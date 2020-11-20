@@ -1,0 +1,60 @@
+.column {
+    flex-direction: column;
+    height: 100%;
+}
+
+.row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 1 100%;
+}
+
+.column,
+.row {
+    display: flex;
+}
+
+.center {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip {
+    transform: rotate(180deg);
+}
+
+.hide {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.hide-tablet {
+    @include tablet {
+        display: none;
+    }
+}
+
+.hide-tablet-landscape {
+    @include tablet-landscape {
+        display: none;
+    }
+}
+
+.hide-notebook {
+    @include notebook {
+        display: none;
+    }
+}
+
+.hide-desktop {
+    @include desktop {
+        display: none;
+    }
+}
+
+.hide-full-hd {
+    @include full-hd {
+        display: none;
+    }
+}

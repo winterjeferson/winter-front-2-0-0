@@ -1,0 +1,33 @@
+{% from 'shared/template-nunjucks.html' import arrSize, arrColor %}
+{% set arrIcon = [
+'home',
+'plus',
+'minus',
+'previous',
+'triangle',
+'menu',
+'instagram',
+'facebook',
+'twitter',
+'youtube',
+'linkedin',
+'github'
+] %}
+
+{% include "shared/head.html" %}
+<h1 class="page__title">Icon</h1>
+<div class="row card-wrapper center">
+    {% for i in arrIcon %}
+    <div class="card small grey">
+        <article class="card__body">
+            <svg class="icon extra-big grey">
+                <use xlink:href="./assets/img/icon.svg#{{i}}"></use>
+            </svg>
+        </article>
+        <footer class="card__footer">
+            <h2>{{i}}</h2>
+        </footer>
+    </div>
+    {% endfor %}
+</div>
+{% include "shared/footer.html" %}

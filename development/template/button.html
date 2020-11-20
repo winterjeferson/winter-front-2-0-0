@@ -1,0 +1,64 @@
+{% from 'shared/template-nunjucks.html' import arrSize, arrColor %}
+{% set arrSocial = [
+        ['facebook', 'fa-facebook'],
+        ['twitter', 'fa-twitter'],
+        ['youtube', 'fa-youtube-play'],
+        ['linkedin', 'fa-linkedin'], 
+        ['pinterest', 'fa-pinterest-p'],
+        ['instagram', 'fa-instagram']
+    ] 
+%}
+{% include "shared/head.html" %}
+<section class="center">
+    <h1 class="page__title">Button</h1>
+    {% for size in arrSize %}
+    <h2 class="page__sub-title">{{size}}</h2>
+    <nav class="button-wrapper row center">
+        {% for color in arrColor %}
+        <button type="button" class="button {{size}} {{color}}">
+            button {{size}} {{color}}
+        </button>
+        {% endfor %}
+    </nav>
+    {% endfor %}
+</section>
+<section class="center">
+    <h1 class="page__title">Button Outline</h1>
+    {% for size in arrSize %}
+    <h2 class="page__sub-title">{{size}}</h2>
+    <nav class="button-wrapper row center">
+        {% for color in arrColor %}
+        <button type="button" class="button-outline {{size}} {{color}}">
+            button {{size}} {{color}}
+        </button>
+        {% endfor %}
+    </nav>
+    {% endfor %}
+</section>
+<section class="center">
+    <h1 class="page__title">Link</h1>
+    {% for size in arrSize %}
+    <h2 class="page__sub-title">{{size}}</h2>
+    <nav class="button-wrapper row center">
+        {% for color in arrColor %}
+        <button type="button" class="link {{size}} {{color}}">
+            button {{size}} {{color}}
+        </button>
+        {% endfor %}
+    </nav>
+    {% endfor %}
+</section>
+<section class="center">
+    <h1 class="page__title">Social</h1>
+    {% for size in arrSize %}
+    <h2 class="page__sub-title">button-{{size}}</h2>
+    <nav class="button-wrapper row center">
+        {% for color in arrSocial %}
+        <a href="javascript:;" rel="noopener" class="button-square {{size}} {{size}} {{name}}" aria-label="{{name}}">
+            <span class="fa fa-fw {{icon}}" aria-hidden="true"></span>
+        </a>
+        {% endfor %}
+    </nav>
+    {% endfor %}
+</section>
+{% include "shared/footer.html" %}

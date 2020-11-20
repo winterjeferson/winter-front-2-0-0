@@ -1,0 +1,104 @@
+.gallery__item {
+  margin-left: 10px;
+  margin-right: 10px; }
+  .gallery__item:first-child {
+    margin-left: 0; }
+  .gallery__item:last-child {
+    margin-right: 0; }
+
+/* ------------------------------------------------------------------ SOCIAL */
+/*
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+}
+*/
+* {
+  font-family: sans-serif;
+  font-size: 16px; }
+
+.grid {
+  height: 100%;
+  display: grid;
+  grid-template: "grid-header grid-header" min-content "grid-menu grid-menu" min-content "grid-content grid-content" auto "grid-footer grid-footer" min-content/auto; }
+  @media (min-width: 1024px) {
+    .grid {
+      grid-template: "grid-header grid-header" min-content "grid-menu grid-content" auto "grid-footer grid-footer" min-content/250px auto; } }
+  .grid__header {
+    grid-area: grid-header; }
+  .grid__menu {
+    grid-area: grid-menu; }
+  .grid__content {
+    grid-area: grid-content; }
+  .grid__footer {
+    grid-area: grid-footer; }
+
+.theme-header,
+.theme-footer {
+  align-items: center;
+  background-color: #d9dcdf;
+  color: #333333;
+  padding: 10px; }
+
+.theme-header {
+  justify-content: space-between; }
+  .theme-header__about {
+    color: #bec3c7; }
+
+.theme-footer {
+  justify-content: flex-end; }
+  .theme-footer .button {
+    margin-left: 10px; }
+
+.theme-menu {
+  background-color: #e7e9ea;
+  padding: 10px;
+  height: 100%; }
+  .theme-menu .button {
+    font-size: 16px;
+    margin-bottom: 0; }
+
+.theme-version .button {
+  margin-left: 10px; }
+
+.background-cyan {
+  background-color: #23c4af; }
+
+.background-orange {
+  background-color: #e77e22; }
+
+.background-red {
+  background-color: #e14b4a; }
+
+.carousel .icon {
+  fill: #a3aaaf; }
+
+.page {
+  padding: 20px; }
+  .page__sub-title, .page__title {
+    text-align: center;
+    font-weight: 100; }
+  .page__sub-title {
+    color: #bec3c7;
+    font-size: 24px; }
+  .page__title {
+    color: #333333;
+    font-size: 32px; }
+
+.page-home {
+  display: flex;
+  height: 100%; }
+  .page-home .carousel,
+  .page-home .carousel__list {
+    height: 100%; }
+  .page-home .icon {
+    fill: #ffffff; }
+  .page-home .carousel__item {
+    align-items: center;
+    color: #ffffff;
+    font-size: 64px;
+    justify-content: center;
+    padding: 40px;
+    text-align: center; }
+
+.gallery__item {
+  flex: 1; }

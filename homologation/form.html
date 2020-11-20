@@ -1,0 +1,1669 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=5,user-scalable=yes,width=device-width">
+    <meta name="description" content="Description" />
+    <meta name="author" content="Jeferson Winter" />
+    <meta name="keywords" content="framework, frontend, html, css, javascript" />
+    <title>Winter Front</title>
+
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-TileImage" content="./assets/img/logo/144-144.png" />
+    <meta name="application-name" content="Jeferson Winter" />
+    <link rel="shortcut icon" href="./assets/img/logo/16-16.png" />
+    <link rel="apple-touch-icon" href="./assets/img/logo/57-57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/logo/72-72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/logo/114-114.png" />
+
+    <meta property="og:image" content="./assets/img/logo/600-315.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="315" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Winter Front" />
+    <meta property="og:site_name" content="Winter Front" />
+    <meta property="og:description" content="Description" />
+
+    <link href="./assets/css/wf-plugin.css" rel="stylesheet">
+    <link href="./assets/css/wf-theme.css" rel="stylesheet">
+
+    <script>
+        var globalLanguage = "pt";
+    </script>
+</head>
+
+<body>
+    <main class="grid">
+        <div id="loadingMain">
+    <div class="col-middle">
+        <div class="row">
+            <div class="col-es-2 col-es-off-5">
+                <div class="progress progress-style-red progress-es">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <header class="grid__header">
+            <div class="row theme-header">
+    <a href="index.html" class="button regular proportional grey" aria-label="home">
+        <svg class="icon regular grey">
+            <use xlink:href="./assets/img/icon.svg#home"></use>
+        </svg>
+    </a>
+    <div class="theme-version">
+        v: 2.0.0
+        <a href="https://github.com/winterjeferson/winter-front" target="_blank" rel="noopener"
+            class="button regular green">
+            Download (Github)
+        </a>
+    </div>
+</div>
+        </header>
+        <section class="grid__menu">
+            
+
+<div class="theme-menu button-wrapper">
+    <button type="button" class="button regular proportional grey hide-tablet-landscape" aria-label="Menu">
+        <svg class="icon regular red">
+            <use xlink:href="./assets/img/icon.svg#menu"></use>
+        </svg>
+    </button>
+    <nav class="column">
+        
+        <a href="button.html" data-id="button" class="button small blue">
+            button
+        </a>
+        
+        <a href="card.html" data-id="card" class="button small blue">
+            card
+        </a>
+        
+        <a href="carousel.html" data-id="carousel" class="button small blue">
+            carousel
+        </a>
+        
+        <a href="form.html" data-id="form" class="button small blue">
+            form
+        </a>
+        
+        <a href="gallery.html" data-id="gallery" class="button small blue">
+            gallery
+        </a>
+        
+        <a href="icon.html" data-id="icon" class="button small blue">
+            icon
+        </a>
+        
+        <a href="lazy-load.html" data-id="lazy-load" class="button small blue">
+            lazy-load
+        </a>
+        
+        <a href="loading.html" data-id="loading" class="button small blue">
+            loading
+        </a>
+        
+        <a href="menu.html" data-id="menu" class="button small blue">
+            menu
+        </a>
+        
+        <a href="modal.html" data-id="modal" class="button small blue">
+            modal
+        </a>
+        
+        <a href="notification.html" data-id="notification" class="button small blue">
+            notification
+        </a>
+        
+        <a href="palette.html" data-id="palette" class="button small blue">
+            palette
+        </a>
+        
+        <a href="progress.html" data-id="progress" class="button small blue">
+            progress
+        </a>
+        
+        <a href="responsive.html" data-id="responsive" class="button small blue">
+            responsive
+        </a>
+        
+        <a href="scroll.html" data-id="scroll" class="button small blue">
+            scroll
+        </a>
+        
+        <a href="table.html" data-id="table" class="button small blue">
+            table
+        </a>
+        
+        <a href="tag.html" data-id="tag" class="button small blue">
+            tag
+        </a>
+        
+        <a href="text.html" data-id="text" class="button small blue">
+            text
+        </a>
+        
+        <a href="tooltip.html" data-id="tooltip" class="button small blue">
+            tooltip
+        </a>
+        
+    </nav>
+</div>
+        </section>
+        <section class="grid__content page">
+<h1 class="page__title">Form</h1>
+
+
+<form class="form black">
+    <h2 class="page__sub-title">black</h2>
+    <div class="row form__field">
+        <label class="form__label">Number</label>
+        <input class="form__fill" type="number" value="0" aria-label="number" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Color</label>
+        <input class="form__fill" type="color" aria-label="color" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Text Required</label>
+        <input class="form__fill" type="text" value="" required aria-label="text required" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CPF</label>
+            <input class="form__fill" type="text" value="" aria-label="cpf" data-mask="cpf"
+                placeholder="000.000.00-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask CNPJ</label>
+            <input class="form__fill" type="text" value="" aria-label="cnpj" data-mask="cnpj"
+                placeholder="00.000.000/0000-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask Phone</label>
+            <input class="form__fill" type="text" value="" aria-label="phone" data-mask="phone"
+                placeholder="(00) 00000-0000" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CEP</label>
+            <input class="form__fill" type="text" value="" aria-label="cep" data-mask="cep" placeholder="00000-000" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask PIS</label>
+            <input class="form__fill" type="text" value="" aria-label="pis" data-mask="pis"
+                placeholder="000.00000.00-0" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Date</label>
+            <input class="form__fill" type="text" value="" aria-label="date" data-mask="date"
+                placeholder="dd/mm/yyyy" />
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Select</label>
+        <select class="form__fill" aria-label="select">
+            <option value="0">option 0</option>
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <option value="3">option 3</option>
+            <option value="4">option 4</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="column">
+            <label class="form__label">Radio</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="radio-1-black" name="radio" type="radio" checked="checked">
+                    <label for="radio-1-black">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-2-black" name="radio" type="radio">
+                    <label for="radio-2-black">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-3-black" name="radio" type="radio" disabled>
+                    <label for="radio-3-black">Disabled</label>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <label class="form__label">Checkbox</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="checkbox-1-black" name="checkbox" type="checkbox" checked="checked">
+                    <label for="checkbox-1-black" class="checkbox-label">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-2-black" name="checkbox" type="checkbox">
+                    <label for="checkbox-2-black" class="checkbox-label">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-4-black" name="checkbox" type="checkbox" disabled="disabled"
+                        checked="checked">
+                    <label for="checkbox-4-black" class="checkbox-label">Disabled</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">E-mail</label>
+        <input class="form__fill" type="email" value="" aria-label="e-mail" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Textarea</label>
+            <textarea class="form__fill" aria-label="textarea"></textarea>
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Multiple</label>
+            <select class="form__fill" multiple="" aria-label="multiple">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Disabled</label>
+        <input class="form__fill" type="text" value="disabled" disabled aria-label="text disabled" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">File</label>
+        <input class="form__fill" type="file">
+    </div>
+</form>
+
+<form class="form blue">
+    <h2 class="page__sub-title">blue</h2>
+    <div class="row form__field">
+        <label class="form__label">Number</label>
+        <input class="form__fill" type="number" value="0" aria-label="number" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Color</label>
+        <input class="form__fill" type="color" aria-label="color" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Text Required</label>
+        <input class="form__fill" type="text" value="" required aria-label="text required" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CPF</label>
+            <input class="form__fill" type="text" value="" aria-label="cpf" data-mask="cpf"
+                placeholder="000.000.00-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask CNPJ</label>
+            <input class="form__fill" type="text" value="" aria-label="cnpj" data-mask="cnpj"
+                placeholder="00.000.000/0000-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask Phone</label>
+            <input class="form__fill" type="text" value="" aria-label="phone" data-mask="phone"
+                placeholder="(00) 00000-0000" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CEP</label>
+            <input class="form__fill" type="text" value="" aria-label="cep" data-mask="cep" placeholder="00000-000" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask PIS</label>
+            <input class="form__fill" type="text" value="" aria-label="pis" data-mask="pis"
+                placeholder="000.00000.00-0" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Date</label>
+            <input class="form__fill" type="text" value="" aria-label="date" data-mask="date"
+                placeholder="dd/mm/yyyy" />
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Select</label>
+        <select class="form__fill" aria-label="select">
+            <option value="0">option 0</option>
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <option value="3">option 3</option>
+            <option value="4">option 4</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="column">
+            <label class="form__label">Radio</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="radio-1-blue" name="radio" type="radio" checked="checked">
+                    <label for="radio-1-blue">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-2-blue" name="radio" type="radio">
+                    <label for="radio-2-blue">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-3-blue" name="radio" type="radio" disabled>
+                    <label for="radio-3-blue">Disabled</label>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <label class="form__label">Checkbox</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="checkbox-1-blue" name="checkbox" type="checkbox" checked="checked">
+                    <label for="checkbox-1-blue" class="checkbox-label">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-2-blue" name="checkbox" type="checkbox">
+                    <label for="checkbox-2-blue" class="checkbox-label">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-4-blue" name="checkbox" type="checkbox" disabled="disabled"
+                        checked="checked">
+                    <label for="checkbox-4-blue" class="checkbox-label">Disabled</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">E-mail</label>
+        <input class="form__fill" type="email" value="" aria-label="e-mail" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Textarea</label>
+            <textarea class="form__fill" aria-label="textarea"></textarea>
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Multiple</label>
+            <select class="form__fill" multiple="" aria-label="multiple">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Disabled</label>
+        <input class="form__fill" type="text" value="disabled" disabled aria-label="text disabled" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">File</label>
+        <input class="form__fill" type="file">
+    </div>
+</form>
+
+<form class="form brown">
+    <h2 class="page__sub-title">brown</h2>
+    <div class="row form__field">
+        <label class="form__label">Number</label>
+        <input class="form__fill" type="number" value="0" aria-label="number" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Color</label>
+        <input class="form__fill" type="color" aria-label="color" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Text Required</label>
+        <input class="form__fill" type="text" value="" required aria-label="text required" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CPF</label>
+            <input class="form__fill" type="text" value="" aria-label="cpf" data-mask="cpf"
+                placeholder="000.000.00-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask CNPJ</label>
+            <input class="form__fill" type="text" value="" aria-label="cnpj" data-mask="cnpj"
+                placeholder="00.000.000/0000-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask Phone</label>
+            <input class="form__fill" type="text" value="" aria-label="phone" data-mask="phone"
+                placeholder="(00) 00000-0000" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CEP</label>
+            <input class="form__fill" type="text" value="" aria-label="cep" data-mask="cep" placeholder="00000-000" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask PIS</label>
+            <input class="form__fill" type="text" value="" aria-label="pis" data-mask="pis"
+                placeholder="000.00000.00-0" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Date</label>
+            <input class="form__fill" type="text" value="" aria-label="date" data-mask="date"
+                placeholder="dd/mm/yyyy" />
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Select</label>
+        <select class="form__fill" aria-label="select">
+            <option value="0">option 0</option>
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <option value="3">option 3</option>
+            <option value="4">option 4</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="column">
+            <label class="form__label">Radio</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="radio-1-brown" name="radio" type="radio" checked="checked">
+                    <label for="radio-1-brown">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-2-brown" name="radio" type="radio">
+                    <label for="radio-2-brown">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-3-brown" name="radio" type="radio" disabled>
+                    <label for="radio-3-brown">Disabled</label>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <label class="form__label">Checkbox</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="checkbox-1-brown" name="checkbox" type="checkbox" checked="checked">
+                    <label for="checkbox-1-brown" class="checkbox-label">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-2-brown" name="checkbox" type="checkbox">
+                    <label for="checkbox-2-brown" class="checkbox-label">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-4-brown" name="checkbox" type="checkbox" disabled="disabled"
+                        checked="checked">
+                    <label for="checkbox-4-brown" class="checkbox-label">Disabled</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">E-mail</label>
+        <input class="form__fill" type="email" value="" aria-label="e-mail" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Textarea</label>
+            <textarea class="form__fill" aria-label="textarea"></textarea>
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Multiple</label>
+            <select class="form__fill" multiple="" aria-label="multiple">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Disabled</label>
+        <input class="form__fill" type="text" value="disabled" disabled aria-label="text disabled" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">File</label>
+        <input class="form__fill" type="file">
+    </div>
+</form>
+
+<form class="form cyan">
+    <h2 class="page__sub-title">cyan</h2>
+    <div class="row form__field">
+        <label class="form__label">Number</label>
+        <input class="form__fill" type="number" value="0" aria-label="number" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Color</label>
+        <input class="form__fill" type="color" aria-label="color" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Text Required</label>
+        <input class="form__fill" type="text" value="" required aria-label="text required" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CPF</label>
+            <input class="form__fill" type="text" value="" aria-label="cpf" data-mask="cpf"
+                placeholder="000.000.00-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask CNPJ</label>
+            <input class="form__fill" type="text" value="" aria-label="cnpj" data-mask="cnpj"
+                placeholder="00.000.000/0000-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask Phone</label>
+            <input class="form__fill" type="text" value="" aria-label="phone" data-mask="phone"
+                placeholder="(00) 00000-0000" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CEP</label>
+            <input class="form__fill" type="text" value="" aria-label="cep" data-mask="cep" placeholder="00000-000" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask PIS</label>
+            <input class="form__fill" type="text" value="" aria-label="pis" data-mask="pis"
+                placeholder="000.00000.00-0" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Date</label>
+            <input class="form__fill" type="text" value="" aria-label="date" data-mask="date"
+                placeholder="dd/mm/yyyy" />
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Select</label>
+        <select class="form__fill" aria-label="select">
+            <option value="0">option 0</option>
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <option value="3">option 3</option>
+            <option value="4">option 4</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="column">
+            <label class="form__label">Radio</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="radio-1-cyan" name="radio" type="radio" checked="checked">
+                    <label for="radio-1-cyan">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-2-cyan" name="radio" type="radio">
+                    <label for="radio-2-cyan">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-3-cyan" name="radio" type="radio" disabled>
+                    <label for="radio-3-cyan">Disabled</label>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <label class="form__label">Checkbox</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="checkbox-1-cyan" name="checkbox" type="checkbox" checked="checked">
+                    <label for="checkbox-1-cyan" class="checkbox-label">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-2-cyan" name="checkbox" type="checkbox">
+                    <label for="checkbox-2-cyan" class="checkbox-label">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-4-cyan" name="checkbox" type="checkbox" disabled="disabled"
+                        checked="checked">
+                    <label for="checkbox-4-cyan" class="checkbox-label">Disabled</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">E-mail</label>
+        <input class="form__fill" type="email" value="" aria-label="e-mail" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Textarea</label>
+            <textarea class="form__fill" aria-label="textarea"></textarea>
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Multiple</label>
+            <select class="form__fill" multiple="" aria-label="multiple">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Disabled</label>
+        <input class="form__fill" type="text" value="disabled" disabled aria-label="text disabled" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">File</label>
+        <input class="form__fill" type="file">
+    </div>
+</form>
+
+<form class="form green">
+    <h2 class="page__sub-title">green</h2>
+    <div class="row form__field">
+        <label class="form__label">Number</label>
+        <input class="form__fill" type="number" value="0" aria-label="number" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Color</label>
+        <input class="form__fill" type="color" aria-label="color" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Text Required</label>
+        <input class="form__fill" type="text" value="" required aria-label="text required" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CPF</label>
+            <input class="form__fill" type="text" value="" aria-label="cpf" data-mask="cpf"
+                placeholder="000.000.00-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask CNPJ</label>
+            <input class="form__fill" type="text" value="" aria-label="cnpj" data-mask="cnpj"
+                placeholder="00.000.000/0000-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask Phone</label>
+            <input class="form__fill" type="text" value="" aria-label="phone" data-mask="phone"
+                placeholder="(00) 00000-0000" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CEP</label>
+            <input class="form__fill" type="text" value="" aria-label="cep" data-mask="cep" placeholder="00000-000" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask PIS</label>
+            <input class="form__fill" type="text" value="" aria-label="pis" data-mask="pis"
+                placeholder="000.00000.00-0" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Date</label>
+            <input class="form__fill" type="text" value="" aria-label="date" data-mask="date"
+                placeholder="dd/mm/yyyy" />
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Select</label>
+        <select class="form__fill" aria-label="select">
+            <option value="0">option 0</option>
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <option value="3">option 3</option>
+            <option value="4">option 4</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="column">
+            <label class="form__label">Radio</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="radio-1-green" name="radio" type="radio" checked="checked">
+                    <label for="radio-1-green">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-2-green" name="radio" type="radio">
+                    <label for="radio-2-green">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-3-green" name="radio" type="radio" disabled>
+                    <label for="radio-3-green">Disabled</label>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <label class="form__label">Checkbox</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="checkbox-1-green" name="checkbox" type="checkbox" checked="checked">
+                    <label for="checkbox-1-green" class="checkbox-label">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-2-green" name="checkbox" type="checkbox">
+                    <label for="checkbox-2-green" class="checkbox-label">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-4-green" name="checkbox" type="checkbox" disabled="disabled"
+                        checked="checked">
+                    <label for="checkbox-4-green" class="checkbox-label">Disabled</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">E-mail</label>
+        <input class="form__fill" type="email" value="" aria-label="e-mail" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Textarea</label>
+            <textarea class="form__fill" aria-label="textarea"></textarea>
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Multiple</label>
+            <select class="form__fill" multiple="" aria-label="multiple">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Disabled</label>
+        <input class="form__fill" type="text" value="disabled" disabled aria-label="text disabled" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">File</label>
+        <input class="form__fill" type="file">
+    </div>
+</form>
+
+<form class="form grey">
+    <h2 class="page__sub-title">grey</h2>
+    <div class="row form__field">
+        <label class="form__label">Number</label>
+        <input class="form__fill" type="number" value="0" aria-label="number" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Color</label>
+        <input class="form__fill" type="color" aria-label="color" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Text Required</label>
+        <input class="form__fill" type="text" value="" required aria-label="text required" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CPF</label>
+            <input class="form__fill" type="text" value="" aria-label="cpf" data-mask="cpf"
+                placeholder="000.000.00-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask CNPJ</label>
+            <input class="form__fill" type="text" value="" aria-label="cnpj" data-mask="cnpj"
+                placeholder="00.000.000/0000-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask Phone</label>
+            <input class="form__fill" type="text" value="" aria-label="phone" data-mask="phone"
+                placeholder="(00) 00000-0000" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CEP</label>
+            <input class="form__fill" type="text" value="" aria-label="cep" data-mask="cep" placeholder="00000-000" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask PIS</label>
+            <input class="form__fill" type="text" value="" aria-label="pis" data-mask="pis"
+                placeholder="000.00000.00-0" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Date</label>
+            <input class="form__fill" type="text" value="" aria-label="date" data-mask="date"
+                placeholder="dd/mm/yyyy" />
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Select</label>
+        <select class="form__fill" aria-label="select">
+            <option value="0">option 0</option>
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <option value="3">option 3</option>
+            <option value="4">option 4</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="column">
+            <label class="form__label">Radio</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="radio-1-grey" name="radio" type="radio" checked="checked">
+                    <label for="radio-1-grey">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-2-grey" name="radio" type="radio">
+                    <label for="radio-2-grey">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-3-grey" name="radio" type="radio" disabled>
+                    <label for="radio-3-grey">Disabled</label>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <label class="form__label">Checkbox</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="checkbox-1-grey" name="checkbox" type="checkbox" checked="checked">
+                    <label for="checkbox-1-grey" class="checkbox-label">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-2-grey" name="checkbox" type="checkbox">
+                    <label for="checkbox-2-grey" class="checkbox-label">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-4-grey" name="checkbox" type="checkbox" disabled="disabled"
+                        checked="checked">
+                    <label for="checkbox-4-grey" class="checkbox-label">Disabled</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">E-mail</label>
+        <input class="form__fill" type="email" value="" aria-label="e-mail" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Textarea</label>
+            <textarea class="form__fill" aria-label="textarea"></textarea>
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Multiple</label>
+            <select class="form__fill" multiple="" aria-label="multiple">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Disabled</label>
+        <input class="form__fill" type="text" value="disabled" disabled aria-label="text disabled" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">File</label>
+        <input class="form__fill" type="file">
+    </div>
+</form>
+
+<form class="form orange">
+    <h2 class="page__sub-title">orange</h2>
+    <div class="row form__field">
+        <label class="form__label">Number</label>
+        <input class="form__fill" type="number" value="0" aria-label="number" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Color</label>
+        <input class="form__fill" type="color" aria-label="color" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Text Required</label>
+        <input class="form__fill" type="text" value="" required aria-label="text required" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CPF</label>
+            <input class="form__fill" type="text" value="" aria-label="cpf" data-mask="cpf"
+                placeholder="000.000.00-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask CNPJ</label>
+            <input class="form__fill" type="text" value="" aria-label="cnpj" data-mask="cnpj"
+                placeholder="00.000.000/0000-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask Phone</label>
+            <input class="form__fill" type="text" value="" aria-label="phone" data-mask="phone"
+                placeholder="(00) 00000-0000" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CEP</label>
+            <input class="form__fill" type="text" value="" aria-label="cep" data-mask="cep" placeholder="00000-000" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask PIS</label>
+            <input class="form__fill" type="text" value="" aria-label="pis" data-mask="pis"
+                placeholder="000.00000.00-0" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Date</label>
+            <input class="form__fill" type="text" value="" aria-label="date" data-mask="date"
+                placeholder="dd/mm/yyyy" />
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Select</label>
+        <select class="form__fill" aria-label="select">
+            <option value="0">option 0</option>
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <option value="3">option 3</option>
+            <option value="4">option 4</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="column">
+            <label class="form__label">Radio</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="radio-1-orange" name="radio" type="radio" checked="checked">
+                    <label for="radio-1-orange">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-2-orange" name="radio" type="radio">
+                    <label for="radio-2-orange">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-3-orange" name="radio" type="radio" disabled>
+                    <label for="radio-3-orange">Disabled</label>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <label class="form__label">Checkbox</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="checkbox-1-orange" name="checkbox" type="checkbox" checked="checked">
+                    <label for="checkbox-1-orange" class="checkbox-label">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-2-orange" name="checkbox" type="checkbox">
+                    <label for="checkbox-2-orange" class="checkbox-label">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-4-orange" name="checkbox" type="checkbox" disabled="disabled"
+                        checked="checked">
+                    <label for="checkbox-4-orange" class="checkbox-label">Disabled</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">E-mail</label>
+        <input class="form__fill" type="email" value="" aria-label="e-mail" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Textarea</label>
+            <textarea class="form__fill" aria-label="textarea"></textarea>
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Multiple</label>
+            <select class="form__fill" multiple="" aria-label="multiple">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Disabled</label>
+        <input class="form__fill" type="text" value="disabled" disabled aria-label="text disabled" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">File</label>
+        <input class="form__fill" type="file">
+    </div>
+</form>
+
+<form class="form pink">
+    <h2 class="page__sub-title">pink</h2>
+    <div class="row form__field">
+        <label class="form__label">Number</label>
+        <input class="form__fill" type="number" value="0" aria-label="number" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Color</label>
+        <input class="form__fill" type="color" aria-label="color" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Text Required</label>
+        <input class="form__fill" type="text" value="" required aria-label="text required" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CPF</label>
+            <input class="form__fill" type="text" value="" aria-label="cpf" data-mask="cpf"
+                placeholder="000.000.00-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask CNPJ</label>
+            <input class="form__fill" type="text" value="" aria-label="cnpj" data-mask="cnpj"
+                placeholder="00.000.000/0000-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask Phone</label>
+            <input class="form__fill" type="text" value="" aria-label="phone" data-mask="phone"
+                placeholder="(00) 00000-0000" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CEP</label>
+            <input class="form__fill" type="text" value="" aria-label="cep" data-mask="cep" placeholder="00000-000" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask PIS</label>
+            <input class="form__fill" type="text" value="" aria-label="pis" data-mask="pis"
+                placeholder="000.00000.00-0" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Date</label>
+            <input class="form__fill" type="text" value="" aria-label="date" data-mask="date"
+                placeholder="dd/mm/yyyy" />
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Select</label>
+        <select class="form__fill" aria-label="select">
+            <option value="0">option 0</option>
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <option value="3">option 3</option>
+            <option value="4">option 4</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="column">
+            <label class="form__label">Radio</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="radio-1-pink" name="radio" type="radio" checked="checked">
+                    <label for="radio-1-pink">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-2-pink" name="radio" type="radio">
+                    <label for="radio-2-pink">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-3-pink" name="radio" type="radio" disabled>
+                    <label for="radio-3-pink">Disabled</label>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <label class="form__label">Checkbox</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="checkbox-1-pink" name="checkbox" type="checkbox" checked="checked">
+                    <label for="checkbox-1-pink" class="checkbox-label">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-2-pink" name="checkbox" type="checkbox">
+                    <label for="checkbox-2-pink" class="checkbox-label">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-4-pink" name="checkbox" type="checkbox" disabled="disabled"
+                        checked="checked">
+                    <label for="checkbox-4-pink" class="checkbox-label">Disabled</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">E-mail</label>
+        <input class="form__fill" type="email" value="" aria-label="e-mail" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Textarea</label>
+            <textarea class="form__fill" aria-label="textarea"></textarea>
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Multiple</label>
+            <select class="form__fill" multiple="" aria-label="multiple">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Disabled</label>
+        <input class="form__fill" type="text" value="disabled" disabled aria-label="text disabled" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">File</label>
+        <input class="form__fill" type="file">
+    </div>
+</form>
+
+<form class="form purple">
+    <h2 class="page__sub-title">purple</h2>
+    <div class="row form__field">
+        <label class="form__label">Number</label>
+        <input class="form__fill" type="number" value="0" aria-label="number" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Color</label>
+        <input class="form__fill" type="color" aria-label="color" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Text Required</label>
+        <input class="form__fill" type="text" value="" required aria-label="text required" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CPF</label>
+            <input class="form__fill" type="text" value="" aria-label="cpf" data-mask="cpf"
+                placeholder="000.000.00-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask CNPJ</label>
+            <input class="form__fill" type="text" value="" aria-label="cnpj" data-mask="cnpj"
+                placeholder="00.000.000/0000-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask Phone</label>
+            <input class="form__fill" type="text" value="" aria-label="phone" data-mask="phone"
+                placeholder="(00) 00000-0000" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CEP</label>
+            <input class="form__fill" type="text" value="" aria-label="cep" data-mask="cep" placeholder="00000-000" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask PIS</label>
+            <input class="form__fill" type="text" value="" aria-label="pis" data-mask="pis"
+                placeholder="000.00000.00-0" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Date</label>
+            <input class="form__fill" type="text" value="" aria-label="date" data-mask="date"
+                placeholder="dd/mm/yyyy" />
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Select</label>
+        <select class="form__fill" aria-label="select">
+            <option value="0">option 0</option>
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <option value="3">option 3</option>
+            <option value="4">option 4</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="column">
+            <label class="form__label">Radio</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="radio-1-purple" name="radio" type="radio" checked="checked">
+                    <label for="radio-1-purple">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-2-purple" name="radio" type="radio">
+                    <label for="radio-2-purple">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-3-purple" name="radio" type="radio" disabled>
+                    <label for="radio-3-purple">Disabled</label>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <label class="form__label">Checkbox</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="checkbox-1-purple" name="checkbox" type="checkbox" checked="checked">
+                    <label for="checkbox-1-purple" class="checkbox-label">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-2-purple" name="checkbox" type="checkbox">
+                    <label for="checkbox-2-purple" class="checkbox-label">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-4-purple" name="checkbox" type="checkbox" disabled="disabled"
+                        checked="checked">
+                    <label for="checkbox-4-purple" class="checkbox-label">Disabled</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">E-mail</label>
+        <input class="form__fill" type="email" value="" aria-label="e-mail" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Textarea</label>
+            <textarea class="form__fill" aria-label="textarea"></textarea>
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Multiple</label>
+            <select class="form__fill" multiple="" aria-label="multiple">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Disabled</label>
+        <input class="form__fill" type="text" value="disabled" disabled aria-label="text disabled" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">File</label>
+        <input class="form__fill" type="file">
+    </div>
+</form>
+
+<form class="form red">
+    <h2 class="page__sub-title">red</h2>
+    <div class="row form__field">
+        <label class="form__label">Number</label>
+        <input class="form__fill" type="number" value="0" aria-label="number" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Color</label>
+        <input class="form__fill" type="color" aria-label="color" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Text Required</label>
+        <input class="form__fill" type="text" value="" required aria-label="text required" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CPF</label>
+            <input class="form__fill" type="text" value="" aria-label="cpf" data-mask="cpf"
+                placeholder="000.000.00-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask CNPJ</label>
+            <input class="form__fill" type="text" value="" aria-label="cnpj" data-mask="cnpj"
+                placeholder="00.000.000/0000-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask Phone</label>
+            <input class="form__fill" type="text" value="" aria-label="phone" data-mask="phone"
+                placeholder="(00) 00000-0000" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CEP</label>
+            <input class="form__fill" type="text" value="" aria-label="cep" data-mask="cep" placeholder="00000-000" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask PIS</label>
+            <input class="form__fill" type="text" value="" aria-label="pis" data-mask="pis"
+                placeholder="000.00000.00-0" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Date</label>
+            <input class="form__fill" type="text" value="" aria-label="date" data-mask="date"
+                placeholder="dd/mm/yyyy" />
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Select</label>
+        <select class="form__fill" aria-label="select">
+            <option value="0">option 0</option>
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <option value="3">option 3</option>
+            <option value="4">option 4</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="column">
+            <label class="form__label">Radio</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="radio-1-red" name="radio" type="radio" checked="checked">
+                    <label for="radio-1-red">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-2-red" name="radio" type="radio">
+                    <label for="radio-2-red">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-3-red" name="radio" type="radio" disabled>
+                    <label for="radio-3-red">Disabled</label>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <label class="form__label">Checkbox</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="checkbox-1-red" name="checkbox" type="checkbox" checked="checked">
+                    <label for="checkbox-1-red" class="checkbox-label">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-2-red" name="checkbox" type="checkbox">
+                    <label for="checkbox-2-red" class="checkbox-label">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-4-red" name="checkbox" type="checkbox" disabled="disabled"
+                        checked="checked">
+                    <label for="checkbox-4-red" class="checkbox-label">Disabled</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">E-mail</label>
+        <input class="form__fill" type="email" value="" aria-label="e-mail" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Textarea</label>
+            <textarea class="form__fill" aria-label="textarea"></textarea>
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Multiple</label>
+            <select class="form__fill" multiple="" aria-label="multiple">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Disabled</label>
+        <input class="form__fill" type="text" value="disabled" disabled aria-label="text disabled" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">File</label>
+        <input class="form__fill" type="file">
+    </div>
+</form>
+
+<form class="form yellow">
+    <h2 class="page__sub-title">yellow</h2>
+    <div class="row form__field">
+        <label class="form__label">Number</label>
+        <input class="form__fill" type="number" value="0" aria-label="number" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Color</label>
+        <input class="form__fill" type="color" aria-label="color" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Text Required</label>
+        <input class="form__fill" type="text" value="" required aria-label="text required" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CPF</label>
+            <input class="form__fill" type="text" value="" aria-label="cpf" data-mask="cpf"
+                placeholder="000.000.00-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask CNPJ</label>
+            <input class="form__fill" type="text" value="" aria-label="cnpj" data-mask="cnpj"
+                placeholder="00.000.000/0000-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask Phone</label>
+            <input class="form__fill" type="text" value="" aria-label="phone" data-mask="phone"
+                placeholder="(00) 00000-0000" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CEP</label>
+            <input class="form__fill" type="text" value="" aria-label="cep" data-mask="cep" placeholder="00000-000" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask PIS</label>
+            <input class="form__fill" type="text" value="" aria-label="pis" data-mask="pis"
+                placeholder="000.00000.00-0" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Date</label>
+            <input class="form__fill" type="text" value="" aria-label="date" data-mask="date"
+                placeholder="dd/mm/yyyy" />
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Select</label>
+        <select class="form__fill" aria-label="select">
+            <option value="0">option 0</option>
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <option value="3">option 3</option>
+            <option value="4">option 4</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="column">
+            <label class="form__label">Radio</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="radio-1-yellow" name="radio" type="radio" checked="checked">
+                    <label for="radio-1-yellow">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-2-yellow" name="radio" type="radio">
+                    <label for="radio-2-yellow">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-3-yellow" name="radio" type="radio" disabled>
+                    <label for="radio-3-yellow">Disabled</label>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <label class="form__label">Checkbox</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="checkbox-1-yellow" name="checkbox" type="checkbox" checked="checked">
+                    <label for="checkbox-1-yellow" class="checkbox-label">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-2-yellow" name="checkbox" type="checkbox">
+                    <label for="checkbox-2-yellow" class="checkbox-label">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-4-yellow" name="checkbox" type="checkbox" disabled="disabled"
+                        checked="checked">
+                    <label for="checkbox-4-yellow" class="checkbox-label">Disabled</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">E-mail</label>
+        <input class="form__fill" type="email" value="" aria-label="e-mail" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Textarea</label>
+            <textarea class="form__fill" aria-label="textarea"></textarea>
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Multiple</label>
+            <select class="form__fill" multiple="" aria-label="multiple">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Disabled</label>
+        <input class="form__fill" type="text" value="disabled" disabled aria-label="text disabled" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">File</label>
+        <input class="form__fill" type="file">
+    </div>
+</form>
+
+<form class="form white">
+    <h2 class="page__sub-title">white</h2>
+    <div class="row form__field">
+        <label class="form__label">Number</label>
+        <input class="form__fill" type="number" value="0" aria-label="number" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Color</label>
+        <input class="form__fill" type="color" aria-label="color" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Text Required</label>
+        <input class="form__fill" type="text" value="" required aria-label="text required" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CPF</label>
+            <input class="form__fill" type="text" value="" aria-label="cpf" data-mask="cpf"
+                placeholder="000.000.00-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask CNPJ</label>
+            <input class="form__fill" type="text" value="" aria-label="cnpj" data-mask="cnpj"
+                placeholder="00.000.000/0000-00" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask Phone</label>
+            <input class="form__fill" type="text" value="" aria-label="phone" data-mask="phone"
+                placeholder="(00) 00000-0000" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Mask CEP</label>
+            <input class="form__fill" type="text" value="" aria-label="cep" data-mask="cep" placeholder="00000-000" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Mask PIS</label>
+            <input class="form__fill" type="text" value="" aria-label="pis" data-mask="pis"
+                placeholder="000.00000.00-0" />
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Date</label>
+            <input class="form__fill" type="text" value="" aria-label="date" data-mask="date"
+                placeholder="dd/mm/yyyy" />
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Select</label>
+        <select class="form__fill" aria-label="select">
+            <option value="0">option 0</option>
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <option value="3">option 3</option>
+            <option value="4">option 4</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="column">
+            <label class="form__label">Radio</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="radio-1-white" name="radio" type="radio" checked="checked">
+                    <label for="radio-1-white">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-2-white" name="radio" type="radio">
+                    <label for="radio-2-white">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="radio-3-white" name="radio" type="radio" disabled>
+                    <label for="radio-3-white">Disabled</label>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <label class="form__label">Checkbox</label>
+            <div class="row form__field">
+                <div class="form__option">
+                    <input id="checkbox-1-white" name="checkbox" type="checkbox" checked="checked">
+                    <label for="checkbox-1-white" class="checkbox-label">Checked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-2-white" name="checkbox" type="checkbox">
+                    <label for="checkbox-2-white" class="checkbox-label">Unchecked</label>
+                </div>
+                <div class="form__option">
+                    <input id="checkbox-4-white" name="checkbox" type="checkbox" disabled="disabled"
+                        checked="checked">
+                    <label for="checkbox-4-white" class="checkbox-label">Disabled</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">E-mail</label>
+        <input class="form__fill" type="email" value="" aria-label="e-mail" />
+    </div>
+    <div class="row">
+        <div class="column form__field">
+            <label class="form__label">Textarea</label>
+            <textarea class="form__fill" aria-label="textarea"></textarea>
+        </div>
+        <div class="column form__field">
+            <label class="form__label">Multiple</label>
+            <select class="form__fill" multiple="" aria-label="multiple">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="row form__field">
+        <label class="form__label">Disabled</label>
+        <input class="form__fill" type="text" value="disabled" disabled aria-label="text disabled" />
+    </div>
+    <div class="row form__field">
+        <label class="form__label">File</label>
+        <input class="form__fill" type="file">
+    </div>
+</form>
+
+        </section>
+        <footer class=grid__footer>
+            <div class="row theme-footer">
+    By:
+    <a href="https://www.jefersonwinter.com.br" target="_blank" rel="noopener" class="button regular grey">
+        Jeferson Winter
+    </a>
+</div>
+        </footer>
+
+        <script src="./assets/js/wf-plugin.js"></script>
+        <script src="./assets/js/wf-theme.js"></script>
+    </main>
+</body>
+
+</html>

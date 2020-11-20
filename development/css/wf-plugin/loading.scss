@@ -1,0 +1,178 @@
+// #loadingMain {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     // z-index: z-index("loading-main");
+//     width: 100vw;
+//     height: 100vh;
+//     opacity: 1;
+//     transition: $transition;
+//     overflow: hidden;
+//     display: flex;
+
+//     .progress-bar {
+//         width: 0;
+//     }
+// }
+
+// .loading-main-done {
+//     opacity: 0 !important;
+//     transition: $transition;
+//     pointer-events: none;
+// }
+
+
+.loading-1 {
+    border-radius: 50%;
+    position: relative;
+    text-indent: -9999em;
+    animation: load5 1.3s infinite linear;
+    transform: translateZ(0);
+    display: inline-block;
+
+    &.extra-small {
+        font-size: $extra-small;
+        margin: $extra-small;
+        height: $extra-small;
+        width: $extra-small;
+    }
+
+    &.small {
+        font-size: $small;
+        margin: $small;
+        height: $small;
+        width: $small;
+    }
+
+    &.regular {
+        font-size: $regular;
+        margin: $regular;
+        height: $regular;
+        width: $regular;
+    }
+
+    &.big {
+        font-size: $big;
+        margin: $big;
+        height: $big;
+        width: $big;
+    }
+
+    &.extra-big {
+        font-size: $extra-big;
+        margin: $extra-big;
+        height: $extra-big;
+        width: $extra-big;
+    }
+
+    @keyframes load5 {
+
+        0%,
+        100% {
+            box-shadow: 0 -1.5em 0 0.1em, 1em -1em 0 0em, 1.5em 0 0 -0.5em, 1em 1em 0 -0.5em, 0 1.5em 0 -0.5em,
+                -1em 1em 0 -0.5em, -1.5em 0 0 -0.5em, -1em -1em 0 0;
+        }
+
+        12.5% {
+            box-shadow: 0 -1.5em 0 0, 1em -1em 0 0.1em, 1.5em 0 0 0, 1em 1em 0 -0.5em, 0 1.5em 0 -0.5em, -1em 1em 0 -0.5em,
+                -1.5em 0 0 -0.5em, -1em -1em 0 -0.5em;
+        }
+
+        25% {
+            box-shadow: 0 -1.5em 0 -0.5em, 1em -1em 0 0, 1.5em 0 0 0.1em, 1em 1em 0 0, 0 1.5em 0 -0.5em, -1em 1em 0 -0.5em,
+                -1.5em 0 0 -0.5em, -1em -1em 0 -0.5em;
+        }
+
+        37.5% {
+            box-shadow: 0 -1.5em 0 -0.5em, 1em -1em 0 -0.5em, 1.5em 0em 0 0, 1em 1em 0 0.1em, 0 1.5em 0 0em, -1em 1em 0 -0.5em,
+                -1.5em 0em 0 -0.5em, -1em -1em 0 -0.5em;
+        }
+
+        50% {
+            box-shadow: 0 -1.5em 0 -0.5em, 1em -1em 0 -0.5em, 1.5em 0 0 -0.5em, 1em 1em 0 0em, 0 1.5em 0 0.1em, -1em 1em 0 0,
+                -1.5em 0em 0 -0.5em, -1em -1em 0 -0.5em;
+        }
+
+        62.5% {
+            box-shadow: 0 -1.5em 0 -0.5em, 1em -1em 0 -0.5em, 1.5em 0 0 -0.5em, 1em 1em 0 -0.5em, 0 1.5em 0 0,
+                -1em 1em 0 0.1em, -1.5em 0 0 0, -1em -1em 0 -0.5em;
+        }
+
+        75% {
+            box-shadow: 0em -1.5em 0 -0.5em, 1em -1em 0 -0.5em, 1.5em 0em 0 -0.5em, 1em 1em 0 -0.5em, 0 1.5em 0 -0.5em,
+                -1em 1em 0 0, -1.5em 0em 0 0.1em, -1em -1em 0 0;
+        }
+
+        87.5% {
+            box-shadow: 0em -1.5em 0 0, 1em -1em 0 -0.5em, 1.5em 0 0 -0.5em, 1em 1em 0 -0.5em, 0 1.5em 0 -0.5em, -1em 1em 0 0,
+                -1.5em 0em 0 0, -1em -1em 0 0.1em;
+        }
+    }
+
+    @each $color in $arrColorLoading {
+        &.#{$color} {
+            color: color-regular(#{$color});
+        }
+    }
+}
+
+.loading-2 {
+    animation: sk-rotateplane 1.2s infinite ease-in-out;
+    display: inline-block;
+
+    &.extra-small {
+        padding: $extra-small;
+        margin: $extra-small;
+        height: $extra-small;
+        width: $extra-small;
+    }
+
+    &.small {
+        padding: $small;
+        margin: $small;
+        height: $small;
+        width: $small;
+    }
+
+    &.regular {
+        padding: $regular;
+        margin: $regular;
+        height: $regular;
+        width: $regular;
+    }
+
+    &.big {
+        padding: $big;
+        margin: $big;
+        height: $big;
+        width: $big;
+    }
+
+    &.extra-big {
+        padding: $extra-big;
+        margin: $extra-big;
+        height: $extra-big;
+        width: $extra-big;
+    }
+
+
+    @keyframes sk-rotateplane {
+        0% {
+            transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        }
+
+        50% {
+            transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+        }
+
+        100% {
+            transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+        }
+    }
+
+    @each $color in $arrColorLoading {
+        &.#{$color} {
+            background-color: color-regular(#{$color});
+        }
+    }
+}

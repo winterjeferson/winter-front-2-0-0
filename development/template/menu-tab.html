@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-es-12">
+        <h2 class="page__sub-title">Tab</h2>
+    </div>
+    {% for color in arrColor %}
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu-tab menu-tab-{{color}} text-center menu menu-horizontal menu-drop-down">
+                <ul>
+                    <li class="menu-tab-active">
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Drop down
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:;" class="button regular">Lorem ipsum</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Dolor sit amet</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Consecttur adipscing elit</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    {% endfor %}
+</div>

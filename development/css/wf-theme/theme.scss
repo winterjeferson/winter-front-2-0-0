@@ -1,0 +1,141 @@
+* {
+    font-family: sans-serif;
+    font-size: $font-size-regular;
+}
+
+.grid {
+    height: 100%;
+    display: grid;
+    grid-template:
+        "grid-header grid-header"min-content "grid-menu grid-menu"min-content "grid-content grid-content"auto "grid-footer grid-footer"min-content / auto;
+
+    @include tablet-landscape {
+        grid-template:
+            "grid-header grid-header"min-content "grid-menu grid-content"auto "grid-footer grid-footer"min-content / 250px auto;
+    }
+
+    &__header {
+        grid-area: grid-header;
+    }
+
+    &__menu {
+        grid-area: grid-menu;
+    }
+
+    &__content {
+        grid-area: grid-content;
+    }
+
+    &__footer {
+        grid-area: grid-footer;
+    }
+}
+
+.theme-header,
+.theme-footer {
+    align-items: center;
+    background-color: $color-grey-light-2;
+    color: $color-text;
+    padding: $regular;
+}
+
+.theme-header {
+    justify-content: space-between;
+
+    &__about {
+        color: $color-grey;
+    }
+}
+
+.theme-footer {
+    justify-content: flex-end;
+
+    .button {
+        margin-left: $regular;
+    }
+}
+
+.theme-menu {
+    background-color: $color-grey-light-3;
+    padding: $regular;
+    height: 100%;
+
+    .button {
+        font-size: $font-size-regular;
+        margin-bottom: 0;
+    }
+}
+
+.theme-version {
+    .button {
+        margin-left: $regular;
+    }
+}
+
+.background-cyan {
+    background-color: $color-cyan;
+}
+
+.background-orange {
+    background-color: $color-orange;
+}
+
+.background-red {
+    background-color: $color-red;
+}
+
+.carousel {
+    .icon {
+        fill: $color-grey-dark-2;
+    }
+}
+
+.page {
+    padding: $big;
+
+    &__sub-title,
+    &__title {
+        text-align: center;
+        font-weight: 100;
+    }
+
+    &__sub-title {
+        color: $color-grey;
+        font-size: $font-size-big;
+    }
+
+    &__title {
+        color: $color-text;
+        font-size: $font-size-extra-big;
+    }
+}
+
+.page-home {
+    display: flex;
+    height: 100%;
+
+    .carousel,
+    .carousel__list {
+        height: 100%;
+    }
+
+    .icon {
+        fill: $color-white;
+    }
+
+    .carousel__item {
+        align-items: center;
+        color: $color-white;
+        font-size: $font-size-extra-big * 2;
+        justify-content: center;
+        padding: $extra-big;
+        text-align: center;
+    }
+}
+
+.gallery {
+    &__item {
+        flex: 1;
+        @extend %extend-margin-component;
+    }
+}

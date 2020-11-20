@@ -1,0 +1,63 @@
+{% from 'shared/template-nunjucks.html' import arrSize, arrColor %}
+{% include "shared/head.html" %}
+{% set arrStyle = ['slide', 'fade'] %}
+{% set arrImage = ['1', '2', '1'] %}
+
+<h1 class="page__title">Carousel</h1>
+{% for style in arrStyle %}
+<h2 class="page__sub-title">{{style}}</h2>
+<div class="carousel" data-current-slide="0" data-style="{{style}}">
+    <ul class="carousel__list">
+        {% for image in arrImage %}
+        <li class="carousel__item">
+            <a href="javascript:;">
+                <img src="assets/img/banner/{{image}}.png" alt="banner">
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="carousel__arrow button-wrapper row center">
+        <button type="button" class="button big" data-id="previous" aria-label="previous">
+            <svg class="icon icon-eb">
+                <use xlink:href="./assets/img/icon.svg#previous"></use>
+            </svg>
+        </button>
+        <button type="button" class="button big" data-id="next" aria-label="next">
+            <svg class="icon icon-eb flip">
+                <use xlink:href="./assets/img/icon.svg#previous"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="carousel__controller over button-wrapper row center"></div>
+</div>
+{% endfor %}
+{% for style in arrStyle %}
+<h2 class="page__sub-title">{{style}} text</h2>
+<div class="carousel" data-current-slide="0" data-style="{{style}}">
+    <ul class="carousel__list">
+        {% for size in arrSize %}
+        <li class="carousel__item">
+            {{loop.index}} - Lorem ipsum dolor sit amet, consecttur adipscing elit. Proin ut ni
+            diam. Nam ini pretium ligulas. Integersda dapibusa id quam non prium! Suspendisse
+            sodalesa efficiturd nullsa, eta elementumds dui consequat eu. Curabituras interd
+            augue,
+            at dictuquam ullamcorperat.
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="carousel__arrow button-wrapper row center hide">
+        <button type="button" class="button big" data-id="previous" aria-label="previous">
+            <svg class="icon icon-eb">
+                <use xlink:href="./assets/img/icon.svg#previous"></use>
+            </svg>
+        </button>
+        <button type="button" class="button big" data-id="next" aria-label="next">
+            <svg class="icon icon-eb flip">
+                <use xlink:href="./assets/img/icon.svg#previous"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="carousel__controller button-wrapper row center"></div>
+</div>
+{% endfor %}
+{% include "shared/footer.html" %}

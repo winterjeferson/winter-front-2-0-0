@@ -1,0 +1,3517 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=5,user-scalable=yes,width=device-width">
+    <meta name="description" content="Description" />
+    <meta name="author" content="Jeferson Winter" />
+    <meta name="keywords" content="framework, frontend, html, css, javascript" />
+    <title>Winter Front</title>
+
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-TileImage" content="./assets/img/logo/144-144.png" />
+    <meta name="application-name" content="Jeferson Winter" />
+    <link rel="shortcut icon" href="./assets/img/logo/16-16.png" />
+    <link rel="apple-touch-icon" href="./assets/img/logo/57-57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/logo/72-72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/logo/114-114.png" />
+
+    <meta property="og:image" content="./assets/img/logo/600-315.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="315" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Winter Front" />
+    <meta property="og:site_name" content="Winter Front" />
+    <meta property="og:description" content="Description" />
+
+    <link href="./assets/css/wf-plugin.css" rel="stylesheet">
+    <link href="./assets/css/wf-theme.css" rel="stylesheet">
+
+    <script>
+        var globalLanguage = "pt";
+    </script>
+</head>
+
+<body>
+    <main class="grid">
+        <div id="loadingMain">
+    <div class="col-middle">
+        <div class="row">
+            <div class="col-es-2 col-es-off-5">
+                <div class="progress progress-style-red progress-es">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <header class="grid__header">
+            <div class="row theme-header">
+    <a href="index.html" class="button regular proportional grey" aria-label="home">
+        <svg class="icon regular grey">
+            <use xlink:href="./assets/img/icon.svg#home"></use>
+        </svg>
+    </a>
+    <div class="theme-version">
+        v: 2.0.0
+        <a href="https://github.com/winterjeferson/winter-front" target="_blank" rel="noopener"
+            class="button regular green">
+            Download (Github)
+        </a>
+    </div>
+</div>
+        </header>
+        <section class="grid__menu">
+            
+
+<div class="theme-menu button-wrapper">
+    <button type="button" class="button regular proportional grey hide-tablet-landscape" aria-label="Menu">
+        <svg class="icon regular red">
+            <use xlink:href="./assets/img/icon.svg#menu"></use>
+        </svg>
+    </button>
+    <nav class="column">
+        
+        <a href="button.html" data-id="button" class="button small blue">
+            button
+        </a>
+        
+        <a href="card.html" data-id="card" class="button small blue">
+            card
+        </a>
+        
+        <a href="carousel.html" data-id="carousel" class="button small blue">
+            carousel
+        </a>
+        
+        <a href="form.html" data-id="form" class="button small blue">
+            form
+        </a>
+        
+        <a href="gallery.html" data-id="gallery" class="button small blue">
+            gallery
+        </a>
+        
+        <a href="icon.html" data-id="icon" class="button small blue">
+            icon
+        </a>
+        
+        <a href="lazy-load.html" data-id="lazy-load" class="button small blue">
+            lazy-load
+        </a>
+        
+        <a href="loading.html" data-id="loading" class="button small blue">
+            loading
+        </a>
+        
+        <a href="menu.html" data-id="menu" class="button small blue">
+            menu
+        </a>
+        
+        <a href="modal.html" data-id="modal" class="button small blue">
+            modal
+        </a>
+        
+        <a href="notification.html" data-id="notification" class="button small blue">
+            notification
+        </a>
+        
+        <a href="palette.html" data-id="palette" class="button small blue">
+            palette
+        </a>
+        
+        <a href="progress.html" data-id="progress" class="button small blue">
+            progress
+        </a>
+        
+        <a href="responsive.html" data-id="responsive" class="button small blue">
+            responsive
+        </a>
+        
+        <a href="scroll.html" data-id="scroll" class="button small blue">
+            scroll
+        </a>
+        
+        <a href="table.html" data-id="table" class="button small blue">
+            table
+        </a>
+        
+        <a href="tag.html" data-id="tag" class="button small blue">
+            tag
+        </a>
+        
+        <a href="text.html" data-id="text" class="button small blue">
+            text
+        </a>
+        
+        <a href="tooltip.html" data-id="tooltip" class="button small blue">
+            tooltip
+        </a>
+        
+    </nav>
+</div>
+        </section>
+        <section class="grid__content page">
+<h1 class="page__title">Menu</h1>
+<h2 class="page__sub-title">Drop down</h2>
+<div class="row">
+    <button type="button" class="button regular proportional grey hide-tablet-landscape" aria-label="Menu">
+        <svg class="icon regular red">
+            <use xlink:href="./assets/img/icon.svg#menu"></use>
+        </svg>
+    </button>
+    <div class="button-wrapper">
+        <a href="javascript:;" class="button regular blue drop-down">Button</a>
+        <div class="drop-down-content">
+            <a href="javascript:;" class="button regular grey">Lorem ipsum</a>
+            <a href="javascript:;" class="button regular green">Drop down</a>
+            <a href="javascript:;" class="button regular grey">Dolor sit amet</a>
+            <a href="javascript:;" class="button regular grey">Consecttur adipscing elit</a>
+        </div>
+        <button type="button" class="button regular blue">Button</button>
+        <div class="drop-down-content">
+            <a href="javascript:;" class="button regular blue">Button</a>
+            <a href="javascript:;" class="button regular green">Drop down</a>
+            <a href="javascript:;" class="button regular grey">Dolor sit amet</a>
+            <a href="javascript:;" class="button regular grey">Consecttur adipscing elit</a>
+            <a href="javascript:;" class="button regular grey">Lorem ipsum</a>
+            <a href="javascript:;" class="button regular grey">Dolor sit amet</a>
+        </div>
+        <button type="button" class="button regular blue" disabled>Button Disabled</button>
+    </div>
+    <div class="button-wrapper">
+        <a href="javascript:;" class="link blue drop-down">Drop Down</a>
+        <div class="drop-down-content">
+            <a href="javascript:;" class="link black">Dolor sit amet</a>
+            <a href="javascript:;" class="link black">Consecttur adipscing elit</a>
+            <a href="javascript:;" class="link blue">Dolor sit amet</a>
+            <a href="javascript:;" class="link black">Dolor sit amet</a>
+        </div>
+        <a href="javascript:;" class="link blue">Lorem</a>
+        <a href="javascript:;" class="link blue">Ipsum</a>
+        <a href="javascript:;" class="link blue drop-down">Drop Down</a>
+        <div class="drop-down-content">
+            <a href="javascript:;" class="link black">Dolor sit amet</a>
+            <a href="javascript:;" class="link black">Consecttur adipscing elit</a>
+            <a href="javascript:;" class="link blue">Dolor sit amet</a>
+            <a href="javascript:;" class="link black">Dolor sit amet</a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-es-12">
+        <h2 class="page__sub-title">Tab</h2>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu-tab menu-tab-black text-center menu menu-horizontal menu-drop-down">
+                <ul>
+                    <li class="menu-tab-active">
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Drop down
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:;" class="button regular">Lorem ipsum</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Dolor sit amet</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Consecttur adipscing elit</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu-tab menu-tab-blue text-center menu menu-horizontal menu-drop-down">
+                <ul>
+                    <li class="menu-tab-active">
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Drop down
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:;" class="button regular">Lorem ipsum</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Dolor sit amet</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Consecttur adipscing elit</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu-tab menu-tab-brown text-center menu menu-horizontal menu-drop-down">
+                <ul>
+                    <li class="menu-tab-active">
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Drop down
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:;" class="button regular">Lorem ipsum</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Dolor sit amet</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Consecttur adipscing elit</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu-tab menu-tab-cyan text-center menu menu-horizontal menu-drop-down">
+                <ul>
+                    <li class="menu-tab-active">
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Drop down
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:;" class="button regular">Lorem ipsum</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Dolor sit amet</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Consecttur adipscing elit</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu-tab menu-tab-green text-center menu menu-horizontal menu-drop-down">
+                <ul>
+                    <li class="menu-tab-active">
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Drop down
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:;" class="button regular">Lorem ipsum</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Dolor sit amet</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Consecttur adipscing elit</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu-tab menu-tab-grey text-center menu menu-horizontal menu-drop-down">
+                <ul>
+                    <li class="menu-tab-active">
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Drop down
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:;" class="button regular">Lorem ipsum</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Dolor sit amet</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Consecttur adipscing elit</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu-tab menu-tab-orange text-center menu menu-horizontal menu-drop-down">
+                <ul>
+                    <li class="menu-tab-active">
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Drop down
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:;" class="button regular">Lorem ipsum</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Dolor sit amet</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Consecttur adipscing elit</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu-tab menu-tab-pink text-center menu menu-horizontal menu-drop-down">
+                <ul>
+                    <li class="menu-tab-active">
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Drop down
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:;" class="button regular">Lorem ipsum</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Dolor sit amet</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Consecttur adipscing elit</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu-tab menu-tab-purple text-center menu menu-horizontal menu-drop-down">
+                <ul>
+                    <li class="menu-tab-active">
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Drop down
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:;" class="button regular">Lorem ipsum</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Dolor sit amet</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Consecttur adipscing elit</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu-tab menu-tab-red text-center menu menu-horizontal menu-drop-down">
+                <ul>
+                    <li class="menu-tab-active">
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Drop down
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:;" class="button regular">Lorem ipsum</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Dolor sit amet</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Consecttur adipscing elit</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu-tab menu-tab-yellow text-center menu menu-horizontal menu-drop-down">
+                <ul>
+                    <li class="menu-tab-active">
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Drop down
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:;" class="button regular">Lorem ipsum</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Dolor sit amet</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Consecttur adipscing elit</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu-tab menu-tab-white text-center menu menu-horizontal menu-drop-down">
+                <ul>
+                    <li class="menu-tab-active">
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Drop down
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:;" class="button regular">Lorem ipsum</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Dolor sit amet</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="button regular">Consecttur adipscing elit</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu-tab-button regular button">
+                            Regular
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="row">
+    <div class="col-es-12">
+        <h2 class="page__sub-title">Pagination extra-small</h2>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-small button black" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button black" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button black">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button black active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button black">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button black" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button black" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-small button blue" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button blue" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button blue">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button blue active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button blue">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button blue" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button blue" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-small button brown" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button brown" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button brown">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button brown active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button brown">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button brown" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button brown" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-small button cyan" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button cyan" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button cyan">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button cyan active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button cyan">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button cyan" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button cyan" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-small button green" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button green" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button green">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button green active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button green">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button green" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button green" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-small button grey" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button grey" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button grey">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button grey active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button grey">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button grey" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button grey" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-small button orange" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button orange" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button orange">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button orange active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button orange">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button orange" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button orange" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-small button pink" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button pink" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button pink">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button pink active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button pink">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button pink" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button pink" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-small button purple" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button purple" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button purple">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button purple active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button purple">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button purple" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button purple" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-small button red" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button red" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button red">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button red active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button red">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button red" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button red" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-small button yellow" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button yellow" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button yellow">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button yellow active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button yellow">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button yellow" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button yellow" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-small button white" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button white" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button white">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button white active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button white">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button white" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-small button white" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+</div>
+
+
+
+<div class="row">
+    <div class="col-es-12">
+        <h2 class="page__sub-title">Pagination small</h2>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="small button black" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button black" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button black">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button black active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button black">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button black" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button black" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="small button blue" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button blue" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button blue">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button blue active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button blue">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button blue" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button blue" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="small button brown" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button brown" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button brown">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button brown active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button brown">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button brown" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button brown" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="small button cyan" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button cyan" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button cyan">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button cyan active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button cyan">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button cyan" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button cyan" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="small button green" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button green" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button green">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button green active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button green">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button green" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button green" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="small button grey" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button grey" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button grey">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button grey active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button grey">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button grey" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button grey" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="small button orange" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button orange" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button orange">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button orange active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button orange">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button orange" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button orange" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="small button pink" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button pink" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button pink">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button pink active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button pink">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button pink" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button pink" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="small button purple" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button purple" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button purple">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button purple active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button purple">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button purple" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button purple" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="small button red" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button red" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button red">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button red active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button red">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button red" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button red" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="small button yellow" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button yellow" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button yellow">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button yellow active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button yellow">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button yellow" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button yellow" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="small button white" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button white" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button white">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button white active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button white">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button white" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="small button white" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+</div>
+
+
+
+<div class="row">
+    <div class="col-es-12">
+        <h2 class="page__sub-title">Pagination regular</h2>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="regular button black" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button black" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button black">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button black active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button black">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button black" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button black" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="regular button blue" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button blue" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button blue">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button blue active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button blue">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button blue" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button blue" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="regular button brown" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button brown" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button brown">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button brown active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button brown">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button brown" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button brown" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="regular button cyan" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button cyan" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button cyan">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button cyan active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button cyan">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button cyan" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button cyan" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="regular button green" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button green" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button green">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button green active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button green">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button green" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button green" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="regular button grey" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button grey" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button grey">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button grey active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button grey">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button grey" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button grey" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="regular button orange" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button orange" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button orange">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button orange active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button orange">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button orange" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button orange" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="regular button pink" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button pink" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button pink">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button pink active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button pink">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button pink" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button pink" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="regular button purple" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button purple" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button purple">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button purple active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button purple">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button purple" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button purple" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="regular button red" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button red" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button red">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button red active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button red">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button red" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button red" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="regular button yellow" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button yellow" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button yellow">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button yellow active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button yellow">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button yellow" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button yellow" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="regular button white" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button white" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button white">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button white active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button white">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button white" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="regular button white" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+</div>
+
+
+
+<div class="row">
+    <div class="col-es-12">
+        <h2 class="page__sub-title">Pagination big</h2>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="big button black" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button black" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button black">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button black active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button black">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button black" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button black" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="big button blue" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button blue" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button blue">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button blue active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button blue">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button blue" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button blue" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="big button brown" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button brown" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button brown">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button brown active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button brown">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button brown" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button brown" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="big button cyan" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button cyan" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button cyan">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button cyan active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button cyan">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button cyan" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button cyan" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="big button green" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button green" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button green">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button green active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button green">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button green" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button green" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="big button grey" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button grey" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button grey">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button grey active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button grey">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button grey" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button grey" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="big button orange" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button orange" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button orange">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button orange active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button orange">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button orange" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button orange" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="big button pink" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button pink" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button pink">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button pink active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button pink">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button pink" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button pink" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="big button purple" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button purple" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button purple">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button purple active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button purple">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button purple" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button purple" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="big button red" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button red" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button red">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button red active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button red">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button red" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button red" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="big button yellow" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button yellow" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button yellow">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button yellow active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button yellow">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button yellow" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button yellow" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="big button white" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button white" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button white">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button white active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button white">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button white" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="big button white" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+</div>
+
+
+
+<div class="row">
+    <div class="col-es-12">
+        <h2 class="page__sub-title">Pagination extra-big</h2>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-big button black" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button black" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button black">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button black active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button black">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button black" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button black" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-big button blue" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button blue" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button blue">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button blue active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button blue">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button blue" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button blue" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-big button brown" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button brown" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button brown">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button brown active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button brown">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button brown" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button brown" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-big button cyan" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button cyan" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button cyan">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button cyan active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button cyan">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button cyan" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button cyan" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-big button green" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button green" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button green">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button green active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button green">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button green" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button green" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-big button grey" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button grey" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button grey">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button grey active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button grey">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button grey" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button grey" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-big button orange" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button orange" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button orange">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button orange active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button orange">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button orange" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button orange" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-big button pink" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button pink" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button pink">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button pink active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button pink">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button pink" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button pink" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-big button purple" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button purple" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button purple">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button purple active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button purple">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button purple" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button purple" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-big button red" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button red" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button red">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button red active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button red">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button red" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button red" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-big button yellow" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button yellow" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button yellow">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button yellow active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button yellow">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button yellow" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button yellow" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="col-es-12">
+        <div class="padding-re">
+            <nav class="menu menu-horizontal pagination">
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="extra-big button white" aria-label="first page">
+                            <span aria-hidden="true">&#10094;&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button white" aria-label="previous">
+                            <span aria-hidden="true">&#10094;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button white">
+                            1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button white active">
+                            2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button white">
+                            3
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button white" aria-label="next">
+                            <span aria-hidden="true">&#10095;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="extra-big button white" aria-label="last page">
+                            <span aria-hidden="true">&#10095;&#10095;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+</div>
+
+
+        </section>
+        <footer class=grid__footer>
+            <div class="row theme-footer">
+    By:
+    <a href="https://www.jefersonwinter.com.br" target="_blank" rel="noopener" class="button regular grey">
+        Jeferson Winter
+    </a>
+</div>
+        </footer>
+
+        <script src="./assets/js/wf-plugin.js"></script>
+        <script src="./assets/js/wf-theme.js"></script>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+.button,
+.button-outline,
+.link {
+    cursor: pointer;
+    display: inline-flex;
+    transition: $transition;
+    user-select: none;
+
+    &:disabled {
+        pointer-events: none;
+    }
+
+    &.extra-small {
+        font-size: $font-size-extra-small;
+    }
+
+    &.small {
+        font-size: $font-size-small;
+    }
+
+    &.regular {
+        font-size: $font-size-regular;
+    }
+
+    &.big {
+        font-size: $font-size-big;
+    }
+
+    &.extra-big {
+        font-size: $font-size-extra-big;
+    }
+}
+
+.button,
+.button-outline {
+    text-decoration: none;
+    border-style: solid;
+
+    &.extra-small {
+        padding: $extra-small $small;
+
+        &.proportional {
+            padding: $extra-small;
+        }
+    }
+
+    &.small {
+        padding: $small $regular;
+
+        &.proportional {
+            padding: $small;
+        }
+    }
+
+    &.regular {
+        padding: $regular $big;
+
+        &.proportional {
+            padding: $regular;
+        }
+    }
+
+    &.big {
+        padding: $big $extra-big;
+
+        &.proportional {
+            padding: $big;
+        }
+    }
+
+    &.extra-big {
+        padding: $extra-big $extra-big-2;
+
+        &.proportional {
+            padding: $extra-big;
+        }
+    }
+}
+
+.button {
+    border-width: $border-width;
+
+    &.extra-small {
+        border-radius: $border-radius-extra-small;
+    }
+
+    &.small {
+        border-radius: $border-radius-small;
+    }
+
+    &.regular {
+        border-radius: $border-radius-regular;
+    }
+
+    &.big {
+        border-radius: $border-radius-big;
+    }
+
+    &.extra-big {
+        border-radius: $border-radius-extra-big;
+    }
+
+    @each $color in $arrColorButton {
+        &.#{$color} {
+            background-color: color-regular(#{$color});
+            border-color: color-regular-border(#{$color});
+            color: color-regular-contrast(#{$color});
+
+            .icon {
+                fill: color-regular-contrast(#{$color});
+            }
+
+            &:hover {
+                color: color-regular-contrast(#{$color});
+                background-color: color-dark(#{$color});
+                border-color: color-dark-border(#{$color});
+
+                .icon {
+                    fill: color-regular-contrast(#{$color});
+                }
+            }
+
+            &:focus {
+                background-color: color-dark(#{$color});
+                box-shadow: 0 0 0 4px rgba(color-regular-border(#{$color}), .5);
+            }
+
+            &--active {
+                background-color: color-dark(#{$color});
+
+                .icon {
+                    fill: color-dark(#{$color});
+                }
+            }
+
+            &--disabled,
+            &:disabled {
+                border-color: color-regular(#{$color});
+            }
+        }
+    }
+}
+
+.button-outline {
+    background-color: transparent;
+    border-width: $border-width * 2;
+
+    &.extra-small,
+    &.small,
+    &.regular,
+    &.big,
+    &.extra-big {
+        border-radius: 0;
+    }
+
+    @each $color in $arrColorButtonOutline {
+        &.#{$color} {
+            border-color: color-regular-border(#{$color});
+            color: color-regular(#{$color});
+
+            .icon {
+                fill: color-regular-contrast(#{$color});
+            }
+
+            &:hover {
+                color: color-regular-contrast(#{$color});
+                background-color: color-regular(#{$color});
+                border-color: color-regular(#{$color});
+
+                .icon {
+                    fill: color-regular-contrast(#{$color});
+                }
+            }
+
+            &--active {
+                background-color: color-dark(#{$color});
+
+                .icon {
+                    fill: color-dark(#{$color});
+                }
+            }
+
+            &--disabled,
+            &:disabled {
+                border-color: color-light(#{$color});
+            }
+        }
+    }
+}
+
+.link {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    @each $color in $arrColorLink {
+        &.#{$color} {
+            color: color-regular(#{$color});
+
+            .icon {
+                fill: color-regular-contrast(#{$color});
+            }
+
+            &:hover {
+                color: color-dark(#{$color});
+
+                .icon {
+                    fill: color-regular-contrast(#{$color});
+                }
+            }
+
+            &--active {
+                background-color: color-dark(#{$color});
+
+                .icon {
+                    fill: color-dark(#{$color});
+                }
+            }
+
+            &--disabled,
+            &:disabled {
+                border-color: color-light(#{$color});
+            }
+        }
+    }
+}
+
+.button-wrapper {
+
+    .button,
+    .button-outline,
+    .link {
+        margin: $extra-small;
+    }
+
+    &.column {
+
+        .button,
+        .button-outline,
+        .link {
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &.row {
+
+        .button,
+        .button-outline,
+        .link {
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
