@@ -51,7 +51,7 @@ gulp.task('wf_template_minify', function () {
 gulp.task('wf_template', gulp.series(
         'wf_template_clean',
         'wf_template_include',
-        'wf_beep'
+        // 'wf_beep'
         ));
 
 

@@ -33,7 +33,9 @@ gulp.task('wf_ftp', function () {
     ];
 
     return gulp
-            .src(globs, {buffer: true})
-            .pipe(conn.newer(folderFtp))
-            .pipe(conn.dest(folderFtp));
+        .src(globs, {
+            buffer: true
+        })
+        .pipe(conn.newer(folderFtp))
+        .pipe(conn.dest(folderFtp));
 });

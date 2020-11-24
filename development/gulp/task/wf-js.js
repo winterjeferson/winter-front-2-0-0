@@ -47,7 +47,7 @@ gulp.task('wf_js_remove_code', function () {
 
 gulp.task('wf_js_default', gulp.series(
     'wf_js_default_concat',
-    'wf_beep'
+    // 'wf_beep'
 ));
 
 
@@ -60,7 +60,7 @@ gulp.task('wf_js_plugin_concat', function () {
 
 gulp.task('wf_js_plugin', gulp.series(
     'wf_js_plugin_concat',
-    'wf_beep'
+    // 'wf_beep'
 ));
 
 

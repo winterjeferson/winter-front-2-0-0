@@ -40,7 +40,7 @@ gulp.task('wf_other_move', function (done) {
 gulp.task('wf_other', gulp.series(
         'wf_other_clean',
         'wf_other_move',
-        'wf_beep'
+        // 'wf_beep'
         ));
 
 

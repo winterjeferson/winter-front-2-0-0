@@ -1,54 +1,65 @@
-var gulp = require('gulp');
+const gulp = require('gulp');
+const webserver = require('gulp-webserver');
 
-var wf_css = require('./wf-css.js');
-var wf_img = require('./wf-image.js');
-var wf_js = require('./wf-js.js');
-var wf_other = require('./wf-other.js');
-var wf_template = require('./wf-template.js');
+const css = require('./wf-css.js');
+const img = require('./wf-image.js');
+const js = require('./wf-js.js');
+const other = require('./wf-other.js');
+const template = require('./wf-template.js');
+const configuration = require('./configuration.js');
 
-
-
-gulp.task('default', function () {
-    gulp.watch(wf_css.wf_cssDefaultConcat, gulp.series('wf_css_style'))
-            .on('change', function (evt) {
-                console.log(evt);
-            });
-
-    gulp.watch(wf_css.wf_cssPluginConcat, gulp.series('wf_css_plugin'))
-            .on('change', function (evt) {
-                console.log(evt);
-            });
-
-
-
-    gulp.watch(wf_js.fileJs_wf_, gulp.series('wf_js_default'))
-            .on('change', function (evt) {
-                console.log(evt);
-            });
-
-    gulp.watch(wf_js.fileJs_wf_Plugin, gulp.series('wf_js_plugin'))
-            .on('change', function (evt) {
-                console.log(evt);
-            });
-
-
-    gulp.watch(wf_img.fileImg, gulp.series('wf_image'))
-            .on('change', function (evt) {
-                console.log(evt);
-            });
-
-
-
-
-    gulp.watch(wf_other.fileOther, gulp.series('wf_other'))
-            .on('change', function (evt) {
-                console.log(evt);
-            });
-            
-            
-
-    gulp.watch(wf_template.wf_fileTemplateWatch, gulp.series('wf_template'))
-            .on('change', function (evt) {
-                console.log(evt);
-            });
+gulp.task('webserver', () => {
+    gulp.src(configuration.homologation)
+        .pipe(webserver({
+            port: configuration.port,
+            livereload: true,
+            host: configuration.ip,
+            open: true,
+        }))
 });
+
+gulp.task('watch', (callback) => {
+    gulp.watch(css.fileAll, gulp.series('buildCssSass'))
+        .on('change', (event) => {
+            console.log(event);
+        });
+
+    // gulp.watch(css.wf_cssPluginConcat, gulp.series('wf_css_plugin'))
+    //     .on('change', (event) => {
+    //         console.log(event);
+    //     });
+
+    gulp.watch(js.fileJs_wf_, gulp.series('wf_js_default'))
+        .on('change', (event) => {
+            console.log(event);
+        });
+
+    gulp.watch(js.fileJs_wf_Plugin, gulp.series('wf_js_plugin'))
+        .on('change', (event) => {
+            console.log(event);
+        });
+
+    gulp.watch(img.fileImg, gulp.series('wf_image'))
+        .on('change', (event) => {
+            console.log(event);
+        });
+
+    gulp.watch(other.fileOther, gulp.series('wf_other'))
+        .on('change', (event) => {
+            console.log(event);
+        });
+
+    gulp.watch(template.wf_fileTemplateWatch, gulp.series('wf_template'))
+        .on('change', (event) => {
+            console.log(event);
+        });
+
+    callback();
+});
+
+gulp.task('default',
+    gulp.series(
+        'watch',
+        'webserver',
+    )
+);

@@ -62,7 +62,7 @@ gulp.task('wf_image_imagemin', function () {
 gulp.task('wf_image', gulp.series(
     'wf_image_clean',
     'wf_image_move',
-    'wf_beep'
+    // 'wf_beep'
 ));
 
 
