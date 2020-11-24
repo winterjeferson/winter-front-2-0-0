@@ -1,73 +1,56 @@
-var gulp = require('gulp');
-var imagemin = require('gulp-imagemin'); //npm install gulp-imagemin --save-dev //https://www.npmjs.com/package/gulp-imagemin/
-var newer = require('gulp-newer'); //npm install gulp-newer --save-dev // https://www.npmjs.com/package/gulp-newer/
-var del = require('del'); //npm install del --save-dev //https://www.npmjs.com/package/del
+const gulp = require('gulp');
+const imagemin = require('gulp-imagemin'); //npm install gulp-imagemin --save-dev //https://www.npmjs.com/package/gulp-imagemin/
+const newer = require('gulp-newer'); //npm install gulp-newer --save-dev // https://www.npmjs.com/package/gulp-newer/
+const del = require('del'); //npm install del --save-dev //https://www.npmjs.com/package/del
 
-var configuration = require('./configuration.js');
+const configuration = require('./configuration.js');
 
-
-
-
-
-var fileImg = [
-    configuration.development + 'img/*',
-    configuration.development + 'img/**',
-    configuration.development + 'img/**/*',
-    configuration.development + 'img/**/*.*'
-];
-
-var fileImgPublic = [
-    configuration.homologation + 'img/*',
-    configuration.homologation + 'img/**',
-    configuration.homologation + 'img/**/*',
-    configuration.homologation + 'img/**/*.*'
-];
+const folder = 'img/';
+const fileAll = `${configuration.development}${folder}**/*.*`;
 
 
 function clean(path) {
-    return del(path, { force: true }); // returns a promise
+    return del(path, {
+        force: true
+    });
 }
 
-gulp.task('wf_image_clean', function () {
-    var files = [
-        configuration.homologation + configuration.assets + 'img/!(dynamic)*'
-    ];
-    return clean(files);
+gulp.task('buildImageClean', () => {
+    const file = `${configuration.homologation}${configuration.assets}${folder}!(dynamic)*`;
+    return clean(file);
 });
 
-gulp.task('wf_image_move', function (done) {
+gulp.task('buildImageMove', (callback) => {
     return gulp
-        .src(configuration.development + 'img/**/*.*')
-        .pipe(gulp.dest(configuration.homologation + configuration.assets + "img/"));
-    done();
+        .src(fileAll)
+        .pipe(gulp.dest(`${configuration.homologation}${configuration.assets}${folder}`));
+    callback();
 });
-
 
 // fix enoent problem: node node_modules/optipng-bin/lib/install.js
-gulp.task('wf_image_imagemin', function () {
+gulp.task('buildImageMinify', () => {
     return gulp
-        .src(configuration.homologation + configuration.assets + 'img/**')
-        .pipe(newer(configuration.production + configuration.assets + "img/"))
+        .src(`${configuration.homologation}${configuration.assets}${folder}**`)
+        .pipe(newer(`${configuration.production}${configuration.assets}${folder}`))
         .pipe(imagemin([
             imagemin.svgo({
-                plugins: [
-                    { removeViewBox: true },
-                    { cleanupIDs: false }
+                plugins: [{
+                        removeViewBox: true
+                    },
+                    {
+                        cleanupIDs: false
+                    }
                 ]
             })
         ]))
-        .pipe(gulp.dest(configuration.production + configuration.assets + "img/"));
+        .pipe(gulp.dest(`${configuration.production}${configuration.assets}${folder}`));
 });
 
-gulp.task('wf_image', gulp.series(
-    'wf_image_clean',
-    'wf_image_move',
-    // 'wf_beep'
+gulp.task('buildImage', gulp.series(
+    'buildImageClean',
+    'buildImageMove',
 ));
 
-
-
 module.exports = {
-    fileImg: fileImg,
-    fileImgPublic: fileImgPublic,
+    fileAll: fileAll,
 };

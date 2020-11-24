@@ -24,11 +24,6 @@ gulp.task('watch', (callback) => {
             console.log(event);
         });
 
-    // gulp.watch(css.wf_cssPluginConcat, gulp.series('wf_css_plugin'))
-    //     .on('change', (event) => {
-    //         console.log(event);
-    //     });
-
     gulp.watch(js.fileJs_wf_, gulp.series('wf_js_default'))
         .on('change', (event) => {
             console.log(event);
@@ -39,7 +34,7 @@ gulp.task('watch', (callback) => {
             console.log(event);
         });
 
-    gulp.watch(img.fileImg, gulp.series('wf_image'))
+    gulp.watch(img.fileAll, gulp.series('buildImage'))
         .on('change', (event) => {
             console.log(event);
         });
