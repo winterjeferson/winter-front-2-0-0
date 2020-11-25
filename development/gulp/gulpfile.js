@@ -7,6 +7,7 @@ const tasks = requireDir('./wf-task/', {
 gulp.task('default',
     gulp.series(
         'watch',
+        'initialize',
         'webserver',
     )
 );
