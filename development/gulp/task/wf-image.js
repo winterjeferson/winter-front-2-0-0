@@ -6,7 +6,7 @@ const del = require('del'); //npm install del --save-dev //https://www.npmjs.com
 const configuration = require('./configuration.js');
 
 const folder = 'img/';
-const fileAll = `${configuration.development}${folder}**/*.*`;
+const fileAll = configuration.development + folder + configuration.allFolderFile;
 
 
 function clean(path) {

@@ -24,12 +24,7 @@ gulp.task('watch', (callback) => {
             console.log(event);
         });
 
-    gulp.watch(js.fileJs_wf_, gulp.series('wf_js_default'))
-        .on('change', (event) => {
-            console.log(event);
-        });
-
-    gulp.watch(js.fileJs_wf_Plugin, gulp.series('wf_js_plugin'))
+    gulp.watch(js.fileAll, gulp.series('buildJs'))
         .on('change', (event) => {
             console.log(event);
         });

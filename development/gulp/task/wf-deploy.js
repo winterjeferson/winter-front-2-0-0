@@ -7,8 +7,8 @@ const template = require('./wf-template.js');
 
 gulp.task('deployWf', gulp.series(
         'buildCssMinify',
-        'wf_js_remove_code',
-        'wf_js_minify',
+        'buildJsRemoveCode',
+        'buildJsMinify',
         'wf_project_move_production',
         'wf_template_minify',
         'buildImageMinify',

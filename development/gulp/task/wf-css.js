@@ -7,15 +7,14 @@ const configuration = require('./configuration.js');
 
 const extension = 'css';
 const extensionSass = 'scss';
-const fileIndex = 'index';
-const filePrefix = `${configuration.prefix}theme`;
-const filePrefixPlugin = `${configuration.prefix}plugin`;
+const filePrefix = `${configuration.prefix}${configuration.theme}`;
+const filePrefixPlugin = `${configuration.prefix}${configuration.plugin}`;
 const folder = `${configuration.development}${extension}/`;
-const file = folder + `${filePrefix}/${fileIndex}.${extensionSass}`;
-const filePlugin = folder + `${filePrefixPlugin}/${fileIndex}.${extensionSass}`;
+const file = folder + `${filePrefix}/${configuration.index}.${extensionSass}`;
+const filePlugin = folder + `${filePrefixPlugin}/${configuration.index}.${extensionSass}`;
 const fileName = `${filePrefix}.${extension}`;
 const fileNamePlugin = `${filePrefixPlugin}.${extension}`;
-const fileAll = folder + '**/*.*';
+const fileAll = folder + configuration.allFolderFile;
 
 
 

@@ -1,80 +1,66 @@
-var gulp = require('gulp');
-var concat = require('gulp-concat');//npm install gulp-concat --save-dev //https://www.npmjs.com/package/gulp-concat/
-var uglify = require("gulp-uglifyes");//npm install gulp-uglifyes --save-dev //https://www.npmjs.com/package/gulp-uglifyes
-var removeCode = require('gulp-remove-code');//npm install gulp-remove-code --save-dev https://www.npmjs.com/package/gulp-remove-code
+const gulp = require('gulp');
+const concat = require('gulp-concat'); //npm install gulp-concat --save-dev //https://www.npmjs.com/package/gulp-concat/
+const uglify = require("gulp-uglifyes"); //npm install gulp-uglifyes --save-dev //https://www.npmjs.com/package/gulp-uglifyes
+const removeCode = require('gulp-remove-code'); //npm install gulp-remove-code --save-dev https://www.npmjs.com/package/gulp-remove-code
 
-var configuration = require('./configuration.js');
-
-
+const configuration = require('./configuration.js');
 
 
-var fileJs_wf_DefaultFinal = 'wf-theme.js';
-var fileJs_wf_PluginFinal = 'wf-plugin.js';
-
-var fileJs_wf_ = [
-    configuration.development + 'js/wf-theme/**/*.*'
+const extension = 'js';
+const filePrefix = `${configuration.prefix}${configuration.theme}`;
+const filePrefixPlugin = `${configuration.prefix}${configuration.plugin}`;
+const folder = `${configuration.development}${extension}/`;
+const file = `${folder}${filePrefix}/${configuration.allFolderFile}`;
+const filePlugin = [
+    `${configuration.development}${extension}/${configuration.prefix}plugin/_WfDebug.${extension}`,
+    `${configuration.development}${extension}/${configuration.prefix}translation/${configuration.allFolderFile}`,
+    `${configuration.development}${extension}/${configuration.prefix}plugin/**/!(_)*.${extension}`,
+    `${configuration.development}${extension}/${configuration.prefix}plugin/_WfManagementPlugin.${extension}`,
 ];
+const fileName = `${filePrefix}.${extension}`;
+const fileNamePlugin = `${filePrefixPlugin}.${extension}`;
+const fileAll = folder + configuration.allFolderFile;
 
-var fileJs_wf_Final = [
-    configuration.homologation + configuration.assets + 'js/' + fileJs_wf_DefaultFinal,
-    configuration.homologation + configuration.assets + 'js/' + fileJs_wf_PluginFinal
-];
-
-var fileJs_wf_Plugin = [
-    configuration.development + 'js/wf-plugin/_WfDebug.js',
-    configuration.development + 'js/translation/**/*.*',
-    configuration.development + 'js/wf-plugin/**/!(_)*.js',
-    configuration.development + 'js/wf-plugin/_WfManagementPlugin.js'
-];
-
-
-
-
-
-
-gulp.task('wf_js_default_concat', function () {
-    return gulp.src(fileJs_wf_)
-        .pipe(concat(fileJs_wf_DefaultFinal))
-        .pipe(gulp.dest(configuration.homologation + configuration.assets + 'js/'));
+gulp.task('buildJsConcat', function () {
+    return gulp.src(file)
+        .pipe(concat(fileName))
+        .pipe(gulp.dest(`${configuration.homologation}${configuration.assets}${extension}/`));
 });
 
-gulp.task('wf_js_remove_code', function () {
-    return gulp.src(configuration.homologation + configuration.assets + 'js/*.js')
-        .pipe(removeCode({ production: true }))
-        .pipe(removeCode({ noDevFeatures: false, commentStart: '/*', commentEnd: '*/' }))
-        .pipe(gulp.dest(configuration.production + configuration.assets + 'js/'));
+gulp.task('buildJsConcatPlugin', function () {
+    return gulp.src(filePlugin)
+        .pipe(concat(fileNamePlugin))
+        .pipe(gulp.dest(`${configuration.homologation}${configuration.assets}${extension}/`));
 });
 
-gulp.task('wf_js_default', gulp.series(
-    'wf_js_default_concat',
-    // 'wf_beep'
-));
-
-
-
-gulp.task('wf_js_plugin_concat', function () {
-    return gulp.src(fileJs_wf_Plugin)
-        .pipe(concat(fileJs_wf_PluginFinal))
-        .pipe(gulp.dest(configuration.homologation + configuration.assets + 'js/'));
-});
-
-gulp.task('wf_js_plugin', gulp.series(
-    'wf_js_plugin_concat',
-    // 'wf_beep'
-));
-
-
-
-gulp.task('wf_js_minify', function () {
-    return gulp.src(configuration.production + configuration.assets + 'js/*.*')
+gulp.task('buildJsMinify', function () {
+    console.log(`${configuration.homologation}${configuration.assets}${extension}/${configuration.allFile}`);
+    console.log(`${configuration.production}${configuration.assets}${extension}/`);
+    return gulp.src(`${configuration.homologation}${configuration.assets}${extension}/${configuration.allFile}`)
         .pipe(uglify())
-        .pipe(gulp.dest(configuration.production + configuration.assets + 'js/'));
+        .pipe(gulp.dest(`${configuration.production}${configuration.assets}${extension}/`));
+});
+
+gulp.task('buildJsRemoveCode', function () {
+    return gulp.src(`${configuration.homologation}${configuration.assets}${extension}/*.${extension}`)
+        .pipe(removeCode({
+            production: true
+        }))
+        .pipe(removeCode({
+            noDevFeatures: false,
+            commentStart: '/*',
+            commentEnd: '*/'
+        }))
+        .pipe(gulp.dest(`${configuration.production}${configuration.assets}${extension}/`));
 });
 
 
+gulp.task('buildJs', gulp.series(
+    'buildJsConcat',
+    'buildJsConcatPlugin',
+));
 
 
 module.exports = {
-    fileJs_wf_: fileJs_wf_,
-    fileJs_wf_Plugin: fileJs_wf_Plugin
+    fileAll: fileAll,
 };
