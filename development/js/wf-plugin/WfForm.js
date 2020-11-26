@@ -1,6 +1,7 @@
 class WfForm {
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (document.querySelectorAll('form').length < 1) {
             return;
         }
@@ -10,7 +11,8 @@ class WfForm {
     }
 
     buildKeyboard() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.addEventListener('keyup', function (event) {
@@ -23,7 +25,8 @@ class WfForm {
     }
 
     buildFocus(target) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let $arr = document.querySelectorAll(target);
 
         Array.prototype.forEach.call($arr, function (item) {
@@ -36,7 +39,8 @@ class WfForm {
     }
 
     buildInputFile() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         return;
 
@@ -67,7 +71,8 @@ class WfForm {
     }
 
     buildInputFileAddAction(item) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let $target = item.parentNode;
         let $targetFileClass = $target.querySelector('.input-file-name');
         let $targetFile = $target.querySelector('input[type="file"]');
@@ -82,7 +87,8 @@ class WfForm {
     }
 
     buildInputFileHtml() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let inputFile = '';
         let textFile = objWfTranslation.translation.input_upload;
 
@@ -95,7 +101,8 @@ class WfForm {
     }
 
     validateEmpty(arr) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let arrEmpty = arr;
         let length = arrEmpty.length;
 

@@ -1,6 +1,7 @@
 class WfModal {
     updateVariable() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.targetBuildGalleryChange = '';
         this.cssDisplay = 'display-none';
         this.isModalOpen = false;
@@ -20,7 +21,8 @@ class WfModal {
     }
 
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.buildHtml();
         this.updateVariable();
         this.buildMenu();
@@ -30,7 +32,8 @@ class WfModal {
     }
 
     buildHtml() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let string = `
             <div id="modal" class="modal-close">
                 <div class="modal-box">
@@ -82,13 +85,15 @@ class WfModal {
     }
 
     buildTranslation() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$modalFooterConfirm.innerHTML = objWfTranslation.translation.confirm;
         this.$modalFooterCancel.innerHTML = objWfTranslation.translation.cancel;
     }
 
     buildKeyboard() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.addEventListener('keyup', function (event) {
@@ -119,11 +124,12 @@ class WfModal {
                     self.$modalNavigationArrowRight.click();
                 }
             }
-        })
+        });
     }
 
     buildMenuGallery() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         if (!this.$gallery) {
@@ -153,7 +159,8 @@ class WfModal {
     }
 
     buildMenu() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         this.$modalClose.addEventListener('click', function () {
@@ -174,7 +181,8 @@ class WfModal {
     }
 
     buildGalleryNavigation(target) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), target); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), target); /*endRemoveIf(production)*/
         let array = [];
         let currentGallery = target.parentNode.parentNode;
         let siblingLength = currentGallery.querySelectorAll('a').length - 1;
@@ -207,7 +215,8 @@ class WfModal {
     }
 
     buildModal(kind, content, size = 're', action = 'open') {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [kind, content, size, action]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [kind, content, size, action]); /*endRemoveIf(production)*/
         this.$modalFooter.classList.add(this.cssDisplay);
         action === 'open' ? this.openModal() : this.closeModal();
         this.buildModalSize(size);
@@ -215,7 +224,8 @@ class WfModal {
     }
 
     buildModalKind(kind, content) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [kind, content]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [kind, content]); /*endRemoveIf(production)*/
 
         if (kind === 'ajax') {
             this.buildContentAjax(content);
@@ -238,7 +248,8 @@ class WfModal {
     }
 
     openModal() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isModalOpen = true;
 
         this.$body.classList.remove('overflow-y');
@@ -249,7 +260,8 @@ class WfModal {
     }
 
     closeModal() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isModalOpen = false;
 
         this.$body.classList.add('overflow-y');
@@ -263,7 +275,8 @@ class WfModal {
     }
 
     buildModalSize(size = 're') {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), size); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), size); /*endRemoveIf(production)*/
         this.$modalBox.classList.remove('modal-es');
         this.$modalBox.classList.remove('modal-sm');
         this.$modalBox.classList.remove('modal-re');
@@ -274,7 +287,8 @@ class WfModal {
     }
 
     buildContentAjax(target) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), target); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), target); /*endRemoveIf(production)*/
         let self = this;
         let ajax = new XMLHttpRequest();
 
@@ -290,7 +304,8 @@ class WfModal {
     }
 
     buildGalleryImage(image, description) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [image, description]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [image, description]); /*endRemoveIf(production)*/
         let stringImage = '<img src="' + image + '" class="img-responsive" style="margin:auto;" title="" alt=""/>';
 
         this.$modalContent.innerHTML = stringImage;
@@ -298,7 +313,8 @@ class WfModal {
     }
 
     buildContentConfirmation(content) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), content); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), content); /*endRemoveIf(production)*/
         let string = '<div class="padding-re text-center">' + content + '</div>';
 
         this.$modalFooter.classList.remove(this.cssDisplay);
@@ -306,12 +322,14 @@ class WfModal {
     }
 
     buildContentConfirmationAction(action) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), action); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), action); /*endRemoveIf(production)*/
         this.$modalFooterConfirm.setAttribute('onclick', action);
     }
 
     changeText(description) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [description]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [description]); /*endRemoveIf(production)*/
         let string = '';
 
         if (description === '' || description === null) {
@@ -328,7 +346,8 @@ class WfModal {
     }
 
     resetOtherClass() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
 
         if (typeof objWfForm !== 'undefined') {
             objWfForm.buildInputFile();

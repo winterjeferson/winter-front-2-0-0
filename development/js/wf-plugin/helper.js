@@ -16,10 +16,15 @@ function getUrlWord(target) {
 }
 
 function offset(element) {
-    var rect = element.getBoundingClientRect(),
-        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+    let rect = element.getBoundingClientRect();
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const obj = {
+        'top': rect.top + scrollTop,
+        'left': rect.left + scrollLeft,
+    };
+
+    return obj;
 }
 
 function verifyUrlRoute(target) {

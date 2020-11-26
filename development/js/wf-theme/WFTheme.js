@@ -1,18 +1,21 @@
 class WfTheme {
     constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, 'constructor'); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, 'constructor'); /*endRemoveIf(production)*/
         this.$body = document.querySelector('body');
         this.arrStyle = ['grey', 'blue', 'green', 'cyan', 'orange', 'red', 'yellow', 'purple', 'brown', 'black', 'white'];
         this.arrStyleLength = this.arrStyle.length;
     }
-    
+
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, 'buildLoad'); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, 'buildLoad'); /*endRemoveIf(production)*/
         this.buildActiveMenu();
     }
 
     buildActiveMenu() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, 'buildActiveMenu'); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, 'buildActiveMenu'); /*endRemoveIf(production)*/
         let url = top.location.href;
         let urlSplit = url.split('/');
         let length = urlSplit.length;

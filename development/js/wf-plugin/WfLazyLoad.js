@@ -1,6 +1,7 @@
 class WfLazyLoad {
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (document.querySelectorAll('[data-lazy-load="true"]').length < 1) {
             return;
         }
@@ -10,7 +11,8 @@ class WfLazyLoad {
     }
 
     addListener() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.addEventListener('scroll', function (e) {
@@ -21,7 +23,8 @@ class WfLazyLoad {
     }
 
     buildLoop() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let $arr = document.querySelectorAll('[data-lazy-load="true"]');
 
@@ -31,7 +34,8 @@ class WfLazyLoad {
     }
 
     verifyPosition(target) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let windowScroll = window.scrollY;
         let elemntPosition = offset(target).top;
         let margin = window.outerHeight;
@@ -42,7 +46,8 @@ class WfLazyLoad {
     }
 
     buildImage(target) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         target.setAttribute('src', target.getAttribute('data-src'));
         target.removeAttribute('data-lazy-load');
     }

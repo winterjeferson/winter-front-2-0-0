@@ -117,7 +117,7 @@ class WfCarousel {
                 // item.parentNode.parentNode.querySelector(`[${self.attCurrentSlide}="${item.getAttribute('data-id')}"]`);
                 self.defineActive(item);
                 self.animate(item.getAttribute('data-id'), item, 'navigation');
-            }
+            };
         });
     }
 
@@ -145,7 +145,7 @@ class WfCarousel {
 
             self.defineActive(elCarousel.querySelector('[data-id="' + newSlide + '"]'));
             self.animate(newSlide, elCarouselList, 'arrow');
-        }
+        };
     }
 
     buildNavigationArrowRight(target) {
@@ -172,7 +172,7 @@ class WfCarousel {
 
             self.defineActive(elCarousel.querySelector('[data-id="' + newSlide + '"]'));
             self.animate(newSlide, elCarouselList, 'arrow');
-        }
+        };
     }
 
     animate(currentSlide, target, from) {

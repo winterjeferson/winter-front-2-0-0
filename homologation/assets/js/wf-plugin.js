@@ -70,30 +70,30 @@ class WfDebug {
     }
 }
 /*endRemoveIf(production)*/
-var translationEN = {
-    "cancel": "Cancel",
-    "close": "Close",
-    "confirm": "Confirm",
-    "input_upload": "Select File...",
-    "next": "Next",
-    "previous": "Previous",
-}
-var translationES = {
-    "cancel": "Cancelar",
-    "close": "Cerrar",
-    "confirm": "Confirmar",
-    "input_upload": "Seleccione Archivo...",
-    "next": "Siguiente",
-    "previous": "Anterior",
-}
-var translationPT = {
-    "cancel": "Cancelar",
-    "close": "Fechar",
-    "confirm": "Confirmar",
-    "input_upload": "Selecione o Arquivo...",
-    "next": "Próximo",
-    "previous": "Anterior",
-}
+const translationEN = {
+    'cancel': 'Cancel',
+    'close': 'Close',
+    'confirm': 'Confirm',
+    'input_upload': 'Select File...',
+    'next': 'Next',
+    'previous': 'Previous',
+};
+const translationES = {
+    'cancel': 'Cancelar',
+    'close': 'Cerrar',
+    'confirm': 'Confirmar',
+    'input_upload': 'Seleccione Archivo...',
+    'next': 'Siguiente',
+    'previous': 'Anterior',
+};
+const translationPT = {
+    'cancel': 'Cancelar',
+    'close': 'Fechar',
+    'confirm': 'Confirmar',
+    'input_upload': 'Selecione o Arquivo...',
+    'next': 'Próximo',
+    'previous': 'Anterior',
+};
 function getUrlParameter(target) {
     let url = top.location.search.substring(1);
     let parameter = url.split('&');
@@ -112,10 +112,15 @@ function getUrlWord(target) {
 }
 
 function offset(element) {
-    var rect = element.getBoundingClientRect(),
-        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+    let rect = element.getBoundingClientRect();
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const obj = {
+        'top': rect.top + scrollTop,
+        'left': rect.left + scrollLeft,
+    };
+
+    return obj;
 }
 
 function verifyUrlRoute(target) {
@@ -254,7 +259,7 @@ class WfCarousel {
                 // item.parentNode.parentNode.querySelector(`[${self.attCurrentSlide}="${item.getAttribute('data-id')}"]`);
                 self.defineActive(item);
                 self.animate(item.getAttribute('data-id'), item, 'navigation');
-            }
+            };
         });
     }
 
@@ -282,7 +287,7 @@ class WfCarousel {
 
             self.defineActive(elCarousel.querySelector('[data-id="' + newSlide + '"]'));
             self.animate(newSlide, elCarouselList, 'arrow');
-        }
+        };
     }
 
     buildNavigationArrowRight(target) {
@@ -309,7 +314,7 @@ class WfCarousel {
 
             self.defineActive(elCarousel.querySelector('[data-id="' + newSlide + '"]'));
             self.animate(newSlide, elCarouselList, 'arrow');
-        }
+        };
     }
 
     animate(currentSlide, target, from) {
@@ -413,7 +418,8 @@ class WfCarousel {
 }
 class WfForm {
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (document.querySelectorAll('form').length < 1) {
             return;
         }
@@ -423,7 +429,8 @@ class WfForm {
     }
 
     buildKeyboard() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.addEventListener('keyup', function (event) {
@@ -436,7 +443,8 @@ class WfForm {
     }
 
     buildFocus(target) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let $arr = document.querySelectorAll(target);
 
         Array.prototype.forEach.call($arr, function (item) {
@@ -449,7 +457,8 @@ class WfForm {
     }
 
     buildInputFile() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         return;
 
@@ -480,7 +489,8 @@ class WfForm {
     }
 
     buildInputFileAddAction(item) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let $target = item.parentNode;
         let $targetFileClass = $target.querySelector('.input-file-name');
         let $targetFile = $target.querySelector('input[type="file"]');
@@ -495,7 +505,8 @@ class WfForm {
     }
 
     buildInputFileHtml() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let inputFile = '';
         let textFile = objWfTranslation.translation.input_upload;
 
@@ -508,7 +519,8 @@ class WfForm {
     }
 
     validateEmpty(arr) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let arrEmpty = arr;
         let length = arrEmpty.length;
 
@@ -524,7 +536,8 @@ class WfForm {
 }
 class WfLayout {
     constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$body = document.querySelector('body');
 
         this.breakPointExtraSmall = 0;
@@ -537,7 +550,8 @@ class WfLayout {
 }
 class WfLazyLoad {
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (document.querySelectorAll('[data-lazy-load="true"]').length < 1) {
             return;
         }
@@ -547,7 +561,8 @@ class WfLazyLoad {
     }
 
     addListener() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.addEventListener('scroll', function (e) {
@@ -558,7 +573,8 @@ class WfLazyLoad {
     }
 
     buildLoop() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let $arr = document.querySelectorAll('[data-lazy-load="true"]');
 
@@ -568,7 +584,8 @@ class WfLazyLoad {
     }
 
     verifyPosition(target) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let windowScroll = window.scrollY;
         let elemntPosition = offset(target).top;
         let margin = window.outerHeight;
@@ -579,19 +596,22 @@ class WfLazyLoad {
     }
 
     buildImage(target) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         target.setAttribute('src', target.getAttribute('data-src'));
         target.removeAttribute('data-lazy-load');
     }
 }
 class WfMask {
     constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$inputMask = document.querySelectorAll('[data-mask]');
     }
 
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.$inputMask.length < 1) {
             return;
         }
@@ -600,7 +620,8 @@ class WfMask {
     }
 
     addListener() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         this.$inputMask.forEach(($input) => {
@@ -610,71 +631,78 @@ class WfMask {
                 let capitalized = inputMask.charAt(0).toUpperCase() + inputMask.slice(1);
 
                 e.target.value = self['mask' + capitalized](inputValue);
-            })
-        })
+            });
+        });
     }
 
     maskCep(value) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '')
             .replace(/(\d{5})(\d)/, '$1-$2')
-            .replace(/(-\d{3})\d+?$/, '$1')
+            .replace(/(-\d{3})\d+?$/, '$1');
     }
 
     maskCpf(value) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '') //only numbers
             .replace(/(\d{3})(\d)/, '$1.$2') // add dot
             .replace(/(\d{3})(\d)/, '$1.$2') // add dot
             .replace(/(\d{3})(\d{1,2})/, '$1-$2') // add hyphen
-            .replace(/(-\d{2})\d+?$/, '$1') // max length
+            .replace(/(-\d{2})\d+?$/, '$1'); // max length
     }
 
     maskCnpj(value) {
-            /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '')
             .replace(/(\d{2})(\d)/, '$1.$2')
             .replace(/(\d{3})(\d)/, '$1.$2')
             .replace(/(\d{3})(\d)/, '$1/$2')
             .replace(/(\d{4})(\d)/, '$1-$2')
-            .replace(/(-\d{2})\d+?$/, '$1')
+            .replace(/(-\d{2})\d+?$/, '$1');
     }
 
     maskDate(value) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '')
             .replace(/(\d{2})(\d)/, '$1/$2')
             .replace(/(\d{2})(\d)/, '$1/$2')
-            .replace(/(\d{4})(\d)/, '$1')
+            .replace(/(\d{4})(\d)/, '$1');
     }
 
     maskPhone(value) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '')
             .replace(/(\d{2})(\d)/, '($1) $2')
             .replace(/(\d{4})(\d)/, '$1-$2')
             .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
-            .replace(/(-\d{4})\d+?$/, '$1')
+            .replace(/(-\d{4})\d+?$/, '$1');
     }
 
     maskPis(value) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '')
             .replace(/(\d{3})(\d)/, '$1.$2')
             .replace(/(\d{5})(\d)/, '$1.$2')
             .replace(/(\d{5}\.)(\d{2})(\d)/, '$1$2-$3')
-            .replace(/(-\d)\d+?$/, '$1')
+            .replace(/(-\d)\d+?$/, '$1');
     }
 }
 class WfMenuDropDown {
     update() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isClickBuild = false;
         this.classMenu = 'menu-drop-down';
         this.classArrow = 'bt-arrow';
@@ -692,7 +720,8 @@ class WfMenuDropDown {
     }
 
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.update();
 
         if (this.$menu.length < 1) {
@@ -710,7 +739,8 @@ class WfMenuDropDown {
     }
 
     buildIcon() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let $arr = document.querySelectorAll('.' + this.classMenu + ' ul > li > ul' + ' , .' + this.classMenuText + ' ul > li > ul');
 
@@ -722,7 +752,8 @@ class WfMenuDropDown {
     }
 
     buildClick() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         Array.prototype.forEach.call(this.$menu, function (item) {
@@ -744,7 +775,8 @@ class WfMenuDropDown {
     }
 
     buildClickAction(item) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let $menuChild = item.parentNode.querySelector('ul');
 
         if (!document.body.contains($menuChild)) {
@@ -769,12 +801,14 @@ class WfMenuDropDown {
     }
 
     buildClickOut() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         document.addEventListener('click', this.listener, true);
     }
 
     listener(event) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (event.toElement.classList.contains('bt') || event.toElement.classList.contains('link')) {
             return;
         }
@@ -785,7 +819,8 @@ class WfMenuDropDown {
     }
 
     reset() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         document.removeEventListener('click', event, true);
         document.removeEventListener('click', this.listener, true);
         objWfMenuDropDown.build();
@@ -793,12 +828,14 @@ class WfMenuDropDown {
 }
 class WfMenuTab {
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.defineActive();
     }
 
     defineActive() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let $arr = document.querySelectorAll('.menu-tab > ul > li > .bt');
 
@@ -810,7 +847,8 @@ class WfMenuTab {
     }
 
     buildClick(item) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let classActive = 'menu-tab-active';
         let $arr = item.parentNode.parentNode.querySelectorAll('li');
 
@@ -823,19 +861,22 @@ class WfMenuTab {
 }
 class WfMenuToggle {
     build() {
-       /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.updateVariable();
         this.buildBt();
         this.watchResize();
     }
 
     updateVariable() {
-       /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$bt = document.querySelectorAll('.bt-toggle');
     }
 
     buildBt() {
-       /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         Array.prototype.forEach.call(this.$bt, function (el, i) {
             el.onclick = function () {
                 let $ul1 = el.parentNode.querySelector('nav > ul');
@@ -848,12 +889,13 @@ class WfMenuToggle {
                 } else {
                     $ul1.classList.add(classDisplay);
                 }
-            }
+            };
         });
     }
 
     watchResize() {
-       /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.onresize = function () {
@@ -862,13 +904,15 @@ class WfMenuToggle {
     }
 
     reset() {
-       /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.build();
     }
 }
 class WfModal {
     updateVariable() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.targetBuildGalleryChange = '';
         this.cssDisplay = 'display-none';
         this.isModalOpen = false;
@@ -888,7 +932,8 @@ class WfModal {
     }
 
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.buildHtml();
         this.updateVariable();
         this.buildMenu();
@@ -898,7 +943,8 @@ class WfModal {
     }
 
     buildHtml() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let string = `
             <div id="modal" class="modal-close">
                 <div class="modal-box">
@@ -950,13 +996,15 @@ class WfModal {
     }
 
     buildTranslation() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$modalFooterConfirm.innerHTML = objWfTranslation.translation.confirm;
         this.$modalFooterCancel.innerHTML = objWfTranslation.translation.cancel;
     }
 
     buildKeyboard() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.addEventListener('keyup', function (event) {
@@ -987,11 +1035,12 @@ class WfModal {
                     self.$modalNavigationArrowRight.click();
                 }
             }
-        })
+        });
     }
 
     buildMenuGallery() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         if (!this.$gallery) {
@@ -1021,7 +1070,8 @@ class WfModal {
     }
 
     buildMenu() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         this.$modalClose.addEventListener('click', function () {
@@ -1042,7 +1092,8 @@ class WfModal {
     }
 
     buildGalleryNavigation(target) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), target); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), target); /*endRemoveIf(production)*/
         let array = [];
         let currentGallery = target.parentNode.parentNode;
         let siblingLength = currentGallery.querySelectorAll('a').length - 1;
@@ -1075,7 +1126,8 @@ class WfModal {
     }
 
     buildModal(kind, content, size = 're', action = 'open') {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [kind, content, size, action]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [kind, content, size, action]); /*endRemoveIf(production)*/
         this.$modalFooter.classList.add(this.cssDisplay);
         action === 'open' ? this.openModal() : this.closeModal();
         this.buildModalSize(size);
@@ -1083,7 +1135,8 @@ class WfModal {
     }
 
     buildModalKind(kind, content) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [kind, content]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [kind, content]); /*endRemoveIf(production)*/
 
         if (kind === 'ajax') {
             this.buildContentAjax(content);
@@ -1106,7 +1159,8 @@ class WfModal {
     }
 
     openModal() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isModalOpen = true;
 
         this.$body.classList.remove('overflow-y');
@@ -1117,7 +1171,8 @@ class WfModal {
     }
 
     closeModal() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isModalOpen = false;
 
         this.$body.classList.add('overflow-y');
@@ -1131,7 +1186,8 @@ class WfModal {
     }
 
     buildModalSize(size = 're') {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), size); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), size); /*endRemoveIf(production)*/
         this.$modalBox.classList.remove('modal-es');
         this.$modalBox.classList.remove('modal-sm');
         this.$modalBox.classList.remove('modal-re');
@@ -1142,7 +1198,8 @@ class WfModal {
     }
 
     buildContentAjax(target) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), target); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), target); /*endRemoveIf(production)*/
         let self = this;
         let ajax = new XMLHttpRequest();
 
@@ -1158,7 +1215,8 @@ class WfModal {
     }
 
     buildGalleryImage(image, description) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [image, description]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [image, description]); /*endRemoveIf(production)*/
         let stringImage = '<img src="' + image + '" class="img-responsive" style="margin:auto;" title="" alt=""/>';
 
         this.$modalContent.innerHTML = stringImage;
@@ -1166,7 +1224,8 @@ class WfModal {
     }
 
     buildContentConfirmation(content) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), content); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), content); /*endRemoveIf(production)*/
         let string = '<div class="padding-re text-center">' + content + '</div>';
 
         this.$modalFooter.classList.remove(this.cssDisplay);
@@ -1174,12 +1233,14 @@ class WfModal {
     }
 
     buildContentConfirmationAction(action) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), action); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), action); /*endRemoveIf(production)*/
         this.$modalFooterConfirm.setAttribute('onclick', action);
     }
 
     changeText(description) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [description]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [description]); /*endRemoveIf(production)*/
         let string = '';
 
         if (description === '' || description === null) {
@@ -1196,7 +1257,8 @@ class WfModal {
     }
 
     resetOtherClass() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
 
         if (typeof objWfForm !== 'undefined') {
             objWfForm.buildInputFile();
@@ -1225,7 +1287,8 @@ class WfModal {
 }
 class WfNotification {
     constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$body = document.querySelector('body');
         this.$notifyItem = document.querySelectorAll('.notify-item');
 
@@ -1233,13 +1296,15 @@ class WfNotification {
     }
 
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.buildHtml();
         this.buildNavigation();
     }
 
     buildHtml() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let html = `
             <div id="notify">
                 <ul class="notify-list">
@@ -1252,7 +1317,8 @@ class WfNotification {
     }
 
     buildHtmlItem(style = 'grey', message) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [style, message]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [style, message]); /*endRemoveIf(production)*/
         return `
             <li id="notify${this.notifyId}">
                 <div class="notify-item notify-${style}">
@@ -1268,10 +1334,11 @@ class WfNotification {
     }
 
     buildNavigation() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
 
         Array.prototype.forEach.call(this.$notifyItem, function (item) {
-            let bt = item.querySelectorAll('.bt')
+            let bt = item.querySelectorAll('.bt');
 
             Array.prototype.forEach.call(bt, function (item) {
                 item.addEventListener('click', function () {
@@ -1282,7 +1349,8 @@ class WfNotification {
     }
 
     add(message, style, place = this.$notify) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [message, style, place]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [message, style, place]); /*endRemoveIf(production)*/
         let string = this.buildHtmlItem(style, message);
         let newPlace = '';
 
@@ -1311,7 +1379,8 @@ class WfNotification {
     }
 
     remove(item, messageLength) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [item, messageLength]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [item, messageLength]); /*endRemoveIf(production)*/
         let messageTime = messageLength * 150;
 
         function remove() {
@@ -1323,7 +1392,8 @@ class WfNotification {
 }
 class WfProgress {
     update() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isFinish = false;
         this.progressSize = 0;
         this.$loadingMain = document.getElementById('loadingMain');
@@ -1334,7 +1404,8 @@ class WfProgress {
     }
 
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (document.getElementById('loadingMain') < 1) {
             return;
         }
@@ -1344,7 +1415,8 @@ class WfProgress {
     }
 
     start() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let interval = setInterval(frame, 1);
         let total = this.buildProportion();
@@ -1364,19 +1436,22 @@ class WfProgress {
     }
 
     finish() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$loadingMain.classList.add('loading-main-done');
         this.$body.style.overflowY = 'auto';
         setTimeout(this.remove(this.$loadingMain), 1000);
     }
 
     remove(element) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         element.parentNode.removeChild(element);
     }
 
     buildProportion() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.$allLength > 1000) {
             return this.$allLength / 50;
         }
@@ -1410,12 +1485,14 @@ class WfProgress {
 }
 class WfTable {
     constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$table = document.querySelectorAll('.table');
     }
 
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.$table.length < 1) {
             return;
         }
@@ -1424,7 +1501,8 @@ class WfTable {
     }
 
     buildResponsive() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         Array.prototype.forEach.call(this.$table, function (item) {
             wrapItem(item, 'table-responsive');
             wrapItem(item.parentNode.parentNode.querySelector('.table-responsive'), 'table-responsive-wrapper');
@@ -1433,12 +1511,14 @@ class WfTable {
 }
 class WfTag {
     constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$tagBt = document.querySelectorAll('.tag-item-bt');
     }
 
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.$tagBt.length < 1) {
             return;
         }
@@ -1447,7 +1527,8 @@ class WfTag {
     }
 
     buildClick() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         Array.prototype.forEach.call(this.$tagBt, function (item) {
             let $bt = item.querySelector('.tag-bt');
 
@@ -1459,7 +1540,8 @@ class WfTag {
 }
 class WfTooltip {
     constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.elementTop = 0;
         this.elementLeft = 0;
         this.elementWidth = 0;
@@ -1477,7 +1559,8 @@ class WfTooltip {
     }
 
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.buildHtml();
         this.updateVariable(false);
 
@@ -1491,7 +1574,8 @@ class WfTooltip {
     }
 
     updateVariable(element) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), element); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), element); /*endRemoveIf(production)*/
         this.$tooltip = document.querySelector('#tooltip');
         this.$tooltipBody = document.querySelector('#tooltipBody');
         this.$tooltipPointer = document.querySelector('#tooltipPointer');
@@ -1517,7 +1601,8 @@ class WfTooltip {
     }
 
     buildHtml() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let html = `
             <div id="tooltip">
                 <div id="tooltipBody"></div>
@@ -1529,23 +1614,25 @@ class WfTooltip {
     }
 
     buildResize() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.onresize = function () {
             self.updateVariable(false);
             self.buildMaxWidth();
-        }
+        };
     }
 
     buildTooltip() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         this.showTooltip(false);
         Array.prototype.forEach.call(this.$tooltipData, function (item) {
             let title = item.getAttribute('title');
-            
+
             if (typeof title !== 'undefined' && title !== null && title !== '') {
                 item.setAttribute('data-tooltip-text', title);
                 item.removeAttribute('title');
@@ -1565,12 +1652,14 @@ class WfTooltip {
     }
 
     buildMaxWidth() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$tooltip.style.maxWidth = this.windowWidth - (this.space * 2);
     }
 
     showTooltip(action) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), action); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), action); /*endRemoveIf(production)*/
         if (action) {
             this.$tooltip.classList.add('tooltip-show');
         } else {
@@ -1579,7 +1668,8 @@ class WfTooltip {
     }
 
     positionTooltipSwitchDirection(placement) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), placement); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), placement); /*endRemoveIf(production)*/
         let direction = typeof placement === 'undefined' ? 'top' : placement;
 
         switch (direction) {
@@ -1609,31 +1699,36 @@ class WfTooltip {
     }
 
     positionTooltipTop() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.positionTop = this.elementTop - this.tooltipHeight - this.space;
         this.positionLeft = this.elementLeft - this.centerWidth;
     }
 
     positionTooltipBottom() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.positionTop = this.elementTop + this.elementHeight + this.space;
         this.positionLeft = this.elementLeft - this.centerWidth;
     }
 
     positionTooltipRight() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.positionTop = this.elementTop + this.centerHeight;
         this.positionLeft = this.elementLeft + this.elementWidth + this.space;
     }
 
     positionTooltipLeft() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.positionTop = this.elementTop + this.centerHeight;
         this.positionLeft = this.elementLeft - this.tooltipWidth - this.space;
     }
 
     positionTooltip(element, placement) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [element, placement]);
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [element, placement]);
         this.updateVariable(element);
 
         let direction = this.positionTooltipSwitchDirection(placement);
@@ -1666,7 +1761,8 @@ class WfTooltip {
     }
 
     buildLimits() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.positionLeft <= 0) {
             this.positionLeft = this.space;
         }
@@ -1677,17 +1773,20 @@ class WfTooltip {
     }
 
     changeArrowPositionHorizontal() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$tooltipPointer.style.left = this.$tooltip.offsetWidth / 2 + 'px';
     }
 
     changeArrowPositionVertical() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$tooltipPointer.style.left = '';
     }
 
     changeArrowDirection(direction) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), direction); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), direction); /*endRemoveIf(production)*/
         this.$tooltipPointer.classList.remove('tooltip-direction-top');
         this.$tooltipPointer.classList.remove('tooltip-direction-bottom');
         this.$tooltipPointer.classList.remove('tooltip-direction-left');
@@ -1696,7 +1795,8 @@ class WfTooltip {
     }
 
     changeLayout(style) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), style); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), style); /*endRemoveIf(production)*/
         let newStyle = typeof style === 'undefined' ? newStyle = this.style : style;
 
         this.$tooltip.removeAttribute('class');
@@ -1705,7 +1805,8 @@ class WfTooltip {
     }
 
     reset() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let element = document.getElementById('tooltip');
 
         element.parentNode.removeChild(element);
@@ -1714,17 +1815,20 @@ class WfTooltip {
 }
 class WfTranslation {
     constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.translation = '';
     }
 
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.defineLanguege();
     }
 
     defineLanguege() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         switch (globalLanguage) {
             case 'pt':
                 this.translation = translationPT;
@@ -1737,12 +1841,16 @@ class WfTranslation {
 }
 class WfManagementPlugin {
     verifyLoad() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        window.addEventListener('load', this.applyClass(), { once: true });
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        window.addEventListener('load', this.applyClass(), {
+            once: true
+        });
     }
 
     applyClass() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         objWfTranslation.build();
         objWfProgress.build();
         objWfForm.build();

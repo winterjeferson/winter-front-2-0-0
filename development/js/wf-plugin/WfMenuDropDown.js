@@ -1,6 +1,7 @@
 class WfMenuDropDown {
     update() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isClickBuild = false;
         this.classMenu = 'menu-drop-down';
         this.classArrow = 'bt-arrow';
@@ -18,7 +19,8 @@ class WfMenuDropDown {
     }
 
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.update();
 
         if (this.$menu.length < 1) {
@@ -36,7 +38,8 @@ class WfMenuDropDown {
     }
 
     buildIcon() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let $arr = document.querySelectorAll('.' + this.classMenu + ' ul > li > ul' + ' , .' + this.classMenuText + ' ul > li > ul');
 
@@ -48,7 +51,8 @@ class WfMenuDropDown {
     }
 
     buildClick() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         Array.prototype.forEach.call(this.$menu, function (item) {
@@ -70,7 +74,8 @@ class WfMenuDropDown {
     }
 
     buildClickAction(item) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let $menuChild = item.parentNode.querySelector('ul');
 
         if (!document.body.contains($menuChild)) {
@@ -95,12 +100,14 @@ class WfMenuDropDown {
     }
 
     buildClickOut() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         document.addEventListener('click', this.listener, true);
     }
 
     listener(event) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (event.toElement.classList.contains('bt') || event.toElement.classList.contains('link')) {
             return;
         }
@@ -111,7 +118,8 @@ class WfMenuDropDown {
     }
 
     reset() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         document.removeEventListener('click', event, true);
         document.removeEventListener('click', this.listener, true);
         objWfMenuDropDown.build();

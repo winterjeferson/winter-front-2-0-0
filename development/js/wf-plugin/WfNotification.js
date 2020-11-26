@@ -1,6 +1,7 @@
 class WfNotification {
     constructor() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$body = document.querySelector('body');
         this.$notifyItem = document.querySelectorAll('.notify-item');
 
@@ -8,13 +9,15 @@ class WfNotification {
     }
 
     build() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.buildHtml();
         this.buildNavigation();
     }
 
     buildHtml() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let html = `
             <div id="notify">
                 <ul class="notify-list">
@@ -27,7 +30,8 @@ class WfNotification {
     }
 
     buildHtmlItem(style = 'grey', message) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [style, message]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [style, message]); /*endRemoveIf(production)*/
         return `
             <li id="notify${this.notifyId}">
                 <div class="notify-item notify-${style}">
@@ -43,10 +47,11 @@ class WfNotification {
     }
 
     buildNavigation() {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
 
         Array.prototype.forEach.call(this.$notifyItem, function (item) {
-            let bt = item.querySelectorAll('.bt')
+            let bt = item.querySelectorAll('.bt');
 
             Array.prototype.forEach.call(bt, function (item) {
                 item.addEventListener('click', function () {
@@ -57,7 +62,8 @@ class WfNotification {
     }
 
     add(message, style, place = this.$notify) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [message, style, place]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [message, style, place]); /*endRemoveIf(production)*/
         let string = this.buildHtmlItem(style, message);
         let newPlace = '';
 
@@ -86,7 +92,8 @@ class WfNotification {
     }
 
     remove(item, messageLength) {
-        /*removeIf(production)*/ objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [item, messageLength]); /*endRemoveIf(production)*/
+        /*removeIf(production)*/
+        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [item, messageLength]); /*endRemoveIf(production)*/
         let messageTime = messageLength * 150;
 
         function remove() {
