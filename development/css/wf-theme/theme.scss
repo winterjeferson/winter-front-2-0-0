@@ -4,10 +4,10 @@
 }
 
 .grid {
-    height: 100%;
     display: grid;
     grid-template:
         "grid-header grid-header"min-content "grid-menu grid-menu"min-content "grid-content grid-content"auto "grid-footer grid-footer"min-content / auto;
+    height: 100%;
 
     @include tablet-landscape {
         grid-template:
@@ -57,8 +57,8 @@
 
 .theme-menu {
     background-color: $color-grey-light-3;
-    padding: $regular;
     height: 100%;
+    padding: $regular;
 
     .button {
         font-size: $font-size-regular;
@@ -95,8 +95,8 @@
 
     &__sub-title,
     &__title {
-        text-align: center;
         font-weight: 100;
+        text-align: center;
     }
 
     &__sub-title {

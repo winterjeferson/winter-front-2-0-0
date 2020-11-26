@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass'); //npm install gulp-sass --save-dev // https://www.npmjs.com/package/gulp-sass/
 const csso = require('gulp-csso'); //npm install gulp-csso --save-dev //https://www.npmjs.com/package/gulp-csso/
 const rename = require('gulp-rename'); //npm install gulp-rename --save-dev // https://www.npmjs.com/package/gulp-rename/
+const gulpStylelint = require('gulp-stylelint'); //npm install stylelint gulp-stylelint --save-dev //https://www.npmjs.com/package/gulp-stylelint
 
 const configuration = require('./configuration.js');
 
@@ -41,11 +42,26 @@ gulp.task('buildCssMinify', () => {
         .pipe(gulp.dest(`${configuration.production}${configuration.assets}${extension}/`));
 });
 
+gulp.task('buildCssLint', function lintCssTask(done) {
+    return gulp
+        .src(fileAll)
+        .pipe(gulpStylelint({
+            failAfterError: true,
+            reporters: [{
+                formatter: 'verbose',
+                console: true
+            }, ],
+            debug: true
+        }));
+    done();
+});
+
+
 gulp.task('buildCss', gulp.series(
+    'buildCssLint',
     'buildCssSass',
     'buildCssSassPlugin',
 ));
-
 
 
 module.exports = {

@@ -33,8 +33,8 @@
 
 .button,
 .button-outline {
-    text-decoration: none;
     border-style: solid;
+    text-decoration: none;
 
     &.extra-small {
         padding: $extra-small $small;
@@ -111,9 +111,9 @@
             }
 
             &:hover {
-                color: color-regular-contrast(#{$color});
                 background-color: color-dark(#{$color});
                 border-color: color-dark-border(#{$color});
+                color: color-regular-contrast(#{$color});
 
                 .icon {
                     fill: color-regular-contrast(#{$color});
@@ -161,11 +161,11 @@
             .icon {
                 fill: color-regular-contrast(#{$color});
             }
-
+            
             &:hover {
-                color: color-regular-contrast(#{$color});
                 background-color: color-regular(#{$color});
                 border-color: color-regular(#{$color});
+                color: color-regular-contrast(#{$color});
 
                 .icon {
                     fill: color-regular-contrast(#{$color});

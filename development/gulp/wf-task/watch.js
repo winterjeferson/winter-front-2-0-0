@@ -10,7 +10,7 @@ const configuration = require('./configuration.js');
 
 
 gulp.task('watch', (callback) => {
-    gulp.watch(css.fileAll, gulp.series('buildCssSass'))
+    gulp.watch(css.fileAll, gulp.series('buildCss'))
         .on('change', (event) => {
             console.log(event);
         });

@@ -1,6 +1,6 @@
 .card__header, .card__body, .card__footer, .form__fill {
-  border-width: 1px;
-  border-style: solid; }
+  border-style: solid;
+  border-width: 1px; }
 
 .form__option, .form .column {
   margin-left: 10px;
@@ -44,16 +44,16 @@ body {
 
 textarea {
   overflow: auto;
-  vertical-align: top;
-  resize: vertical; }
+  resize: vertical;
+  vertical-align: top; }
 
 table,
 table td {
   border-collapse: collapse; }
 
 img {
-  max-width: 100%;
-  align-self: start; }
+  align-self: start;
+  max-width: 100%; }
 
 .button,
 .button-outline,
@@ -89,8 +89,8 @@ img {
 
 .button,
 .button-outline {
-  text-decoration: none;
-  border-style: solid; }
+  border-style: solid;
+  text-decoration: none; }
   .button.extra-small,
   .button-outline.extra-small {
     padding: 2px 5px; }
@@ -141,9 +141,9 @@ img {
     .button.black .icon {
       fill: #ffffff; }
     .button.black:hover {
-      color: #ffffff;
       background-color: #0d0d0d;
-      border-color: color-dark-border(black); }
+      border-color: color-dark-border(black);
+      color: #ffffff; }
       .button.black:hover .icon {
         fill: #ffffff; }
     .button.black:focus {
@@ -162,9 +162,9 @@ img {
     .button.blue .icon {
       fill: #ffffff; }
     .button.blue:hover {
-      color: #ffffff;
       background-color: #1d6da4;
-      border-color: color-dark-border(blue); }
+      border-color: color-dark-border(blue);
+      color: #ffffff; }
       .button.blue:hover .icon {
         fill: #ffffff; }
     .button.blue:focus {
@@ -183,9 +183,9 @@ img {
     .button.brown .icon {
       fill: #ffffff; }
     .button.brown:hover {
-      color: #ffffff;
       background-color: #4e2f02;
-      border-color: color-dark-border(brown); }
+      border-color: color-dark-border(brown);
+      color: #ffffff; }
       .button.brown:hover .icon {
         fill: #ffffff; }
     .button.brown:focus {
@@ -204,9 +204,9 @@ img {
     .button.cyan .icon {
       fill: #ffffff; }
     .button.cyan:hover {
-      color: #ffffff;
       background-color: #178375;
-      border-color: color-dark-border(cyan); }
+      border-color: color-dark-border(cyan);
+      color: #ffffff; }
       .button.cyan:hover .icon {
         fill: #ffffff; }
     .button.cyan:focus {
@@ -225,9 +225,9 @@ img {
     .button.green .icon {
       fill: #ffffff; }
     .button.green:hover {
-      color: #ffffff;
       background-color: #1f8d4e;
-      border-color: color-dark-border(green); }
+      border-color: color-dark-border(green);
+      color: #ffffff; }
       .button.green:hover .icon {
         fill: #ffffff; }
     .button.green:focus {
@@ -246,9 +246,9 @@ img {
     .button.grey .icon {
       fill: #333333; }
     .button.grey:hover {
-      color: #333333;
       background-color: #7a848c;
-      border-color: color-dark-border(grey); }
+      border-color: color-dark-border(grey);
+      color: #333333; }
       .button.grey:hover .icon {
         fill: #333333; }
     .button.grey:focus {
@@ -267,9 +267,9 @@ img {
     .button.orange .icon {
       fill: #ffffff; }
     .button.orange:hover {
-      color: #ffffff;
       background-color: #aa5912;
-      border-color: color-dark-border(orange); }
+      border-color: color-dark-border(orange);
+      color: #ffffff; }
       .button.orange:hover .icon {
         fill: #ffffff; }
     .button.orange:focus {
@@ -288,9 +288,9 @@ img {
     .button.pink .icon {
       fill: #ffffff; }
     .button.pink:hover {
-      color: #ffffff;
       background-color: #a71182;
-      border-color: color-dark-border(pink); }
+      border-color: color-dark-border(pink);
+      color: #ffffff; }
       .button.pink:hover .icon {
         fill: #ffffff; }
     .button.pink:focus {
@@ -309,9 +309,9 @@ img {
     .button.purple .icon {
       fill: #ffffff; }
     .button.purple:hover {
-      color: #ffffff;
       background-color: #703c86;
-      border-color: color-dark-border(purple); }
+      border-color: color-dark-border(purple);
+      color: #ffffff; }
       .button.purple:hover .icon {
         fill: #ffffff; }
     .button.purple:focus {
@@ -330,9 +330,9 @@ img {
     .button.red .icon {
       fill: #ffffff; }
     .button.red:hover {
-      color: #ffffff;
       background-color: #bf2120;
-      border-color: color-dark-border(red); }
+      border-color: color-dark-border(red);
+      color: #ffffff; }
       .button.red:hover .icon {
         fill: #ffffff; }
     .button.red:focus {
@@ -351,9 +351,9 @@ img {
     .button.white .icon {
       fill: #333333; }
     .button.white:hover {
-      color: #333333;
       background-color: #d9d9d9;
-      border-color: color-dark-border(white); }
+      border-color: color-dark-border(white);
+      color: #333333; }
       .button.white:hover .icon {
         fill: #333333; }
     .button.white:focus {
@@ -372,9 +372,9 @@ img {
     .button.yellow .icon {
       fill: #ffffff; }
     .button.yellow:hover {
-      color: #ffffff;
       background-color: #a98a0a;
-      border-color: color-dark-border(yellow); }
+      border-color: color-dark-border(yellow);
+      color: #ffffff; }
       .button.yellow:hover .icon {
         fill: #ffffff; }
     .button.yellow:focus {
@@ -398,9 +398,9 @@ img {
     .button-outline.black .icon {
       fill: #ffffff; }
     .button-outline.black:hover {
-      color: #ffffff;
       background-color: #333333;
-      border-color: #333333; }
+      border-color: #333333;
+      color: #ffffff; }
       .button-outline.black:hover .icon {
         fill: #ffffff; }
     .button-outline.black--active {
@@ -415,9 +415,9 @@ img {
     .button-outline.blue .icon {
       fill: #ffffff; }
     .button-outline.blue:hover {
-      color: #ffffff;
       background-color: #3297db;
-      border-color: #3297db; }
+      border-color: #3297db;
+      color: #ffffff; }
       .button-outline.blue:hover .icon {
         fill: #ffffff; }
     .button-outline.blue--active {
@@ -432,9 +432,9 @@ img {
     .button-outline.brown .icon {
       fill: #ffffff; }
     .button-outline.brown:hover {
-      color: #ffffff;
       background-color: #7f4d04;
-      border-color: #7f4d04; }
+      border-color: #7f4d04;
+      color: #ffffff; }
       .button-outline.brown:hover .icon {
         fill: #ffffff; }
     .button-outline.brown--active {
@@ -449,9 +449,9 @@ img {
     .button-outline.cyan .icon {
       fill: #ffffff; }
     .button-outline.cyan:hover {
-      color: #ffffff;
       background-color: #23c4af;
-      border-color: #23c4af; }
+      border-color: #23c4af;
+      color: #ffffff; }
       .button-outline.cyan:hover .icon {
         fill: #ffffff; }
     .button-outline.cyan--active {
@@ -466,9 +466,9 @@ img {
     .button-outline.green .icon {
       fill: #ffffff; }
     .button-outline.green:hover {
-      color: #ffffff;
       background-color: #2dcc70;
-      border-color: #2dcc70; }
+      border-color: #2dcc70;
+      color: #ffffff; }
       .button-outline.green:hover .icon {
         fill: #ffffff; }
     .button-outline.green--active {
@@ -483,9 +483,9 @@ img {
     .button-outline.grey .icon {
       fill: #333333; }
     .button-outline.grey:hover {
-      color: #333333;
       background-color: #bec3c7;
-      border-color: #bec3c7; }
+      border-color: #bec3c7;
+      color: #333333; }
       .button-outline.grey:hover .icon {
         fill: #333333; }
     .button-outline.grey--active {
@@ -500,9 +500,9 @@ img {
     .button-outline.orange .icon {
       fill: #ffffff; }
     .button-outline.orange:hover {
-      color: #ffffff;
       background-color: #e77e22;
-      border-color: #e77e22; }
+      border-color: #e77e22;
+      color: #ffffff; }
       .button-outline.orange:hover .icon {
         fill: #ffffff; }
     .button-outline.orange--active {
@@ -517,9 +517,9 @@ img {
     .button-outline.pink .icon {
       fill: #ffffff; }
     .button-outline.pink:hover {
-      color: #ffffff;
       background-color: #e81cb6;
-      border-color: #e81cb6; }
+      border-color: #e81cb6;
+      color: #ffffff; }
       .button-outline.pink:hover .icon {
         fill: #ffffff; }
     .button-outline.pink--active {
@@ -534,9 +534,9 @@ img {
     .button-outline.purple .icon {
       fill: #ffffff; }
     .button-outline.purple:hover {
-      color: #ffffff;
       background-color: #9a59b5;
-      border-color: #9a59b5; }
+      border-color: #9a59b5;
+      color: #ffffff; }
       .button-outline.purple:hover .icon {
         fill: #ffffff; }
     .button-outline.purple--active {
@@ -551,9 +551,9 @@ img {
     .button-outline.red .icon {
       fill: #ffffff; }
     .button-outline.red:hover {
-      color: #ffffff;
       background-color: #e14b4a;
-      border-color: #e14b4a; }
+      border-color: #e14b4a;
+      color: #ffffff; }
       .button-outline.red:hover .icon {
         fill: #ffffff; }
     .button-outline.red--active {
@@ -568,9 +568,9 @@ img {
     .button-outline.white .icon {
       fill: #333333; }
     .button-outline.white:hover {
-      color: #333333;
       background-color: #ffffff;
-      border-color: #ffffff; }
+      border-color: #ffffff;
+      color: #333333; }
       .button-outline.white:hover .icon {
         fill: #333333; }
     .button-outline.white--active {
@@ -585,9 +585,9 @@ img {
     .button-outline.yellow .icon {
       fill: #ffffff; }
     .button-outline.yellow:hover {
-      color: #ffffff;
       background-color: #f1c50e;
-      border-color: #f1c50e; }
+      border-color: #f1c50e;
+      color: #ffffff; }
       .button-outline.yellow:hover .icon {
         fill: #ffffff; }
     .button-outline.yellow--active {
@@ -998,9 +998,9 @@ img {
     position: absolute;
     z-index: 2; }
   .carousel__controller-button {
-    opacity: .5;
     border-color: transparent;
-    border-radius: 50%; }
+    border-radius: 50%;
+    opacity: 0.5; }
     .carousel__controller-button--active {
       opacity: 1; }
   .carousel__arrow {
@@ -1230,25 +1230,25 @@ img {
   height: 100%; }
 
 .row {
+  flex: 0 1 100%;
   flex-direction: row;
-  flex-wrap: wrap;
-  flex: 0 1 100%; }
+  flex-wrap: wrap; }
 
 .column,
 .row {
   display: flex; }
 
 .center {
-  text-align: center;
+  align-items: center;
   justify-content: center;
-  align-items: center; }
+  text-align: center; }
 
 .flip {
   transform: rotate(180deg); }
 
 .hide {
-  visibility: hidden;
-  pointer-events: none; }
+  pointer-events: none;
+  visibility: hidden; }
 
 @media (min-width: 768px) {
   .hide-tablet {
@@ -1271,36 +1271,36 @@ img {
     display: none; } }
 
 .loading-1 {
+  animation: load5 1.3s infinite linear;
   border-radius: 50%;
+  display: inline-block;
   position: relative;
   text-indent: -9999em;
-  animation: load5 1.3s infinite linear;
-  transform: translateZ(0);
-  display: inline-block; }
+  transform: translateZ(0); }
   .loading-1.extra-small {
     font-size: 2px;
-    margin: 2px;
     height: 2px;
+    margin: 2px;
     width: 2px; }
   .loading-1.small {
     font-size: 5px;
-    margin: 5px;
     height: 5px;
+    margin: 5px;
     width: 5px; }
   .loading-1.regular {
     font-size: 10px;
-    margin: 10px;
     height: 10px;
+    margin: 10px;
     width: 10px; }
   .loading-1.big {
     font-size: 20px;
-    margin: 20px;
     height: 20px;
+    margin: 20px;
     width: 20px; }
   .loading-1.extra-big {
     font-size: 40px;
-    margin: 40px;
     height: 40px;
+    margin: 40px;
     width: 40px; }
 
 @keyframes load5 {
@@ -1350,29 +1350,29 @@ img {
   animation: sk-rotateplane 1.2s infinite ease-in-out;
   display: inline-block; }
   .loading-2.extra-small {
-    padding: 2px;
-    margin: 2px;
     height: 2px;
+    margin: 2px;
+    padding: 2px;
     width: 2px; }
   .loading-2.small {
-    padding: 5px;
-    margin: 5px;
     height: 5px;
+    margin: 5px;
+    padding: 5px;
     width: 5px; }
   .loading-2.regular {
-    padding: 10px;
-    margin: 10px;
     height: 10px;
+    margin: 10px;
+    padding: 10px;
     width: 10px; }
   .loading-2.big {
-    padding: 20px;
-    margin: 20px;
     height: 20px;
+    margin: 20px;
+    padding: 20px;
     width: 20px; }
   .loading-2.extra-big {
-    padding: 40px;
-    margin: 40px;
     height: 40px;
+    margin: 40px;
+    padding: 40px;
     width: 40px; }
 
 @keyframes sk-rotateplane {
@@ -1406,6 +1406,3 @@ img {
     background-color: #ffffff; }
   .loading-2.yellow {
     background-color: #f1c50e; }
-
-#modal {
-  display: none; }

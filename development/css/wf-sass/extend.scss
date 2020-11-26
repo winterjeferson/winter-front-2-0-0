@@ -1,12 +1,12 @@
 %extend-truncate {
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 %extend-border-default {
-  border-width: $border-width;
   border-style: solid;
+  border-width: $border-width;
 }
 
 %extend-margin-component {

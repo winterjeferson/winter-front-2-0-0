@@ -1,8 +1,8 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat'); //npm install gulp-concat --save-dev //https://www.npmjs.com/package/gulp-concat/
 const uglify = require("gulp-uglifyes"); //npm install gulp-uglifyes --save-dev //https://www.npmjs.com/package/gulp-uglifyes
-const removeCode = require('gulp-remove-code'); //npm install gulp-remove-code --save-dev https://www.npmjs.com/package/gulp-remove-code
-const eslint = require('gulp-eslint');
+const removeCode = require('gulp-remove-code'); //npm install gulp-remove-code --save-dev //https://www.npmjs.com/package/gulp-remove-code
+const eslint = require('gulp-eslint'); //npm install gulp-eslint --save-dev //https://www.npmjs.com/package/gulp-eslint
 
 const configuration = require('./configuration.js');
 
@@ -90,8 +90,8 @@ gulp.task('buildJsLint', () => {
 
 
 gulp.task('buildJs', gulp.series(
-    'buildJsLint',
     'buildJsConcat',
+    'buildJsLint',
     'buildJsConcatPlugin',
 ));
 

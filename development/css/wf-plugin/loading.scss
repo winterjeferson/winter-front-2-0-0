@@ -23,45 +23,45 @@
 
 
 .loading-1 {
+    animation: load5 1.3s infinite linear;
     border-radius: 50%;
+    display: inline-block;
     position: relative;
     text-indent: -9999em;
-    animation: load5 1.3s infinite linear;
     transform: translateZ(0);
-    display: inline-block;
 
     &.extra-small {
         font-size: $extra-small;
-        margin: $extra-small;
         height: $extra-small;
+        margin: $extra-small;
         width: $extra-small;
     }
 
     &.small {
         font-size: $small;
-        margin: $small;
         height: $small;
+        margin: $small;
         width: $small;
     }
 
     &.regular {
         font-size: $regular;
-        margin: $regular;
         height: $regular;
+        margin: $regular;
         width: $regular;
     }
 
     &.big {
         font-size: $big;
-        margin: $big;
         height: $big;
+        margin: $big;
         width: $big;
     }
 
     &.extra-big {
         font-size: $extra-big;
-        margin: $extra-big;
         height: $extra-big;
+        margin: $extra-big;
         width: $extra-big;
     }
 
@@ -121,37 +121,37 @@
     display: inline-block;
 
     &.extra-small {
-        padding: $extra-small;
-        margin: $extra-small;
         height: $extra-small;
+        margin: $extra-small;
+        padding: $extra-small;
         width: $extra-small;
     }
 
     &.small {
-        padding: $small;
-        margin: $small;
         height: $small;
+        margin: $small;
+        padding: $small;
         width: $small;
     }
 
     &.regular {
-        padding: $regular;
-        margin: $regular;
         height: $regular;
+        margin: $regular;
+        padding: $regular;
         width: $regular;
     }
 
     &.big {
-        padding: $big;
-        margin: $big;
         height: $big;
+        margin: $big;
+        padding: $big;
         width: $big;
     }
 
     &.extra-big {
-        padding: $extra-big;
-        margin: $extra-big;
         height: $extra-big;
+        margin: $extra-big;
+        padding: $extra-big;
         width: $extra-big;
     }
 
