@@ -6,7 +6,7 @@ const rename = require('gulp-rename'); //npm install gulp-rename --save-dev // h
 const configuration = require('./configuration.js');
 
 const extension = 'css';
-const extensionSass = 'scss';
+const extensionSass = `s${extension}`;
 const filePrefix = `${configuration.prefix}${configuration.theme}`;
 const filePrefixPlugin = `${configuration.prefix}${configuration.plugin}`;
 const folder = `${configuration.development}${extension}/`;

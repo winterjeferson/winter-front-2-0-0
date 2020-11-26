@@ -4,27 +4,25 @@ const newer = require('gulp-newer'); //npm install gulp-newer --save-dev // http
 const del = require('del'); //npm install del --save-dev //https://www.npmjs.com/package/del
 
 const configuration = require('./configuration.js');
+const helper = require('./helper.js');
 
 const folder = 'img/';
 const fileAll = configuration.development + folder + configuration.allFolderFile;
+const fileClean = `${configuration.homologation}${configuration.assets}${folder}!(dynamic)*`;
 
 
-function clean(path) {
-    return del(path, {
-        force: true
-    });
-}
 
-gulp.task('buildImageClean', () => {
-    const file = `${configuration.homologation}${configuration.assets}${folder}!(dynamic)*`;
-    return clean(file);
+
+gulp.task('buildImageClean', (done) => {
+    clean(fileClean);
+    done();
 });
 
-gulp.task('buildImageMove', (callback) => {
+gulp.task('buildImageMove', (done) => {
     return gulp
         .src(fileAll)
         .pipe(gulp.dest(`${configuration.homologation}${configuration.assets}${folder}`));
-    callback();
+    done();
 });
 
 // fix enoent problem: node node_modules/optipng-bin/lib/install.js

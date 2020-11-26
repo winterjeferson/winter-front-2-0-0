@@ -2,26 +2,24 @@ const gulp = require('gulp');
 const del = require('del'); //npm install del --save-dev //https://www.npmjs.com/package/del
 
 const configuration = require('./configuration.js');
+const helper = require('./helper.js');
 
 const folder = 'other/';
 const fileAll = [
     `${configuration.development}${folder}${configuration.allFolderFile}`,
     `${configuration.development}${folder}.htaccess`,
 ];
-const fileAllPublic = [
-    `${configuration.homologation}.txt`,
+const fileClean = [
     `${configuration.homologation}.htaccess`,
+    `${configuration.homologation}*.txt`,
+    `${configuration.homologation}*.xml`,
 ];
 
 
-function clean(path) {
-    return del(path, {
-        force: true
-    }); // returns a promise
-}
 
-gulp.task('buildOtherClean', () => {
-    return clean(fileAllPublic);
+gulp.task('buildOtherClean', (done) => {
+    clean(fileClean);
+    done();
 });
 
 gulp.task('buildOtherMove', (done) => {

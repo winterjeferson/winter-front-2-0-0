@@ -5,25 +5,22 @@ const htmlmin = require('gulp-htmlmin'); //npm install gulp-htmlmin --save-dev  
 const del = require('del'); //npm install del --save-dev //https://www.npmjs.com/package/del
 
 const configuration = require('./configuration.js');
+const helper = require('./helper.js');
 
 const extension = 'html';
 const folder = `${configuration.development}template/`;
 const file = `${folder}*.${extension}`;
 const fileAll = folder + configuration.allFolderFile;
+const fileClean = `${configuration.homologation}*.${extension}`;
 
 
 
-function clean(path) {
-    return del(path, {
-        force: true
-    }); // returns a promise
-}
 
-gulp.task('buildTemplateClean', () => {
-    const file = `${configuration.homologation}*.${extension}`;
-
-    return clean(file);
+gulp.task('buildTemplateClean', (done) => {
+    clean(fileClean);
+    done();
 });
+
 
 gulp.task('buildTemplateInclude', () => {
     return gulp
