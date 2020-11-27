@@ -3,6 +3,9 @@ const nunjucksRender = require('gulp-nunjucks-render'); //npm install gulp-nunju
 const rename = require("gulp-rename"); //npm install gulp-rename --save-dev // https://www.npmjs.com/package/gulp-rename/
 const htmlmin = require('gulp-htmlmin'); //npm install gulp-htmlmin --save-dev  //https://www.npmjs.com/package/gulp-htmlmin/
 const del = require('del'); //npm install del --save-dev //https://www.npmjs.com/package/del
+const htmllint = require('gulp-htmllint');
+const fancyLog = require('fancy-log');
+const colors = require('ansi-colors');
 
 const configuration = require('./configuration.js');
 const helper = require('./helper.js');
@@ -39,6 +42,29 @@ gulp.task('buildTemplateMinify', () => {
         }))
         .pipe(gulp.dest(configuration.production));
 });
+
+gulp.task('buildTemplateLint', () => {
+    return gulp.src(fileAll)
+        .pipe(htmllint({}, htmllintReporter));
+});
+
+function htmllintReporter(filepath, issues) {
+
+    if (issues.length > 0) {
+        issues.forEach(function (issue) {
+            if (issue.code === 'E015') {
+                return;
+            }
+
+            fancyLog(colors.cyan('[gulp-htmllint] ') +
+                colors.white(filepath +
+                    ' [' + issue.line + ',' + issue.column + ']: ') +
+                colors.red('(' + issue.code + ') ' + issue.msg));
+        });
+
+        // process.exitCode = 1;
+    }
+}
 
 gulp.task('buildTemplate', gulp.series(
     'buildTemplateClean',
