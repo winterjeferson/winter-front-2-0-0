@@ -41,11 +41,15 @@ class WfMenuDropDown {
         /*removeIf(production)*/
         objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
-        let $arr = document.querySelectorAll('.' + this.classMenu + ' ul > li > ul' + ' , .' + this.classMenuText + ' ul > li > ul');
+        let arr = document.querySelectorAll(`.${this.classMenu} ul > li > ul, .${this.classMenuText} ul > li > ul`);
 
-        Array.prototype.forEach.call($arr, function (item) {
-            if (!document.body.contains(item.parentNode.querySelector('.bt .' + self.classArrow + ' , .link .' + self.classArrow))) {
-                item.parentNode.querySelector('.bt , .link').insertAdjacentHTML('beforeend', self.$icon);
+        Array.prototype.forEach.call(arr, function (item) {
+            if (!document.body.contains(item.parentNode.querySelector(`.bt .${self.classArrow}, .link .${self.classArrow}`))) {
+                let el = item.parentNode.querySelector('.bt , .link');
+
+                if (el) {
+                    el.insertAdjacentHTML('beforeend', self.$icon);
+                }
             }
         });
     }

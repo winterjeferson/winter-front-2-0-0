@@ -1,4 +1,4 @@
-{% from 'shared/template-nunjucks.html' import arrSize, arrColor %}
+{% from 'include/template-nunjucks.html' import arrSize, arrColor %}
 {% set arrIcon = [
 'home',
 'plus',
@@ -14,7 +14,7 @@
 'github'
 ] %}
 
-{% include "shared/head.html" %}
+{% include "include/head.html" %}
 <h1 class="page__title">Icon</h1>
 <div class="row card-wrapper center">
     {% for i in arrIcon %}
@@ -30,4 +30,4 @@
     </div>
     {% endfor %}
 </div>
-{% include "shared/footer.html" %}
+{% include "include/footer.html" %}

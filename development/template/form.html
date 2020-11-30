@@ -1,5 +1,5 @@
-{% from 'shared/template-nunjucks.html' import arrSize, arrColor %}
-{% include "shared/head.html" %}
+{% from 'include/template-nunjucks.html' import arrSize, arrColor %}
+{% include "include/head.html" %}
 <h1 class="page__title">Form</h1>
 
 {% for color in arrColor %}
@@ -127,4 +127,4 @@
     </div>
 </form>
 {% endfor %}
-{% include "shared/footer.html" %}
+{% include "include/footer.html" %}

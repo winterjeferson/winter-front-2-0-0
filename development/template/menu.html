@@ -1,8 +1,8 @@
-{% from 'shared/template-nunjucks.html' import arrSize, arrColor %}
+{% from 'include/template-nunjucks.html' import arrSize, arrColor %}
 {% set arrStatus = ['', 'active', 'disabled'] %}
-{% include "shared/head.html" %}
+{% include "include/head.html" %}
 <h1 class="page__title">Menu</h1>
 {% include "include/menu-drop-down.html" %}
 {% include "include/menu-tab.html" %}
 {% include "include/menu-pagination.html" %}
-{% include "shared/footer.html" %}
+{% include "include/footer.html" %}

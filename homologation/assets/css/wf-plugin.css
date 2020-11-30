@@ -1406,3 +1406,6 @@ img {
     background-color: #ffffff; }
   .loading-2.yellow {
     background-color: #f1c50e; }
+
+.modal {
+  display: none; }

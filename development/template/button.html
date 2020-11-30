@@ -1,4 +1,4 @@
-{% from 'shared/template-nunjucks.html' import arrSize, arrColor %}
+{% from 'include/template-nunjucks.html' import arrSize, arrColor %}
 {% set arrSocial = [
         ['facebook', 'fa-facebook'],
         ['twitter', 'fa-twitter'],
@@ -8,7 +8,7 @@
         ['instagram', 'fa-instagram']
     ]
 %}
-{% include "shared/head.html" %}
+{% include "include/head.html" %}
 <section class="center">
     <h1 class="page__title">Button</h1>
     {% for size in arrSize %}
@@ -61,4 +61,4 @@
     </nav>
     {% endfor %}
 </section>
-{% include "shared/footer.html" %}
+{% include "include/footer.html" %}

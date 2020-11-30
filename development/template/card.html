@@ -1,5 +1,5 @@
-{% from 'shared/template-nunjucks.html' import arrSize, arrColor %}
-{% include "shared/head.html" %}
+{% from 'include/template-nunjucks.html' import arrSize, arrColor %}
+{% include "include/head.html" %}
 <section class="center">
     <h1 class="page__title">Card</h1>
     {% for size in arrSize %}
@@ -34,4 +34,4 @@
     </div>
     {% endfor %}
 </section>
-{% include "shared/footer.html" %}
+{% include "include/footer.html" %}
