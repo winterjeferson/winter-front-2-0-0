@@ -3,12 +3,9 @@
 .link {
     cursor: pointer;
     display: inline-flex;
+    height: fit-content;
     transition: $transition;
     user-select: none;
-
-    &:disabled {
-        pointer-events: none;
-    }
 
     &.extra-small {
         font-size: $font-size-extra-small;
@@ -28,6 +25,10 @@
 
     &.extra-big {
         font-size: $font-size-extra-big;
+    }
+
+    .icon {
+        font-size: 0.87em;
     }
 }
 
@@ -135,7 +136,14 @@
 
             &--disabled,
             &:disabled {
-                border-color: color-regular(#{$color});
+                background-color: color-light(#{$color});
+                border-color: color-light(#{$color});
+            }
+
+            &--active,
+            &--disabled,
+            &:disabled {
+                @extend %extend-disabled;
             }
         }
     }
@@ -153,7 +161,7 @@
         border-radius: 0;
     }
 
-    @each $color in $arrColorButtonOutline {
+    @each $color in $arrColorButton {
         &.#{$color} {
             border-color: color-regular-border(#{$color});
             color: color-regular(#{$color});
@@ -161,7 +169,7 @@
             .icon {
                 fill: color-regular-contrast(#{$color});
             }
-            
+
             &:hover {
                 background-color: color-regular(#{$color});
                 border-color: color-regular(#{$color});
@@ -184,6 +192,12 @@
             &:disabled {
                 border-color: color-light(#{$color});
             }
+
+            &--active,
+            &--disabled,
+            &:disabled {
+                @extend %extend-disabled;
+            }
         }
     }
 }
@@ -197,7 +211,7 @@
         text-decoration: underline;
     }
 
-    @each $color in $arrColorLink {
+    @each $color in $arrColorButton {
         &.#{$color} {
             color: color-regular(#{$color});
 
@@ -212,27 +226,16 @@
                     fill: color-regular-contrast(#{$color});
                 }
             }
-
-            &--active {
-                background-color: color-dark(#{$color});
-
-                .icon {
-                    fill: color-dark(#{$color});
-                }
-            }
-
-            &--disabled,
-            &:disabled {
-                border-color: color-light(#{$color});
-            }
         }
     }
 }
 
 .button-wrapper {
+    align-items: center;
 
     .button,
     .button-outline,
+    .drop-down,
     .link {
         margin: $extra-small;
     }
@@ -241,6 +244,7 @@
 
         .button,
         .button-outline,
+        .drop-down,
         .link {
 
             &:first-child {
@@ -257,6 +261,7 @@
 
         .button,
         .button-outline,
+        .drop-down,
         .link {
 
             &:first-child {

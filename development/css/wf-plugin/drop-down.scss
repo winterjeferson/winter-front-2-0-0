@@ -1,153 +1,41 @@
 .drop-down-text,
 .drop-down {
-    // width: 100%;
-    // width: calc(100% - 6px);
 
-    ul {
-        list-style: none;
-    }
+    >.button,
+    >.button-outline,
+    >.link {
 
-    >ul {
-        margin: 0;
-        padding: 0;
-        position: relative;
-
-        li {
-            border: 1px solid;
-            margin: 0;
-            padding: 0;
-            position: relative;
-            // vertical-align: top;
+        &:after {
+            align-self: center;
+            display: inline-flex;
+            height: 100%;
+            margin-left: $small;
+            margin-top: $extra-small;
         }
 
-        >li {
-            // margin: 0;
-            // padding: 0;
-
-            // @include tablet-landscape {
-            //     margin: $extra-small;
-            // }
-
-            // li {
-            //     width: 100%;
-            // }
-        }
-
-        ul {
-            // display: none;
-            // z-index: z-index("drop-down");
-            // position: relative;
-            // width: 100%;
-
-            // @include tablet-landscape {
-            // position: absolute;
-            // width: auto;
-            // }
-        }
-    }
-}
-
-.drop-down {
-    >ul {
-        // display: none;
-
-        // @include tablet-landscape {
-        //     display: table;
-        // }
-
-        ul {
-            // margin-top: 1px;
-            // border-radius: $border-radius-regular;
-            // @extend %extend-border-default;
-            // border-color: $color-grey;
-            // background-color: $color-white;
-            // position: relative;
-            // width: 100%;
-
-            // @include tablet-landscape {
-            //     position: absolute;
-            //     width: auto;
-            // }
-
-            .button {
-                // border-radius: 0;
-                // background-color: transparent;
-                // border-color: transparent;
-                // color: initial;
-                // box-shadow: none;
-            }
-
-            li {
-                // background-color: transparent;
-                // @extend %extend-border-default;
-                // border-color: transparent;
-                // border-bottom-color: $color-grey-lighten-3;
-
-                &:hover {
-                    // background-color: $color-grey-lighten-3;
-                }
-
-                &:first-child {
-                    // border-radius: $border-radius-regular $border-radius-regular 0 0;
-                }
-
-                &:last-child {
-                    // border-radius: 0 0 $border-radius-regular $border-radius-regular;
-                    // border-bottom: 0;
+        @each $color in $arrColorButton {
+            &.#{$color} {
+                &:after {
+                    @include triangle(color-regular-contrast(#{$color}), down, $size: $small, $position: relative, $round: false);
                 }
             }
         }
-
-        li {
-            // margin-top: -1px;
-        }
-
-        >li {
-            // margin: $extra-small;
-            // width: 100%;
-
-            // @include tablet-landscape {
-            //     width: auto;
-            // }
-        }
-
-        .button {
-            // width: 100%;
-            // white-space: nowrap;
-            // text-align: left;
-
-            // @include tablet-landscape {
-            //     text-align: start;
-            // }
-        }
     }
-}
 
-.drop-down-text {
-    // vertical-align: top;
+    .drop-down__content {
+        display: flex;
+        flex-direction: column;
+        height: 0;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        transition: $transition;
+        z-index: z-index("drop-down");
 
-    >ul {
-        ul {
-            // position: relative;
-            // width: 100%;
-            // padding-left: $regular;
-        }
-
-        >li {
-            // padding: $small;
-            // width: auto !important;
-
-            li {
-                // padding: $small;
-
-                // &:first-child {
-                //     padding-top: $regular;
-                // }
-
-                // &:last-child {
-                //     padding-bottom: 0;
-                // }
-            }
+        &--opened {
+            height: auto;
+            opacity: 1;
+            pointer-events: initial;
         }
     }
 }

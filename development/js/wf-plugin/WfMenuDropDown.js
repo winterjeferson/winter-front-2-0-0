@@ -1,131 +1,70 @@
 class WfMenuDropDown {
     update() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isClickBuild = false;
-        this.classMenu = 'menu-drop-down';
-        this.classArrow = 'bt-arrow';
-        this.classMenuText = this.classMenu + '-text';
-        this.classShowMobile = 'mobile-show';
-
-        this.$menu = document.querySelectorAll('.' + this.classMenu + ' , ' + '.' + this.classMenuText);
-        this.$menuDropDownUl = document.querySelectorAll('.' + this.classMenu + ' ul' + ' , ' + '.' + this.classMenuText + ' ul');
-        this.$menuDropDownLi = document.querySelectorAll('.' + this.classMenu + ' ul li' + ' , ' + '.' + this.classMenuText + ' ul li');
-        this.$icon = `
-            <svg class="icon icon-re ${this.classArrow}">
-                <use xlink:href="./assets/img/icon.svg#triangle"></use>
-            </svg>
-        `;
+        this.classMenu = 'drop-down';
+        this.classMenuText = `${this.classMenu}-text`;
+        this.cssDropDownContent = `${this.classMenu}__content`;
+        this.cssOpend = `${this.cssDropDownContent}--opened`;
+        this.elMenu = document.querySelectorAll(`.${this.classMenu}, .${this.classMenuText}`);
     }
 
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.update();
 
-        if (this.$menu.length < 1) {
+        if (this.elMenu.length < 1) {
             return;
         }
-
-        this.buildIcon();
 
         if (!this.isClickBuild) {
             this.isClickBuild = true;
             this.buildClick();
         }
 
-        this.buildClickOut();
+        document.addEventListener('click', this.close, true);
     }
 
-    buildIcon() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        let self = this;
-        let arr = document.querySelectorAll(`.${this.classMenu} ul > li > ul, .${this.classMenuText} ul > li > ul`);
+    close() {
+        Array.prototype.forEach.call(objWfMenuDropDown.elMenu, function (item) {
+            const elContent = item.querySelector(`.${objWfMenuDropDown.cssDropDownContent}`);
 
-        Array.prototype.forEach.call(arr, function (item) {
-            if (!document.body.contains(item.parentNode.querySelector(`.bt .${self.classArrow}, .link .${self.classArrow}`))) {
-                let el = item.parentNode.querySelector('.bt , .link');
+            if (elContent === null) {
+                return;
+            }
 
-                if (el) {
-                    el.insertAdjacentHTML('beforeend', self.$icon);
-                }
+            if (elContent.classList.contains(objWfMenuDropDown.cssOpend)) {
+                elContent.classList.remove(objWfMenuDropDown.cssOpend);
             }
         });
     }
 
     buildClick() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        let self = this;
+        const self = this;
 
-        Array.prototype.forEach.call(this.$menu, function (item) {
-            let $bt = item.querySelectorAll('li > .bt , li > .link');
-            let $btSubMenu = item.querySelectorAll('ul > li > ul > li > .bt , ul > li > ul > li > .link');
+        Array.prototype.forEach.call(this.elMenu, function (item) {
+            let elButton = item.querySelectorAll('.button:first-child, .link:first-child')[0];
 
-            Array.prototype.forEach.call($bt, function (item) {
-                item.addEventListener('click', function () {
-                    self.buildClickAction(item);
-                });
-            });
-
-            Array.prototype.forEach.call($btSubMenu, function (item) {
-                item.addEventListener('click', function () {
-                    item.parentNode.parentNode.classList.remove(self.classShowMobile);
-                });
+            elButton.addEventListener('click', function () {
+                self.buildClickAction(elButton);
             });
         });
     }
 
     buildClickAction(item) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        let $menuChild = item.parentNode.querySelector('ul');
+        const elContent = item.parentNode.querySelector(`.${this.cssDropDownContent}`);
 
-        if (!document.body.contains($menuChild)) {
+        if (elContent === null) {
             return;
         }
 
-        let $menuDropDown = $menuChild.parentNode.parentNode.parentNode;
-        let $menuDropDownUl = $menuDropDown.querySelector('ul > li > ul');
-
-        if ($menuDropDownUl.classList.contains(this.classShowMobile)) {
-            $menuDropDownUl.classList.remove(this.classShowMobile);
-        }
-
-        if ($menuChild.classList.contains(this.classShowMobile)) {
-            $menuChild.classList.remove(this.classShowMobile);
-        } else {
-            $menuChild.classList.add(this.classShowMobile);
-        }
-
-        $menuChild.classList.remove(self.classShowMobile);
-        $menuChild.style.opacity = 1;
+        this.close();
+        elContent.classList.add(this.cssOpend);
     }
 
-    buildClickOut() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        document.addEventListener('click', this.listener, true);
-    }
-
-    listener(event) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        if (event.toElement.classList.contains('bt') || event.toElement.classList.contains('link')) {
-            return;
-        }
-
-        Array.prototype.forEach.call(document.querySelectorAll('.' + objWfMenuDropDown.classShowMobile), function (item) {
-            item.classList.remove(objWfMenuDropDown.classShowMobile);
-        });
-    }
-
-    reset() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        document.removeEventListener('click', event, true);
-        document.removeEventListener('click', this.listener, true);
-        objWfMenuDropDown.build();
-    }
+    // reset() {
+    /*removeIf(production)*/
+    // objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+    // document.removeEventListener('click', event, true);
+    // document.removeEventListener('click', this.listener, true);
+    // objWfMenuDropDown.build();
+    // }
 }

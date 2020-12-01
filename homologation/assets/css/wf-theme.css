@@ -102,3 +102,8 @@
 
 .gallery__item {
   flex: 1; }
+
+.theme-header,
+.theme-footer,
+.theme-menu {
+  opacity: .2; }

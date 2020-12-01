@@ -9,6 +9,10 @@
   border-width: $border-width;
 }
 
+%extend-disabled {
+  pointer-events: none;
+}
+
 %extend-margin-component {
   margin-left: $regular;
   margin-right: $regular;

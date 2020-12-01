@@ -61,12 +61,11 @@ function htmllintReporter(filepath, issues) {
                     ' [' + issue.line + ',' + issue.column + ']: ') +
                 colors.red('(' + issue.code + ') ' + issue.msg));
         });
-
-        // process.exitCode = 1;
     }
 }
 
 gulp.task('buildTemplate', gulp.series(
+    'buildTemplateLint',
     'buildTemplateClean',
     'buildTemplateInclude',
 ));

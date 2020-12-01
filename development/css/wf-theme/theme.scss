@@ -139,3 +139,10 @@
         @extend %extend-margin-component;
     }
 }
+
+
+.theme-header,
+.theme-footer,
+.theme-menu {
+    opacity: .2;
+}
