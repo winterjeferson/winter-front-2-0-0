@@ -1,4 +1,5 @@
 .tab {
+    $self : button;
     align-items: flex-end;
     border-bottom: $border-width solid;
     margin-bottom: 0;
@@ -16,7 +17,7 @@
         border-color: transparent;
 
         @each $color in $arrColorButton {
-            &.#{$color} {
+            &--#{$color} {
                 color: color-regular(#{$color});
 
                 &:hover {
@@ -32,11 +33,11 @@
     }
 
     @each $color in $arrColorButton {
-        &.#{$color} {
+        &--#{$color} {
             border-bottom-color: color-regular(#{$color});
         }
 
-        .#{$color}--active {
+        .#{$self}--#{$color}--active {
             background-color: color-regular(#{$color});
             border-color: color-regular(#{$color});
             color: color-regular-contrast(#{$color});

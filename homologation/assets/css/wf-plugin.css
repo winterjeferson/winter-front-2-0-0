@@ -1648,195 +1648,195 @@ img {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-color: transparent; }
-    .tab .drop-down > .button.black,
-    .tab > .button.black {
+    .tab .drop-down > .button--black,
+    .tab > .button--black {
       color: #333333; }
-      .tab .drop-down > .button.black:hover,
-      .tab > .button.black:hover {
+      .tab .drop-down > .button--black:hover,
+      .tab > .button--black:hover {
         background-color: #333333;
         color: #ffffff; }
-      .tab .drop-down > .button.black .icon,
-      .tab > .button.black .icon {
+      .tab .drop-down > .button--black .icon,
+      .tab > .button--black .icon {
         fill: #333333; }
-    .tab .drop-down > .button.blue,
-    .tab > .button.blue {
+    .tab .drop-down > .button--blue,
+    .tab > .button--blue {
       color: #3297db; }
-      .tab .drop-down > .button.blue:hover,
-      .tab > .button.blue:hover {
+      .tab .drop-down > .button--blue:hover,
+      .tab > .button--blue:hover {
         background-color: #3297db;
         color: #ffffff; }
-      .tab .drop-down > .button.blue .icon,
-      .tab > .button.blue .icon {
+      .tab .drop-down > .button--blue .icon,
+      .tab > .button--blue .icon {
         fill: #3297db; }
-    .tab .drop-down > .button.brown,
-    .tab > .button.brown {
+    .tab .drop-down > .button--brown,
+    .tab > .button--brown {
       color: #7f4d04; }
-      .tab .drop-down > .button.brown:hover,
-      .tab > .button.brown:hover {
+      .tab .drop-down > .button--brown:hover,
+      .tab > .button--brown:hover {
         background-color: #7f4d04;
         color: #ffffff; }
-      .tab .drop-down > .button.brown .icon,
-      .tab > .button.brown .icon {
+      .tab .drop-down > .button--brown .icon,
+      .tab > .button--brown .icon {
         fill: #7f4d04; }
-    .tab .drop-down > .button.cyan,
-    .tab > .button.cyan {
+    .tab .drop-down > .button--cyan,
+    .tab > .button--cyan {
       color: #23c4af; }
-      .tab .drop-down > .button.cyan:hover,
-      .tab > .button.cyan:hover {
+      .tab .drop-down > .button--cyan:hover,
+      .tab > .button--cyan:hover {
         background-color: #23c4af;
         color: #ffffff; }
-      .tab .drop-down > .button.cyan .icon,
-      .tab > .button.cyan .icon {
+      .tab .drop-down > .button--cyan .icon,
+      .tab > .button--cyan .icon {
         fill: #23c4af; }
-    .tab .drop-down > .button.green,
-    .tab > .button.green {
+    .tab .drop-down > .button--green,
+    .tab > .button--green {
       color: #2dcc70; }
-      .tab .drop-down > .button.green:hover,
-      .tab > .button.green:hover {
+      .tab .drop-down > .button--green:hover,
+      .tab > .button--green:hover {
         background-color: #2dcc70;
         color: #ffffff; }
-      .tab .drop-down > .button.green .icon,
-      .tab > .button.green .icon {
+      .tab .drop-down > .button--green .icon,
+      .tab > .button--green .icon {
         fill: #2dcc70; }
-    .tab .drop-down > .button.grey,
-    .tab > .button.grey {
+    .tab .drop-down > .button--grey,
+    .tab > .button--grey {
       color: #bec3c7; }
-      .tab .drop-down > .button.grey:hover,
-      .tab > .button.grey:hover {
+      .tab .drop-down > .button--grey:hover,
+      .tab > .button--grey:hover {
         background-color: #bec3c7;
         color: #333333; }
-      .tab .drop-down > .button.grey .icon,
-      .tab > .button.grey .icon {
+      .tab .drop-down > .button--grey .icon,
+      .tab > .button--grey .icon {
         fill: #bec3c7; }
-    .tab .drop-down > .button.orange,
-    .tab > .button.orange {
+    .tab .drop-down > .button--orange,
+    .tab > .button--orange {
       color: #e77e22; }
-      .tab .drop-down > .button.orange:hover,
-      .tab > .button.orange:hover {
+      .tab .drop-down > .button--orange:hover,
+      .tab > .button--orange:hover {
         background-color: #e77e22;
         color: #ffffff; }
-      .tab .drop-down > .button.orange .icon,
-      .tab > .button.orange .icon {
+      .tab .drop-down > .button--orange .icon,
+      .tab > .button--orange .icon {
         fill: #e77e22; }
-    .tab .drop-down > .button.pink,
-    .tab > .button.pink {
+    .tab .drop-down > .button--pink,
+    .tab > .button--pink {
       color: #e81cb6; }
-      .tab .drop-down > .button.pink:hover,
-      .tab > .button.pink:hover {
+      .tab .drop-down > .button--pink:hover,
+      .tab > .button--pink:hover {
         background-color: #e81cb6;
         color: #ffffff; }
-      .tab .drop-down > .button.pink .icon,
-      .tab > .button.pink .icon {
+      .tab .drop-down > .button--pink .icon,
+      .tab > .button--pink .icon {
         fill: #e81cb6; }
-    .tab .drop-down > .button.purple,
-    .tab > .button.purple {
+    .tab .drop-down > .button--purple,
+    .tab > .button--purple {
       color: #9a59b5; }
-      .tab .drop-down > .button.purple:hover,
-      .tab > .button.purple:hover {
+      .tab .drop-down > .button--purple:hover,
+      .tab > .button--purple:hover {
         background-color: #9a59b5;
         color: #ffffff; }
-      .tab .drop-down > .button.purple .icon,
-      .tab > .button.purple .icon {
+      .tab .drop-down > .button--purple .icon,
+      .tab > .button--purple .icon {
         fill: #9a59b5; }
-    .tab .drop-down > .button.red,
-    .tab > .button.red {
+    .tab .drop-down > .button--red,
+    .tab > .button--red {
       color: #e14b4a; }
-      .tab .drop-down > .button.red:hover,
-      .tab > .button.red:hover {
+      .tab .drop-down > .button--red:hover,
+      .tab > .button--red:hover {
         background-color: #e14b4a;
         color: #ffffff; }
-      .tab .drop-down > .button.red .icon,
-      .tab > .button.red .icon {
+      .tab .drop-down > .button--red .icon,
+      .tab > .button--red .icon {
         fill: #e14b4a; }
-    .tab .drop-down > .button.white,
-    .tab > .button.white {
+    .tab .drop-down > .button--white,
+    .tab > .button--white {
       color: #ffffff; }
-      .tab .drop-down > .button.white:hover,
-      .tab > .button.white:hover {
+      .tab .drop-down > .button--white:hover,
+      .tab > .button--white:hover {
         background-color: #ffffff;
         color: #333333; }
-      .tab .drop-down > .button.white .icon,
-      .tab > .button.white .icon {
+      .tab .drop-down > .button--white .icon,
+      .tab > .button--white .icon {
         fill: #ffffff; }
-    .tab .drop-down > .button.yellow,
-    .tab > .button.yellow {
+    .tab .drop-down > .button--yellow,
+    .tab > .button--yellow {
       color: #f1c50e; }
-      .tab .drop-down > .button.yellow:hover,
-      .tab > .button.yellow:hover {
+      .tab .drop-down > .button--yellow:hover,
+      .tab > .button--yellow:hover {
         background-color: #f1c50e;
         color: #ffffff; }
-      .tab .drop-down > .button.yellow .icon,
-      .tab > .button.yellow .icon {
+      .tab .drop-down > .button--yellow .icon,
+      .tab > .button--yellow .icon {
         fill: #f1c50e; }
-  .tab.black {
+  .tab--black {
     border-bottom-color: #333333; }
-  .tab .black--active {
+  .tab .button--black--active {
     background-color: #333333;
     border-color: #333333;
     color: #ffffff; }
-  .tab.blue {
+  .tab--blue {
     border-bottom-color: #3297db; }
-  .tab .blue--active {
+  .tab .button--blue--active {
     background-color: #3297db;
     border-color: #3297db;
     color: #ffffff; }
-  .tab.brown {
+  .tab--brown {
     border-bottom-color: #7f4d04; }
-  .tab .brown--active {
+  .tab .button--brown--active {
     background-color: #7f4d04;
     border-color: #7f4d04;
     color: #ffffff; }
-  .tab.cyan {
+  .tab--cyan {
     border-bottom-color: #23c4af; }
-  .tab .cyan--active {
+  .tab .button--cyan--active {
     background-color: #23c4af;
     border-color: #23c4af;
     color: #ffffff; }
-  .tab.green {
+  .tab--green {
     border-bottom-color: #2dcc70; }
-  .tab .green--active {
+  .tab .button--green--active {
     background-color: #2dcc70;
     border-color: #2dcc70;
     color: #ffffff; }
-  .tab.grey {
+  .tab--grey {
     border-bottom-color: #bec3c7; }
-  .tab .grey--active {
+  .tab .button--grey--active {
     background-color: #bec3c7;
     border-color: #bec3c7;
     color: #333333; }
-  .tab.orange {
+  .tab--orange {
     border-bottom-color: #e77e22; }
-  .tab .orange--active {
+  .tab .button--orange--active {
     background-color: #e77e22;
     border-color: #e77e22;
     color: #ffffff; }
-  .tab.pink {
+  .tab--pink {
     border-bottom-color: #e81cb6; }
-  .tab .pink--active {
+  .tab .button--pink--active {
     background-color: #e81cb6;
     border-color: #e81cb6;
     color: #ffffff; }
-  .tab.purple {
+  .tab--purple {
     border-bottom-color: #9a59b5; }
-  .tab .purple--active {
+  .tab .button--purple--active {
     background-color: #9a59b5;
     border-color: #9a59b5;
     color: #ffffff; }
-  .tab.red {
+  .tab--red {
     border-bottom-color: #e14b4a; }
-  .tab .red--active {
+  .tab .button--red--active {
     background-color: #e14b4a;
     border-color: #e14b4a;
     color: #ffffff; }
-  .tab.white {
+  .tab--white {
     border-bottom-color: #ffffff; }
-  .tab .white--active {
+  .tab .button--white--active {
     background-color: #ffffff;
     border-color: #ffffff;
     color: #333333; }
-  .tab.yellow {
+  .tab--yellow {
     border-bottom-color: #f1c50e; }
-  .tab .yellow--active {
+  .tab .button--yellow--active {
     background-color: #f1c50e;
     border-color: #f1c50e;
     color: #ffffff; }
