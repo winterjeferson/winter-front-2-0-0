@@ -757,17 +757,8 @@ class WfMenuDropDown {
             return;
         }
 
-        this.close();
         elContent.classList.add(this.cssOpend);
     }
-
-    // reset() {
-    /*removeIf(production)*/
-    // objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-    // document.removeEventListener('click', event, true);
-    // document.removeEventListener('click', this.listener, true);
-    // objWfMenuDropDown.build();
-    // }
 }
 class WfMenuTab {
     build() {

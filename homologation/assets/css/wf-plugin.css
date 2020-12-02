@@ -1021,6 +1021,7 @@ img {
 .button-group {
   margin: 10px auto; }
   .button-group .button,
+  .button-group .drop-down,
   .button-group .button-outline {
     margin-left: -1px; }
   .button-group > .button:not(:first-child):not(:last-child),
