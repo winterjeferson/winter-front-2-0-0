@@ -85,7 +85,7 @@ class WfCarousel {
 
         for (let i = 0; i < length; i++) {
             concat += `
-                <button type="button" class="button small proportional ${this.cssButton}" data-id="${i}" aria-hidden="true"></button>
+                <button type="button" class="button button--small button--small--proportional ${this.cssButton}" data-id="${i}" aria-hidden="true"></button>
             `;
         }
 

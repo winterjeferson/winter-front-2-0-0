@@ -19,6 +19,11 @@
             &.#{$color} {
                 color: color-regular(#{$color});
 
+                &:hover {
+                    background-color: color-regular(#{$color});
+                    color: color-regular-contrast(#{$color});
+                }
+
                 .icon {
                     fill: color-regular(#{$color});
                 }
@@ -30,14 +35,11 @@
         &.#{$color} {
             border-bottom-color: color-regular(#{$color});
         }
-    }
 
-    &--active {
-        // @each $color in $arrColorButton {
-        // &.#{$color} {
-        background-color: red;
-        box-shadow: 10px 10px 10px rgba($color-black, .5);
-        // }
-        // }
+        .#{$color}--active {
+            background-color: color-regular(#{$color});
+            border-color: color-regular(#{$color});
+            color: color-regular-contrast(#{$color});
+        }
     }
 }

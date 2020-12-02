@@ -7,23 +7,23 @@
     transition: $transition;
     user-select: none;
 
-    &.extra-small {
+    &--extra-small {
         font-size: $font-size-extra-small;
     }
 
-    &.small {
+    &--small {
         font-size: $font-size-small;
     }
 
-    &.regular {
+    &--regular {
         font-size: $font-size-regular;
     }
 
-    &.big {
+    &--big {
         font-size: $font-size-big;
     }
 
-    &.extra-big {
+    &--extra-big {
         font-size: $font-size-extra-big;
     }
 
@@ -37,42 +37,42 @@
     border-style: solid;
     text-decoration: none;
 
-    &.extra-small {
+    &--extra-small {
         padding: $extra-small $small;
 
-        &.proportional {
+        &--proportional {
             padding: $extra-small;
         }
     }
 
-    &.small {
+    &--small {
         padding: $small $regular;
 
-        &.proportional {
+        &--proportional {
             padding: $small;
         }
     }
 
-    &.regular {
+    &--regular {
         padding: $regular $big;
 
-        &.proportional {
+        &--proportional {
             padding: $regular;
         }
     }
 
-    &.big {
+    &--big {
         padding: $big $extra-big;
 
-        &.proportional {
+        &--proportional {
             padding: $big;
         }
     }
 
-    &.extra-big {
+    &--extra-big {
         padding: $extra-big $extra-big-2;
 
-        &.proportional {
+        &--proportional {
             padding: $extra-big;
         }
     }
@@ -81,28 +81,28 @@
 .button {
     border-width: $border-width;
 
-    &.extra-small {
+    &--extra-small {
         border-radius: $border-radius-extra-small;
     }
 
-    &.small {
+    &--small {
         border-radius: $border-radius-small;
     }
 
-    &.regular {
+    &--regular {
         border-radius: $border-radius-regular;
     }
 
-    &.big {
+    &--big {
         border-radius: $border-radius-big;
     }
 
-    &.extra-big {
+    &--extra-big {
         border-radius: $border-radius-extra-big;
     }
 
     @each $color in $arrColorButton {
-        &.#{$color} {
+        &--#{$color} {
             background-color: color-regular(#{$color});
             border-color: color-regular-border(#{$color});
             color: color-regular-contrast(#{$color});
@@ -153,16 +153,16 @@
     background-color: transparent;
     border-width: $border-width * 2;
 
-    &.extra-small,
-    &.small,
-    &.regular,
-    &.big,
-    &.extra-big {
+    &--extra-small,
+    &--small,
+    &--regular,
+    &--big,
+    &--extra-big {
         border-radius: 0;
     }
 
     @each $color in $arrColorButton {
-        &.#{$color} {
+        &--#{$color} {
             border-color: color-regular-border(#{$color});
             color: color-regular(#{$color});
 
@@ -212,7 +212,7 @@
     }
 
     @each $color in $arrColorButton {
-        &.#{$color} {
+        &--#{$color} {
             color: color-regular(#{$color});
 
             .icon {
@@ -225,6 +225,76 @@
                 .icon {
                     fill: color-regular-contrast(#{$color});
                 }
+            }
+        }
+    }
+}
+
+.drop-down-text,
+.drop-down {
+
+    >.button,
+    >.button-outline,
+    >.link {
+
+        &:after {
+            align-self: center;
+            content: '';
+            display: inline-flex;
+            height: 100%;
+            margin-left: $small;
+            margin-top: $extra-small;
+        }
+
+        @each $color in $arrColorButton {
+            &--#{$color} {
+                &:after {
+                    @include triangle(color-regular-contrast(#{$color}), down, $size: $small, $position: relative, $round: false);
+                }
+            }
+        }
+    }
+
+    .drop-down__content {
+        display: flex;
+        flex-direction: column;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        pointer-events: none;
+        position: absolute;
+        transition: $transition;
+        z-index: z-index("drop-down");
+
+        &--opened {
+            height: auto;
+            opacity: 1;
+            pointer-events: initial;
+        }
+
+        .button {
+            margin: 0;
+            margin-top: -$border-width;
+
+            &:not(:first-child):not(:last-child) {
+                border-radius: 0;
+            }
+
+            &:first-child {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                margin-top: -($border-width + 1);
+            }
+
+            &:last-child {
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+        }
+
+        @each $color in $arrColorButton {
+            &--#{$color} {
+                border-color: $color-grey;
             }
         }
     }
@@ -277,9 +347,11 @@
 
 .button-group {
     margin: $regular auto;
+    $button: button;
+    $button-outline: button-outline;
+    $drop-down: drop-down;
 
     .button,
-    .drop-down,
     .button-outline {
         margin-left: -$border-width;
     }
@@ -287,62 +359,18 @@
     >.button,
     >.drop-down>.button,
     >.button-outline {
-        border-radius: 0;
-    }
-
-    >:first-child {
-
-        &.extra-small {
-            border-bottom-left-radius: $border-radius-extra-small;
-            border-top-left-radius: $border-radius-extra-small;
+        &:not(:first-child):not(:last-child) {
+            border-radius: 0;
         }
 
-        &.small {
-            border-bottom-left-radius: $border-radius-small;
-            border-top-left-radius: $border-radius-small;
+        &:first-child {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
         }
 
-        &.regular {
-            border-bottom-left-radius: $border-radius-regular;
-            border-top-left-radius: $border-radius-regular;
-        }
-
-        &.big {
-            border-bottom-left-radius: $border-radius-big;
-            border-top-left-radius: $border-radius-big;
-        }
-
-        &.extra-big {
-            border-bottom-left-radius: $border-radius-extra-big;
-            border-top-left-radius: $border-radius-extra-big;
-        }
-    }
-
-    >:last-child {
-
-        &.extra-small {
-            border-bottom-right-radius: $border-radius-extra-small;
-            border-top-right-radius: $border-radius-extra-small;
-        }
-
-        &.small {
-            border-bottom-right-radius: $border-radius-small;
-            border-top-right-radius: $border-radius-small;
-        }
-
-        &.regular {
-            border-bottom-right-radius: $border-radius-regular;
-            border-top-right-radius: $border-radius-regular;
-        }
-
-        &.big {
-            border-bottom-right-radius: $border-radius-big;
-            border-top-right-radius: $border-radius-big;
-        }
-
-        &.extra-big {
-            border-bottom-right-radius: $border-radius-extra-big;
-            border-top-right-radius: $border-radius-extra-big;
+        &:last-child {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
         }
     }
 }
