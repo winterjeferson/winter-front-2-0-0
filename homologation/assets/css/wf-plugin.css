@@ -716,19 +716,6 @@ img {
       .link--yellow:hover .icon {
         fill: #ffffff; }
 
-.drop-down-text > .button:after,
-.drop-down-text > .button-outline:after,
-.drop-down-text > .link:after,
-.drop-down > .button:after,
-.drop-down > .button-outline:after,
-.drop-down > .link:after {
-  align-self: center;
-  content: '';
-  display: inline-flex;
-  height: 100%;
-  margin-left: 5px;
-  margin-top: 2px; }
-
 .drop-down-text > .button--black:after,
 .drop-down-text > .button-outline--black:after,
 .drop-down-text > .link--black:after,
@@ -920,6 +907,19 @@ img {
   border-right: 5px solid transparent;
   border-top: 5px solid #ffffff;
   margin-top: 5px; }
+
+.drop-down-text > .button:after,
+.drop-down-text > .button-outline:after,
+.drop-down-text > .link:after,
+.drop-down > .button:after,
+.drop-down > .button-outline:after,
+.drop-down > .link:after {
+  align-self: center;
+  content: '';
+  display: inline-flex;
+  height: 100%;
+  margin-left: 5px;
+  margin-top: 1px; }
 
 .drop-down-text .drop-down__content,
 .drop-down .drop-down__content {
@@ -1769,6 +1769,246 @@ img {
       .tab .drop-down > .button--yellow .icon,
       .tab > .button--yellow .icon {
         fill: #f1c50e; }
+  .tab .drop-down > .button--black:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333333;
+    margin-top: 5px; }
+  .tab .drop-down > .button--black:hover:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    margin-top: 5px; }
+  .tab .drop-down > .button--blue:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #3297db;
+    margin-top: 5px; }
+  .tab .drop-down > .button--blue:hover:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    margin-top: 5px; }
+  .tab .drop-down > .button--brown:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #7f4d04;
+    margin-top: 5px; }
+  .tab .drop-down > .button--brown:hover:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    margin-top: 5px; }
+  .tab .drop-down > .button--cyan:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #23c4af;
+    margin-top: 5px; }
+  .tab .drop-down > .button--cyan:hover:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    margin-top: 5px; }
+  .tab .drop-down > .button--green:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #2dcc70;
+    margin-top: 5px; }
+  .tab .drop-down > .button--green:hover:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    margin-top: 5px; }
+  .tab .drop-down > .button--grey:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #bec3c7;
+    margin-top: 5px; }
+  .tab .drop-down > .button--grey:hover:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333333;
+    margin-top: 5px; }
+  .tab .drop-down > .button--orange:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #e77e22;
+    margin-top: 5px; }
+  .tab .drop-down > .button--orange:hover:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    margin-top: 5px; }
+  .tab .drop-down > .button--pink:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #e81cb6;
+    margin-top: 5px; }
+  .tab .drop-down > .button--pink:hover:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    margin-top: 5px; }
+  .tab .drop-down > .button--purple:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #9a59b5;
+    margin-top: 5px; }
+  .tab .drop-down > .button--purple:hover:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    margin-top: 5px; }
+  .tab .drop-down > .button--red:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #e14b4a;
+    margin-top: 5px; }
+  .tab .drop-down > .button--red:hover:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    margin-top: 5px; }
+  .tab .drop-down > .button--white:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    margin-top: 5px; }
+  .tab .drop-down > .button--white:hover:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333333;
+    margin-top: 5px; }
+  .tab .drop-down > .button--yellow:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #f1c50e;
+    margin-top: 5px; }
+  .tab .drop-down > .button--yellow:hover:after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    margin-top: 5px; }
   .tab--black {
     border-bottom-color: #333333; }
   .tab .button--black--active {

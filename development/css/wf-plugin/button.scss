@@ -236,16 +236,6 @@
     >.button,
     >.button-outline,
     >.link {
-
-        &:after {
-            align-self: center;
-            content: '';
-            display: inline-flex;
-            height: 100%;
-            margin-left: $small;
-            margin-top: $extra-small;
-        }
-
         @each $color in $arrColorButton {
             &--#{$color} {
                 &:after {
@@ -253,6 +243,16 @@
                 }
             }
         }
+
+        &:after {
+            align-self: center;
+            content: '';
+            display: inline-flex;
+            height: 100%;
+            margin-left: $small;
+            margin-top: 1px;
+        }
+
     }
 
     .drop-down__content {

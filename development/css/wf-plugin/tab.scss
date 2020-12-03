@@ -1,5 +1,5 @@
 .tab {
-    $self : button;
+    $self: button;
     align-items: flex-end;
     border-bottom: $border-width solid;
     margin-bottom: 0;
@@ -27,6 +27,22 @@
 
                 .icon {
                     fill: color-regular(#{$color});
+                }
+            }
+        }
+    }
+
+    .drop-down>.button {
+        @each $color in $arrColorButton {
+            &--#{$color} {
+                &:after {
+                    @include triangle(color-regular(#{$color}), down, $size: $small, $position: relative, $round: false);
+                }
+
+                &:hover {
+                    &:after {
+                        @include triangle(color-regular-contrast(#{$color}), down, $size: $small, $position: relative, $round: false);
+                    }
                 }
             }
         }
