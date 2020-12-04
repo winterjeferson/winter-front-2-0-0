@@ -1792,6 +1792,105 @@ img {
   .progress--yellow .progress__bar {
     background-color: #f1c50e; }
 
+.scrollbar::-webkit-scrollbar {
+  width: 10px; }
+
+.scrollbar--black {
+  scrollbar-color: #333333 #f2f2f2; }
+  .scrollbar--black::-webkit-scrollbar {
+    background-color: #cccccc;
+    width: 12px; }
+  .scrollbar--black::-webkit-scrollbar-thumb {
+    background-color: #333333; }
+
+.scrollbar--blue {
+  scrollbar-color: #3297db #e0eff9; }
+  .scrollbar--blue::-webkit-scrollbar {
+    background-color: #cae4f6;
+    width: 12px; }
+  .scrollbar--blue::-webkit-scrollbar-thumb {
+    background-color: #3297db; }
+
+.scrollbar--brown {
+  scrollbar-color: #7f4d04 #fef6ea; }
+  .scrollbar--brown::-webkit-scrollbar {
+    background-color: #fbcc87;
+    width: 12px; }
+  .scrollbar--brown::-webkit-scrollbar-thumb {
+    background-color: #7f4d04; }
+
+.scrollbar--cyan {
+  scrollbar-color: #23c4af #d5f8f3; }
+  .scrollbar--cyan::-webkit-scrollbar {
+    background-color: #aaf0e7;
+    width: 12px; }
+  .scrollbar--cyan::-webkit-scrollbar-thumb {
+    background-color: #23c4af; }
+
+.scrollbar--green {
+  scrollbar-color: #2dcc70 #e5f9ee; }
+  .scrollbar--green::-webkit-scrollbar {
+    background-color: #bbf0d2;
+    width: 12px; }
+  .scrollbar--green::-webkit-scrollbar-thumb {
+    background-color: #2dcc70; }
+
+.scrollbar--grey {
+  scrollbar-color: #bec3c7 #f5f6f6; }
+  .scrollbar--grey::-webkit-scrollbar {
+    background-color: #e7e9ea;
+    width: 12px; }
+  .scrollbar--grey::-webkit-scrollbar-thumb {
+    background-color: #bec3c7; }
+
+.scrollbar--orange {
+  scrollbar-color: #e77e22 #fbe9da; }
+  .scrollbar--orange::-webkit-scrollbar {
+    background-color: #f8dcc3;
+    width: 12px; }
+  .scrollbar--orange::-webkit-scrollbar-thumb {
+    background-color: #e77e22; }
+
+.scrollbar--pink {
+  scrollbar-color: #e81cb6 #fdecf9; }
+  .scrollbar--pink::-webkit-scrollbar {
+    background-color: #fbd5f2;
+    width: 12px; }
+  .scrollbar--pink::-webkit-scrollbar-thumb {
+    background-color: #e81cb6; }
+
+.scrollbar--purple {
+  scrollbar-color: #9a59b5 #f0e6f4; }
+  .scrollbar--purple::-webkit-scrollbar {
+    background-color: #e5d4ec;
+    width: 12px; }
+  .scrollbar--purple::-webkit-scrollbar-thumb {
+    background-color: #9a59b5; }
+
+.scrollbar--red {
+  scrollbar-color: #e14b4a #fae3e3; }
+  .scrollbar--red::-webkit-scrollbar {
+    background-color: #fae3e3;
+    width: 12px; }
+  .scrollbar--red::-webkit-scrollbar-thumb {
+    background-color: #e14b4a; }
+
+.scrollbar--white {
+  scrollbar-color: #ffffff #ffffff; }
+  .scrollbar--white::-webkit-scrollbar {
+    background-color: #ffffff;
+    width: 12px; }
+  .scrollbar--white::-webkit-scrollbar-thumb {
+    background-color: #ffffff; }
+
+.scrollbar--yellow {
+  scrollbar-color: #f1c50e #fef9e7; }
+  .scrollbar--yellow::-webkit-scrollbar {
+    background-color: #fbeeb7;
+    width: 12px; }
+  .scrollbar--yellow::-webkit-scrollbar-thumb {
+    background-color: #f1c50e; }
+
 .tab {
   align-items: flex-end;
   border-bottom: 1px solid;

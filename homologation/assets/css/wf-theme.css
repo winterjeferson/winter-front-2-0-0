@@ -114,6 +114,14 @@
 .page {
   opacity: .3; }
 
+.theme-scroll .scrollbar {
+  height: 300px;
+  margin: 10px;
+  overflow-y: scroll; }
+
+.theme-scroll .scrollbar-force-overflow {
+  min-height: 450px; }
+
 [class*="color-"] {
   float: left;
   position: relative;

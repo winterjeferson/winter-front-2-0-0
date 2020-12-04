@@ -154,3 +154,15 @@
 .page {
     opacity: .3;
 }
+
+.theme-scroll {
+    .scrollbar {
+        height: 300px;
+        margin: $regular;
+        overflow-y: scroll;
+    }
+
+    .scrollbar-force-overflow {
+        min-height: 450px;
+    }
+}
