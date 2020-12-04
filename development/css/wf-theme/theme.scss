@@ -136,7 +136,7 @@
 .gallery {
     &__item {
         flex: 1;
-        @extend %extend-margin-component;
+        @extend %extend-component-margin;
     }
 }
 

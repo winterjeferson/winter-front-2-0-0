@@ -20,7 +20,11 @@
     text-align: center;
 }
 
-.flip {
+.rotate-45 {
+    transform: rotate(45deg);
+}
+
+.rotate-180 {
     transform: rotate(180deg);
 }
 

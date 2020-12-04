@@ -1218,107 +1218,89 @@ class WfModal {
 }
 class WfNotification {
     constructor() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$body = document.querySelector('body');
-        this.$notifyItem = document.querySelectorAll('.notify-item');
+        this.elBody = document.querySelector('body');
+        this.elNotificationId = 'notification';
 
-        this.notifyId = 0;
+        this.notificationId = 0;
     }
 
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.buildHtml();
-        this.buildNavigation();
+        this.update();
+    }
+
+    update() {
+        this.elNotification = document.querySelector(`#${this.elNotificationId}`);
     }
 
     buildHtml() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        let html = `
-            <div id="notify">
-                <ul class="notify-list">
-                </ul>
-            </div>
-        `;
+        const html = `<div id="${this.elNotificationId}" class="${this.elNotificationId} ${this.elNotificationId}--default"></div>`;
 
-        this.$body.insertAdjacentHTML('beforeend', html);
-        this.$notify = document.querySelector('#notify .notify-list');
+        this.elBody.insertAdjacentHTML('beforeend', html);
     }
 
     buildHtmlItem(style = 'grey', message) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [style, message]); /*endRemoveIf(production)*/
         return `
-            <li id="notify${this.notifyId}">
-                <div class="notify-item notify-${style}">
-                    <span class="text">${message}</span>
-                    <button type="button" class="bt" onclick="objWfNotification.remove(this.parentNode, 0)" aria-label="${objWfTranslation.translation.close}">
-                        <svg class="icon icon-re rotate-45">
-                            <use xlink:href="./assets/img/icon.svg#plus"></use>
-                        </svg>
-                    </button>
-                </div>
-            </li>
+            <div class="${this.elNotificationId}__item ${this.elNotificationId}--regular ${this.elNotificationId}--${style}" id="${this.elNotificationId}${this.notificationId}">
+                <span class="${this.elNotificationId}__text">${message}</span>
+                <button type="button" class="button button--small button--small--proportional button--transparent" onclick="objWfNotification.remove(this.parentNode, 0)" aria-label="${objWfTranslation.translation.close}">
+                    <svg class="icon icon--regular rotate-45">
+                        <use xlink:href="./assets/img/icon.svg#plus"></use>
+                    </svg>
+                </button>
+            </div>
         `;
     }
 
-    buildNavigation() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
+    add(obj) {
+        if (!obj.text) {
+            return;
+        }
 
-        Array.prototype.forEach.call(this.$notifyItem, function (item) {
-            let bt = item.querySelectorAll('.bt');
-
-            Array.prototype.forEach.call(bt, function (item) {
-                item.addEventListener('click', function () {
-                    item.parentNode.parentNode.parentNode.removeChild(item.parentNode.parentNode);
-                });
-            });
-        });
+        this.placeItem(obj);
+        this.remove(document.querySelector(`#${this.elNotificationId}${this.notificationId}`), obj.text.length);
+        this.notificationId++;
     }
 
-    add(message, style, place = this.$notify) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [message, style, place]); /*endRemoveIf(production)*/
-        let string = this.buildHtmlItem(style, message);
-        let newPlace = '';
+    placeItem(obj) {
+        let string = this.buildHtmlItem(obj.color, obj.text);
+        let place = '';
 
-        if (!message) {
-            return false;
-        }
-
-        if (place !== this.$notify) {
-            if (typeof place === 'string') {
-                newPlace = document.querySelector(place);
-            } else {
-                newPlace = place;
-            }
-
-            if (!newPlace.querySelector('.notify-list')) {
-                newPlace.insertAdjacentHTML('beforeend', '<ul class="notify-list"></ul>');
-            }
-
-            newPlace.querySelector('.notify-list').insertAdjacentHTML('beforeend', string);
+        if (typeof obj.place === 'undefined') {
+            place = this.elNotification;
         } else {
-            place.insertAdjacentHTML('beforeend', string);
+            let elList = document.querySelector(obj.place).querySelector(`.${this.elNotificationId}`);
+
+            if (elList === null) {
+                let newString = `
+                <div class="${this.elNotificationId}">
+                    ${string}
+                </div>
+                `;
+                string = newString;
+                place = document.querySelector(obj.place);
+            } else {
+                place = elList;
+            }
         }
 
-        this.remove(document.querySelector('#notify' + this.notifyId), message.length);
-        this.notifyId++;
+        place.insertAdjacentHTML('beforeend', string);
     }
 
     remove(item, messageLength) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [item, messageLength]); /*endRemoveIf(production)*/
         let messageTime = messageLength * 150;
 
-        function remove() {
-            item.parentNode.removeChild(item);
+        setTimeout(() => {
+            this.removeItem(item)
+        }, messageTime);
+    }
+
+    removeItem(item) {
+        if (item.parentNode === null) {
+            return;
         }
 
-        setTimeout(remove, messageTime);
+        item.parentNode.removeChild(item);
     }
 }
 class WfProgress {
