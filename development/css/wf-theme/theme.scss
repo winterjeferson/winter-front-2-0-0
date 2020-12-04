@@ -133,6 +133,13 @@
     }
 }
 
+.page-table {
+    .wrapper-table-responsive {
+        margin-bottom: $extra-big;
+        max-height: 500px;
+    }
+}
+
 .gallery {
     &__item {
         flex: 1;

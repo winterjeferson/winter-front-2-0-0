@@ -1,4 +1,4 @@
-.card__header, .card__body, .card__footer, .form__fill, .notification__item {
+.card__header, .card__body, .card__footer, .form__fill, .notification__item, .table, .table tbody td {
   border-style: solid;
   border-width: 1px; }
 
@@ -2336,3 +2336,203 @@ img {
     background-color: #f1c50e;
     border-color: #f1c50e;
     color: #ffffff; }
+
+.table {
+  position: relative;
+  width: 100%; }
+  .table tr {
+    background-color: #ffffff; }
+  .table td {
+    border-bottom: 0;
+    border-top: 0;
+    padding: 10px;
+    vertical-align: top; }
+    .table td:first-child {
+      border-left: 0; }
+    .table td:last-child {
+      border-right: 0; }
+  .table thead tr,
+  .table thead th,
+  .table thead td {
+    font-weight: bold;
+    text-align: center; }
+  .table thead th,
+  .table thead td {
+    border-color: transparent;
+    padding: 20px; }
+  .table tbody td {
+    border-bottom: 0;
+    border-top: 0; }
+  .table--minimum {
+    width: 1px; }
+  .table--wrapper {
+    max-height: 48px;
+    overflow: auto;
+    white-space: pre-line;
+    width: 100%; }
+  .table--wrapper--auto {
+    max-height: initial; }
+
+.wrapper-table-responsive {
+  display: grid;
+  max-width: 100%;
+  width: 100%; }
+  .wrapper-table-responsive .table-responsive {
+    max-width: 100%;
+    overflow-x: auto; }
+
+.table--black {
+  border-color: #cccccc; }
+  .table--black thead {
+    border-color: #cccccc; }
+    .table--black thead td,
+    .table--black thead th {
+      background-color: #cccccc;
+      color: #0d0d0d; }
+  .table--black tbody tr:nth-child(even) {
+    background-color: #f2f2f2; }
+  .table--black tbody tr td {
+    border-color: #cccccc; }
+
+.table--blue {
+  border-color: #cae4f6; }
+  .table--blue thead {
+    border-color: #cae4f6; }
+    .table--blue thead td,
+    .table--blue thead th {
+      background-color: #cae4f6;
+      color: #1d6da4; }
+  .table--blue tbody tr:nth-child(even) {
+    background-color: #e0eff9; }
+  .table--blue tbody tr td {
+    border-color: #cae4f6; }
+
+.table--brown {
+  border-color: #fbcc87; }
+  .table--brown thead {
+    border-color: #fbcc87; }
+    .table--brown thead td,
+    .table--brown thead th {
+      background-color: #fbcc87;
+      color: #4e2f02; }
+  .table--brown tbody tr:nth-child(even) {
+    background-color: #fef6ea; }
+  .table--brown tbody tr td {
+    border-color: #fbcc87; }
+
+.table--cyan {
+  border-color: #aaf0e7; }
+  .table--cyan thead {
+    border-color: #aaf0e7; }
+    .table--cyan thead td,
+    .table--cyan thead th {
+      background-color: #aaf0e7;
+      color: #178375; }
+  .table--cyan tbody tr:nth-child(even) {
+    background-color: #d5f8f3; }
+  .table--cyan tbody tr td {
+    border-color: #aaf0e7; }
+
+.table--green {
+  border-color: #bbf0d2; }
+  .table--green thead {
+    border-color: #bbf0d2; }
+    .table--green thead td,
+    .table--green thead th {
+      background-color: #bbf0d2;
+      color: #1f8d4e; }
+  .table--green tbody tr:nth-child(even) {
+    background-color: #e5f9ee; }
+  .table--green tbody tr td {
+    border-color: #bbf0d2; }
+
+.table--grey {
+  border-color: #e7e9ea; }
+  .table--grey thead {
+    border-color: #e7e9ea; }
+    .table--grey thead td,
+    .table--grey thead th {
+      background-color: #e7e9ea;
+      color: #7a848c; }
+  .table--grey tbody tr:nth-child(even) {
+    background-color: #f5f6f6; }
+  .table--grey tbody tr td {
+    border-color: #e7e9ea; }
+
+.table--orange {
+  border-color: #f8dcc3; }
+  .table--orange thead {
+    border-color: #f8dcc3; }
+    .table--orange thead td,
+    .table--orange thead th {
+      background-color: #f8dcc3;
+      color: #aa5912; }
+  .table--orange tbody tr:nth-child(even) {
+    background-color: #fbe9da; }
+  .table--orange tbody tr td {
+    border-color: #f8dcc3; }
+
+.table--pink {
+  border-color: #fbd5f2; }
+  .table--pink thead {
+    border-color: #fbd5f2; }
+    .table--pink thead td,
+    .table--pink thead th {
+      background-color: #fbd5f2;
+      color: #a71182; }
+  .table--pink tbody tr:nth-child(even) {
+    background-color: #fdecf9; }
+  .table--pink tbody tr td {
+    border-color: #fbd5f2; }
+
+.table--purple {
+  border-color: #e5d4ec; }
+  .table--purple thead {
+    border-color: #e5d4ec; }
+    .table--purple thead td,
+    .table--purple thead th {
+      background-color: #e5d4ec;
+      color: #703c86; }
+  .table--purple tbody tr:nth-child(even) {
+    background-color: #f0e6f4; }
+  .table--purple tbody tr td {
+    border-color: #e5d4ec; }
+
+.table--red {
+  border-color: #fae3e3; }
+  .table--red thead {
+    border-color: #fae3e3; }
+    .table--red thead td,
+    .table--red thead th {
+      background-color: #fae3e3;
+      color: #bf2120; }
+  .table--red tbody tr:nth-child(even) {
+    background-color: #fae3e3; }
+  .table--red tbody tr td {
+    border-color: #fae3e3; }
+
+.table--white {
+  border-color: #ffffff; }
+  .table--white thead {
+    border-color: #ffffff; }
+    .table--white thead td,
+    .table--white thead th {
+      background-color: #ffffff;
+      color: #d9d9d9; }
+  .table--white tbody tr:nth-child(even) {
+    background-color: #ffffff; }
+  .table--white tbody tr td {
+    border-color: #ffffff; }
+
+.table--yellow {
+  border-color: #fbeeb7; }
+  .table--yellow thead {
+    border-color: #fbeeb7; }
+    .table--yellow thead td,
+    .table--yellow thead th {
+      background-color: #fbeeb7;
+      color: #a98a0a; }
+  .table--yellow tbody tr:nth-child(even) {
+    background-color: #fef9e7; }
+  .table--yellow tbody tr td {
+    border-color: #fbeeb7; }

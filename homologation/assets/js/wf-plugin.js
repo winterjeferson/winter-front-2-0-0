@@ -1398,15 +1398,12 @@ class WfProgress {
 }
 class WfTable {
     constructor() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$table = document.querySelectorAll('.table');
+        this.elTable = document.querySelectorAll('.table');
+        this.cssResponsive = 'table-responsive';
     }
 
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        if (this.$table.length < 1) {
+        if (this.elTable.length < 1) {
             return;
         }
 
@@ -1414,11 +1411,9 @@ class WfTable {
     }
 
     buildResponsive() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        Array.prototype.forEach.call(this.$table, function (item) {
-            wrapItem(item, 'table-responsive');
-            wrapItem(item.parentNode.parentNode.querySelector('.table-responsive'), 'table-responsive-wrapper');
+        Array.prototype.forEach.call(this.elTable, (item) => {
+            wrapItem(item, this.cssResponsive);
+            wrapItem(item.parentNode.parentNode.querySelector(`.${this.cssResponsive}`), `wrapper-${this.cssResponsive}`);
         });
     }
 }
