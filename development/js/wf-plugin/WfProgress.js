@@ -1,7 +1,5 @@
 class WfProgress {
     update() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isFinish = false;
         this.progressSize = 0;
         this.$loadingMain = document.getElementById('loadingMain');
@@ -12,8 +10,6 @@ class WfProgress {
     }
 
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (document.getElementById('loadingMain') < 1) {
             return;
         }
@@ -23,8 +19,6 @@ class WfProgress {
     }
 
     start() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let interval = setInterval(frame, 1);
         let total = this.buildProportion();
@@ -44,22 +38,16 @@ class WfProgress {
     }
 
     finish() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$loadingMain.classList.add('loading-main-done');
         this.$body.style.overflowY = 'auto';
         setTimeout(this.remove(this.$loadingMain), 1000);
     }
 
     remove(element) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         element.parentNode.removeChild(element);
     }
 
     buildProportion() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.$allLength > 1000) {
             return this.$allLength / 50;
         }

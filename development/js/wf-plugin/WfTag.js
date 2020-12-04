@@ -1,14 +1,10 @@
 class WfTag {
     constructor() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$tagBt = document.querySelectorAll('.tag-item-bt');
+        this.elTag = document.querySelectorAll('.tag');
     }
 
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        if (this.$tagBt.length < 1) {
+        if (this.elTag.length < 1) {
             return;
         }
 
@@ -16,13 +12,15 @@ class WfTag {
     }
 
     buildClick() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        Array.prototype.forEach.call(this.$tagBt, function (item) {
-            let $bt = item.querySelector('.tag-bt');
+        Array.prototype.forEach.call(this.elTag, function (item) {
+            let button = item.querySelector('.button__close');
 
-            $bt.addEventListener('click', function () {
-                $bt.parentNode.parentNode.parentNode.removeChild($bt.parentNode.parentNode);
+            if (button === null) {
+                return;
+            }
+
+            button.addEventListener('click', () => {
+                button.parentNode.parentNode.removeChild(button.parentNode);
             });
         });
     }

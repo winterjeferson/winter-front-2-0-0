@@ -12,7 +12,6 @@ const filePrefixPlugin = `${configuration.prefix}${configuration.plugin}`;
 const folder = `${configuration.development}${extension}/`;
 const file = `${folder}${filePrefix}/${configuration.allFolderFile}`;
 const filePlugin = [
-    `${configuration.development}${extension}/${configuration.prefix}plugin/_WfDebug.${extension}`,
     `${configuration.development}${extension}/${configuration.prefix}translation/${configuration.allFolderFile}`,
     `${configuration.development}${extension}/${configuration.prefix}plugin/**/!(_)*.${extension}`,
     `${configuration.development}${extension}/${configuration.prefix}plugin/_WfManagementPlugin.${extension}`,

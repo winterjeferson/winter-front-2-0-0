@@ -1,13 +1,9 @@
 class WfMask {
     constructor() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$inputMask = document.querySelectorAll('[data-mask]');
     }
 
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.$inputMask.length < 1) {
             return;
         }
@@ -16,8 +12,6 @@ class WfMask {
     }
 
     addListener() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         this.$inputMask.forEach(($input) => {
@@ -32,8 +26,6 @@ class WfMask {
     }
 
     maskCep(value) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '')
             .replace(/(\d{5})(\d)/, '$1-$2')
@@ -41,8 +33,6 @@ class WfMask {
     }
 
     maskCpf(value) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '') //only numbers
             .replace(/(\d{3})(\d)/, '$1.$2') // add dot
@@ -52,8 +42,6 @@ class WfMask {
     }
 
     maskCnpj(value) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '')
             .replace(/(\d{2})(\d)/, '$1.$2')
@@ -64,8 +52,6 @@ class WfMask {
     }
 
     maskDate(value) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '')
             .replace(/(\d{2})(\d)/, '$1/$2')
@@ -74,8 +60,6 @@ class WfMask {
     }
 
     maskPhone(value) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '')
             .replace(/(\d{2})(\d)/, '($1) $2')
@@ -85,8 +69,6 @@ class WfMask {
     }
 
     maskPis(value) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '')
             .replace(/(\d{3})(\d)/, '$1.$2')

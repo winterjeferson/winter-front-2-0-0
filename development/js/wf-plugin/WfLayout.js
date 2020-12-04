@@ -1,7 +1,5 @@
 class WfLayout {
     constructor() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$body = document.querySelector('body');
 
         this.breakPointExtraSmall = 0;

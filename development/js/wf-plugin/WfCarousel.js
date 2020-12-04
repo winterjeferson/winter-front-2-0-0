@@ -1,8 +1,5 @@
 class WfCarousel {
     constructor() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         this.attCurrentSlide = 'data-current-slide';
         this.attPrevious = '[data-id="previous"]';
         this.attNext = '[data-id="next"]';
@@ -22,9 +19,6 @@ class WfCarousel {
     }
 
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         if (this.elCarousel.length < 1) {
             return;
         }
@@ -39,9 +33,6 @@ class WfCarousel {
     }
 
     buildLayout() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         const self = this;
 
         Array.prototype.forEach.call(this.elCarousel, function (item) {
@@ -60,9 +51,6 @@ class WfCarousel {
     }
 
     watchResize() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         let self = this;
 
         window.onresize = function () {
@@ -78,9 +66,6 @@ class WfCarousel {
     }
 
     buildLayoutController(target, length) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [target, length]);
-        /*endRemoveIf(production)*/
         let concat = '';
 
         for (let i = 0; i < length; i++) {
@@ -93,9 +78,6 @@ class WfCarousel {
     }
 
     buildNavigation() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         let self = this;
 
         Array.prototype.forEach.call(this.elCarousel, function (item) {
@@ -106,9 +88,6 @@ class WfCarousel {
     }
 
     buildNavigationControllerBt(target) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         const self = this;
         const button = target.querySelectorAll(this.cssButtonClass);
 
@@ -122,9 +101,6 @@ class WfCarousel {
     }
 
     buildNavigationArrowLeft(target) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         const self = this;
         const button = target.querySelector(this.attPrevious);
 
@@ -149,9 +125,6 @@ class WfCarousel {
     }
 
     buildNavigationArrowRight(target) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         let self = this;
         let button = target.querySelector(this.attNext);
 
@@ -176,9 +149,6 @@ class WfCarousel {
     }
 
     animate(currentSlide, target, from) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [currentSlide, target, from]);
-        /*endRemoveIf(production)*/
         let elCarouselList = from === 'arrow' ?
             target.parentNode.querySelector(this.cssCarouselListClass) :
             target.parentNode.parentNode.querySelector(this.cssCarouselListClass);
@@ -205,9 +175,6 @@ class WfCarousel {
     }
 
     animateFade(obj) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         let el = obj.elCarouselList.querySelectorAll('li');
         let transition = '.7s';
 
@@ -222,16 +189,10 @@ class WfCarousel {
     }
 
     animateSlide(obj) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         obj.elCarouselList.style.transform = `translateX(-${obj.currentPosition}px)`;
     }
 
     verifyInterval() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         let self = window.objWfCarousel;
 
         self.counterCurrent++;
@@ -246,9 +207,6 @@ class WfCarousel {
     }
 
     defineActive(target) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), target);
-        /*endRemoveIf(production)*/
         const self = this;
         let listBt = target.parentNode.parentNode.querySelectorAll(this.cssButtonClass);
 
@@ -260,9 +218,6 @@ class WfCarousel {
     }
 
     resizeLayout(target) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), target);
-        /*endRemoveIf(production)*/
         let elCarouselList = target.querySelector(this.cssCarouselListClass);
         let elCarouselListItem = elCarouselList.querySelectorAll('li');
         let length = elCarouselListItem.length;

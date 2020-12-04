@@ -1,75 +1,3 @@
-/*removeIf(production)*/
-class WfDebug {
-    constructor() {
-        this.isWfLayout = false;
-        this.isWfLoading = false;
-        this.isWfTheme = false;
-
-        this.isWfCarousel = false;
-        this.isWfForm = false;
-        this.isWfLazyLoad = false;
-        this.isWfMenuDropDown = false;
-        this.isWfMenuTab = false;
-        this.isWfMenuToggle = false;
-        this.isWfMask = false;
-        this.isWfModal = false;
-        this.isWfNotification = false;
-        this.isWfProgress = false;
-        this.isWfTable = false;
-        this.isWfTag = false;
-        this.isWfTooltip = false;
-        this.isWfTranslation = false;
-    }
-
-    debugMethod(objWf, method, parameter = '') {
-        let string = '';
-        let className = objWf.constructor.name;
-        // let arrMethod = objWfect.getOwnPropertyNames(objWfect.getPrototypeOf(objWf));
-
-        if (!this['is' + className]) {
-            return false;
-        }
-
-        string += '%c';
-        string += 'obj' + className;
-        string += '.';
-        string += '%c';
-        string += method;
-        string += '(';
-
-        string += '%c';
-        if (parameter !== '') {
-            string += parameter;
-        }
-
-        string += '%c';
-        string += ');';
-
-        console.log(string, 'color: black', 'color: blue', 'color: red', 'color: blue');
-    }
-
-    getMethodName() {
-        let userAgent = window.navigator.userAgent;
-        let msie = userAgent.indexOf('.NET ');
-
-        if (msie > 0) {
-            return false;
-        }
-
-        let e = new Error('dummy');
-        let stack = e.stack.split('\n')[2]
-            // " at functionName ( ..." => "functionName"
-            .replace(/^\s+at\s+(.+?)\s.+/g, '$1');
-        let split = stack.split('.');
-
-        if (stack !== 'new') {
-            return split[1];
-        } else {
-            return 'constructor';
-        }
-    }
-}
-/*endRemoveIf(production)*/
 const translationEN = {
     'cancel': 'Cancel',
     'close': 'Close',
@@ -142,9 +70,6 @@ function wrapItem(target, cssClass) {
 }
 class WfCarousel {
     constructor() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         this.attCurrentSlide = 'data-current-slide';
         this.attPrevious = '[data-id="previous"]';
         this.attNext = '[data-id="next"]';
@@ -164,9 +89,6 @@ class WfCarousel {
     }
 
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         if (this.elCarousel.length < 1) {
             return;
         }
@@ -181,9 +103,6 @@ class WfCarousel {
     }
 
     buildLayout() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         const self = this;
 
         Array.prototype.forEach.call(this.elCarousel, function (item) {
@@ -202,9 +121,6 @@ class WfCarousel {
     }
 
     watchResize() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         let self = this;
 
         window.onresize = function () {
@@ -220,9 +136,6 @@ class WfCarousel {
     }
 
     buildLayoutController(target, length) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [target, length]);
-        /*endRemoveIf(production)*/
         let concat = '';
 
         for (let i = 0; i < length; i++) {
@@ -235,9 +148,6 @@ class WfCarousel {
     }
 
     buildNavigation() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         let self = this;
 
         Array.prototype.forEach.call(this.elCarousel, function (item) {
@@ -248,9 +158,6 @@ class WfCarousel {
     }
 
     buildNavigationControllerBt(target) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         const self = this;
         const button = target.querySelectorAll(this.cssButtonClass);
 
@@ -264,9 +171,6 @@ class WfCarousel {
     }
 
     buildNavigationArrowLeft(target) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         const self = this;
         const button = target.querySelector(this.attPrevious);
 
@@ -291,9 +195,6 @@ class WfCarousel {
     }
 
     buildNavigationArrowRight(target) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         let self = this;
         let button = target.querySelector(this.attNext);
 
@@ -318,9 +219,6 @@ class WfCarousel {
     }
 
     animate(currentSlide, target, from) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [currentSlide, target, from]);
-        /*endRemoveIf(production)*/
         let elCarouselList = from === 'arrow' ?
             target.parentNode.querySelector(this.cssCarouselListClass) :
             target.parentNode.parentNode.querySelector(this.cssCarouselListClass);
@@ -347,9 +245,6 @@ class WfCarousel {
     }
 
     animateFade(obj) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         let el = obj.elCarouselList.querySelectorAll('li');
         let transition = '.7s';
 
@@ -364,16 +259,10 @@ class WfCarousel {
     }
 
     animateSlide(obj) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         obj.elCarouselList.style.transform = `translateX(-${obj.currentPosition}px)`;
     }
 
     verifyInterval() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName());
-        /*endRemoveIf(production)*/
         let self = window.objWfCarousel;
 
         self.counterCurrent++;
@@ -388,9 +277,6 @@ class WfCarousel {
     }
 
     defineActive(target) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), target);
-        /*endRemoveIf(production)*/
         const self = this;
         let listBt = target.parentNode.parentNode.querySelectorAll(this.cssButtonClass);
 
@@ -402,9 +288,6 @@ class WfCarousel {
     }
 
     resizeLayout(target) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), target);
-        /*endRemoveIf(production)*/
         let elCarouselList = target.querySelector(this.cssCarouselListClass);
         let elCarouselListItem = elCarouselList.querySelectorAll('li');
         let length = elCarouselListItem.length;
@@ -418,8 +301,6 @@ class WfCarousel {
 }
 class WfForm {
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (document.querySelectorAll('form').length < 1) {
             return;
         }
@@ -429,8 +310,6 @@ class WfForm {
     }
 
     buildKeyboard() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.addEventListener('keyup', function (event) {
@@ -443,8 +322,6 @@ class WfForm {
     }
 
     buildFocus(target) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let $arr = document.querySelectorAll(target);
 
         Array.prototype.forEach.call($arr, function (item) {
@@ -457,8 +334,6 @@ class WfForm {
     }
 
     buildInputFile() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         return;
 
@@ -489,8 +364,6 @@ class WfForm {
     }
 
     buildInputFileAddAction(item) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let $target = item.parentNode;
         let $targetFileClass = $target.querySelector('.input-file-name');
         let $targetFile = $target.querySelector('input[type="file"]');
@@ -505,8 +378,6 @@ class WfForm {
     }
 
     buildInputFileHtml() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let inputFile = '';
         let textFile = objWfTranslation.translation.input_upload;
 
@@ -519,8 +390,6 @@ class WfForm {
     }
 
     validateEmpty(arr) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let arrEmpty = arr;
         let length = arrEmpty.length;
 
@@ -536,8 +405,6 @@ class WfForm {
 }
 class WfLayout {
     constructor() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$body = document.querySelector('body');
 
         this.breakPointExtraSmall = 0;
@@ -550,8 +417,6 @@ class WfLayout {
 }
 class WfLazyLoad {
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (document.querySelectorAll('[data-lazy-load="true"]').length < 1) {
             return;
         }
@@ -561,8 +426,6 @@ class WfLazyLoad {
     }
 
     addListener() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.addEventListener('scroll', function (e) {
@@ -573,8 +436,6 @@ class WfLazyLoad {
     }
 
     buildLoop() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let $arr = document.querySelectorAll('[data-lazy-load="true"]');
 
@@ -584,8 +445,6 @@ class WfLazyLoad {
     }
 
     verifyPosition(target) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let windowScroll = window.scrollY;
         let elemntPosition = offset(target).top;
         let margin = window.outerHeight;
@@ -596,22 +455,16 @@ class WfLazyLoad {
     }
 
     buildImage(target) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         target.setAttribute('src', target.getAttribute('data-src'));
         target.removeAttribute('data-lazy-load');
     }
 }
 class WfMask {
     constructor() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$inputMask = document.querySelectorAll('[data-mask]');
     }
 
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.$inputMask.length < 1) {
             return;
         }
@@ -620,8 +473,6 @@ class WfMask {
     }
 
     addListener() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         this.$inputMask.forEach(($input) => {
@@ -636,8 +487,6 @@ class WfMask {
     }
 
     maskCep(value) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '')
             .replace(/(\d{5})(\d)/, '$1-$2')
@@ -645,8 +494,6 @@ class WfMask {
     }
 
     maskCpf(value) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '') //only numbers
             .replace(/(\d{3})(\d)/, '$1.$2') // add dot
@@ -656,8 +503,6 @@ class WfMask {
     }
 
     maskCnpj(value) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '')
             .replace(/(\d{2})(\d)/, '$1.$2')
@@ -668,8 +513,6 @@ class WfMask {
     }
 
     maskDate(value) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '')
             .replace(/(\d{2})(\d)/, '$1/$2')
@@ -678,8 +521,6 @@ class WfMask {
     }
 
     maskPhone(value) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '')
             .replace(/(\d{2})(\d)/, '($1) $2')
@@ -689,8 +530,6 @@ class WfMask {
     }
 
     maskPis(value) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         return value
             .replace(/\D/g, '')
             .replace(/(\d{3})(\d)/, '$1.$2')
@@ -762,14 +601,10 @@ class WfMenuDropDown {
 }
 class WfMenuTab {
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.defineActive();
     }
 
     defineActive() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let $arr = document.querySelectorAll('.menu-tab > ul > li > .bt');
 
@@ -781,8 +616,6 @@ class WfMenuTab {
     }
 
     buildClick(item) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let classActive = 'menu-tab-active';
         let $arr = item.parentNode.parentNode.querySelectorAll('li');
 
@@ -795,22 +628,16 @@ class WfMenuTab {
 }
 class WfMenuToggle {
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.updateVariable();
         this.buildBt();
         this.watchResize();
     }
 
     updateVariable() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$bt = document.querySelectorAll('.bt-toggle');
     }
 
     buildBt() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         Array.prototype.forEach.call(this.$bt, function (el, i) {
             el.onclick = function () {
                 let $ul1 = el.parentNode.querySelector('nav > ul');
@@ -828,8 +655,6 @@ class WfMenuToggle {
     }
 
     watchResize() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.onresize = function () {
@@ -838,15 +663,11 @@ class WfMenuToggle {
     }
 
     reset() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.build();
     }
 }
 class WfModal {
     update() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.targetBuildGalleryChange = '';
         this.cssDisplay = 'display-none';
         this.isModalOpen = false;
@@ -866,8 +687,6 @@ class WfModal {
     }
 
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.buildHtml();
         this.update();
         this.buildMenu();
@@ -877,8 +696,6 @@ class WfModal {
     }
 
     buildHtml() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let string = `
             <div class="modal">
                 <div class="modal-box">
@@ -930,15 +747,11 @@ class WfModal {
     }
 
     buildTranslation() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$modalFooterConfirm.innerHTML = objWfTranslation.translation.confirm;
         this.$modalFooterCancel.innerHTML = objWfTranslation.translation.cancel;
     }
 
     buildKeyboard() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.addEventListener('keyup', function (event) {
@@ -973,8 +786,6 @@ class WfModal {
     }
 
     buildMenuGallery() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         if (!this.$gallery) {
@@ -1004,8 +815,6 @@ class WfModal {
     }
 
     buildMenu() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         this.$modalClose.addEventListener('click', function () {
@@ -1026,8 +835,6 @@ class WfModal {
     }
 
     buildGalleryNavigation(target) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), target); /*endRemoveIf(production)*/
         let array = [];
         let currentGallery = target.parentNode.parentNode;
         let siblingLength = currentGallery.querySelectorAll('a').length - 1;
@@ -1060,8 +867,6 @@ class WfModal {
     }
 
     buildModal(kind, content, size = 're', action = 'open') {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [kind, content, size, action]); /*endRemoveIf(production)*/
         this.$modalFooter.classList.add(this.cssDisplay);
         action === 'open' ? this.openModal() : this.closeModal();
         this.buildModalSize(size);
@@ -1069,8 +874,6 @@ class WfModal {
     }
 
     buildModalKind(kind, content) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [kind, content]); /*endRemoveIf(production)*/
 
         if (kind === 'ajax') {
             this.buildContentAjax(content);
@@ -1093,8 +896,6 @@ class WfModal {
     }
 
     openModal() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isModalOpen = true;
 
         this.$body.classList.remove('overflow-y');
@@ -1105,8 +906,6 @@ class WfModal {
     }
 
     closeModal() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isModalOpen = false;
 
         this.$body.classList.add('overflow-y');
@@ -1120,8 +919,6 @@ class WfModal {
     }
 
     buildModalSize(size = 're') {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), size); /*endRemoveIf(production)*/
         this.$modalBox.classList.remove('modal-es');
         this.$modalBox.classList.remove('modal-sm');
         this.$modalBox.classList.remove('modal-re');
@@ -1132,8 +929,6 @@ class WfModal {
     }
 
     buildContentAjax(target) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), target); /*endRemoveIf(production)*/
         let self = this;
         let ajax = new XMLHttpRequest();
 
@@ -1149,8 +944,6 @@ class WfModal {
     }
 
     buildGalleryImage(image, description) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [image, description]); /*endRemoveIf(production)*/
         const stringImage = `<img src="${image}" class="img-responsive" style="margin:auto;" title="" alt=""/>`;
 
         this.$modalContent.innerHTML = stringImage;
@@ -1158,8 +951,6 @@ class WfModal {
     }
 
     buildContentConfirmation(content) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), content); /*endRemoveIf(production)*/
         let string = '<div class="padding-re text-center">' + content + '</div>';
 
         this.$modalFooter.classList.remove(this.cssDisplay);
@@ -1167,15 +958,10 @@ class WfModal {
     }
 
     buildContentConfirmationAction(action) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), action); /*endRemoveIf(production)*/
         this.$modalFooterConfirm.setAttribute('onclick', action);
     }
 
     changeText(description) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [description]); /*endRemoveIf(production)*/
-
         if (description === '' || description === null) {
             return;
         }
@@ -1188,9 +974,6 @@ class WfModal {
     }
 
     resetOtherClass() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-
         if (typeof objWfForm !== 'undefined') {
             objWfForm.buildInputFile();
         }
@@ -1305,8 +1088,6 @@ class WfNotification {
 }
 class WfProgress {
     update() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.isFinish = false;
         this.progressSize = 0;
         this.$loadingMain = document.getElementById('loadingMain');
@@ -1317,8 +1098,6 @@ class WfProgress {
     }
 
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (document.getElementById('loadingMain') < 1) {
             return;
         }
@@ -1328,8 +1107,6 @@ class WfProgress {
     }
 
     start() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
         let interval = setInterval(frame, 1);
         let total = this.buildProportion();
@@ -1349,22 +1126,16 @@ class WfProgress {
     }
 
     finish() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$loadingMain.classList.add('loading-main-done');
         this.$body.style.overflowY = 'auto';
         setTimeout(this.remove(this.$loadingMain), 1000);
     }
 
     remove(element) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         element.parentNode.removeChild(element);
     }
 
     buildProportion() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.$allLength > 1000) {
             return this.$allLength / 50;
         }
@@ -1419,15 +1190,11 @@ class WfTable {
 }
 class WfTag {
     constructor() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        this.$tagBt = document.querySelectorAll('.tag-item-bt');
+        this.elTag = document.querySelectorAll('.tag');
     }
 
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        if (this.$tagBt.length < 1) {
+        if (this.elTag.length < 1) {
             return;
         }
 
@@ -1435,21 +1202,21 @@ class WfTag {
     }
 
     buildClick() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
-        Array.prototype.forEach.call(this.$tagBt, function (item) {
-            let $bt = item.querySelector('.tag-bt');
+        Array.prototype.forEach.call(this.elTag, function (item) {
+            let button = item.querySelector('.button__close');
 
-            $bt.addEventListener('click', function () {
-                $bt.parentNode.parentNode.parentNode.removeChild($bt.parentNode.parentNode);
+            if (button === null) {
+                return;
+            }
+
+            button.addEventListener('click', () => {
+                button.parentNode.parentNode.removeChild(button.parentNode);
             });
         });
     }
 }
 class WfTooltip {
     constructor() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.elementTop = 0;
         this.elementLeft = 0;
         this.elementWidth = 0;
@@ -1467,8 +1234,6 @@ class WfTooltip {
     }
 
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.buildHtml();
         this.updateVariable(false);
 
@@ -1482,8 +1247,6 @@ class WfTooltip {
     }
 
     updateVariable(element) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), element); /*endRemoveIf(production)*/
         this.$tooltip = document.querySelector('#tooltip');
         this.$tooltipBody = document.querySelector('#tooltipBody');
         this.$tooltipPointer = document.querySelector('#tooltipPointer');
@@ -1509,8 +1272,6 @@ class WfTooltip {
     }
 
     buildHtml() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let html = `
             <div id="tooltip">
                 <div id="tooltipBody"></div>
@@ -1522,8 +1283,6 @@ class WfTooltip {
     }
 
     buildResize() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         window.onresize = function () {
@@ -1533,8 +1292,6 @@ class WfTooltip {
     }
 
     buildTooltip() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let self = this;
 
         this.showTooltip(false);
@@ -1560,14 +1317,10 @@ class WfTooltip {
     }
 
     buildMaxWidth() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$tooltip.style.maxWidth = this.windowWidth - (this.space * 2);
     }
 
     showTooltip(action) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), action); /*endRemoveIf(production)*/
         if (action) {
             this.$tooltip.classList.add('tooltip-show');
         } else {
@@ -1576,8 +1329,6 @@ class WfTooltip {
     }
 
     positionTooltipSwitchDirection(placement) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), placement); /*endRemoveIf(production)*/
         let direction = typeof placement === 'undefined' ? 'top' : placement;
 
         switch (direction) {
@@ -1607,36 +1358,26 @@ class WfTooltip {
     }
 
     positionTooltipTop() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.positionTop = this.elementTop - this.tooltipHeight - this.space;
         this.positionLeft = this.elementLeft - this.centerWidth;
     }
 
     positionTooltipBottom() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.positionTop = this.elementTop + this.elementHeight + this.space;
         this.positionLeft = this.elementLeft - this.centerWidth;
     }
 
     positionTooltipRight() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.positionTop = this.elementTop + this.centerHeight;
         this.positionLeft = this.elementLeft + this.elementWidth + this.space;
     }
 
     positionTooltipLeft() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.positionTop = this.elementTop + this.centerHeight;
         this.positionLeft = this.elementLeft - this.tooltipWidth - this.space;
     }
 
     positionTooltip(element, placement) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), [element, placement]);
         this.updateVariable(element);
 
         let direction = this.positionTooltipSwitchDirection(placement);
@@ -1669,8 +1410,6 @@ class WfTooltip {
     }
 
     buildLimits() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         if (this.positionLeft <= 0) {
             this.positionLeft = this.space;
         }
@@ -1681,20 +1420,14 @@ class WfTooltip {
     }
 
     changeArrowPositionHorizontal() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$tooltipPointer.style.left = this.$tooltip.offsetWidth / 2 + 'px';
     }
 
     changeArrowPositionVertical() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.$tooltipPointer.style.left = '';
     }
 
     changeArrowDirection(direction) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), direction); /*endRemoveIf(production)*/
         this.$tooltipPointer.classList.remove('tooltip-direction-top');
         this.$tooltipPointer.classList.remove('tooltip-direction-bottom');
         this.$tooltipPointer.classList.remove('tooltip-direction-left');
@@ -1703,8 +1436,6 @@ class WfTooltip {
     }
 
     changeLayout(style) {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName(), style); /*endRemoveIf(production)*/
         let newStyle = typeof style === 'undefined' ? newStyle = this.style : style;
 
         this.$tooltip.removeAttribute('class');
@@ -1713,8 +1444,6 @@ class WfTooltip {
     }
 
     reset() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         let element = document.getElementById('tooltip');
 
         element.parentNode.removeChild(element);
@@ -1723,20 +1452,14 @@ class WfTooltip {
 }
 class WfTranslation {
     constructor() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.translation = '';
     }
 
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         this.defineLanguege();
     }
 
     defineLanguege() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         switch (globalLanguage) {
             case 'pt':
                 this.translation = translationPT;
@@ -1749,16 +1472,12 @@ class WfTranslation {
 }
 class WfManagementPlugin {
     verifyLoad() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         window.addEventListener('load', this.applyClass(), {
             once: true
         });
     }
 
     applyClass() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         objWfTranslation.build();
         objWfProgress.build();
         objWfForm.build();
@@ -1776,9 +1495,6 @@ class WfManagementPlugin {
     }
 }
 
-/*removeIf(production)*/
-window.objWfDebug = new WfDebug();
-/*endRemoveIf(production)*/
 window.objWfManagementPlugin = new WfManagementPlugin();
 
 window.objWfCarousel = new WfCarousel();

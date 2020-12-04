@@ -1,21 +1,15 @@
 class WfTheme {
     constructor() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, 'constructor'); /*endRemoveIf(production)*/
         this.$body = document.querySelector('body');
         this.arrStyle = ['grey', 'blue', 'green', 'cyan', 'orange', 'red', 'yellow', 'purple', 'brown', 'black', 'white'];
         this.arrStyleLength = this.arrStyle.length;
     }
 
     build() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, 'buildLoad'); /*endRemoveIf(production)*/
         this.buildActiveMenu();
     }
 
     buildActiveMenu() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, 'buildActiveMenu'); /*endRemoveIf(production)*/
         let url = top.location.href;
         let urlSplit = url.split('/');
         let length = urlSplit.length;
@@ -32,16 +26,12 @@ class WfTheme {
 window.objWfTheme = new WfTheme();
 class WfManagementTheme {
     verifyLoad() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         window.addEventListener('load', this.applyClass(), {
             once: true
         });
     }
 
     applyClass() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         objWfTheme.build();
     }
 }

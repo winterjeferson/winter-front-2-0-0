@@ -1,15 +1,11 @@
 class WfManagementPlugin {
     verifyLoad() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         window.addEventListener('load', this.applyClass(), {
             once: true
         });
     }
 
     applyClass() {
-        /*removeIf(production)*/
-        objWfDebug.debugMethod(this, objWfDebug.getMethodName()); /*endRemoveIf(production)*/
         objWfTranslation.build();
         objWfProgress.build();
         objWfForm.build();
@@ -27,9 +23,6 @@ class WfManagementPlugin {
     }
 }
 
-/*removeIf(production)*/
-window.objWfDebug = new WfDebug();
-/*endRemoveIf(production)*/
 window.objWfManagementPlugin = new WfManagementPlugin();
 
 window.objWfCarousel = new WfCarousel();
