@@ -1748,6 +1748,50 @@ img {
     .notification .notification--yellow .icon {
       fill: #f1c50e; }
 
+.progress {
+  background-color: #e7e9ea;
+  box-shadow: inset 0 1px 0 #d9dcdf, inset 0 -1px 0 #d9dcdf, inset -1px 0 0 #d9dcdf;
+  display: block;
+  overflow: hidden;
+  width: 100%; }
+  .progress .progress__bar {
+    height: 100%;
+    transition: 0.3s; }
+  .progress--extra-small {
+    height: 2px; }
+  .progress--small {
+    height: 5px; }
+  .progress--regular {
+    height: 10px; }
+  .progress--big {
+    height: 20px; }
+  .progress--extra-big {
+    height: 40px; }
+  .progress--black .progress__bar {
+    background-color: #333333; }
+  .progress--blue .progress__bar {
+    background-color: #3297db; }
+  .progress--brown .progress__bar {
+    background-color: #7f4d04; }
+  .progress--cyan .progress__bar {
+    background-color: #23c4af; }
+  .progress--green .progress__bar {
+    background-color: #2dcc70; }
+  .progress--grey .progress__bar {
+    background-color: #bec3c7; }
+  .progress--orange .progress__bar {
+    background-color: #e77e22; }
+  .progress--pink .progress__bar {
+    background-color: #e81cb6; }
+  .progress--purple .progress__bar {
+    background-color: #9a59b5; }
+  .progress--red .progress__bar {
+    background-color: #e14b4a; }
+  .progress--white .progress__bar {
+    background-color: #ffffff; }
+  .progress--yellow .progress__bar {
+    background-color: #f1c50e; }
+
 .tab {
   align-items: flex-end;
   border-bottom: 1px solid;

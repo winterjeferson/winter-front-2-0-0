@@ -140,6 +140,13 @@
     }
 }
 
+.progress {
+    margin-bottom: $regular;
+
+    .progress__bar {
+        width: 80%;
+    }
+}
 
 .theme-header,
 .theme-footer,
