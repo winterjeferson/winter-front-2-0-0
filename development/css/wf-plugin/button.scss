@@ -32,57 +32,6 @@
     }
 }
 
-.button,
-.button-outline {
-    border-style: solid;
-    text-decoration: none;
-
-    &--extra-small {
-        padding: $extra-small $small;
-
-        &--proportional {
-            padding: $extra-small;
-        }
-    }
-
-    &--small {
-        padding: $small $regular;
-
-        &--proportional {
-            padding: $small;
-        }
-    }
-
-    &--regular {
-        padding: $regular $big;
-
-        &--proportional {
-            padding: $regular;
-        }
-    }
-
-    &--big {
-        padding: $big $extra-big;
-
-        &--proportional {
-            padding: $big;
-        }
-    }
-
-    &--extra-big {
-        padding: $extra-big $extra-big-2;
-
-        &--proportional {
-            padding: $extra-big;
-        }
-    }
-
-    &--transparent {
-        background-color: transparent;
-        border-color: transparent;
-    }
-}
-
 .button {
     border-width: $border-width;
 
@@ -204,6 +153,58 @@
                 @extend %extend-disabled;
             }
         }
+    }
+}
+
+
+.button,
+.button-outline {
+    border-style: solid;
+    text-decoration: none;
+
+    &--extra-small {
+        padding: $extra-small $small;
+
+        &--proportional {
+            padding: $extra-small;
+        }
+    }
+
+    &--small {
+        padding: $small $regular;
+
+        &--proportional {
+            padding: $small;
+        }
+    }
+
+    &--regular {
+        padding: $regular $big;
+
+        &--proportional {
+            padding: $regular;
+        }
+    }
+
+    &--big {
+        padding: $big $extra-big;
+
+        &--proportional {
+            padding: $big;
+        }
+    }
+
+    &--extra-big {
+        padding: $extra-big $extra-big-2;
+
+        &--proportional {
+            padding: $extra-big;
+        }
+    }
+
+    &--transparent {
+        background-color: transparent;
+        border-color: transparent;
     }
 }
 
@@ -377,6 +378,29 @@
         &:last-child {
             border-bottom-left-radius: 0;
             border-top-left-radius: 0;
+        }
+    }
+}
+
+
+.navigation-change {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    .button {
+        background-color: transparent;
+        border-color: transparent;
+        position: absolute;
+
+        &:first-child {
+            left: 0;
+        }
+
+        &:last-child {
+            right: 0;
         }
     }
 }

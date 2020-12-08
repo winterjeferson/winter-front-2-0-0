@@ -13,5 +13,5 @@ module.exports = {
     assets: 'assets/',
     prefix: 'wf-',
     ip: '127.0.0.1',
-    port: '3015',
+    port: '3016',
 }

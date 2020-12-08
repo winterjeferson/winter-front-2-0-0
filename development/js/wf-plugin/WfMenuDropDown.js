@@ -5,6 +5,7 @@ class WfMenuDropDown {
         this.classMenuText = `${this.classMenu}-text`;
         this.cssDropDownContent = `${this.classMenu}__content`;
         this.cssOpend = `${this.cssDropDownContent}--opened`;
+        this.cssMobileShow = 'mobile-show';
         this.elMenu = document.querySelectorAll(`.${this.classMenu}, .${this.classMenuText}`);
     }
 
@@ -24,7 +25,7 @@ class WfMenuDropDown {
     }
 
     close() {
-        Array.prototype.forEach.call(objWfMenuDropDown.elMenu, function (item) {
+        Array.prototype.forEach.call(objWfMenuDropDown.elMenu, (item) => {
             const elContent = item.querySelector(`.${objWfMenuDropDown.cssDropDownContent}`);
 
             if (elContent === null) {
@@ -40,7 +41,7 @@ class WfMenuDropDown {
     buildClick() {
         const self = this;
 
-        Array.prototype.forEach.call(this.elMenu, function (item) {
+        Array.prototype.forEach.call(this.elMenu, (item) => {
             let elButton = item.querySelectorAll('.button:first-child, .link:first-child')[0];
 
             elButton.addEventListener('click', function () {
@@ -57,5 +58,23 @@ class WfMenuDropDown {
         }
 
         elContent.classList.add(this.cssOpend);
+    }
+
+    listener(event) {
+        const el = document.querySelectorAll(`.${window.objWfMenuDropDown.cssMobileShow}`);
+
+        if (event.toElement.classList.contains('button') || event.toElement.classList.contains('link')) {
+            return;
+        }
+
+        Array.prototype.forEach.call(el, (item) => {
+            item.classList.remove(window.objWfMenuDropDown.cssMobileShow);
+        });
+    }
+
+    reset() {
+        document.removeEventListener('click', event, true);
+        document.removeEventListener('click', this.listener, true);
+        window.objWfMenuDropDown.build();
     }
 }

@@ -1,3 +1,170 @@
 .modal {
-    display: none;
+    background-color: rgba($color-black, .5);
+    bottom: 0;
+    display: flex;
+    left: 0;
+    opacity: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: $small;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: $transition;
+    z-index: z-index("modal");
+
+    @media only screen and (min-width: $break-point-tablet) {
+        padding: $big;
+    }
+
+    &__header,
+    &__footer {
+        display: flex;
+        padding: $regular;
+        width: 100%;
+    }
+
+    &__footer {
+        background-color: color-extra-light("black");
+
+        @media only screen and (min-width: $break-point-tablet) {
+            border-radius: 0 0 $border-radius-regular $border-radius-regular;
+        }
+    }
+
+    &__box {
+        align-items: center;
+        background-color: $color-white;
+        border-radius: 0;
+        justify-content: center;
+        margin: auto;
+        pointer-events: initial;
+        position: relative;
+        transform: translate(0, -200px);
+        transition: $transition;
+        width: 100%;
+
+        @media only screen and (min-width: $break-point-tablet) {
+            border-radius: $border-radius-regular;
+        }
+    }
+
+    &--extra-small {
+        max-width: 100%;
+
+        @media only screen and (min-width: $break-point-tablet) {
+            max-width: $break-point-smartphone;
+        }
+    }
+
+    &--small {
+        max-width: 100%;
+
+        @media only screen and (min-width: $break-point-tablet) {
+            max-width: $break-point-tablet;
+        }
+    }
+
+    &--regular {
+        max-width: 100%;
+
+        @media only screen and (min-width: $break-point-tablet) {
+            max-width: $break-point-tablet-landscape;
+        }
+    }
+
+    &--big {
+        max-width: 100%;
+
+        @media only screen and (min-width: $break-point-tablet) {
+            max-width: $break-point-notebook;
+        }
+    }
+
+    &--extra-big {
+        max-width: 100%;
+
+        @media only screen and (min-width: $break-point-tablet) {
+            max-width: $break-point-desktop;
+        }
+    }
+
+    &--full {
+        max-width: 100%;
+    }
+
+    // .arrow-active {
+    //     opacity: 1;
+
+    //     * {
+    //         pointer-events: initial;
+    //     }
+    // }
+
+    // .arrow-inactive {
+    //     opacity: 0;
+
+    //     * {
+    //         opacity: 0;
+    //         pointer-events: none;
+    //     }
+    // }
+
+    // hr {
+    //     margin: auto;
+    //     width: calc(100% - #{$big * 2});
+    // }
+
+    // .menu-tab {
+    //     ul {
+    //         ul {
+    //             margin-top: -1px;
+    //         }
+    //     }
+    // }
+}
+
+.modal__content {
+    padding: $regular;
+    position: relative;
+
+    .modal-description {
+        background-color: rgba($color-black, 0.6);
+        bottom: 0;
+        color: $color-white;
+        padding: $small;
+        position: absolute;
+        text-align: center;
+        width: calc(100% - #{$big});
+
+        @media only screen and (min-width: $break-point-tablet) {
+            padding: $regular;
+        }
+    }
+}
+
+.button--close {
+    float: right;
+    font-weight: bold;
+}
+
+.modal--close {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: $transition;
+
+    @media screen and (-ms-high-contrast: active),
+    (-ms-high-contrast: none) {
+        position: absolute;
+        top: -100% !important;
+    }
+
+    * {
+        pointer-events: none !important;
+    }
+}
+
+.modal-animate {
+    transform: translate(0, 0) !important;
+    transition: $transition;
 }

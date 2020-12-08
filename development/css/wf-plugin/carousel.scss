@@ -44,26 +44,4 @@
       opacity: 1;
     }
   }
-
-  &__arrow {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-
-    .button {
-      background-color: transparent;
-      border-color: transparent;
-      position: absolute;
-
-      &:first-child {
-        left: 0;
-      }
-
-      &:last-child {
-        right: 0;
-      }
-    }
-  }
 }

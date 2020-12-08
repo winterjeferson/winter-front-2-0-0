@@ -20,6 +20,18 @@
     text-align: center;
 }
 
+.left {
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.right {
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: right;
+}
+
 .rotate-45 {
     transform: rotate(45deg);
 }
@@ -29,8 +41,23 @@
 }
 
 .hide {
+    font-size: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
     pointer-events: none;
     visibility: hidden;
+    width: 0;
+
+    * {
+        font-size: 0;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        pointer-events: none;
+        visibility: hidden;
+        width: 0;
+    }
 }
 
 .hide-tablet {

@@ -126,45 +126,6 @@ small {
   .link .icon {
     font-size: 0.87em; }
 
-.button,
-.button-outline {
-  border-style: solid;
-  text-decoration: none; }
-  .button--extra-small,
-  .button-outline--extra-small {
-    padding: 2px 5px; }
-    .button--extra-small--proportional,
-    .button-outline--extra-small--proportional {
-      padding: 2px; }
-  .button--small,
-  .button-outline--small {
-    padding: 5px 10px; }
-    .button--small--proportional,
-    .button-outline--small--proportional {
-      padding: 5px; }
-  .button--regular,
-  .button-outline--regular {
-    padding: 10px 20px; }
-    .button--regular--proportional,
-    .button-outline--regular--proportional {
-      padding: 10px; }
-  .button--big,
-  .button-outline--big {
-    padding: 20px 40px; }
-    .button--big--proportional,
-    .button-outline--big--proportional {
-      padding: 20px; }
-  .button--extra-big,
-  .button-outline--extra-big {
-    padding: 40px 80px; }
-    .button--extra-big--proportional,
-    .button-outline--extra-big--proportional {
-      padding: 40px; }
-  .button--transparent,
-  .button-outline--transparent {
-    background-color: transparent;
-    border-color: transparent; }
-
 .button {
   border-width: 1px; }
   .button--extra-small {
@@ -652,6 +613,45 @@ small {
     .button-outline--yellow--disabled, .button-outline--yellow:disabled {
       border-color: #fbeeb7; }
 
+.button,
+.button-outline {
+  border-style: solid;
+  text-decoration: none; }
+  .button--extra-small,
+  .button-outline--extra-small {
+    padding: 2px 5px; }
+    .button--extra-small--proportional,
+    .button-outline--extra-small--proportional {
+      padding: 2px; }
+  .button--small,
+  .button-outline--small {
+    padding: 5px 10px; }
+    .button--small--proportional,
+    .button-outline--small--proportional {
+      padding: 5px; }
+  .button--regular,
+  .button-outline--regular {
+    padding: 10px 20px; }
+    .button--regular--proportional,
+    .button-outline--regular--proportional {
+      padding: 10px; }
+  .button--big,
+  .button-outline--big {
+    padding: 20px 40px; }
+    .button--big--proportional,
+    .button-outline--big--proportional {
+      padding: 20px; }
+  .button--extra-big,
+  .button-outline--extra-big {
+    padding: 40px 80px; }
+    .button--extra-big--proportional,
+    .button-outline--extra-big--proportional {
+      padding: 40px; }
+  .button--transparent,
+  .button-outline--transparent {
+    background-color: transparent;
+    border-color: transparent; }
+
 .link {
   background-color: transparent;
   border: 0;
@@ -1078,6 +1078,21 @@ small {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0; }
 
+.navigation-change {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+  .navigation-change .button {
+    background-color: transparent;
+    border-color: transparent;
+    position: absolute; }
+    .navigation-change .button:first-child {
+      left: 0; }
+    .navigation-change .button:last-child {
+      right: 0; }
+
 .card {
   max-width: 100%;
   width: auto; }
@@ -1284,20 +1299,6 @@ small {
     opacity: 0.5; }
     .carousel__controller-button--active {
       opacity: 1; }
-  .carousel__arrow {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%; }
-    .carousel__arrow .button {
-      background-color: transparent;
-      border-color: transparent;
-      position: absolute; }
-      .carousel__arrow .button:first-child {
-        left: 0; }
-      .carousel__arrow .button:last-child {
-        right: 0; }
 
 .icon--extra-small {
   height: 10px;
@@ -1490,54 +1491,6 @@ small {
   .form.yellow .form__fill:focus {
     box-shadow: 0 0 0 4px rgba(245, 214, 86, 0.7); }
 
-.column {
-  flex-direction: column;
-  height: 100%; }
-
-.row {
-  flex: 0 1 100%;
-  flex-direction: row;
-  flex-wrap: wrap; }
-
-.column,
-.row {
-  display: flex; }
-
-.center {
-  align-items: center;
-  justify-content: center;
-  text-align: center; }
-
-.rotate-45 {
-  transform: rotate(45deg); }
-
-.rotate-180 {
-  transform: rotate(180deg); }
-
-.hide {
-  pointer-events: none;
-  visibility: hidden; }
-
-@media (min-width: 768px) {
-  .hide-tablet {
-    display: none; } }
-
-@media (min-width: 1024px) {
-  .hide-tablet-landscape {
-    display: none; } }
-
-@media (min-width: 1366px) {
-  .hide-notebook {
-    display: none; } }
-
-@media (min-width: 1600px) {
-  .hide-desktop {
-    display: none; } }
-
-@media (min-width: 1920px) {
-  .hide-full-hd {
-    display: none; } }
-
 .loading-1 {
   animation: load5 1.3s infinite linear;
   border-radius: 50%;
@@ -1676,7 +1629,106 @@ small {
     background-color: #f1c50e; }
 
 .modal {
-  display: none; }
+  background-color: rgba(51, 51, 51, 0.5);
+  bottom: 0;
+  display: flex;
+  left: 0;
+  opacity: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 5px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: 0.3s;
+  z-index: 3; }
+  @media only screen and (min-width: 768px) {
+    .modal {
+      padding: 20px; } }
+  .modal__header, .modal__footer {
+    display: flex;
+    padding: 10px;
+    width: 100%; }
+  .modal__footer {
+    background-color: #f2f2f2; }
+    @media only screen and (min-width: 768px) {
+      .modal__footer {
+        border-radius: 0 0 4px 4px; } }
+  .modal__box {
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 0;
+    justify-content: center;
+    margin: auto;
+    pointer-events: initial;
+    position: relative;
+    transform: translate(0, -200px);
+    transition: 0.3s;
+    width: 100%; }
+    @media only screen and (min-width: 768px) {
+      .modal__box {
+        border-radius: 4px; } }
+  .modal--extra-small {
+    max-width: 100%; }
+    @media only screen and (min-width: 768px) {
+      .modal--extra-small {
+        max-width: 320px; } }
+  .modal--small {
+    max-width: 100%; }
+    @media only screen and (min-width: 768px) {
+      .modal--small {
+        max-width: 768px; } }
+  .modal--regular {
+    max-width: 100%; }
+    @media only screen and (min-width: 768px) {
+      .modal--regular {
+        max-width: 1024px; } }
+  .modal--big {
+    max-width: 100%; }
+    @media only screen and (min-width: 768px) {
+      .modal--big {
+        max-width: 1366px; } }
+  .modal--extra-big {
+    max-width: 100%; }
+    @media only screen and (min-width: 768px) {
+      .modal--extra-big {
+        max-width: 1600px; } }
+  .modal--full {
+    max-width: 100%; }
+
+.modal__content {
+  padding: 10px;
+  position: relative; }
+  .modal__content .modal-description {
+    background-color: rgba(51, 51, 51, 0.6);
+    bottom: 0;
+    color: #ffffff;
+    padding: 5px;
+    position: absolute;
+    text-align: center;
+    width: calc(100% - 20px); }
+    @media only screen and (min-width: 768px) {
+      .modal__content .modal-description {
+        padding: 10px; } }
+
+.button--close {
+  float: right;
+  font-weight: bold; }
+
+.modal--close {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: 0.3s; }
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .modal--close {
+      position: absolute;
+      top: -100% !important; } }
+  .modal--close * {
+    pointer-events: none !important; }
+
+.modal-animate {
+  transform: translate(0, 0) !important;
+  transition: 0.3s; }
 
 .notification {
   align-items: flex-end;
@@ -2746,3 +2798,74 @@ small {
       color: #a98a0a; }
   .tag--yellow .button .icon {
     fill: #f1c50e; }
+
+.column {
+  flex-direction: column;
+  height: 100%; }
+
+.row {
+  flex: 0 1 100%;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.column,
+.row {
+  display: flex; }
+
+.center {
+  align-items: center;
+  justify-content: center;
+  text-align: center; }
+
+.left {
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left; }
+
+.right {
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-align: right; }
+
+.rotate-45 {
+  transform: rotate(45deg); }
+
+.rotate-180 {
+  transform: rotate(180deg); }
+
+.hide {
+  font-size: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  visibility: hidden;
+  width: 0; }
+  .hide * {
+    font-size: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+    visibility: hidden;
+    width: 0; }
+
+@media (min-width: 768px) {
+  .hide-tablet {
+    display: none; } }
+
+@media (min-width: 1024px) {
+  .hide-tablet-landscape {
+    display: none; } }
+
+@media (min-width: 1366px) {
+  .hide-notebook {
+    display: none; } }
+
+@media (min-width: 1600px) {
+  .hide-desktop {
+    display: none; } }
+
+@media (min-width: 1920px) {
+  .hide-full-hd {
+    display: none; } }

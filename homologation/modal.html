@@ -156,30 +156,17 @@
         </section>
         <section class="grid__content page">
 
-<h1 class="page-title">
-    Modal
-</h1>
-<div class="row">
-    <div class="col-es-12 text-center">
-        <nav class="menu menu-horizontal">
-            <ul>
-                <li>
-                    <button type="button" class="bt bt-re bt-fu bt-blue"
-                        onclick="objWfModal.buildModal('ajax', './modal-ajax.html');">
-                        Modal
-                    </button>
-                </li>
-                <li>
-                    <button type="button" class="bt bt-re bt-fu bt-blue" onclick="
-                                objWfModal.buildModal('confirmation', 'Lorem ipsum dolor sit amet, consecttur adipscing elit?');
-                                objWfModal.buildContentConfirmationAction('console.log(this)');
+<h1 class="page__title">Modal</h1>
+<div class="row button-wrapper center">
+    <button type="button" class="button button--regular button--blue"
+        onclick="window.objWfModal.buildModal({'kind': 'ajax', 'content': './modal-ajax.html', 'size': 'regular'});">
+        Modal
+    </button>
+    <button type="button" class="button button--regular button--blue" onclick="
+                                window.objWfModal.buildModal({'kind': 'confirmation','content': 'Lorem ipsum dolor sit amet, consecttur adipscing elit?', 'size': 'small', 'click': 'console.log(this)'});
                                 ">
-                        Confirmation
-                    </button>
-                </li>
-            </ul>
-        </nav>
-    </div>
+        Confirmation
+    </button>
 </div>
         </section>
         <footer class="grid__footer">
