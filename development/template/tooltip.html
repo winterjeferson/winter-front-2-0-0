@@ -2,27 +2,15 @@
 {% set arrPosition = ['top', 'right', 'bottom', 'left'] %}
 {% include "include/head.html" %}
 
-<h1 class="page-title">
-    Tooltip
-</h1>
-<div class="row">
+<h1 class="page__title">Tooltip</h1>
+{% for position in arrPosition %}
+<div class="row center button-wrapper tooltip-wrapper">
     {% for color in arrColor %}
-    <div class="col-es-12 text-center">
-        <nav class="menu menu-horizontal">
-            <ul>
-                {% for position in arrPosition %}
-                <li>
-                    <a href="javascript:;" class="link link-{{color}}"
-                        title="Lorem <strong class='color-red'>ipsum</strong> dolor sit amet, consecttur adipscing elit. <img src='assets/img/banner/1.png' style='width: 100px; height: auto; padding: 10px;'>"
-                        alt="" data-tooltip="true" data-tooltip-placement="{{position}}" data-tooltip-color="{{color}}">
-                        {{color}} - ({{position}})
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-        </nav>
-    </div>
+    <a href="javascript:;" class="link link--{{color}} tooltip tooltip--{{color}} tooltip--{{position}}" data-tooltip="tooltip text here">
+        {{position}}
+    </a>
     {% endfor %}
 </div>
+{% endfor %}
 
 {% include "include/footer.html" %}

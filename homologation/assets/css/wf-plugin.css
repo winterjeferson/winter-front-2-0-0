@@ -2801,6 +2801,76 @@ small {
   .tag--yellow .button .icon {
     fill: #f1c50e; }
 
+.tooltip {
+  position: relative; }
+  .tooltip:after {
+    border-radius: 2px;
+    content: attr(data-tooltip);
+    opacity: 0;
+    padding: 10px;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    transition: 0.3s;
+    white-space: nowrap;
+    z-index: 1; }
+  .tooltip:hover:after {
+    opacity: 1; }
+  .tooltip--black:after {
+    background-color: #333333;
+    color: #ffffff; }
+  .tooltip--blue:after {
+    background-color: #3297db;
+    color: #ffffff; }
+  .tooltip--brown:after {
+    background-color: #7f4d04;
+    color: #ffffff; }
+  .tooltip--cyan:after {
+    background-color: #23c4af;
+    color: #ffffff; }
+  .tooltip--green:after {
+    background-color: #2dcc70;
+    color: #ffffff; }
+  .tooltip--grey:after {
+    background-color: #bec3c7;
+    color: #333333; }
+  .tooltip--orange:after {
+    background-color: #e77e22;
+    color: #ffffff; }
+  .tooltip--pink:after {
+    background-color: #e81cb6;
+    color: #ffffff; }
+  .tooltip--purple:after {
+    background-color: #9a59b5;
+    color: #ffffff; }
+  .tooltip--red:after {
+    background-color: #e14b4a;
+    color: #ffffff; }
+  .tooltip--white:after {
+    background-color: #ffffff;
+    color: #333333; }
+  .tooltip--yellow:after {
+    background-color: #f1c50e;
+    color: #ffffff; }
+  .tooltip--bottom:after, .tooltip--top:after {
+    left: 50%;
+    transform: translateX(-50%); }
+  .tooltip--left:after, .tooltip--right:after {
+    top: 50%; }
+  .tooltip--bottom:after {
+    bottom: -100%;
+    margin-bottom: -25px; }
+  .tooltip--left:after {
+    margin-left: -100%;
+    transform: translate(-100%, -50%); }
+  .tooltip--right:after {
+    left: 15px;
+    margin-left: 100%;
+    transform: translate(0%, -50%); }
+  .tooltip--top:after {
+    margin-top: -25px;
+    top: -100%; }
+
 .column {
   flex-direction: column;
   height: 100%; }

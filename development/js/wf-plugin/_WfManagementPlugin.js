@@ -19,7 +19,6 @@ class WfManagementPlugin {
         objWfNotification.build();
         objWfTable.build();
         objWfTag.build();
-        objWfTooltip.build();
     }
 }
 
@@ -38,7 +37,6 @@ window.objWfNotification = new WfNotification();
 window.objWfProgress = new WfProgress();
 window.objWfTable = new WfTable();
 window.objWfTag = new WfTag();
-window.objWfTooltip = new WfTooltip();
 window.objWfTranslation = new WfTranslation();
 
 objWfManagementPlugin.verifyLoad();

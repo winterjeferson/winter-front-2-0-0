@@ -103,6 +103,9 @@
   margin-bottom: 40px;
   max-height: 500px; }
 
+.tooltip-wrapper {
+  margin-bottom: 40px; }
+
 .gallery__item {
   flex: 1; }
 

@@ -300,10 +300,6 @@ class WfModal {
             window.objWfMenuToggle.build();
         }
 
-        if (typeof window.objWfTooltip !== 'undefined') {
-            window.objWfTooltip.reset();
-        }
-
         if (typeof window.objWfMenuTab !== 'undefined') {
             window.objWfMenuTab.defineActive();
         }
