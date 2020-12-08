@@ -4,12 +4,13 @@ class WfModal {
 
         this.cssHide = 'hide';
         this.cssClose = 'modal--close';
+
+        this.elBody = document.querySelector('body');
     }
 
     update() {
         this.targetBuildGalleryChange = '';
 
-        this.elBody = document.querySelector('body');
         this.elModal = document.querySelector('.modal');
         this.elModalFooter = this.elModal.querySelector('footer');
         this.elModalFooterConfirm = this.elModalFooter.querySelector('[data-id="confirm"]');
@@ -33,7 +34,7 @@ class WfModal {
     }
 
     buildHtml() {
-        let string = `
+        const string = `
             <div class="modal ${this.cssClose}">
                 <div class="modal__box">
                     <header class="modal__header right">
@@ -47,13 +48,13 @@ class WfModal {
                         <div id="modalContent" class="modal__content"></div>
                     </div>
                     <div class="navigation-change button-wrapper row center ${this.cssHide}">
-                        <button type="button" class="button button--small" data-id="previous" aria-label="${objWfTranslation.translation.previous}" >
-                            <svg class="icon icon-eb">
+                        <button type="button" class="button button--big" data-id="previous" aria-label="${objWfTranslation.translation.previous}" >
+                            <svg class="icon icon--extra-big icon--white">
                                 <use xlink:href="./assets/img/icon.svg#previous"></use>
                             </svg>
                         </button>
-                        <button type="button" class="button button--small" data-id="next" aria-label="${objWfTranslation.translation.next}" >
-                            <svg class="icon icon-eb rotate-180">
+                        <button type="button" class="button button--big" data-id="next" aria-label="${objWfTranslation.translation.next}" >
+                            <svg class="icon icon--extra-big icon--white rotate-180">
                                 <use xlink:href="./assets/img/icon.svg#previous"></use>
                             </svg>
                         </button>
@@ -66,7 +67,7 @@ class WfModal {
             </div>
         `;
 
-        document.querySelector('body').insertAdjacentHTML('afterbegin', string);
+        this.elBody.insertAdjacentHTML('afterbegin', string);
     }
 
     buildTranslation() {
@@ -75,85 +76,79 @@ class WfModal {
     }
 
     buildKeyboard() {
-        let self = this;
-
-        window.addEventListener('keyup', function (event) {
-            if (event.keyCode === 27) {
-                if (self.isModalOpen) {
-                    self.closeModal();
+        window.addEventListener('keyup', (event) => {
+            if (event.key === 'Escape') {
+                if (this.isModalOpen) {
+                    this.closeModal();
                 }
             }
 
-            if (event.keyCode === 37) {
-                if (!self.isModalOpen) {
+            if (event.key === 'ArrowLeft') {
+                if (!this.isModalOpen) {
                     return;
                 }
-                if (self.elModalNavigationArrowLeft.classList.contains(self.cssHide)) {
+                if (this.elModalNavigationArrowLeft.classList.contains(this.cssHide)) {
                     return;
                 } else {
-                    self.elModalNavigationArrowLeft.click();
+                    this.elModalNavigationArrowLeft.click();
                 }
             }
 
-            if (event.keyCode === 39) {
-                if (!self.isModalOpen) {
+            if (event.key === 'ArrowRight') {
+                if (!this.isModalOpen) {
                     return;
                 }
-                if (self.elModalNavigationArrowRight.classList.contains(self.cssHide)) {
+                if (this.elModalNavigationArrowRight.classList.contains(this.cssHide)) {
                     return;
                 } else {
-                    self.elModalNavigationArrowRight.click();
+                    this.elModalNavigationArrowRight.click();
                 }
             }
         });
     }
 
     buildMenuGallery() {
-        let self = this;
-
         if (!this.elGallery) {
             return;
         }
 
-        Array.prototype.forEach.call(this.elGallery, function (item) {
+        Array.prototype.forEach.call(this.elGallery, (item) => {
             let button = item.querySelectorAll('a');
 
-            Array.prototype.forEach.call(button, function (itemBt) {
-                itemBt.addEventListener('click', function (event) {
+            Array.prototype.forEach.call(button, (itemBt) => {
+                itemBt.addEventListener('click', (event) => {
                     event.preventDefault();
-                    self.buildModal('gallery', false, 'full');
-                    self.buildGalleryImage(itemBt.getAttribute('href'), itemBt.querySelector('img').getAttribute('data-description'));
-                    self.buildGalleryNavigation(itemBt);
+                    this.buildModal('gallery', false, 'full');
+                    this.buildGalleryImage(itemBt.getAttribute('href'), itemBt.querySelector('img').getAttribute('data-description'));
+                    this.buildGalleryNavigation(itemBt);
                 });
             });
         });
 
-        this.elModalNavigationArrowLeft.addEventListener('click', function () {
-            self.targetBuildGalleryChange.parentNode.previousElementSibling.querySelector('a').click();
+        this.elModalNavigationArrowLeft.addEventListener('click', () => {
+            this.targetBuildGalleryChange.previousElementSibling.click();
         });
 
-        this.elModalNavigationArrowRight.addEventListener('click', function () {
-            self.targetBuildGalleryChange.parentNode.nextElementSibling.querySelector('a').click();
+        this.elModalNavigationArrowRight.addEventListener('click', () => {
+            this.targetBuildGalleryChange.nextElementSibling.click();
         });
     }
 
     buildMenu() {
-        let self = this;
-
-        this.elModalClose.addEventListener('click', function () {
-            self.closeModal();
+        this.elModalClose.addEventListener('click', () => {
+            this.closeModal();
         });
 
-        document.addEventListener('click', function (event) {
-            var isButton = event.target.matches('button *, a *');
+        document.addEventListener('click', (event) => {
+            let isButton = event.target.matches('button *, a *');
 
             if (isButton) {
                 return;
             }
         });
 
-        this.elModalFooter.querySelector('[data-id="cancel"]').addEventListener('click', function (event) {
-            self.closeModal();
+        this.elModalFooter.querySelector('[data-id="cancel"]').addEventListener('click', (event) => {
+            this.closeModal();
         });
     }
 
@@ -162,7 +157,7 @@ class WfModal {
         let currentGallery = target.parentNode.parentNode;
         let siblingLength = currentGallery.querySelectorAll('a').length - 1;
 
-        Array.prototype.forEach.call(currentGallery.querySelectorAll('a'), function (item) {
+        Array.prototype.forEach.call(currentGallery.querySelectorAll('a'), (item) => {
             array.push(item);
         });
 
@@ -194,34 +189,30 @@ class WfModal {
         typeof obj.action === 'undefined' ? this.openModal() : this.closeModal();
         typeof obj.click !== 'undefined' ? this.buildContentConfirmationAction(obj.click) : '';
         this.buildModalSize(obj.size);
-        this.buildModalKind(obj.kind, obj.content);
+        this.buildModalKind(obj);
     }
 
-    buildModalKind(kind, content) {
-
-        if (kind === 'ajax') {
-            this.buildContentAjax(content);
+    buildModalKind(obj) {
+        if (obj.kind === 'ajax') {
+            this.buildContentAjax(obj.content);
         }
 
-        if (kind === 'confirmation') {
-            this.buildContentConfirmation(content);
+        if (obj.kind === 'confirmation') {
+            this.buildContentConfirmation(obj.content);
         }
 
-        switch (kind) {
+        switch (obj.kind) {
             case 'gallery':
-                this.elModalNavigationArrow.classList.remove('arrow-inactive');
-                this.elModalNavigationArrow.classList.add('arrow-active');
+                this.elModalNavigationArrow.classList.remove('hide');
                 break;
             default:
-                this.elModalNavigationArrow.classList.remove('arrow-active');
-                this.elModalNavigationArrow.classList.add('arrow-inactive');
+                this.elModalNavigationArrow.classList.add('hide');
                 break;
         }
     }
 
     openModal() {
         this.isModalOpen = true;
-
         this.elBody.classList.remove('overflow-y');
         this.elBody.classList.add('overflow-hidden');
         this.elBody.style.overflowY = 'hidden';
@@ -231,26 +222,23 @@ class WfModal {
 
     closeModal() {
         this.isModalOpen = false;
-
         this.elBody.classList.add('overflow-y');
         this.elBody.classList.remove('overflow-hidden');
         this.elBody.style.overflowY = 'auto';
         this.elBody.style.position = 'relative';
         this.elModal.classList.add(this.cssClose);
         this.elModalBox.classList.remove('modal-animate');
-
         this.resetOtherClass();
     }
 
     buildModalSize(size = 'regular') {
         const prefix = 'modal--';
+        const arr = ['extra-small', 'small', 'regular', 'big', 'extra-big', 'full'];
 
-        this.elModalBox.classList.remove(`${prefix}extra-small`);
-        this.elModalBox.classList.remove(`${prefix}small`);
-        this.elModalBox.classList.remove(`${prefix}regular`);
-        this.elModalBox.classList.remove(`${prefix}big`);
-        this.elModalBox.classList.remove(`${prefix}extra-big`);
-        this.elModalBox.classList.remove(`${prefix}full`);
+        Array.prototype.forEach.call(arr, (item) => {
+            this.elModalBox.classList.remove(`${prefix}${item}`);
+        });
+
         this.elModalBox.classList.add(`${prefix}${size}`);
     }
 
@@ -300,28 +288,28 @@ class WfModal {
     }
 
     resetOtherClass() {
-        if (typeof objWfForm !== 'undefined') {
-            objWfForm.buildInputFile();
+        if (typeof window.objWfForm !== 'undefined') {
+            window.objWfForm.buildInputFile();
         }
 
-        if (typeof objWfMenuDropDown !== 'undefined') {
-            objWfMenuDropDown.reset();
+        if (typeof window.objWfMenuDropDown !== 'undefined') {
+            window.objWfMenuDropDown.reset();
         }
 
-        if (typeof objWfMenuToggle !== 'undefined') {
-            objWfMenuToggle.build();
+        if (typeof window.objWfMenuToggle !== 'undefined') {
+            window.objWfMenuToggle.build();
         }
 
-        if (typeof objWfTooltip !== 'undefined') {
-            objWfTooltip.reset();
+        if (typeof window.objWfTooltip !== 'undefined') {
+            window.objWfTooltip.reset();
         }
 
-        if (typeof objWfMenuTab !== 'undefined') {
-            objWfMenuTab.defineActive();
+        if (typeof window.objWfMenuTab !== 'undefined') {
+            window.objWfMenuTab.defineActive();
         }
 
-        if (typeof objWfLazyLoad !== 'undefined') {
-            objWfLazyLoad.build();
+        if (typeof window.objWfLazyLoad !== 'undefined') {
+            window.objWfLazyLoad.build();
         }
     }
 }

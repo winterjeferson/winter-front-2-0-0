@@ -1,5 +1,6 @@
+$self: button;
+
 .tab {
-    $self: button;
     align-items: flex-end;
     border-bottom: $border-width solid;
     margin-bottom: 0;
@@ -33,6 +34,8 @@
     }
 
     .drop-down>.button {
+        margin-top: -$border-width;
+
         @each $color in $arrColorButton {
             &--#{$color} {
                 &:after {

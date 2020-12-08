@@ -1,5 +1,5 @@
- [class*="color-"] {
-     float: left;
+ [class*="color--"] {
+     display: flex;
      position: relative;
      width: calc(100% / 31);
 
@@ -9,7 +9,7 @@
      }
 
      @each $color in $arrColorDefault {
-         &.color-#{$color} {
+         &.color--#{$color} {
              background-color: color-regular(#{$color});
 
              &:after {
@@ -24,99 +24,99 @@
      }
 
      @for $i from 1 through 15 {
-         &.color-grey-lighten-#{$i} {
+         &.color--grey-lighten-#{$i} {
              background-color: lighten($color-grey, $i * $scale);
          }
 
-         &.color-grey-darken-#{$i} {
+         &.color--grey-darken-#{$i} {
              background-color: darken($color-grey, $i * $scale);
          }
 
-         &.color-blue-lighten-#{$i} {
+         &.color--blue-lighten-#{$i} {
              background-color: lighten($color-blue, $i * $scale);
          }
 
-         &.color-blue-darken-#{$i} {
+         &.color--blue-darken-#{$i} {
              background-color: darken($color-blue, $i * $scale);
          }
 
-         &.color-green-lighten-#{$i} {
+         &.color--green-lighten-#{$i} {
              background-color: lighten($color-green, $i * $scale);
          }
 
-         &.color-green-darken-#{$i} {
+         &.color--green-darken-#{$i} {
              background-color: darken($color-green, $i * $scale);
          }
 
-         &.color-cyan-lighten-#{$i} {
+         &.color--cyan-lighten-#{$i} {
              background-color: lighten($color-cyan, $i * $scale);
          }
 
-         &.color-cyan-darken-#{$i} {
+         &.color--cyan-darken-#{$i} {
              background-color: darken($color-cyan, $i * $scale);
          }
 
-         &.color-orange-lighten-#{$i} {
+         &.color--orange-lighten-#{$i} {
              background-color: lighten($color-orange, $i * $scale);
          }
 
-         &.color-orange-darken-#{$i} {
+         &.color--orange-darken-#{$i} {
              background-color: darken($color-orange, $i * $scale);
          }
 
-         &.color-red-lighten-#{$i} {
+         &.color--red-lighten-#{$i} {
              background-color: lighten($color-red, $i * $scale);
          }
 
-         &.color-red-darken-#{$i} {
+         &.color--red-darken-#{$i} {
              background-color: darken($color-red, $i * $scale);
          }
 
-         &.color-yellow-lighten-#{$i} {
+         &.color--yellow-lighten-#{$i} {
              background-color: lighten($color-yellow, $i * $scale);
          }
 
-         &.color-yellow-darken-#{$i} {
+         &.color--yellow-darken-#{$i} {
              background-color: darken($color-yellow, $i * $scale);
          }
 
-         &.color-purple-lighten-#{$i} {
+         &.color--purple-lighten-#{$i} {
              background-color: lighten($color-purple, $i * $scale);
          }
 
-         &.color-purple-darken-#{$i} {
+         &.color--purple-darken-#{$i} {
              background-color: darken($color-purple, $i * $scale);
          }
 
-         &.color-brown-lighten-#{$i} {
+         &.color--brown-lighten-#{$i} {
              background-color: lighten($color-brown, $i * $scale);
          }
 
-         &.color-brown-darken-#{$i} {
+         &.color--brown-darken-#{$i} {
              background-color: darken($color-brown, $i * $scale);
          }
 
-         &.color-pink-lighten-#{$i} {
+         &.color--pink-lighten-#{$i} {
              background-color: lighten($color-pink, $i * $scale);
          }
 
-         &.color-pink-darken-#{$i} {
+         &.color--pink-darken-#{$i} {
              background-color: darken($color-pink, $i * $scale);
          }
 
-         &.color-black-lighten-#{$i} {
+         &.color--black-lighten-#{$i} {
              background-color: lighten($color-black, $i * $scale);
          }
 
-         &.color-black-darken-#{$i} {
+         &.color--black-darken-#{$i} {
              background-color: darken($color-black, $i * $scale);
          }
 
-         &.color-white-lighten-#{$i} {
+         &.color--white-lighten-#{$i} {
              background-color: lighten($color-white, $i * $scale);
          }
 
-         &.color-white-darken-#{$i} {
+         &.color--white-darken-#{$i} {
              background-color: darken($color-white, $i * $scale);
          }
      }
