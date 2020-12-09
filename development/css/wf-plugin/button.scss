@@ -405,5 +405,18 @@
 }
 
 .toggle-menu {
+    display: flex;
     margin-bottom: $regular;
+
+    @include tablet-landscape {
+        display: none;
+    }
+}
+
+.toggle-menu__content {
+    display: none;
+
+    @include tablet-landscape {
+        display: flex;
+    }
 }

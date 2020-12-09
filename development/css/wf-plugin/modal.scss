@@ -13,7 +13,7 @@
     transition: $transition;
     z-index: z-index("modal");
 
-    @media only screen and (min-width: $break-point-tablet) {
+    @include tablet-landscape {
         padding: $big;
     }
 
@@ -27,7 +27,7 @@
     &__footer {
         background-color: color-extra-light("black");
 
-        @media only screen and (min-width: $break-point-tablet) {
+        @include tablet-landscape {
             border-radius: 0 0 $border-radius-regular $border-radius-regular;
         }
     }
@@ -44,7 +44,7 @@
         transition: $transition;
         width: 100%;
 
-        @media only screen and (min-width: $break-point-tablet) {
+        @include tablet-landscape {
             border-radius: $border-radius-regular;
         }
     }
@@ -52,7 +52,7 @@
     &--extra-small {
         max-width: 100%;
 
-        @media only screen and (min-width: $break-point-tablet) {
+        @include tablet-landscape {
             max-width: $break-point-smartphone;
         }
     }
@@ -60,7 +60,7 @@
     &--small {
         max-width: 100%;
 
-        @media only screen and (min-width: $break-point-tablet) {
+        @include tablet-landscape {
             max-width: $break-point-tablet;
         }
     }
@@ -68,7 +68,7 @@
     &--regular {
         max-width: 100%;
 
-        @media only screen and (min-width: $break-point-tablet) {
+        @include tablet-landscape {
             max-width: $break-point-tablet-landscape;
         }
     }
@@ -76,7 +76,7 @@
     &--big {
         max-width: 100%;
 
-        @media only screen and (min-width: $break-point-tablet) {
+        @include tablet-landscape {
             max-width: $break-point-notebook;
         }
     }
@@ -84,7 +84,7 @@
     &--extra-big {
         max-width: 100%;
 
-        @media only screen and (min-width: $break-point-tablet) {
+        @include tablet-landscape {
             max-width: $break-point-desktop;
         }
     }
@@ -108,7 +108,7 @@
         text-align: center;
         width: calc(100% - #{$big});
 
-        @media only screen and (min-width: $break-point-tablet) {
+        @include tablet-landscape {
             padding: $regular;
         }
     }

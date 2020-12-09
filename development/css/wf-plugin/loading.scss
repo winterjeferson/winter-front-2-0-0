@@ -30,35 +30,35 @@
     text-indent: -9999em;
     transform: translateZ(0);
 
-    &.extra-small {
+    &--extra-small {
         font-size: $extra-small;
         height: $extra-small;
         margin: $extra-small;
         width: $extra-small;
     }
 
-    &.small {
+    &--small {
         font-size: $small;
         height: $small;
         margin: $small;
         width: $small;
     }
 
-    &.regular {
+    &--regular {
         font-size: $regular;
         height: $regular;
         margin: $regular;
         width: $regular;
     }
 
-    &.big {
+    &--big {
         font-size: $big;
         height: $big;
         margin: $big;
         width: $big;
     }
 
-    &.extra-big {
+    &--extra-big {
         font-size: $extra-big;
         height: $extra-big;
         margin: $extra-big;
@@ -110,7 +110,7 @@
     }
 
     @each $color in $arrColorLoading {
-        &.#{$color} {
+        &--#{$color} {
             color: color-regular(#{$color});
         }
     }
@@ -120,35 +120,35 @@
     animation: sk-rotateplane 1.2s infinite ease-in-out;
     display: inline-block;
 
-    &.extra-small {
+    &--extra-small {
         height: $extra-small;
         margin: $extra-small;
         padding: $extra-small;
         width: $extra-small;
     }
 
-    &.small {
+    &--small {
         height: $small;
         margin: $small;
         padding: $small;
         width: $small;
     }
 
-    &.regular {
+    &--regular {
         height: $regular;
         margin: $regular;
         padding: $regular;
         width: $regular;
     }
 
-    &.big {
+    &--big {
         height: $big;
         margin: $big;
         padding: $big;
         width: $big;
     }
 
-    &.extra-big {
+    &--extra-big {
         height: $extra-big;
         margin: $extra-big;
         padding: $extra-big;
@@ -171,7 +171,7 @@
     }
 
     @each $color in $arrColorLoading {
-        &.#{$color} {
+        &--#{$color} {
             background-color: color-regular(#{$color});
         }
     }

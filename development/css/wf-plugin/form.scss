@@ -28,7 +28,7 @@ $prefix: 'form';
     }
 
     &__option {
-        @extend %extend-component-margin;
+        margin-right: $big;
     }
 
     select[multiple],
@@ -44,6 +44,7 @@ $prefix: 'form';
 
     @each $color in $arrColorButton {
         &.#{$color} {
+
             input[type="checkbox"],
             input[type="radio"] {
                 &:focus {

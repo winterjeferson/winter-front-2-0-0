@@ -163,7 +163,6 @@ class WfCarousel {
 
         Array.prototype.forEach.call(button, function (item) {
             item.onclick = function () {
-                // item.parentNode.parentNode.querySelector(`[${self.attCurrentSlide}="${item.getAttribute('data-id')}"]`);
                 self.defineActive(item);
                 self.animate(item.getAttribute('data-id'), item, 'navigation');
             };
@@ -292,10 +291,10 @@ class WfCarousel {
         let elCarouselListItem = elCarouselList.querySelectorAll('li');
         let length = elCarouselListItem.length;
 
-        elCarouselList.style.width = +length * 100 + '%';
+        elCarouselList.style.width += length * 100 + '%';
 
         Array.prototype.forEach.call(elCarouselListItem, function (item) {
-            item.style.width = +100 / length + '%';
+            item.style.width = '100%';
         });
     }
 }
@@ -647,7 +646,6 @@ class WfMenuTab {
 }
 class WfMenuToggle {
     constructor() {
-        this.classDisplay = 'hide';
         this.classButton = 'toggle-menu';
         this.isWatch = false;
     }
@@ -669,12 +667,14 @@ class WfMenuToggle {
     buildClick() {
         Array.prototype.forEach.call(this.elButton, (el) => {
             el.onclick = () => {
-                let sibling = el.nextElementSibling;
+                const attribute = 'style';
+                const sibling = el.nextElementSibling;
+                const isStyle = sibling.hasAttribute(attribute);
 
-                if (sibling.classList.contains(this.classDisplay)) {
-                    sibling.classList.remove(this.classDisplay);
+                if (isStyle) {
+                    sibling.removeAttribute(attribute);
                 } else {
-                    sibling.classList.add(this.classDisplay);
+                    sibling.style.display = 'flex';
                 }
             };
         });

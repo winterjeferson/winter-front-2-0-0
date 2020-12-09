@@ -1,6 +1,5 @@
 class WfMenuToggle {
     constructor() {
-        this.classDisplay = 'hide';
         this.classButton = 'toggle-menu';
         this.isWatch = false;
     }
@@ -22,12 +21,14 @@ class WfMenuToggle {
     buildClick() {
         Array.prototype.forEach.call(this.elButton, (el) => {
             el.onclick = () => {
-                let sibling = el.nextElementSibling;
+                const attribute = 'style';
+                const sibling = el.nextElementSibling;
+                const isStyle = sibling.hasAttribute(attribute);
 
-                if (sibling.classList.contains(this.classDisplay)) {
-                    sibling.classList.remove(this.classDisplay);
+                if (isStyle) {
+                    sibling.removeAttribute(attribute);
                 } else {
-                    sibling.classList.add(this.classDisplay);
+                    sibling.style.display = 'flex';
                 }
             };
         });

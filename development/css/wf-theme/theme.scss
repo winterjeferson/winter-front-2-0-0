@@ -134,6 +134,18 @@
     }
 }
 
+.page-card {
+
+    .card--extra-big,
+    .card--big {
+        display: none;
+
+        @include tablet-landscape {
+            display: initial;
+        }
+    }
+}
+
 .page-table {
     .wrapper-table-responsive {
         margin-bottom: $extra-big;
@@ -146,9 +158,14 @@
 }
 
 .gallery {
+
     &__item {
-        flex: 1;
-        @extend %extend-component-margin;
+        margin: $extra-small;
+
+        @include tablet-landscape {
+            flex: 1;
+            margin: $regular;
+        }
     }
 }
 
