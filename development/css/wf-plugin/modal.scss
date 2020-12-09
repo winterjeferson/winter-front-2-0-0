@@ -92,16 +92,17 @@
     &--full {
         max-width: 100%;
     }
-}
 
-.modal__content {
-    padding: $regular;
-    position: relative;
+    &__content {
+        padding: $regular;
+        position: relative;
+    }
 
-    .modal-description {
+    &__description {
         background-color: rgba($color-black, 0.6);
         bottom: 0;
         color: $color-white;
+        margin-bottom: 14px;
         padding: $small;
         position: absolute;
         text-align: center;

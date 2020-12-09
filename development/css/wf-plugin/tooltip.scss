@@ -1,5 +1,5 @@
-$spaceVertical: $regular * 2 + $small;
-$spaceHorizontal: $regular + $small;
+$spaceVertical: ($regular * 2 + $small);
+$spaceHorizontal: ($regular + $small);
 
 .tooltip {
     position: relative;
@@ -7,7 +7,7 @@ $spaceHorizontal: $regular + $small;
     &:after {
         border-radius: $border-radius-small;
         content: attr(data-tooltip);
-        opacity: 0;
+        display: none;
         padding: $regular;
         pointer-events: none;
         position: absolute;
@@ -19,7 +19,7 @@ $spaceHorizontal: $regular + $small;
 
     &:hover {
         &:after {
-            opacity: 1;
+            display: block;
         }
     }
 

@@ -1093,6 +1093,9 @@ small {
     .navigation-change .button:last-child {
       right: 0; }
 
+.toggle-menu {
+  margin-bottom: 10px; }
+
 .card {
   max-width: 100%;
   width: auto; }
@@ -1695,20 +1698,20 @@ small {
         max-width: 1600px; } }
   .modal--full {
     max-width: 100%; }
-
-.modal__content {
-  padding: 10px;
-  position: relative; }
-  .modal__content .modal-description {
+  .modal__content {
+    padding: 10px;
+    position: relative; }
+  .modal__description {
     background-color: rgba(51, 51, 51, 0.6);
     bottom: 0;
     color: #ffffff;
+    margin-bottom: 14px;
     padding: 5px;
     position: absolute;
     text-align: center;
     width: calc(100% - 20px); }
     @media only screen and (min-width: 768px) {
-      .modal__content .modal-description {
+      .modal__description {
         padding: 10px; } }
 
 .button--close {
@@ -2806,7 +2809,7 @@ small {
   .tooltip:after {
     border-radius: 2px;
     content: attr(data-tooltip);
-    opacity: 0;
+    display: none;
     padding: 10px;
     pointer-events: none;
     position: absolute;
@@ -2815,7 +2818,7 @@ small {
     white-space: nowrap;
     z-index: 1; }
   .tooltip:hover:after {
-    opacity: 1; }
+    display: block; }
   .tooltip--black:after {
     background-color: #333333;
     color: #ffffff; }

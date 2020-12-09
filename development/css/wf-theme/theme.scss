@@ -59,9 +59,11 @@
     height: 100%;
     padding: $regular;
 
-    .button {
-        font-size: $font-size-regular;
-        margin-bottom: 0;
+    .column {
+        .button {
+            font-size: $font-size-regular;
+            margin-bottom: 0;
+        }
     }
 }
 

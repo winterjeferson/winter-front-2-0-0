@@ -280,7 +280,7 @@ class WfModal {
             return;
         }
 
-        const string = `<p class="modal-description">${description}</p>`;
+        const string = `<p class="modal__description">${description}</p>`;
 
         if (typeof description !== typeof undefined) {
             this.elModalContent.insertAdjacentHTML('beforeend', string);

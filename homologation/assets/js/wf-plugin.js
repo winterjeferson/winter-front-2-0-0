@@ -646,38 +646,43 @@ class WfMenuTab {
     }
 }
 class WfMenuToggle {
+    constructor() {
+        this.classDisplay = 'hide';
+        this.classButton = 'toggle-menu';
+        this.isWatch = false;
+    }
+
     build() {
-        this.updateVariable();
-        this.buildBt();
-        this.watchResize();
+        this.update();
+        this.buildClick();
+
+        if (!this.isWatch) {
+            this.isWatch = true;
+            this.watchResize();
+        }
     }
 
-    updateVariable() {
-        this.$bt = document.querySelectorAll('.bt-toggle');
+    update() {
+        this.elButton = document.querySelectorAll(`.${this.classButton}`);
     }
 
-    buildBt() {
-        Array.prototype.forEach.call(this.$bt, function (el, i) {
-            el.onclick = function () {
-                let $ul1 = el.parentNode.querySelector('nav > ul');
-                let $ulAll = el.parentNode.querySelector('nav ul');
-                let classDisplay = 'mobile-show';
+    buildClick() {
+        Array.prototype.forEach.call(this.elButton, (el) => {
+            el.onclick = () => {
+                let sibling = el.nextElementSibling;
 
-                if ($ul1.classList.contains(classDisplay)) {
-                    $ul1.classList.remove(classDisplay);
-                    $ulAll.classList.remove(classDisplay);
+                if (sibling.classList.contains(this.classDisplay)) {
+                    sibling.classList.remove(this.classDisplay);
                 } else {
-                    $ul1.classList.add(classDisplay);
+                    sibling.classList.add(this.classDisplay);
                 }
             };
         });
     }
 
     watchResize() {
-        let self = this;
-
-        window.onresize = function () {
-            self.build();
+        window.onresize = () => {
+            this.build();
         };
     }
 
@@ -967,7 +972,7 @@ class WfModal {
             return;
         }
 
-        const string = `<p class="modal-description">${description}</p>`;
+        const string = `<p class="modal__description">${description}</p>`;
 
         if (typeof description !== typeof undefined) {
             this.elModalContent.insertAdjacentHTML('beforeend', string);
