@@ -14,8 +14,8 @@ class WfCarousel {
         this.elCarousel = document.querySelectorAll('.carousel');
 
         this.counterCurrent = 0;
-        this.transition = 1;
-        this.isAutoplay = false;
+        this.transition = 5;
+        this.isAutoplay = true;
     }
 
     build() {
@@ -23,20 +23,28 @@ class WfCarousel {
             return;
         }
 
-        if (this.isAutoplay) {
-            this.interval = setInterval(this.verifyInterval, 1000);
-        }
-
         this.buildLayout();
         this.buildNavigation();
         this.watchResize();
     }
 
+    buildAutoplay() {
+        if (this.isAutoplay) {
+            this.interval = setInterval(this.verifyInterval, 1000);
+            this.isAutoplay = false;
+        }
+    }
+
     buildLayout() {
         const self = this;
 
-        Array.prototype.forEach.call(this.elCarousel, function (item) {
+        Array.prototype.forEach.call(this.elCarousel, (item) => {
             let length = item.querySelectorAll(`${self.cssCarouselListClass} li`).length;
+            let autoplay = item.getAttribute('data-autoplay');
+
+            if (autoplay === "true") {
+                self.buildAutoplay();
+            }
 
             self.resizeLayout(item);
             self.buildLayoutController(item, length);
@@ -199,8 +207,12 @@ class WfCarousel {
         if (self.counterCurrent >= self.transition) {
             self.counterCurrent = 0;
 
-            Array.prototype.forEach.call(self.elCarousel, function (item) {
-                item.querySelector(self.attNext).click();
+            Array.prototype.forEach.call(self.elCarousel, (item) => {
+                const autoplay = item.getAttribute('data-autoplay');
+
+                if (autoplay === "true") {
+                    item.querySelector(self.attNext).click();
+                }
             });
         }
     }

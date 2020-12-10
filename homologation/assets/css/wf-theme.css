@@ -76,20 +76,23 @@
     font-size: 32px; }
 
 .page-home {
-  display: flex;
   height: 100%; }
   .page-home .carousel,
   .page-home .carousel__list {
-    height: 100%; }
-  .page-home .icon {
-    fill: #ffffff; }
+    height: 100%;
+    min-height: 300px; }
   .page-home .carousel__item {
     align-items: center;
-    color: #ffffff;
-    font-size: 64px;
     justify-content: center;
-    padding: 40px;
     text-align: center; }
+  .page-home .carousel__content {
+    color: #ffffff;
+    font-size: 24px; }
+    @media (min-width: 1024px) {
+      .page-home .carousel__content {
+        font-size: 64px; } }
+  .page-home .icon {
+    fill: #ffffff; }
 
 .page-card .card--extra-big,
 .page-card .card--big {
