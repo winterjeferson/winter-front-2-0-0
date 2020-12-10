@@ -5,13 +5,13 @@
     ] %}
 
 <div class="row page-home">
-    <div class="carousel" data-current-slide="0" data-autoplay="true">
+    <div class="carousel" data-current-slide="0" data-autoplay="false">
         <ul class="carousel__list">
             {% for slide in arrSlide %}
             <li class="carousel__item background-{{slide[1]}}">
-                <span class="carousel__content">
+                <div class="carousel__content">
                     {{slide[0] | safe}}
-                </span>
+                </div>
             </li>
             {% endfor %}
         </ul>

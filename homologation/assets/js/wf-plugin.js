@@ -303,11 +303,7 @@ class WfCarousel {
         let elCarouselListItem = elCarouselList.querySelectorAll('li');
         let length = elCarouselListItem.length;
 
-        elCarouselList.style.width += length * 100 + '%';
-
-        Array.prototype.forEach.call(elCarouselListItem, function (item) {
-            item.style.width = '100%';
-        });
+        elCarouselList.style.width += `${length * 100}%`;
     }
 }
 class WfForm {

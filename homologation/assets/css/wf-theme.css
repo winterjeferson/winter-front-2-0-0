@@ -84,10 +84,12 @@
   .page-home .carousel__item {
     align-items: center;
     justify-content: center;
-    text-align: center; }
+    text-align: center;
+    width: 100%; }
   .page-home .carousel__content {
     color: #ffffff;
-    font-size: 24px; }
+    font-size: 24px;
+    width: calc(100% - 40px); }
     @media (min-width: 1024px) {
       .page-home .carousel__content {
         font-size: 64px; } }
@@ -134,6 +136,9 @@
 
 .theme-scroll .scrollbar-force-overflow {
   min-height: 450px; }
+
+.tag--extra-big {
+  display: none; }
 
 [class*="color--"] {
   display: flex;

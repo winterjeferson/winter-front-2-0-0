@@ -126,11 +126,13 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+            width: 100%;
         }
 
         &__content {
             color: $color-white;
             font-size: $font-size-big;
+            width: calc(100% - #{$extra-big});
 
             @include tablet-landscape {
                 font-size: $font-size-extra-big * 2;
@@ -203,4 +205,8 @@
     .scrollbar-force-overflow {
         min-height: 450px;
     }
+}
+
+.tag--extra-big {
+    display: none;
 }
