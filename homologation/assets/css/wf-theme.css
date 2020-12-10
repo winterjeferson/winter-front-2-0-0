@@ -123,12 +123,6 @@
   .progress .progress__bar {
     width: 80%; }
 
-.theme-header,
-.theme-footer,
-.theme-menu,
-.page {
-  opacity: .3; }
-
 .theme-scroll .scrollbar {
   height: 300px;
   margin: 10px;

@@ -1091,20 +1091,55 @@ small {
   .button-group .drop-down,
   .button-group .button-outline {
     margin-left: -1px; }
-  .button-group > .button:not(:first-child):not(:last-child),
-  .button-group > .drop-down > .button:not(:first-child):not(:last-child),
-  .button-group > .button-outline:not(:first-child):not(:last-child) {
+  .button-group > .button,
+  .button-group > .drop-down > .button,
+  .button-group > .button-outline {
     border-radius: 0; }
-  .button-group > .button:first-child,
-  .button-group > .drop-down > .button:first-child,
-  .button-group > .button-outline:first-child {
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0; }
-  .button-group > .button:last-child,
-  .button-group > .drop-down > .button:last-child,
-  .button-group > .button-outline:last-child {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0; }
+  .button-group > :first-child.button--extra-small {
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px; }
+  .button-group > :first-child.button--small {
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px; }
+  .button-group > :first-child.button--regular {
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px; }
+  .button-group > :first-child.button--big {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px; }
+  .button-group > :first-child.button--extra-big {
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px; }
+  .button-group > :first-child > .button.button--extra-small {
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px; }
+  .button-group > :first-child > .button.button--small {
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px; }
+  .button-group > :first-child > .button.button--regular {
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px; }
+  .button-group > :first-child > .button.button--big {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px; }
+  .button-group > :first-child > .button.button--extra-big {
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px; }
+  .button-group > :last-child.button--extra-small {
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px; }
+  .button-group > :last-child.button--small {
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px; }
+  .button-group > :last-child.button--regular {
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px; }
+  .button-group > :last-child.button--big {
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px; }
+  .button-group > :last-child.button--extra-big {
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px; }
 
 .navigation-change {
   height: 100%;
