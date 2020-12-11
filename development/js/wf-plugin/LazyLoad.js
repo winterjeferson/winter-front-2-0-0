@@ -42,3 +42,5 @@ class LazyLoad {
         target.removeAttribute('data-lazy-load');
     }
 }
+
+window.lazyLoad = new LazyLoad();

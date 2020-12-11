@@ -43,7 +43,7 @@ class Carousel {
             let length = item.querySelectorAll(`${self.cssCarouselListClass} li`).length;
             let autoplay = item.getAttribute('data-autoplay');
 
-            if (autoplay === "true") {
+            if (autoplay === 'true') {
                 self.buildAutoplay();
             }
 
@@ -182,16 +182,16 @@ class Carousel {
     }
 
     animateFade(obj) {
-        let el = obj.elCarouselList.querySelectorAll('li');
-        let transition = '.7s';
+        const el = obj.elCarouselList.querySelectorAll(`.${this.cssCarouselListItem}`);
+        const transition = '.7s';
 
-        Array.prototype.forEach.call(obj.elCarouselList.querySelectorAll('li'), (item) => {
+        Array.prototype.forEach.call(el, (item) => {
             item.style.opacity = 0;
             item.style.transition = transition;
         });
 
         el[obj.currentSlide].style.opacity = 1;
-        el[obj.currentSlide].style.left = '-' + obj.currentPosition + 'px';
+        el[obj.currentSlide].style.left = `-${obj.currentPosition}px`;
         el[obj.currentSlide].style.transition = transition;
     }
 
@@ -200,18 +200,18 @@ class Carousel {
     }
 
     verifyInterval() {
-        let self = window.carousel;
+        let instance = window.carousel;
 
-        self.counterCurrent++;
+        instance.counterCurrent++;
 
-        if (self.counterCurrent >= self.transition) {
-            self.counterCurrent = 0;
+        if (instance.counterCurrent >= instance.transition) {
+            instance.counterCurrent = 0;
 
-            Array.prototype.forEach.call(self.elCarousel, (item) => {
+            Array.prototype.forEach.call(instance.elCarousel, (item) => {
                 const autoplay = item.getAttribute('data-autoplay');
 
                 if (autoplay === "true") {
-                    item.querySelector(self.attNext).click();
+                    item.querySelector(instance.attNext).click();
                 }
             });
         }
@@ -235,3 +235,5 @@ class Carousel {
         elCarouselList.style.width += `${length * 100}%`;
     }
 }
+
+window.carousel = new Carousel();

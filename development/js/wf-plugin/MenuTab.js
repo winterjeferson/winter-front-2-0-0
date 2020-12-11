@@ -25,3 +25,5 @@ class MenuTab {
         item.parentNode.classList.add(classActive);
     }
 }
+
+window.menuTab = new MenuTab();

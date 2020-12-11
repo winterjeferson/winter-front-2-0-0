@@ -13,8 +13,14 @@ class Translation {
                 this.translation = translationPT;
                 break;
             case 'en':
+            default:
                 this.translation = translationEN;
+                break;
+            case 'es':
+                this.translation = translationES;
                 break;
         }
     }
 }
+
+window.translation = new Translation();

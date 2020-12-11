@@ -19,3 +19,5 @@ class Table {
         });
     }
 }
+
+window.table = new Table();

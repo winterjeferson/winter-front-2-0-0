@@ -46,3 +46,5 @@ class Helper {
         wrapper.appendChild(target);
     }
 }
+
+window.helper = new Helper();

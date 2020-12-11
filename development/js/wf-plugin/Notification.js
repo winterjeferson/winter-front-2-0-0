@@ -85,3 +85,5 @@ class Notification {
         item.parentNode.removeChild(item);
     }
 }
+
+window.notification = new Notification();

@@ -25,15 +25,21 @@ class MenuDropDown {
     }
 
     close() {
-        Array.prototype.forEach.call(MenuDropDown.elMenu, (item) => {
-            const elContent = item.querySelector(`.${MenuDropDown.cssDropDownContent}`);
+        if (this.elMen === typeof 'undefined') {
+            return;
+        }
+
+        const self = window.menuDropDown;
+
+        Array.prototype.forEach.call(self.elMenu, (item) => {
+            const elContent = item.querySelector(`.${self.cssDropDownContent}`);
 
             if (elContent === null) {
                 return;
             }
 
-            if (elContent.classList.contains(MenuDropDown.cssOpend)) {
-                elContent.classList.remove(MenuDropDown.cssOpend);
+            if (elContent.classList.contains(self.cssOpend)) {
+                elContent.classList.remove(self.cssOpend);
             }
         });
     }
@@ -78,3 +84,5 @@ class MenuDropDown {
         window.menuDropDown.build();
     }
 }
+
+window.menuDropDown = new MenuDropDown();

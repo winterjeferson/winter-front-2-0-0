@@ -79,3 +79,5 @@ class Progress {
         return this.$allLength;
     }
 }
+
+window.progress = new Progress();

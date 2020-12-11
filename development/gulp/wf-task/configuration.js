@@ -8,6 +8,7 @@ module.exports = {
     theme: 'theme',
     plugin: 'plugin',
     index: 'index',
+    translation: 'translation',
     allFile: allFile,
     allFolderFile: `**/${allFile}`,
     assets: 'assets/',

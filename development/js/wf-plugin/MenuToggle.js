@@ -44,3 +44,5 @@ class MenuToggle {
         this.build();
     }
 }
+
+window.menuToggle = new MenuToggle();

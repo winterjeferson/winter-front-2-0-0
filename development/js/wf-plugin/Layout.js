@@ -10,3 +10,5 @@ class Layout {
         this.breakPointFullHd = 1920;
     }
 }
+
+window.layout = new Layout();

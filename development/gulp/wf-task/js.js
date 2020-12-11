@@ -9,12 +9,17 @@ const configuration = require('./configuration.js');
 const extension = 'js';
 const filePrefix = `${configuration.prefix}${configuration.theme}`;
 const filePrefixPlugin = `${configuration.prefix}${configuration.plugin}`;
+const filePrefixTranslation = `${configuration.prefix}${configuration.translation}`;
 const folder = `${configuration.development}${extension}/`;
-const file = `${folder}${filePrefix}/${configuration.allFolderFile}`;
+const file = [
+    `${folder}${filePrefix}/!(${configuration.index})*.${extension}`,
+    `${folder}${filePrefix}/${configuration.index}.${extension}`,
+
+];
 const filePlugin = [
-    `${configuration.development}${extension}/${configuration.prefix}translation/${configuration.allFolderFile}`,
-    `${configuration.development}${extension}/${configuration.prefix}plugin/**/!(_)*.${extension}`,
-    `${configuration.development}${extension}/${configuration.prefix}plugin/_Index.${extension}`,
+    `${folder}${filePrefixTranslation}/${configuration.allFolderFile}`,
+    `${folder}${filePrefixPlugin}/!(${configuration.index})*.${extension}`,
+    `${folder}${filePrefixPlugin}/${configuration.index}.${extension}`,
 ];
 const fileName = `${filePrefix}.${extension}`;
 const fileNamePlugin = `${filePrefixPlugin}.${extension}`;

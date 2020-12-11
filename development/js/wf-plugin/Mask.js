@@ -77,3 +77,5 @@ class Mask {
             .replace(/(-\d)\d+?$/, '$1');
     }
 }
+
+window.mask = new Mask();

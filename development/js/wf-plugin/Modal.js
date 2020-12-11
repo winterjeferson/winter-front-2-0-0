@@ -247,7 +247,7 @@ class Modal {
         let ajax = new XMLHttpRequest();
 
         ajax.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
+            if (this.readyState === 4 && this.status === 200) {
                 self.elModalContent.innerHTML = this.responseText;
                 self.resetOtherClass();
             }
@@ -282,7 +282,7 @@ class Modal {
 
         const string = `<p class="modal__description">${description}</p>`;
 
-        if (typeof description !== typeof undefined) {
+        if (typeof description !== typeof 'undefined') {
             this.elModalContent.insertAdjacentHTML('beforeend', string);
         }
     }
@@ -309,3 +309,5 @@ class Modal {
         }
     }
 }
+
+window.modal = new Modal();

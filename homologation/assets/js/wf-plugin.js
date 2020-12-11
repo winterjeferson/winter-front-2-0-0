@@ -67,7 +67,7 @@ class Carousel {
             let length = item.querySelectorAll(`${self.cssCarouselListClass} li`).length;
             let autoplay = item.getAttribute('data-autoplay');
 
-            if (autoplay === "true") {
+            if (autoplay === 'true') {
                 self.buildAutoplay();
             }
 
@@ -206,16 +206,16 @@ class Carousel {
     }
 
     animateFade(obj) {
-        let el = obj.elCarouselList.querySelectorAll('li');
-        let transition = '.7s';
+        const el = obj.elCarouselList.querySelectorAll(`.${this.cssCarouselListItem}`);
+        const transition = '.7s';
 
-        Array.prototype.forEach.call(obj.elCarouselList.querySelectorAll('li'), (item) => {
+        Array.prototype.forEach.call(el, (item) => {
             item.style.opacity = 0;
             item.style.transition = transition;
         });
 
         el[obj.currentSlide].style.opacity = 1;
-        el[obj.currentSlide].style.left = '-' + obj.currentPosition + 'px';
+        el[obj.currentSlide].style.left = `-${obj.currentPosition}px`;
         el[obj.currentSlide].style.transition = transition;
     }
 
@@ -224,18 +224,18 @@ class Carousel {
     }
 
     verifyInterval() {
-        let self = window.carousel;
+        let instance = window.carousel;
 
-        self.counterCurrent++;
+        instance.counterCurrent++;
 
-        if (self.counterCurrent >= self.transition) {
-            self.counterCurrent = 0;
+        if (instance.counterCurrent >= instance.transition) {
+            instance.counterCurrent = 0;
 
-            Array.prototype.forEach.call(self.elCarousel, (item) => {
+            Array.prototype.forEach.call(instance.elCarousel, (item) => {
                 const autoplay = item.getAttribute('data-autoplay');
 
                 if (autoplay === "true") {
-                    item.querySelector(self.attNext).click();
+                    item.querySelector(instance.attNext).click();
                 }
             });
         }
@@ -259,96 +259,9 @@ class Carousel {
         elCarouselList.style.width += `${length * 100}%`;
     }
 }
+
+window.carousel = new Carousel();
 class Form {
-    build() {
-        if (document.querySelectorAll('form').length < 1) {
-            return;
-        }
-
-        this.buildKeyboard();
-        this.buildInputFile();
-    }
-
-    buildKeyboard() {
-        let self = this;
-
-        window.addEventListener('keyup', function (event) {
-            if (event.keyCode === 13) {
-                self.buildFocus('.radio');
-                self.buildFocus('.checkbox');
-                self.buildFocus('.input-switch');
-            }
-        });
-    }
-
-    buildFocus(target) {
-        let $arr = document.querySelectorAll(target);
-
-        Array.prototype.forEach.call($arr, function (item) {
-            let target = item.querySelector('input');
-
-            if (document.activeElement == item) {
-                target.click();
-            }
-        });
-    }
-
-    buildInputFile() {
-        let self = this;
-        return;
-
-        Array.prototype.forEach.call(document.querySelectorAll('input[type="file"]'), function (item) {
-            let target = item.parentNode;
-
-            if (item.getAttribute('style')) {
-                if (item.getAttribute('style').indexOf('display:') != -1) {
-                    return;
-                }
-            }
-
-            item.style.display = 'none';
-            target.insertAdjacentHTML('beforeend', self.buildInputFileHtml());
-            target.setAttribute('tabIndex', 0);
-            target.style.outline = 0;
-
-            if (document.activeElement == target) {
-                target.querySelector('.input-file').classList.add('focus');
-            }
-
-            item.addEventListener('focusout', function () {
-                target.querySelector('.input-file').classList.remove('focus');
-            });
-
-            self.buildInputFileAddAction(item);
-        });
-    }
-
-    buildInputFileAddAction(item) {
-        let $target = item.parentNode;
-        let $targetFileClass = $target.querySelector('.input-file-name');
-        let $targetFile = $target.querySelector('input[type="file"]');
-
-        $target.addEventListener('click', function () {
-            $targetFile.click();
-        });
-
-        $targetFile.addEventListener('change', function () {
-            $targetFileClass.innerHTML = $targetFile.value;
-        });
-    }
-
-    buildInputFileHtml() {
-        let inputFile = '';
-        let textFile = Translation.translation.input_upload;
-
-        inputFile += '<div class="input-file">';
-        inputFile += '    <div class="input-file-name"></div>';
-        inputFile += '    <div class="input-file-text"><span class="fa fa-upload" aria-hidden="true"></span>&nbsp; ' + textFile + '</div>';
-        inputFile += '</div>';
-
-        return inputFile;
-    }
-
     validateEmpty(arr) {
         let arrEmpty = arr;
         let length = arrEmpty.length;
@@ -363,6 +276,8 @@ class Form {
         return true;
     }
 }
+
+window.form = new Form();
 class Helper {
     getUrlParameter(target) {
         let url = top.location.search.substring(1);
@@ -411,6 +326,8 @@ class Helper {
         wrapper.appendChild(target);
     }
 }
+
+window.helper = new Helper();
 class Layout {
     constructor() {
         this.$body = document.querySelector('body');
@@ -423,6 +340,8 @@ class Layout {
         this.breakPointFullHd = 1920;
     }
 }
+
+window.layout = new Layout();
 class LazyLoad {
     build() {
         if (document.querySelectorAll('[data-lazy-load="true"]').length < 1) {
@@ -467,6 +386,8 @@ class LazyLoad {
         target.removeAttribute('data-lazy-load');
     }
 }
+
+window.lazyLoad = new LazyLoad();
 class Mask {
     constructor() {
         this.$inputMask = document.querySelectorAll('[data-mask]');
@@ -546,6 +467,8 @@ class Mask {
             .replace(/(-\d)\d+?$/, '$1');
     }
 }
+
+window.mask = new Mask();
 class MenuDropDown {
     update() {
         this.isClickBuild = false;
@@ -573,15 +496,21 @@ class MenuDropDown {
     }
 
     close() {
-        Array.prototype.forEach.call(MenuDropDown.elMenu, (item) => {
-            const elContent = item.querySelector(`.${MenuDropDown.cssDropDownContent}`);
+        if (this.elMen === typeof 'undefined') {
+            return;
+        }
+
+        const self = window.menuDropDown;
+
+        Array.prototype.forEach.call(self.elMenu, (item) => {
+            const elContent = item.querySelector(`.${self.cssDropDownContent}`);
 
             if (elContent === null) {
                 return;
             }
 
-            if (elContent.classList.contains(MenuDropDown.cssOpend)) {
-                elContent.classList.remove(MenuDropDown.cssOpend);
+            if (elContent.classList.contains(self.cssOpend)) {
+                elContent.classList.remove(self.cssOpend);
             }
         });
     }
@@ -626,6 +555,8 @@ class MenuDropDown {
         window.menuDropDown.build();
     }
 }
+
+window.menuDropDown = new MenuDropDown();
 class MenuTab {
     build() {
         this.defineActive();
@@ -653,6 +584,8 @@ class MenuTab {
         item.parentNode.classList.add(classActive);
     }
 }
+
+window.menuTab = new MenuTab();
 class MenuToggle {
     constructor() {
         this.classButton = 'toggle-menu';
@@ -699,6 +632,8 @@ class MenuToggle {
         this.build();
     }
 }
+
+window.menuToggle = new MenuToggle();
 class Modal {
     constructor() {
         this.isModalOpen = false;
@@ -948,7 +883,7 @@ class Modal {
         let ajax = new XMLHttpRequest();
 
         ajax.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
+            if (this.readyState === 4 && this.status === 200) {
                 self.elModalContent.innerHTML = this.responseText;
                 self.resetOtherClass();
             }
@@ -983,7 +918,7 @@ class Modal {
 
         const string = `<p class="modal__description">${description}</p>`;
 
-        if (typeof description !== typeof undefined) {
+        if (typeof description !== typeof 'undefined') {
             this.elModalContent.insertAdjacentHTML('beforeend', string);
         }
     }
@@ -1010,6 +945,8 @@ class Modal {
         }
     }
 }
+
+window.modal = new Modal();
 class Notification {
     constructor() {
         this.elBody = document.querySelector('body');
@@ -1097,6 +1034,8 @@ class Notification {
         item.parentNode.removeChild(item);
     }
 }
+
+window.notification = new Notification();
 class Progress {
     update() {
         this.isFinish = false;
@@ -1178,6 +1117,8 @@ class Progress {
         return this.$allLength;
     }
 }
+
+window.progress = new Progress();
 class Table {
     constructor() {
         this.elTable = document.querySelectorAll('.table');
@@ -1199,6 +1140,8 @@ class Table {
         });
     }
 }
+
+window.table = new Table();
 class Tag {
     constructor() {
         this.elTag = document.querySelectorAll('.tag');
@@ -1226,6 +1169,8 @@ class Tag {
         });
     }
 }
+
+window.tag = new Tag();
 class Translation {
     constructor() {
         this.translation = '';
@@ -1241,31 +1186,20 @@ class Translation {
                 this.translation = translationPT;
                 break;
             case 'en':
+            default:
                 this.translation = translationEN;
+                break;
+            case 'es':
+                this.translation = translationES;
                 break;
         }
     }
 }
-window.carousel = new Carousel();
-window.form = new Form();
-window.helper = new Helper();
-window.layout = new Layout();
-window.lazyLoad = new LazyLoad();
-window.mask = new Mask();
-window.menuDropDown = new MenuDropDown();
-window.menuTab = new MenuTab();
-window.menuToggle = new MenuToggle();
-window.modal = new Modal();
-window.notification = new Notification();
-window.progress = new Progress();
-window.table = new Table();
-window.tag = new Tag();
-window.translation = new Translation();
 
+window.translation = new Translation();
 window.addEventListener('load',
     window.translation.build(),
     window.progress.build(),
-    window.form.build(),
     window.mask.build(),
     window.modal.build(),
     window.carousel.build(),
