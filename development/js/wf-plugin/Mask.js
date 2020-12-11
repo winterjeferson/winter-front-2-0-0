@@ -1,10 +1,10 @@
 class Mask {
     constructor() {
-        this.$inputMask = document.querySelectorAll('[data-mask]');
+        this.elMask = document.querySelectorAll('[data-mask]');
     }
 
     build() {
-        if (this.$inputMask.length < 1) {
+        if (this.elMask.length < 1) {
             return;
         }
 
@@ -12,9 +12,9 @@ class Mask {
     }
 
     addListener() {
-        let self = this;
+        const self = this;
 
-        this.$inputMask.forEach(($input) => {
+        this.elMask.forEach(($input) => {
             $input.addEventListener('input', (e) => {
                 let inputValue = e.target.value;
                 let inputMask = $input.dataset.mask;

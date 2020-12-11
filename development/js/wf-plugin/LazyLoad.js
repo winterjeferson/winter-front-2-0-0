@@ -9,28 +9,25 @@ class LazyLoad {
     }
 
     addListener() {
-        let self = this;
-
-        window.addEventListener('scroll', function (e) {
-            window.requestAnimationFrame(function () {
-                self.buildLoop();
+        window.addEventListener('scroll', () => {
+            window.requestAnimationFrame(() => {
+                this.buildLoop();
             });
         });
     }
 
     buildLoop() {
-        let self = this;
-        let $arr = document.querySelectorAll('[data-lazy-load="true"]');
+        const el = document.querySelectorAll('[data-lazy-load="true"]');
 
-        Array.prototype.forEach.call($arr, function (item) {
-            self.verifyPosition(item);
+        Array.prototype.forEach.call(el, (item) => {
+            this.verifyPosition(item);
         });
     }
 
     verifyPosition(target) {
-        let windowScroll = window.scrollY;
-        let elemntPosition = window.helper.offset(target).top;
-        let margin = window.outerHeight;
+        const windowScroll = window.scrollY;
+        const elemntPosition = window.helper.offset(target).top;
+        const margin = window.outerHeight;
 
         if (windowScroll >= elemntPosition - margin) {
             this.buildImage(target);

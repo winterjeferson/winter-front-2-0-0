@@ -25,7 +25,7 @@ class MenuDropDown {
     }
 
     close() {
-        if (this.elMen === typeof 'undefined') {
+        if (this.elMenu === typeof 'undefined') {
             return;
         }
 

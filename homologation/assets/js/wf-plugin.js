@@ -1,35 +1,10 @@
-const translationEN = {
-    'cancel': 'Cancel',
-    'close': 'Close',
-    'confirm': 'Confirm',
-    'input_upload': 'Select File...',
-    'next': 'Next',
-    'previous': 'Previous',
-};
-const translationES = {
-    'cancel': 'Cancelar',
-    'close': 'Cerrar',
-    'confirm': 'Confirmar',
-    'input_upload': 'Seleccione Archivo...',
-    'next': 'Siguiente',
-    'previous': 'Anterior',
-};
-const translationPT = {
-    'cancel': 'Cancelar',
-    'close': 'Fechar',
-    'confirm': 'Confirmar',
-    'input_upload': 'Selecione o Arquivo...',
-    'next': 'Próximo',
-    'previous': 'Anterior',
-};
 class Carousel {
     constructor() {
         this.attCurrentSlide = 'data-current-slide';
         this.attPrevious = '[data-id="previous"]';
         this.attNext = '[data-id="next"]';
         this.cssCarouselList = 'carousel__list';
-        this.cssCarouselListClass = `.${this.cssCarouselList}`;
-        this.cssCarouselListItem = `carousel__item`;
+        this.cssCarouselListItem = 'carousel__item';
         this.cssCarouselController = 'carousel__controller';
         this.cssCarouselControllerClass = `.${this.cssCarouselController}`;
         this.cssButton = 'carousel__controller-button';
@@ -64,7 +39,7 @@ class Carousel {
         const self = this;
 
         Array.prototype.forEach.call(this.elCarousel, (item) => {
-            let length = item.querySelectorAll(`${self.cssCarouselListClass} li`).length;
+            let length = item.querySelectorAll(`.${self.cssCarouselList} li`).length;
             let autoplay = item.getAttribute('data-autoplay');
 
             if (autoplay === 'true') {
@@ -88,11 +63,11 @@ class Carousel {
 
         window.onresize = () => {
             Array.prototype.forEach.call(self.elCarousel, (item) => {
-                let $this = item.parentNode.parentNode.parentNode.parentNode;
-                let elCarouselList = $this.querySelector(self.cssCarouselListClass);
+                let el = item.parentNode.parentNode.parentNode.parentNode;
+                let elCarouselList = el.querySelector(`.${self.cssCarouselList}`);
                 let newSlide = 0;
 
-                self.defineActive($this.querySelector('[data-id="' + newSlide + '"]'));
+                self.defineActive(el.querySelector(`[data-id="${newSlide}"]`));
                 self.animate(newSlide, elCarouselList, 'arrow');
             });
         };
@@ -137,7 +112,7 @@ class Carousel {
 
         button.onclick = () => {
             let elCarousel = button.parentNode.parentNode;
-            let elCarouselList = elCarousel.querySelector(self.cssCarouselListClass);
+            let elCarouselList = elCarousel.querySelector(`.${self.cssCarouselList}`);
             let elCarouselListLength = Number(elCarouselList.querySelectorAll('li').length);
             let currentSlide = Number(elCarousel.getAttribute(self.attCurrentSlide));
             let newSlide = 0;
@@ -161,7 +136,7 @@ class Carousel {
 
         button.onclick = () => {
             let elCarousel = button.parentNode.parentNode;
-            let elCarouselList = elCarousel.querySelector(self.cssCarouselListClass);
+            let elCarouselList = elCarousel.querySelector(`.${self.cssCarouselList}`);
             let elCarouselListLength = Number(elCarouselList.querySelectorAll('li').length);
             let currentSlide = Number(elCarousel.getAttribute(self.attCurrentSlide));
             let newSlide = 0;
@@ -181,8 +156,8 @@ class Carousel {
 
     animate(currentSlide, target, from) {
         let elCarouselList = from === 'arrow' ?
-            target.parentNode.querySelector(this.cssCarouselListClass) :
-            target.parentNode.parentNode.querySelector(this.cssCarouselListClass);
+            target.parentNode.querySelector(`.${this.cssCarouselList}`) :
+            target.parentNode.parentNode.querySelector(`.${this.cssCarouselList}`);
         let elCarousel = elCarouselList.parentNode;
         let carouselStyle = elCarousel.getAttribute('data-style');
         let slideSize = Number(elCarouselList.querySelector('li').offsetWidth);
@@ -206,10 +181,10 @@ class Carousel {
     }
 
     animateFade(obj) {
-        const el = obj.elCarouselList.querySelectorAll(`.${this.cssCarouselListItem}`);
-        const transition = '.7s';
+        let el = obj.elCarouselList.querySelectorAll('li');
+        let transition = '.7s';
 
-        Array.prototype.forEach.call(el, (item) => {
+        Array.prototype.forEach.call(obj.elCarouselList.querySelectorAll('li'), (item) => {
             item.style.opacity = 0;
             item.style.transition = transition;
         });
@@ -224,18 +199,18 @@ class Carousel {
     }
 
     verifyInterval() {
-        let instance = window.carousel;
+        let self = window.objWfCarousel;
 
-        instance.counterCurrent++;
+        self.counterCurrent++;
 
-        if (instance.counterCurrent >= instance.transition) {
-            instance.counterCurrent = 0;
+        if (self.counterCurrent >= self.transition) {
+            self.counterCurrent = 0;
 
-            Array.prototype.forEach.call(instance.elCarousel, (item) => {
+            Array.prototype.forEach.call(self.elCarousel, (item) => {
                 const autoplay = item.getAttribute('data-autoplay');
 
-                if (autoplay === "true") {
-                    item.querySelector(instance.attNext).click();
+                if (autoplay === 'true') {
+                    item.querySelector(self.attNext).click();
                 }
             });
         }
@@ -252,7 +227,7 @@ class Carousel {
     }
 
     resizeLayout(target) {
-        const elCarouselList = target.querySelector(this.cssCarouselListClass);
+        const elCarouselList = target.querySelector(`.${this.cssCarouselList}`);
         const elCarouselListItem = elCarouselList.querySelectorAll(`.${this.cssCarouselListItem}`);
         const length = elCarouselListItem.length;
 
@@ -263,8 +238,8 @@ class Carousel {
 window.carousel = new Carousel();
 class Form {
     validateEmpty(arr) {
-        let arrEmpty = arr;
-        let length = arrEmpty.length;
+        const arrEmpty = arr;
+        const length = arrEmpty.length;
 
         for (let i = 0; i < length; i++) {
             if (arrEmpty[i].value === '') {
@@ -353,28 +328,25 @@ class LazyLoad {
     }
 
     addListener() {
-        let self = this;
-
-        window.addEventListener('scroll', function (e) {
-            window.requestAnimationFrame(function () {
-                self.buildLoop();
+        window.addEventListener('scroll', () => {
+            window.requestAnimationFrame(() => {
+                this.buildLoop();
             });
         });
     }
 
     buildLoop() {
-        let self = this;
-        let $arr = document.querySelectorAll('[data-lazy-load="true"]');
+        const el = document.querySelectorAll('[data-lazy-load="true"]');
 
-        Array.prototype.forEach.call($arr, function (item) {
-            self.verifyPosition(item);
+        Array.prototype.forEach.call(el, (item) => {
+            this.verifyPosition(item);
         });
     }
 
     verifyPosition(target) {
-        let windowScroll = window.scrollY;
-        let elemntPosition = window.helper.offset(target).top;
-        let margin = window.outerHeight;
+        const windowScroll = window.scrollY;
+        const elemntPosition = window.helper.offset(target).top;
+        const margin = window.outerHeight;
 
         if (windowScroll >= elemntPosition - margin) {
             this.buildImage(target);
@@ -390,11 +362,11 @@ class LazyLoad {
 window.lazyLoad = new LazyLoad();
 class Mask {
     constructor() {
-        this.$inputMask = document.querySelectorAll('[data-mask]');
+        this.elMask = document.querySelectorAll('[data-mask]');
     }
 
     build() {
-        if (this.$inputMask.length < 1) {
+        if (this.elMask.length < 1) {
             return;
         }
 
@@ -402,9 +374,9 @@ class Mask {
     }
 
     addListener() {
-        let self = this;
+        const self = this;
 
-        this.$inputMask.forEach(($input) => {
+        this.elMask.forEach(($input) => {
             $input.addEventListener('input', (e) => {
                 let inputValue = e.target.value;
                 let inputMask = $input.dataset.mask;
@@ -496,7 +468,7 @@ class MenuDropDown {
     }
 
     close() {
-        if (this.elMen === typeof 'undefined') {
+        if (this.elMenu === typeof 'undefined') {
             return;
         }
 
@@ -558,30 +530,42 @@ class MenuDropDown {
 
 window.menuDropDown = new MenuDropDown();
 class MenuTab {
-    build() {
-        this.defineActive();
+    constructor() {
+        this.cssMenu = 'tab';
+        this.cssMenuActive = `${this.cssMenu}--active`;
+        this.cssAllButton = `.${this.cssMenu} > .button, .${this.cssMenu} > .drop-down > .button`;
     }
 
-    defineActive() {
-        let self = this;
-        let $arr = document.querySelectorAll('.menu-tab > ul > li > .bt');
+    build() {
+        this.el = document.querySelectorAll(`.${this.cssMenu}`);
 
-        Array.prototype.forEach.call($arr, function (item) {
-            item.addEventListener('click', function () {
-                self.buildClick(item);
+        if (this.el.length < 1) {
+            return;
+        }
+
+        this.buildClick();
+    }
+
+    buildClick() {
+        const self = this;
+        const el = document.querySelectorAll(this.cssAllButton);
+
+        Array.prototype.forEach.call(el, (item) => {
+            item.addEventListener('click', () => {
+                self.buildCss(item);
+
             });
         });
     }
 
-    buildClick(item) {
-        let classActive = 'menu-tab-active';
-        let $arr = item.parentNode.parentNode.querySelectorAll('li');
+    buildCss(item) {
+        const el = document.querySelectorAll(this.cssAllButton);
 
-        Array.prototype.forEach.call($arr, function (item) {
-            item.classList.remove(classActive);
+        Array.prototype.forEach.call(el, (item) => {
+            item.classList.remove(this.cssMenuActive);
         });
 
-        item.parentNode.classList.add(classActive);
+        item.classList.add(this.cssMenuActive);
     }
 }
 
@@ -783,7 +767,7 @@ class Modal {
             }
         });
 
-        this.elModalFooter.querySelector('[data-id="cancel"]').addEventListener('click', (event) => {
+        this.elModalFooter.querySelector('[data-id="cancel"]').addEventListener('click', () => {
             this.closeModal();
         });
     }
@@ -924,10 +908,6 @@ class Modal {
     }
 
     resetOtherClass() {
-        if (typeof window.form !== 'undefined') {
-            window.form.buildInputFile();
-        }
-
         if (typeof window.menuDropDown !== 'undefined') {
             window.menuDropDown.reset();
         }
@@ -937,7 +917,7 @@ class Modal {
         }
 
         if (typeof window.menuTab !== 'undefined') {
-            window.menuTab.defineActive();
+            window.menuTab.build();
         }
 
         if (typeof window.lazyLoad !== 'undefined') {
@@ -1022,7 +1002,7 @@ class Notification {
         let messageTime = messageLength * 150;
 
         setTimeout(() => {
-            this.removeItem(item)
+            this.removeItem(item);
         }, messageTime);
     }
 
@@ -1036,89 +1016,6 @@ class Notification {
 }
 
 window.notification = new Notification();
-class Progress {
-    update() {
-        this.isFinish = false;
-        this.progressSize = 0;
-        this.$loadingMain = document.getElementById('loadingMain');
-        this.$body = document.querySelector('body');
-        this.$bar = document.querySelector('#loadingMain').querySelector('.progress-bar');
-        this.$all = document.querySelectorAll('div, section, article');
-        this.$allLength = this.$all.length;
-    }
-
-    build() {
-        if (document.getElementById('loadingMain') < 1) {
-            return;
-        }
-
-        this.update();
-        this.start();
-    }
-
-    start() {
-        let self = this;
-        let interval = setInterval(frame, 1);
-        let total = this.buildProportion();
-
-        function frame() {
-            let porcentage = self.progressSize * 100 / total;
-
-            self.progressSize++;
-            self.$bar.style.width = porcentage + '%';
-
-            if (self.progressSize >= total) {
-                clearInterval(interval);
-                self.finish();
-                self.isFinish = true;
-            }
-        }
-    }
-
-    finish() {
-        this.$loadingMain.classList.add('loading-main-done');
-        this.$body.style.overflowY = 'auto';
-        setTimeout(this.remove(this.$loadingMain), 1000);
-    }
-
-    remove(element) {
-        element.parentNode.removeChild(element);
-    }
-
-    buildProportion() {
-        if (this.$allLength > 1000) {
-            return this.$allLength / 50;
-        }
-        if (this.$allLength > 900) {
-            return this.$allLength / 45;
-        }
-        if (this.$allLength > 800) {
-            return this.$allLength / 40;
-        }
-        if (this.$allLength > 700) {
-            return this.$allLength / 35;
-        }
-        if (this.$allLength > 600) {
-            return this.$allLength / 30;
-        }
-        if (this.$allLength > 500) {
-            return this.$allLength / 25;
-        }
-        if (this.$allLength > 400) {
-            return this.$allLength / 20;
-        }
-        if (this.$allLength > 300) {
-            return this.$allLength / 15;
-        }
-        if (this.$allLength > 200) {
-            return this.$allLength / 10;
-        }
-
-        return this.$allLength;
-    }
-}
-
-window.progress = new Progress();
 class Table {
     constructor() {
         this.elTable = document.querySelectorAll('.table');
@@ -1174,6 +1071,30 @@ window.tag = new Tag();
 class Translation {
     constructor() {
         this.translation = '';
+        this.translationEn = {
+            'cancel': 'Cancel',
+            'close': 'Close',
+            'confirm': 'Confirm',
+            'input_upload': 'Select File...',
+            'next': 'Next',
+            'previous': 'Previous',
+        };
+        this.translationEs = {
+            'cancel': 'Cancelar',
+            'close': 'Cerrar',
+            'confirm': 'Confirmar',
+            'input_upload': 'Seleccione Archivo...',
+            'next': 'Siguiente',
+            'previous': 'Anterior',
+        };
+        this.translationPt = {
+            'cancel': 'Cancelar',
+            'close': 'Fechar',
+            'confirm': 'Confirmar',
+            'input_upload': 'Selecione o Arquivo...',
+            'next': 'Próximo',
+            'previous': 'Anterior',
+        };
     }
 
     build() {
@@ -1181,25 +1102,15 @@ class Translation {
     }
 
     defineLanguege() {
-        switch (globalLanguage) {
-            case 'pt':
-                this.translation = translationPT;
-                break;
-            case 'en':
-            default:
-                this.translation = translationEN;
-                break;
-            case 'es':
-                this.translation = translationES;
-                break;
-        }
+        const capitalize = globalLanguage.charAt(0).toUpperCase() + globalLanguage.slice(1);
+
+        this.translation = this[`translation${capitalize}`];
     }
 }
 
 window.translation = new Translation();
 window.addEventListener('load',
     window.translation.build(),
-    window.progress.build(),
     window.mask.build(),
     window.modal.build(),
     window.carousel.build(),

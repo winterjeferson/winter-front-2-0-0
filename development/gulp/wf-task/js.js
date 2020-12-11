@@ -9,7 +9,6 @@ const configuration = require('./configuration.js');
 const extension = 'js';
 const filePrefix = `${configuration.prefix}${configuration.theme}`;
 const filePrefixPlugin = `${configuration.prefix}${configuration.plugin}`;
-const filePrefixTranslation = `${configuration.prefix}${configuration.translation}`;
 const folder = `${configuration.development}${extension}/`;
 const file = [
     `${folder}${filePrefix}/!(${configuration.index})*.${extension}`,
@@ -17,7 +16,6 @@ const file = [
 
 ];
 const filePlugin = [
-    `${folder}${filePrefixTranslation}/${configuration.allFolderFile}`,
     `${folder}${filePrefixPlugin}/!(${configuration.index})*.${extension}`,
     `${folder}${filePrefixPlugin}/${configuration.index}.${extension}`,
 ];
@@ -64,29 +62,8 @@ gulp.task('buildJsLint', () => {
     return gulp
         .src(`${configuration.development}${extension}/${configuration.allFolderFile}`)
         .pipe(eslint({
-            'extends': 'eslint:recommended',
-            'rules': {
-                'quotes': [1, 'single'],
-                'semi': [1, 'always'],
-                'eqeqeq': [1, 'always'],
-                'no-alert': 1,
-                'no-eval': 1,
-                'no-var': 1,
-                'no-redeclare': 1,
-                'no-self-compare': 1,
-                'no-unused-vars': [1, {
-                    'vars': 'all',
-                    'args': 'after-used',
-                    'ignoreRestSiblings': false
-                }],
-            },
-            'parserOptions': {
-                'ecmaVersion': 6,
-                'sourceType': 'module',
-                'ecmaFeatures': {
-                    'jsx': true
-                }
-            },
+            "extends": "eslint:recommended",
+            configFile: 'eslint.json'
         }))
         .pipe(eslint.format())
         .pipe(eslint.failOnError());

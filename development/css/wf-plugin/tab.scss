@@ -1,4 +1,4 @@
-$self: button;
+$button: button;
 
 .tab {
     align-items: flex-end;
@@ -56,10 +56,12 @@ $self: button;
             border-bottom-color: color-regular(#{$color});
         }
 
-        .#{$self}--#{$color}--active {
-            background-color: color-regular(#{$color});
-            border-color: color-regular(#{$color});
-            color: color-regular-contrast(#{$color});
+        .#{$button}--#{$color} {
+            &.tab--active {
+                background-color: color-regular(#{$color});
+                border-color: color-regular(#{$color});
+                color: color-regular-contrast(#{$color});
+            }
         }
     }
 }

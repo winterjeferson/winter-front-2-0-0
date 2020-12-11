@@ -2433,73 +2433,73 @@ small {
       margin-top: 5px; }
   .tab--black {
     border-bottom-color: #333333; }
-  .tab .button--black--active {
+  .tab .button--black.tab--active {
     background-color: #333333;
     border-color: #333333;
     color: #ffffff; }
   .tab--blue {
     border-bottom-color: #3297db; }
-  .tab .button--blue--active {
+  .tab .button--blue.tab--active {
     background-color: #3297db;
     border-color: #3297db;
     color: #ffffff; }
   .tab--brown {
     border-bottom-color: #7f4d04; }
-  .tab .button--brown--active {
+  .tab .button--brown.tab--active {
     background-color: #7f4d04;
     border-color: #7f4d04;
     color: #ffffff; }
   .tab--cyan {
     border-bottom-color: #23c4af; }
-  .tab .button--cyan--active {
+  .tab .button--cyan.tab--active {
     background-color: #23c4af;
     border-color: #23c4af;
     color: #ffffff; }
   .tab--green {
     border-bottom-color: #2dcc70; }
-  .tab .button--green--active {
+  .tab .button--green.tab--active {
     background-color: #2dcc70;
     border-color: #2dcc70;
     color: #ffffff; }
   .tab--grey {
     border-bottom-color: #bec3c7; }
-  .tab .button--grey--active {
+  .tab .button--grey.tab--active {
     background-color: #bec3c7;
     border-color: #bec3c7;
     color: #333333; }
   .tab--orange {
     border-bottom-color: #e77e22; }
-  .tab .button--orange--active {
+  .tab .button--orange.tab--active {
     background-color: #e77e22;
     border-color: #e77e22;
     color: #ffffff; }
   .tab--pink {
     border-bottom-color: #e81cb6; }
-  .tab .button--pink--active {
+  .tab .button--pink.tab--active {
     background-color: #e81cb6;
     border-color: #e81cb6;
     color: #ffffff; }
   .tab--purple {
     border-bottom-color: #9a59b5; }
-  .tab .button--purple--active {
+  .tab .button--purple.tab--active {
     background-color: #9a59b5;
     border-color: #9a59b5;
     color: #ffffff; }
   .tab--red {
     border-bottom-color: #e14b4a; }
-  .tab .button--red--active {
+  .tab .button--red.tab--active {
     background-color: #e14b4a;
     border-color: #e14b4a;
     color: #ffffff; }
   .tab--white {
     border-bottom-color: #ffffff; }
-  .tab .button--white--active {
+  .tab .button--white.tab--active {
     background-color: #ffffff;
     border-color: #ffffff;
     color: #333333; }
   .tab--yellow {
     border-bottom-color: #f1c50e; }
-  .tab .button--yellow--active {
+  .tab .button--yellow.tab--active {
     background-color: #f1c50e;
     border-color: #f1c50e;
     color: #ffffff; }

@@ -147,7 +147,7 @@ class Modal {
             }
         });
 
-        this.elModalFooter.querySelector('[data-id="cancel"]').addEventListener('click', (event) => {
+        this.elModalFooter.querySelector('[data-id="cancel"]').addEventListener('click', () => {
             this.closeModal();
         });
     }
@@ -288,10 +288,6 @@ class Modal {
     }
 
     resetOtherClass() {
-        if (typeof window.form !== 'undefined') {
-            window.form.buildInputFile();
-        }
-
         if (typeof window.menuDropDown !== 'undefined') {
             window.menuDropDown.reset();
         }
@@ -301,7 +297,7 @@ class Modal {
         }
 
         if (typeof window.menuTab !== 'undefined') {
-            window.menuTab.defineActive();
+            window.menuTab.build();
         }
 
         if (typeof window.lazyLoad !== 'undefined') {

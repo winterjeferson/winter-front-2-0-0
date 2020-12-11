@@ -1,28 +1,40 @@
 class MenuTab {
-    build() {
-        this.defineActive();
+    constructor() {
+        this.cssMenu = 'tab';
+        this.cssMenuActive = `${this.cssMenu}--active`;
+        this.cssAllButton = `.${this.cssMenu} > .button, .${this.cssMenu} > .drop-down > .button`;
     }
 
-    defineActive() {
-        let self = this;
-        let $arr = document.querySelectorAll('.menu-tab > ul > li > .bt');
+    build() {
+        this.el = document.querySelectorAll(`.${this.cssMenu}`);
 
-        Array.prototype.forEach.call($arr, function (item) {
-            item.addEventListener('click', function () {
-                self.buildClick(item);
+        if (this.el.length < 1) {
+            return;
+        }
+
+        this.buildClick();
+    }
+
+    buildClick() {
+        const self = this;
+        const el = document.querySelectorAll(this.cssAllButton);
+
+        Array.prototype.forEach.call(el, (item) => {
+            item.addEventListener('click', () => {
+                self.buildCss(item);
+
             });
         });
     }
 
-    buildClick(item) {
-        let classActive = 'menu-tab-active';
-        let $arr = item.parentNode.parentNode.querySelectorAll('li');
+    buildCss(item) {
+        const el = document.querySelectorAll(this.cssAllButton);
 
-        Array.prototype.forEach.call($arr, function (item) {
-            item.classList.remove(classActive);
+        Array.prototype.forEach.call(el, (item) => {
+            item.classList.remove(this.cssMenuActive);
         });
 
-        item.parentNode.classList.add(classActive);
+        item.classList.add(this.cssMenuActive);
     }
 }
 

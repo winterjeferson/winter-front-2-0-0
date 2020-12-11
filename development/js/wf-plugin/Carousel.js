@@ -4,8 +4,7 @@ class Carousel {
         this.attPrevious = '[data-id="previous"]';
         this.attNext = '[data-id="next"]';
         this.cssCarouselList = 'carousel__list';
-        this.cssCarouselListClass = `.${this.cssCarouselList}`;
-        this.cssCarouselListItem = `carousel__item`;
+        this.cssCarouselListItem = 'carousel__item';
         this.cssCarouselController = 'carousel__controller';
         this.cssCarouselControllerClass = `.${this.cssCarouselController}`;
         this.cssButton = 'carousel__controller-button';
@@ -40,7 +39,7 @@ class Carousel {
         const self = this;
 
         Array.prototype.forEach.call(this.elCarousel, (item) => {
-            let length = item.querySelectorAll(`${self.cssCarouselListClass} li`).length;
+            let length = item.querySelectorAll(`.${self.cssCarouselList} li`).length;
             let autoplay = item.getAttribute('data-autoplay');
 
             if (autoplay === 'true') {
@@ -64,11 +63,11 @@ class Carousel {
 
         window.onresize = () => {
             Array.prototype.forEach.call(self.elCarousel, (item) => {
-                let $this = item.parentNode.parentNode.parentNode.parentNode;
-                let elCarouselList = $this.querySelector(self.cssCarouselListClass);
+                let el = item.parentNode.parentNode.parentNode.parentNode;
+                let elCarouselList = el.querySelector(`.${self.cssCarouselList}`);
                 let newSlide = 0;
 
-                self.defineActive($this.querySelector('[data-id="' + newSlide + '"]'));
+                self.defineActive(el.querySelector(`[data-id="${newSlide}"]`));
                 self.animate(newSlide, elCarouselList, 'arrow');
             });
         };
@@ -113,7 +112,7 @@ class Carousel {
 
         button.onclick = () => {
             let elCarousel = button.parentNode.parentNode;
-            let elCarouselList = elCarousel.querySelector(self.cssCarouselListClass);
+            let elCarouselList = elCarousel.querySelector(`.${self.cssCarouselList}`);
             let elCarouselListLength = Number(elCarouselList.querySelectorAll('li').length);
             let currentSlide = Number(elCarousel.getAttribute(self.attCurrentSlide));
             let newSlide = 0;
@@ -137,7 +136,7 @@ class Carousel {
 
         button.onclick = () => {
             let elCarousel = button.parentNode.parentNode;
-            let elCarouselList = elCarousel.querySelector(self.cssCarouselListClass);
+            let elCarouselList = elCarousel.querySelector(`.${self.cssCarouselList}`);
             let elCarouselListLength = Number(elCarouselList.querySelectorAll('li').length);
             let currentSlide = Number(elCarousel.getAttribute(self.attCurrentSlide));
             let newSlide = 0;
@@ -157,8 +156,8 @@ class Carousel {
 
     animate(currentSlide, target, from) {
         let elCarouselList = from === 'arrow' ?
-            target.parentNode.querySelector(this.cssCarouselListClass) :
-            target.parentNode.parentNode.querySelector(this.cssCarouselListClass);
+            target.parentNode.querySelector(`.${this.cssCarouselList}`) :
+            target.parentNode.parentNode.querySelector(`.${this.cssCarouselList}`);
         let elCarousel = elCarouselList.parentNode;
         let carouselStyle = elCarousel.getAttribute('data-style');
         let slideSize = Number(elCarouselList.querySelector('li').offsetWidth);
@@ -182,10 +181,10 @@ class Carousel {
     }
 
     animateFade(obj) {
-        const el = obj.elCarouselList.querySelectorAll(`.${this.cssCarouselListItem}`);
-        const transition = '.7s';
+        let el = obj.elCarouselList.querySelectorAll('li');
+        let transition = '.7s';
 
-        Array.prototype.forEach.call(el, (item) => {
+        Array.prototype.forEach.call(obj.elCarouselList.querySelectorAll('li'), (item) => {
             item.style.opacity = 0;
             item.style.transition = transition;
         });
@@ -200,18 +199,18 @@ class Carousel {
     }
 
     verifyInterval() {
-        let instance = window.carousel;
+        let self = window.objWfCarousel;
 
-        instance.counterCurrent++;
+        self.counterCurrent++;
 
-        if (instance.counterCurrent >= instance.transition) {
-            instance.counterCurrent = 0;
+        if (self.counterCurrent >= self.transition) {
+            self.counterCurrent = 0;
 
-            Array.prototype.forEach.call(instance.elCarousel, (item) => {
+            Array.prototype.forEach.call(self.elCarousel, (item) => {
                 const autoplay = item.getAttribute('data-autoplay');
 
-                if (autoplay === "true") {
-                    item.querySelector(instance.attNext).click();
+                if (autoplay === 'true') {
+                    item.querySelector(self.attNext).click();
                 }
             });
         }
@@ -228,7 +227,7 @@ class Carousel {
     }
 
     resizeLayout(target) {
-        const elCarouselList = target.querySelector(this.cssCarouselListClass);
+        const elCarouselList = target.querySelector(`.${this.cssCarouselList}`);
         const elCarouselListItem = elCarouselList.querySelectorAll(`.${this.cssCarouselListItem}`);
         const length = elCarouselListItem.length;
 

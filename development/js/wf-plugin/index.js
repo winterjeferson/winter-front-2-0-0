@@ -1,6 +1,5 @@
 window.addEventListener('load',
     window.translation.build(),
-    window.progress.build(),
     window.mask.build(),
     window.modal.build(),
     window.carousel.build(),

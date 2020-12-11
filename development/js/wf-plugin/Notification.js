@@ -73,7 +73,7 @@ class Notification {
         let messageTime = messageLength * 150;
 
         setTimeout(() => {
-            this.removeItem(item)
+            this.removeItem(item);
         }, messageTime);
     }
 
