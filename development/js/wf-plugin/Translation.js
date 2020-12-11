@@ -1,4 +1,4 @@
-class WfTranslation {
+class Translation {
     constructor() {
         this.translation = '';
     }

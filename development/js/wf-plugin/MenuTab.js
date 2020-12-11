@@ -1,4 +1,4 @@
-class WfMenuTab {
+class MenuTab {
     build() {
         this.defineActive();
     }

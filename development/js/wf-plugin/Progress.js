@@ -1,4 +1,4 @@
-class WfProgress {
+class Progress {
     update() {
         this.isFinish = false;
         this.progressSize = 0;

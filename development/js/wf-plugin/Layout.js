@@ -1,4 +1,4 @@
-class WfLayout {
+class Layout {
     constructor() {
         this.$body = document.querySelector('body');
 

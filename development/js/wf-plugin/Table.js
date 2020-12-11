@@ -1,4 +1,4 @@
-class WfTable {
+class Table {
     constructor() {
         this.elTable = document.querySelectorAll('.table');
         this.cssResponsive = 'table-responsive';

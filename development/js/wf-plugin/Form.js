@@ -1,4 +1,4 @@
-class WfForm {
+class Form {
     build() {
         if (document.querySelectorAll('form').length < 1) {
             return;
@@ -78,7 +78,7 @@ class WfForm {
 
     buildInputFileHtml() {
         let inputFile = '';
-        let textFile = objWfTranslation.translation.input_upload;
+        let textFile = Translation.translation.input_upload;
 
         inputFile += '<div class="input-file">';
         inputFile += '    <div class="input-file-name"></div>';

@@ -17,6 +17,11 @@
         padding: $big;
     }
 
+    &__header {
+        position: relative;
+        z-index: z-index("modal-header");
+    }
+
     &__header,
     &__footer {
         display: flex;
@@ -112,11 +117,6 @@
             padding: $regular;
         }
     }
-}
-
-.button--close {
-    position: relative;
-    z-index: z-index("modal-close");
 }
 
 .modal--close {

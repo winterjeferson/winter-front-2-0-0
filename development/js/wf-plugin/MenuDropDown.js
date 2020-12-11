@@ -1,4 +1,4 @@
-class WfMenuDropDown {
+class MenuDropDown {
     update() {
         this.isClickBuild = false;
         this.classMenu = 'drop-down';
@@ -25,15 +25,15 @@ class WfMenuDropDown {
     }
 
     close() {
-        Array.prototype.forEach.call(objWfMenuDropDown.elMenu, (item) => {
-            const elContent = item.querySelector(`.${objWfMenuDropDown.cssDropDownContent}`);
+        Array.prototype.forEach.call(MenuDropDown.elMenu, (item) => {
+            const elContent = item.querySelector(`.${MenuDropDown.cssDropDownContent}`);
 
             if (elContent === null) {
                 return;
             }
 
-            if (elContent.classList.contains(objWfMenuDropDown.cssOpend)) {
-                elContent.classList.remove(objWfMenuDropDown.cssOpend);
+            if (elContent.classList.contains(MenuDropDown.cssOpend)) {
+                elContent.classList.remove(MenuDropDown.cssOpend);
             }
         });
     }
@@ -61,20 +61,20 @@ class WfMenuDropDown {
     }
 
     listener(event) {
-        const el = document.querySelectorAll(`.${window.objWfMenuDropDown.cssMobileShow}`);
+        const el = document.querySelectorAll(`.${window.menuDropDown.cssMobileShow}`);
 
         if (event.toElement.classList.contains('button') || event.toElement.classList.contains('link')) {
             return;
         }
 
         Array.prototype.forEach.call(el, (item) => {
-            item.classList.remove(window.objWfMenuDropDown.cssMobileShow);
+            item.classList.remove(window.menuDropDown.cssMobileShow);
         });
     }
 
     reset() {
         document.removeEventListener('click', event, true);
         document.removeEventListener('click', this.listener, true);
-        window.objWfMenuDropDown.build();
+        window.menuDropDown.build();
     }
 }

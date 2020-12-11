@@ -1,4 +1,4 @@
-class WfNotification {
+class Notification {
     constructor() {
         this.elBody = document.querySelector('body');
         this.elNotificationId = 'notification';
@@ -25,7 +25,7 @@ class WfNotification {
         return `
             <div class="${this.elNotificationId}__item ${this.elNotificationId}--regular ${this.elNotificationId}--${style}" id="${this.elNotificationId}${this.notificationId}">
                 <span class="${this.elNotificationId}__text">${message}</span>
-                <button type="button" class="button button--small button--small--proportional button--transparent" onclick="objWfNotification.remove(this.parentNode, 0)" aria-label="${objWfTranslation.translation.close}">
+                <button type="button" class="button button--small button--small--proportional button--transparent" onclick="Notification.remove(this.parentNode, 0)" aria-label="${Translation.translation.close}">
                     <svg class="icon icon--regular rotate-45">
                         <use xlink:href="./assets/img/icon.svg#plus"></use>
                     </svg>

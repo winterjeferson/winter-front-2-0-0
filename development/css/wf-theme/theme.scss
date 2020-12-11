@@ -145,15 +145,12 @@
     }
 }
 
-.page-card {
+.card--extra-big,
+.card--big {
+    display: none;
 
-    .card--extra-big,
-    .card--big {
-        display: none;
-
-        @include tablet-landscape {
-            display: initial;
-        }
+    @include tablet-landscape {
+        display: initial;
     }
 }
 

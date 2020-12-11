@@ -96,12 +96,12 @@
   .page-home .icon {
     fill: #ffffff; }
 
-.page-card .card--extra-big,
-.page-card .card--big {
+.card--extra-big,
+.card--big {
   display: none; }
   @media (min-width: 1024px) {
-    .page-card .card--extra-big,
-    .page-card .card--big {
+    .card--extra-big,
+    .card--big {
       display: initial; } }
 
 .page-table .wrapper-table-responsive {
@@ -995,3 +995,6 @@
     background-color: white; }
   [class*="color--"].color--white-darken-15 {
     background-color: #404040; }
+
+* {
+  opacity: .85; }

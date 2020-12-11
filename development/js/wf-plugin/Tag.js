@@ -1,4 +1,4 @@
-class WfTag {
+class Tag {
     constructor() {
         this.elTag = document.querySelectorAll('.tag');
     }

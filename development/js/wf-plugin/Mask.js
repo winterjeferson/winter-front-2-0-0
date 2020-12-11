@@ -1,4 +1,4 @@
-class WfMask {
+class Mask {
     constructor() {
         this.$inputMask = document.querySelectorAll('[data-mask]');
     }

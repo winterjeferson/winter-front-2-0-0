@@ -1,4 +1,4 @@
-class WfManagementTheme {
+class ManagementTheme {
     verifyLoad() {
         window.addEventListener('load', this.applyClass(), {
             once: true
@@ -10,6 +10,7 @@ class WfManagementTheme {
     }
 }
 
-window.objWfManagementTheme = new WfManagementTheme();
+window.objWfTheme = new Theme();
+window.objWfManagementTheme = new ManagementTheme();
 
 objWfManagementTheme.verifyLoad();

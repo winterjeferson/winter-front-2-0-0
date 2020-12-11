@@ -1724,6 +1724,9 @@ small {
   @media (min-width: 1024px) {
     .modal {
       padding: 20px; } }
+  .modal__header {
+    position: relative;
+    z-index: 3; }
   .modal__header, .modal__footer {
     display: flex;
     padding: 10px;
@@ -1789,10 +1792,6 @@ small {
     @media (min-width: 1024px) {
       .modal__description {
         padding: 10px; } }
-
-.button--close {
-  position: relative;
-  z-index: 3; }
 
 .modal--close {
   opacity: 0 !important;

@@ -1,4 +1,4 @@
-class WfTheme {
+class Theme {
     constructor() {
         this.$body = document.querySelector('body');
         this.arrStyle = ['grey', 'blue', 'green', 'cyan', 'orange', 'red', 'yellow', 'purple', 'brown', 'black', 'white'];
@@ -22,9 +22,7 @@ class WfTheme {
         }
     }
 }
-
-window.objWfTheme = new WfTheme();
-class WfManagementTheme {
+class ManagementTheme {
     verifyLoad() {
         window.addEventListener('load', this.applyClass(), {
             once: true
@@ -36,6 +34,7 @@ class WfManagementTheme {
     }
 }
 
-window.objWfManagementTheme = new WfManagementTheme();
+window.objWfTheme = new Theme();
+window.objWfManagementTheme = new ManagementTheme();
 
 objWfManagementTheme.verifyLoad();

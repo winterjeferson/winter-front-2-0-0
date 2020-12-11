@@ -1,4 +1,4 @@
-class WfMenuToggle {
+class MenuToggle {
     constructor() {
         this.classButton = 'toggle-menu';
         this.isWatch = false;

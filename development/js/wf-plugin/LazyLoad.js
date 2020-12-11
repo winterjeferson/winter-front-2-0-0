@@ -1,4 +1,4 @@
-class WfLazyLoad {
+class LazyLoad {
     build() {
         if (document.querySelectorAll('[data-lazy-load="true"]').length < 1) {
             return;

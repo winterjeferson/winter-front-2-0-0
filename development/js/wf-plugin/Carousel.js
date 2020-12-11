@@ -1,10 +1,11 @@
-class WfCarousel {
+class Carousel {
     constructor() {
         this.attCurrentSlide = 'data-current-slide';
         this.attPrevious = '[data-id="previous"]';
         this.attNext = '[data-id="next"]';
         this.cssCarouselList = 'carousel__list';
         this.cssCarouselListClass = `.${this.cssCarouselList}`;
+        this.cssCarouselListItem = `carousel__item`;
         this.cssCarouselController = 'carousel__controller';
         this.cssCarouselControllerClass = `.${this.cssCarouselController}`;
         this.cssButton = 'carousel__controller-button';
@@ -61,8 +62,8 @@ class WfCarousel {
     watchResize() {
         let self = this;
 
-        window.onresize = function () {
-            Array.prototype.forEach.call(self.elCarousel, function (item) {
+        window.onresize = () => {
+            Array.prototype.forEach.call(self.elCarousel, (item) => {
                 let $this = item.parentNode.parentNode.parentNode.parentNode;
                 let elCarouselList = $this.querySelector(self.cssCarouselListClass);
                 let newSlide = 0;
@@ -89,20 +90,19 @@ class WfCarousel {
         let self = this;
 
         Array.prototype.forEach.call(this.elCarousel, function (item) {
-            self.buildNavigationControllerBt(item);
+            self.buildNavigationController(item);
             self.buildNavigationArrowLeft(item);
             self.buildNavigationArrowRight(item);
         });
     }
 
-    buildNavigationControllerBt(target) {
-        const self = this;
+    buildNavigationController(target) {
         const button = target.querySelectorAll(this.cssButtonClass);
 
-        Array.prototype.forEach.call(button, function (item) {
-            item.onclick = function () {
-                self.defineActive(item);
-                self.animate(item.getAttribute('data-id'), item, 'navigation');
+        Array.prototype.forEach.call(button, (item) => {
+            item.onclick = () => {
+                this.defineActive(item);
+                this.animate(item.getAttribute('data-id'), item, 'navigation');
             };
         });
     }
@@ -111,7 +111,7 @@ class WfCarousel {
         const self = this;
         const button = target.querySelector(this.attPrevious);
 
-        button.onclick = function () {
+        button.onclick = () => {
             let elCarousel = button.parentNode.parentNode;
             let elCarouselList = elCarousel.querySelector(self.cssCarouselListClass);
             let elCarouselListLength = Number(elCarouselList.querySelectorAll('li').length);
@@ -135,7 +135,7 @@ class WfCarousel {
         let self = this;
         let button = target.querySelector(this.attNext);
 
-        button.onclick = function () {
+        button.onclick = () => {
             let elCarousel = button.parentNode.parentNode;
             let elCarouselList = elCarousel.querySelector(self.cssCarouselListClass);
             let elCarouselListLength = Number(elCarouselList.querySelectorAll('li').length);
@@ -185,7 +185,7 @@ class WfCarousel {
         let el = obj.elCarouselList.querySelectorAll('li');
         let transition = '.7s';
 
-        Array.prototype.forEach.call(obj.elCarouselList.querySelectorAll('li'), function (item) {
+        Array.prototype.forEach.call(obj.elCarouselList.querySelectorAll('li'), (item) => {
             item.style.opacity = 0;
             item.style.transition = transition;
         });
@@ -200,7 +200,7 @@ class WfCarousel {
     }
 
     verifyInterval() {
-        let self = window.objWfCarousel;
+        let self = window.carousel;
 
         self.counterCurrent++;
 
@@ -218,20 +218,19 @@ class WfCarousel {
     }
 
     defineActive(target) {
-        const self = this;
-        let listBt = target.parentNode.parentNode.querySelectorAll(this.cssButtonClass);
+        const el = target.parentNode.parentNode.querySelectorAll(this.cssButtonClass);
 
-        Array.prototype.forEach.call(listBt, function (item) {
-            item.classList.remove(self.cssButtonActive);
+        Array.prototype.forEach.call(el, (item) => {
+            item.classList.remove(this.cssButtonActive);
         });
 
         target.classList.add(this.cssButtonActive);
     }
 
     resizeLayout(target) {
-        let elCarouselList = target.querySelector(this.cssCarouselListClass);
-        let elCarouselListItem = elCarouselList.querySelectorAll('li');
-        let length = elCarouselListItem.length;
+        const elCarouselList = target.querySelector(this.cssCarouselListClass);
+        const elCarouselListItem = elCarouselList.querySelectorAll(`.${this.cssCarouselListItem}`);
+        const length = elCarouselListItem.length;
 
         elCarouselList.style.width += `${length * 100}%`;
     }

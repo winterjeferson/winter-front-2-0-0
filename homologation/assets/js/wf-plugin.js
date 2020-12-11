@@ -22,59 +22,14 @@ const translationPT = {
     'next': 'Próximo',
     'previous': 'Anterior',
 };
-function getUrlParameter(target) {
-    let url = top.location.search.substring(1);
-    let parameter = url.split('&');
-
-    for (let i = 0; i < parameter.length; i++) {
-        let parameterName = parameter[i].split('=');
-
-        if (parameterName[0] === target) {
-            return parameterName[1];
-        }
-    }
-}
-
-function getUrlWord(target) {
-    return new RegExp('\\b' + target + '\\b', 'i').test(window.location.href);
-}
-
-function offset(element) {
-    let rect = element.getBoundingClientRect();
-    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const obj = {
-        'top': rect.top + scrollTop,
-        'left': rect.left + scrollLeft,
-    };
-
-    return obj;
-}
-
-function verifyUrlRoute(target) {
-    let arrFolder = window.location.pathname.split('/');
-
-    if (arrFolder.indexOf(target) > -1) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function wrapItem(target, cssClass) {
-    let wrapper = document.createElement('div');
-
-    wrapper.className = cssClass;
-    target.parentNode.insertBefore(wrapper, target);
-    wrapper.appendChild(target);
-}
-class WfCarousel {
+class Carousel {
     constructor() {
         this.attCurrentSlide = 'data-current-slide';
         this.attPrevious = '[data-id="previous"]';
         this.attNext = '[data-id="next"]';
         this.cssCarouselList = 'carousel__list';
         this.cssCarouselListClass = `.${this.cssCarouselList}`;
+        this.cssCarouselListItem = `carousel__item`;
         this.cssCarouselController = 'carousel__controller';
         this.cssCarouselControllerClass = `.${this.cssCarouselController}`;
         this.cssButton = 'carousel__controller-button';
@@ -131,8 +86,8 @@ class WfCarousel {
     watchResize() {
         let self = this;
 
-        window.onresize = function () {
-            Array.prototype.forEach.call(self.elCarousel, function (item) {
+        window.onresize = () => {
+            Array.prototype.forEach.call(self.elCarousel, (item) => {
                 let $this = item.parentNode.parentNode.parentNode.parentNode;
                 let elCarouselList = $this.querySelector(self.cssCarouselListClass);
                 let newSlide = 0;
@@ -159,20 +114,19 @@ class WfCarousel {
         let self = this;
 
         Array.prototype.forEach.call(this.elCarousel, function (item) {
-            self.buildNavigationControllerBt(item);
+            self.buildNavigationController(item);
             self.buildNavigationArrowLeft(item);
             self.buildNavigationArrowRight(item);
         });
     }
 
-    buildNavigationControllerBt(target) {
-        const self = this;
+    buildNavigationController(target) {
         const button = target.querySelectorAll(this.cssButtonClass);
 
-        Array.prototype.forEach.call(button, function (item) {
-            item.onclick = function () {
-                self.defineActive(item);
-                self.animate(item.getAttribute('data-id'), item, 'navigation');
+        Array.prototype.forEach.call(button, (item) => {
+            item.onclick = () => {
+                this.defineActive(item);
+                this.animate(item.getAttribute('data-id'), item, 'navigation');
             };
         });
     }
@@ -181,7 +135,7 @@ class WfCarousel {
         const self = this;
         const button = target.querySelector(this.attPrevious);
 
-        button.onclick = function () {
+        button.onclick = () => {
             let elCarousel = button.parentNode.parentNode;
             let elCarouselList = elCarousel.querySelector(self.cssCarouselListClass);
             let elCarouselListLength = Number(elCarouselList.querySelectorAll('li').length);
@@ -205,7 +159,7 @@ class WfCarousel {
         let self = this;
         let button = target.querySelector(this.attNext);
 
-        button.onclick = function () {
+        button.onclick = () => {
             let elCarousel = button.parentNode.parentNode;
             let elCarouselList = elCarousel.querySelector(self.cssCarouselListClass);
             let elCarouselListLength = Number(elCarouselList.querySelectorAll('li').length);
@@ -255,7 +209,7 @@ class WfCarousel {
         let el = obj.elCarouselList.querySelectorAll('li');
         let transition = '.7s';
 
-        Array.prototype.forEach.call(obj.elCarouselList.querySelectorAll('li'), function (item) {
+        Array.prototype.forEach.call(obj.elCarouselList.querySelectorAll('li'), (item) => {
             item.style.opacity = 0;
             item.style.transition = transition;
         });
@@ -270,7 +224,7 @@ class WfCarousel {
     }
 
     verifyInterval() {
-        let self = window.objWfCarousel;
+        let self = window.carousel;
 
         self.counterCurrent++;
 
@@ -288,25 +242,24 @@ class WfCarousel {
     }
 
     defineActive(target) {
-        const self = this;
-        let listBt = target.parentNode.parentNode.querySelectorAll(this.cssButtonClass);
+        const el = target.parentNode.parentNode.querySelectorAll(this.cssButtonClass);
 
-        Array.prototype.forEach.call(listBt, function (item) {
-            item.classList.remove(self.cssButtonActive);
+        Array.prototype.forEach.call(el, (item) => {
+            item.classList.remove(this.cssButtonActive);
         });
 
         target.classList.add(this.cssButtonActive);
     }
 
     resizeLayout(target) {
-        let elCarouselList = target.querySelector(this.cssCarouselListClass);
-        let elCarouselListItem = elCarouselList.querySelectorAll('li');
-        let length = elCarouselListItem.length;
+        const elCarouselList = target.querySelector(this.cssCarouselListClass);
+        const elCarouselListItem = elCarouselList.querySelectorAll(`.${this.cssCarouselListItem}`);
+        const length = elCarouselListItem.length;
 
         elCarouselList.style.width += `${length * 100}%`;
     }
 }
-class WfForm {
+class Form {
     build() {
         if (document.querySelectorAll('form').length < 1) {
             return;
@@ -386,7 +339,7 @@ class WfForm {
 
     buildInputFileHtml() {
         let inputFile = '';
-        let textFile = objWfTranslation.translation.input_upload;
+        let textFile = Translation.translation.input_upload;
 
         inputFile += '<div class="input-file">';
         inputFile += '    <div class="input-file-name"></div>';
@@ -410,7 +363,53 @@ class WfForm {
         return true;
     }
 }
-class WfLayout {
+function getUrlParameter(target) {
+    let url = top.location.search.substring(1);
+    let parameter = url.split('&');
+
+    for (let i = 0; i < parameter.length; i++) {
+        let parameterName = parameter[i].split('=');
+
+        if (parameterName[0] === target) {
+            return parameterName[1];
+        }
+    }
+}
+
+function getUrlWord(target) {
+    return new RegExp('\\b' + target + '\\b', 'i').test(window.location.href);
+}
+
+function offset(element) {
+    let rect = element.getBoundingClientRect();
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const obj = {
+        'top': rect.top + scrollTop,
+        'left': rect.left + scrollLeft,
+    };
+
+    return obj;
+}
+
+function verifyUrlRoute(target) {
+    let arrFolder = window.location.pathname.split('/');
+
+    if (arrFolder.indexOf(target) > -1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function wrapItem(target, cssClass) {
+    let wrapper = document.createElement('div');
+
+    wrapper.className = cssClass;
+    target.parentNode.insertBefore(wrapper, target);
+    wrapper.appendChild(target);
+}
+class Layout {
     constructor() {
         this.$body = document.querySelector('body');
 
@@ -422,7 +421,7 @@ class WfLayout {
         this.breakPointFullHd = 1920;
     }
 }
-class WfLazyLoad {
+class LazyLoad {
     build() {
         if (document.querySelectorAll('[data-lazy-load="true"]').length < 1) {
             return;
@@ -466,7 +465,7 @@ class WfLazyLoad {
         target.removeAttribute('data-lazy-load');
     }
 }
-class WfMask {
+class Mask {
     constructor() {
         this.$inputMask = document.querySelectorAll('[data-mask]');
     }
@@ -545,7 +544,7 @@ class WfMask {
             .replace(/(-\d)\d+?$/, '$1');
     }
 }
-class WfMenuDropDown {
+class MenuDropDown {
     update() {
         this.isClickBuild = false;
         this.classMenu = 'drop-down';
@@ -572,15 +571,15 @@ class WfMenuDropDown {
     }
 
     close() {
-        Array.prototype.forEach.call(objWfMenuDropDown.elMenu, (item) => {
-            const elContent = item.querySelector(`.${objWfMenuDropDown.cssDropDownContent}`);
+        Array.prototype.forEach.call(MenuDropDown.elMenu, (item) => {
+            const elContent = item.querySelector(`.${MenuDropDown.cssDropDownContent}`);
 
             if (elContent === null) {
                 return;
             }
 
-            if (elContent.classList.contains(objWfMenuDropDown.cssOpend)) {
-                elContent.classList.remove(objWfMenuDropDown.cssOpend);
+            if (elContent.classList.contains(MenuDropDown.cssOpend)) {
+                elContent.classList.remove(MenuDropDown.cssOpend);
             }
         });
     }
@@ -608,24 +607,24 @@ class WfMenuDropDown {
     }
 
     listener(event) {
-        const el = document.querySelectorAll(`.${window.objWfMenuDropDown.cssMobileShow}`);
+        const el = document.querySelectorAll(`.${window.menuDropDown.cssMobileShow}`);
 
         if (event.toElement.classList.contains('button') || event.toElement.classList.contains('link')) {
             return;
         }
 
         Array.prototype.forEach.call(el, (item) => {
-            item.classList.remove(window.objWfMenuDropDown.cssMobileShow);
+            item.classList.remove(window.menuDropDown.cssMobileShow);
         });
     }
 
     reset() {
         document.removeEventListener('click', event, true);
         document.removeEventListener('click', this.listener, true);
-        window.objWfMenuDropDown.build();
+        window.menuDropDown.build();
     }
 }
-class WfMenuTab {
+class MenuTab {
     build() {
         this.defineActive();
     }
@@ -652,7 +651,7 @@ class WfMenuTab {
         item.parentNode.classList.add(classActive);
     }
 }
-class WfMenuToggle {
+class MenuToggle {
     constructor() {
         this.classButton = 'toggle-menu';
         this.isWatch = false;
@@ -698,7 +697,7 @@ class WfMenuToggle {
         this.build();
     }
 }
-class WfModal {
+class Modal {
     constructor() {
         this.isModalOpen = false;
 
@@ -738,7 +737,7 @@ class WfModal {
             <div class="modal ${this.cssClose}">
                 <div class="modal__box">
                     <header class="modal__header right">
-                        <button id="modalClose" type="button" aria-label="${objWfTranslation.translation.close}" class="button button--small button--small--proportional button--grey button--transparent button--close">
+                        <button id="modalClose" type="button" aria-label="${window.translation.translation.close}" class="button button--small button--small--proportional button--grey button--transparent button--close">
                             <svg class="icon icon--regular rotate-45">
                                 <use xlink:href="./assets/img/icon.svg#plus"></use>
                             </svg>
@@ -748,12 +747,12 @@ class WfModal {
                         <div id="modalContent" class="modal__content"></div>
                     </div>
                     <div class="navigation-change button-wrapper row center ${this.cssHide}">
-                        <button type="button" class="button button--big" data-id="previous" aria-label="${objWfTranslation.translation.previous}" >
+                        <button type="button" class="button button--big" data-id="previous" aria-label="${window.translation.translation.previous}" >
                             <svg class="icon icon--extra-big icon--white">
                                 <use xlink:href="./assets/img/icon.svg#previous"></use>
                             </svg>
                         </button>
-                        <button type="button" class="button button--big" data-id="next" aria-label="${objWfTranslation.translation.next}" >
+                        <button type="button" class="button button--big" data-id="next" aria-label="${window.translation.translation.next}" >
                             <svg class="icon icon--extra-big icon--white rotate-180">
                                 <use xlink:href="./assets/img/icon.svg#previous"></use>
                             </svg>
@@ -771,8 +770,8 @@ class WfModal {
     }
 
     buildTranslation() {
-        this.elModalFooterConfirm.innerHTML = objWfTranslation.translation.confirm;
-        this.elModalFooterCancel.innerHTML = objWfTranslation.translation.cancel;
+        this.elModalFooterConfirm.innerHTML = window.translation.translation.confirm;
+        this.elModalFooterCancel.innerHTML = window.translation.translation.cancel;
     }
 
     buildKeyboard() {
@@ -988,28 +987,28 @@ class WfModal {
     }
 
     resetOtherClass() {
-        if (typeof window.objWfForm !== 'undefined') {
-            window.objWfForm.buildInputFile();
+        if (typeof window.form !== 'undefined') {
+            window.form.buildInputFile();
         }
 
-        if (typeof window.objWfMenuDropDown !== 'undefined') {
-            window.objWfMenuDropDown.reset();
+        if (typeof window.menuDropDown !== 'undefined') {
+            window.menuDropDown.reset();
         }
 
-        if (typeof window.objWfMenuToggle !== 'undefined') {
-            window.objWfMenuToggle.build();
+        if (typeof window.menuToggle !== 'undefined') {
+            window.menuToggle.build();
         }
 
-        if (typeof window.objWfMenuTab !== 'undefined') {
-            window.objWfMenuTab.defineActive();
+        if (typeof window.menuTab !== 'undefined') {
+            window.menuTab.defineActive();
         }
 
-        if (typeof window.objWfLazyLoad !== 'undefined') {
-            window.objWfLazyLoad.build();
+        if (typeof window.lazyLoad !== 'undefined') {
+            window.lazyLoad.build();
         }
     }
 }
-class WfNotification {
+class Notification {
     constructor() {
         this.elBody = document.querySelector('body');
         this.elNotificationId = 'notification';
@@ -1036,7 +1035,7 @@ class WfNotification {
         return `
             <div class="${this.elNotificationId}__item ${this.elNotificationId}--regular ${this.elNotificationId}--${style}" id="${this.elNotificationId}${this.notificationId}">
                 <span class="${this.elNotificationId}__text">${message}</span>
-                <button type="button" class="button button--small button--small--proportional button--transparent" onclick="objWfNotification.remove(this.parentNode, 0)" aria-label="${objWfTranslation.translation.close}">
+                <button type="button" class="button button--small button--small--proportional button--transparent" onclick="Notification.remove(this.parentNode, 0)" aria-label="${Translation.translation.close}">
                     <svg class="icon icon--regular rotate-45">
                         <use xlink:href="./assets/img/icon.svg#plus"></use>
                     </svg>
@@ -1096,7 +1095,7 @@ class WfNotification {
         item.parentNode.removeChild(item);
     }
 }
-class WfProgress {
+class Progress {
     update() {
         this.isFinish = false;
         this.progressSize = 0;
@@ -1177,7 +1176,7 @@ class WfProgress {
         return this.$allLength;
     }
 }
-class WfTable {
+class Table {
     constructor() {
         this.elTable = document.querySelectorAll('.table');
         this.cssResponsive = 'table-responsive';
@@ -1198,7 +1197,7 @@ class WfTable {
         });
     }
 }
-class WfTag {
+class Tag {
     constructor() {
         this.elTag = document.querySelectorAll('.tag');
     }
@@ -1225,7 +1224,7 @@ class WfTag {
         });
     }
 }
-class WfTranslation {
+class Translation {
     constructor() {
         this.translation = '';
     }
@@ -1245,7 +1244,7 @@ class WfTranslation {
         }
     }
 }
-class WfManagementPlugin {
+class ManagementPlugin {
     verifyLoad() {
         window.addEventListener('load', this.applyClass(), {
             once: true
@@ -1253,37 +1252,36 @@ class WfManagementPlugin {
     }
 
     applyClass() {
-        objWfTranslation.build();
-        objWfProgress.build();
-        objWfForm.build();
-        objWfMask.build();
-        objWfModal.build();
-        objWfCarousel.build();
-        objWfLazyLoad.build();
-        objWfMenuDropDown.build();
-        objWfMenuTab.build();
-        objWfMenuToggle.build();
-        objWfNotification.build();
-        objWfTable.build();
-        objWfTag.build();
+        window.translation.build();
+        window.progress.build();
+        window.form.build();
+        window.mask.build();
+        window.modal.build();
+        window.carousel.build();
+        window.lazyLoad.build();
+        window.menuDropDown.build();
+        window.menuTab.build();
+        window.menuToggle.build();
+        window.notification.build();
+        window.table.build();
+        window.tag.build();
     }
 }
 
-window.objWfManagementPlugin = new WfManagementPlugin();
+window.managementPlugin = new ManagementPlugin();
+window.carousel = new Carousel();
+window.form = new Form();
+window.layout = new Layout();
+window.lazyLoad = new LazyLoad();
+window.mask = new Mask();
+window.menuDropDown = new MenuDropDown();
+window.menuTab = new MenuTab();
+window.menuToggle = new MenuToggle();
+window.modal = new Modal();
+window.notification = new Notification();
+window.progress = new Progress();
+window.table = new Table();
+window.tag = new Tag();
+window.translation = new Translation();
 
-window.objWfCarousel = new WfCarousel();
-window.objWfForm = new WfForm();
-window.objWfLayout = new WfLayout();
-window.objWfLazyLoad = new WfLazyLoad();
-window.objWfMask = new WfMask();
-window.objWfMenuDropDown = new WfMenuDropDown();
-window.objWfMenuTab = new WfMenuTab();
-window.objWfMenuToggle = new WfMenuToggle();
-window.objWfModal = new WfModal();
-window.objWfNotification = new WfNotification();
-window.objWfProgress = new WfProgress();
-window.objWfTable = new WfTable();
-window.objWfTag = new WfTag();
-window.objWfTranslation = new WfTranslation();
-
-objWfManagementPlugin.verifyLoad();
+window.managementPlugin.verifyLoad();
