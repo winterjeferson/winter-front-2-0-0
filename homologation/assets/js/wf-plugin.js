@@ -363,51 +363,53 @@ class Form {
         return true;
     }
 }
-function getUrlParameter(target) {
-    let url = top.location.search.substring(1);
-    let parameter = url.split('&');
+class Helper {
+    getUrlParameter(target) {
+        let url = top.location.search.substring(1);
+        let parameter = url.split('&');
 
-    for (let i = 0; i < parameter.length; i++) {
-        let parameterName = parameter[i].split('=');
+        for (let i = 0; i < parameter.length; i++) {
+            let parameterName = parameter[i].split('=');
 
-        if (parameterName[0] === target) {
-            return parameterName[1];
+            if (parameterName[0] === target) {
+                return parameterName[1];
+            }
         }
     }
-}
 
-function getUrlWord(target) {
-    return new RegExp('\\b' + target + '\\b', 'i').test(window.location.href);
-}
-
-function offset(element) {
-    let rect = element.getBoundingClientRect();
-    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const obj = {
-        'top': rect.top + scrollTop,
-        'left': rect.left + scrollLeft,
-    };
-
-    return obj;
-}
-
-function verifyUrlRoute(target) {
-    let arrFolder = window.location.pathname.split('/');
-
-    if (arrFolder.indexOf(target) > -1) {
-        return true;
-    } else {
-        return false;
+    getUrlWord(target) {
+        return new RegExp('\\b' + target + '\\b', 'i').test(window.location.href);
     }
-}
 
-function wrapItem(target, cssClass) {
-    let wrapper = document.createElement('div');
+    offset(element) {
+        let rect = element.getBoundingClientRect();
+        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const obj = {
+            'top': rect.top + scrollTop,
+            'left': rect.left + scrollLeft,
+        };
 
-    wrapper.className = cssClass;
-    target.parentNode.insertBefore(wrapper, target);
-    wrapper.appendChild(target);
+        return obj;
+    }
+
+    verifyUrlRoute(target) {
+        let arrFolder = window.location.pathname.split('/');
+
+        if (arrFolder.indexOf(target) > -1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    wrapItem(target, cssClass) {
+        let wrapper = document.createElement('div');
+
+        wrapper.className = cssClass;
+        target.parentNode.insertBefore(wrapper, target);
+        wrapper.appendChild(target);
+    }
 }
 class Layout {
     constructor() {
@@ -452,7 +454,7 @@ class LazyLoad {
 
     verifyPosition(target) {
         let windowScroll = window.scrollY;
-        let elemntPosition = offset(target).top;
+        let elemntPosition = window.helper.offset(target).top;
         let margin = window.outerHeight;
 
         if (windowScroll >= elemntPosition - margin) {
@@ -1192,8 +1194,8 @@ class Table {
 
     buildResponsive() {
         Array.prototype.forEach.call(this.elTable, (item) => {
-            wrapItem(item, this.cssResponsive);
-            wrapItem(item.parentNode.parentNode.querySelector(`.${this.cssResponsive}`), `wrapper-${this.cssResponsive}`);
+            window.helper.wrapItem(item, this.cssResponsive);
+            window.helper.wrapItem(item.parentNode.parentNode.querySelector(`.${this.cssResponsive}`), `wrapper-${this.cssResponsive}`);
         });
     }
 }
@@ -1244,33 +1246,9 @@ class Translation {
         }
     }
 }
-class ManagementPlugin {
-    verifyLoad() {
-        window.addEventListener('load', this.applyClass(), {
-            once: true
-        });
-    }
-
-    applyClass() {
-        window.translation.build();
-        window.progress.build();
-        window.form.build();
-        window.mask.build();
-        window.modal.build();
-        window.carousel.build();
-        window.lazyLoad.build();
-        window.menuDropDown.build();
-        window.menuTab.build();
-        window.menuToggle.build();
-        window.notification.build();
-        window.table.build();
-        window.tag.build();
-    }
-}
-
-window.managementPlugin = new ManagementPlugin();
 window.carousel = new Carousel();
 window.form = new Form();
+window.helper = new Helper();
 window.layout = new Layout();
 window.lazyLoad = new LazyLoad();
 window.mask = new Mask();
@@ -1284,4 +1262,19 @@ window.table = new Table();
 window.tag = new Tag();
 window.translation = new Translation();
 
-window.managementPlugin.verifyLoad();
+window.addEventListener('load',
+    window.translation.build(),
+    window.progress.build(),
+    window.form.build(),
+    window.mask.build(),
+    window.modal.build(),
+    window.carousel.build(),
+    window.lazyLoad.build(),
+    window.menuDropDown.build(),
+    window.menuTab.build(),
+    window.menuToggle.build(),
+    window.notification.build(),
+    window.table.build(),
+    window.tag.build(), {
+        once: true
+    });

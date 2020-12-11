@@ -14,8 +14,8 @@ class Table {
 
     buildResponsive() {
         Array.prototype.forEach.call(this.elTable, (item) => {
-            wrapItem(item, this.cssResponsive);
-            wrapItem(item.parentNode.parentNode.querySelector(`.${this.cssResponsive}`), `wrapper-${this.cssResponsive}`);
+            window.helper.wrapItem(item, this.cssResponsive);
+            window.helper.wrapItem(item.parentNode.parentNode.querySelector(`.${this.cssResponsive}`), `wrapper-${this.cssResponsive}`);
         });
     }
 }

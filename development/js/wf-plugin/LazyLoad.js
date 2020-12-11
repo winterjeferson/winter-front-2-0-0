@@ -29,7 +29,7 @@ class LazyLoad {
 
     verifyPosition(target) {
         let windowScroll = window.scrollY;
-        let elemntPosition = offset(target).top;
+        let elemntPosition = window.helper.offset(target).top;
         let margin = window.outerHeight;
 
         if (windowScroll >= elemntPosition - margin) {

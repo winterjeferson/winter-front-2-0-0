@@ -1,46 +1,48 @@
-function getUrlParameter(target) {
-    let url = top.location.search.substring(1);
-    let parameter = url.split('&');
+class Helper {
+    getUrlParameter(target) {
+        let url = top.location.search.substring(1);
+        let parameter = url.split('&');
 
-    for (let i = 0; i < parameter.length; i++) {
-        let parameterName = parameter[i].split('=');
+        for (let i = 0; i < parameter.length; i++) {
+            let parameterName = parameter[i].split('=');
 
-        if (parameterName[0] === target) {
-            return parameterName[1];
+            if (parameterName[0] === target) {
+                return parameterName[1];
+            }
         }
     }
-}
 
-function getUrlWord(target) {
-    return new RegExp('\\b' + target + '\\b', 'i').test(window.location.href);
-}
-
-function offset(element) {
-    let rect = element.getBoundingClientRect();
-    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const obj = {
-        'top': rect.top + scrollTop,
-        'left': rect.left + scrollLeft,
-    };
-
-    return obj;
-}
-
-function verifyUrlRoute(target) {
-    let arrFolder = window.location.pathname.split('/');
-
-    if (arrFolder.indexOf(target) > -1) {
-        return true;
-    } else {
-        return false;
+    getUrlWord(target) {
+        return new RegExp('\\b' + target + '\\b', 'i').test(window.location.href);
     }
-}
 
-function wrapItem(target, cssClass) {
-    let wrapper = document.createElement('div');
+    offset(element) {
+        let rect = element.getBoundingClientRect();
+        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const obj = {
+            'top': rect.top + scrollTop,
+            'left': rect.left + scrollLeft,
+        };
 
-    wrapper.className = cssClass;
-    target.parentNode.insertBefore(wrapper, target);
-    wrapper.appendChild(target);
+        return obj;
+    }
+
+    verifyUrlRoute(target) {
+        let arrFolder = window.location.pathname.split('/');
+
+        if (arrFolder.indexOf(target) > -1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    wrapItem(target, cssClass) {
+        let wrapper = document.createElement('div');
+
+        wrapper.className = cssClass;
+        target.parentNode.insertBefore(wrapper, target);
+        wrapper.appendChild(target);
+    }
 }
