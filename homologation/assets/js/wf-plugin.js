@@ -6,11 +6,10 @@ class Carousel {
         this.cssCarouselList = 'carousel__list';
         this.cssCarouselListItem = 'carousel__item';
         this.cssCarouselController = 'carousel__controller';
-        this.cssCarouselControllerClass = `.${this.cssCarouselController}`;
         this.cssButton = 'carousel__controller-button';
-        this.cssButtonClass = `.${this.cssButton}`;
         this.cssButtonActive = `${this.cssButton}--active`;
         this.cssDisplay = 'hide';
+        this.cssTransition = '.7s';
         this.elCarousel = document.querySelectorAll('.carousel');
 
         this.counterCurrent = 0;
@@ -39,7 +38,7 @@ class Carousel {
         const self = this;
 
         Array.prototype.forEach.call(this.elCarousel, (item) => {
-            let length = item.querySelectorAll(`.${self.cssCarouselList} li`).length;
+            let length = item.querySelectorAll(`.${self.cssCarouselList} .${this.cssCarouselListItem}`).length;
             let autoplay = item.getAttribute('data-autoplay');
 
             if (autoplay === 'true') {
@@ -53,13 +52,13 @@ class Carousel {
             if (length === 1) {
                 item.querySelector(self.attPrevious).classList.add(self.cssDisplay);
                 item.querySelector(self.attNext).classList.add(self.cssDisplay);
-                item.querySelector(self.cssCarouselControllerClass).classList.add(self.cssDisplay);
+                item.querySelector(`.${self.cssCarouselController}`).classList.add(self.cssDisplay);
             }
         });
     }
 
     watchResize() {
-        let self = this;
+        const self = this;
 
         window.onresize = () => {
             Array.prototype.forEach.call(self.elCarousel, (item) => {
@@ -68,100 +67,104 @@ class Carousel {
                 let newSlide = 0;
 
                 self.defineActive(el.querySelector(`[data-id="${newSlide}"]`));
-                self.animate(newSlide, elCarouselList, 'arrow');
+                self.animate({
+                    'currentSlide': newSlide,
+                    'target': elCarouselList,
+                    'from': 'arrow'
+                });
             });
         };
     }
 
     buildLayoutController(target, length) {
+        const css = `button button--small button--small--proportional ${this.cssButton}`;
         let concat = '';
 
         for (let i = 0; i < length; i++) {
             concat += `
-                <button type="button" class="button button--small button--small--proportional ${this.cssButton}" data-id="${i}" aria-hidden="true"></button>
+                <button type="button" class="${css}" data-id="${i}" aria-hidden="true"></button>
             `;
         }
 
-        target.querySelector(this.cssCarouselControllerClass).innerHTML = concat;
+        target.querySelector(`.${this.cssCarouselController}`).innerHTML = concat;
     }
 
     buildNavigation() {
-        let self = this;
-
-        Array.prototype.forEach.call(this.elCarousel, function (item) {
-            self.buildNavigationController(item);
-            self.buildNavigationArrowLeft(item);
-            self.buildNavigationArrowRight(item);
+        Array.prototype.forEach.call(this.elCarousel, (item) => {
+            this.buildNavigationController(item);
+            this.buildNavigationArrowLeft(item);
+            this.buildNavigationArrowRight(item);
         });
     }
 
     buildNavigationController(target) {
-        const button = target.querySelectorAll(this.cssButtonClass);
+        const button = target.querySelectorAll(`.${this.cssButton}`);
 
         Array.prototype.forEach.call(button, (item) => {
             item.onclick = () => {
                 this.defineActive(item);
-                this.animate(item.getAttribute('data-id'), item, 'navigation');
+                this.animate({
+                    'currentSlide': item.getAttribute('data-id'),
+                    'target': item,
+                    'from': 'navigation'
+                });
             };
         });
     }
 
-    buildNavigationArrowLeft(target) {
+    buildNavigationArrow(obj) {
         const self = this;
-        const button = target.querySelector(this.attPrevious);
 
-        button.onclick = () => {
-            let elCarousel = button.parentNode.parentNode;
-            let elCarouselList = elCarousel.querySelector(`.${self.cssCarouselList}`);
-            let elCarouselListLength = Number(elCarouselList.querySelectorAll('li').length);
-            let currentSlide = Number(elCarousel.getAttribute(self.attCurrentSlide));
-            let newSlide = 0;
+        obj.button.onclick = () => {
+            const elCarousel = obj.button.parentNode.parentNode;
+            const elCarouselList = elCarousel.querySelector(`.${self.cssCarouselList}`);
+            const elCarouselListLength = Number(elCarouselList.querySelectorAll(`.${this.cssCarouselListItem}`).length);
+            const currentSlide = Number(elCarousel.getAttribute(self.attCurrentSlide));
+            let slide = 0;
 
-            if (currentSlide === 0) {
-                newSlide = elCarouselListLength - 1;
-                elCarousel.setAttribute(self.attCurrentSlide, newSlide);
+            if (obj.side === 'previous') {
+                slide = currentSlide === 0 ? elCarouselListLength - 1 : currentSlide - 1;
             } else {
-                newSlide = currentSlide - 1;
-                elCarousel.setAttribute(self.attCurrentSlide, newSlide);
+                slide = currentSlide === (elCarouselListLength - 1) ? 0 : currentSlide + 1;
             }
 
-            self.defineActive(elCarousel.querySelector('[data-id="' + newSlide + '"]'));
-            self.animate(newSlide, elCarouselList, 'arrow');
+            elCarousel.setAttribute(self.attCurrentSlide, slide);
+            self.defineActive(elCarousel.querySelector(`[data-id="${slide}"]`));
+            self.animate({
+                'currentSlide': slide,
+                'target': elCarouselList,
+                'from': 'arrow'
+            });
         };
+    }
+
+    buildNavigationArrowLeft(target) {
+        const button = target.querySelector(this.attPrevious);
+
+        this.buildNavigationArrow({
+            button,
+            'side': 'previous'
+        });
     }
 
     buildNavigationArrowRight(target) {
-        let self = this;
-        let button = target.querySelector(this.attNext);
+        const button = target.querySelector(this.attNext);
 
-        button.onclick = () => {
-            let elCarousel = button.parentNode.parentNode;
-            let elCarouselList = elCarousel.querySelector(`.${self.cssCarouselList}`);
-            let elCarouselListLength = Number(elCarouselList.querySelectorAll('li').length);
-            let currentSlide = Number(elCarousel.getAttribute(self.attCurrentSlide));
-            let newSlide = 0;
-
-            if (currentSlide === (elCarouselListLength - 1)) {
-                newSlide = 0;
-                elCarousel.setAttribute(self.attCurrentSlide, newSlide);
-            } else {
-                newSlide = currentSlide + 1;
-                elCarousel.setAttribute(self.attCurrentSlide, newSlide);
-            }
-
-            self.defineActive(elCarousel.querySelector('[data-id="' + newSlide + '"]'));
-            self.animate(newSlide, elCarouselList, 'arrow');
-        };
+        this.buildNavigationArrow({
+            button,
+            'side': 'next'
+        });
     }
 
-    animate(currentSlide, target, from) {
-        let elCarouselList = from === 'arrow' ?
-            target.parentNode.querySelector(`.${this.cssCarouselList}`) :
-            target.parentNode.parentNode.querySelector(`.${this.cssCarouselList}`);
-        let elCarousel = elCarouselList.parentNode;
-        let carouselStyle = elCarousel.getAttribute('data-style');
-        let slideSize = Number(elCarouselList.querySelector('li').offsetWidth);
-        let currentPosition = Number(currentSlide * slideSize);
+    animate(obj) {
+        const elCarouselList = obj.from === 'arrow' ?
+            obj.target.parentNode.querySelector(`.${this.cssCarouselList}`) :
+            obj.target.parentNode.parentNode.querySelector(`.${this.cssCarouselList}`);
+        const elCarousel = elCarouselList.parentNode;
+        const carouselStyle = elCarousel.getAttribute('data-style');
+        const slideSize = Number(elCarouselList.querySelector(`.${this.cssCarouselListItem}`).offsetWidth);
+        const currentSlide = obj.currentSlide;
+        const currentPosition = Number(currentSlide * slideSize);
 
         switch (carouselStyle) {
             case 'fade':
@@ -181,17 +184,16 @@ class Carousel {
     }
 
     animateFade(obj) {
-        let el = obj.elCarouselList.querySelectorAll('li');
-        let transition = '.7s';
+        const el = obj.elCarouselList.querySelectorAll(`.${this.cssCarouselListItem}`);
 
-        Array.prototype.forEach.call(obj.elCarouselList.querySelectorAll('li'), (item) => {
+        Array.prototype.forEach.call(el, (item) => {
             item.style.opacity = 0;
-            item.style.transition = transition;
+            item.style.transition = this.cssTransition;
         });
 
         el[obj.currentSlide].style.opacity = 1;
         el[obj.currentSlide].style.left = `-${obj.currentPosition}px`;
-        el[obj.currentSlide].style.transition = transition;
+        el[obj.currentSlide].style.transition = this.cssTransition;
     }
 
     animateSlide(obj) {
@@ -199,7 +201,7 @@ class Carousel {
     }
 
     verifyInterval() {
-        let self = window.objWfCarousel;
+        const self = window.carousel;
 
         self.counterCurrent++;
 
@@ -217,7 +219,7 @@ class Carousel {
     }
 
     defineActive(target) {
-        const el = target.parentNode.parentNode.querySelectorAll(this.cssButtonClass);
+        const el = target.parentNode.parentNode.querySelectorAll(`.${this.cssButton}`);
 
         Array.prototype.forEach.call(el, (item) => {
             item.classList.remove(this.cssButtonActive);
@@ -238,12 +240,11 @@ class Carousel {
 window.carousel = new Carousel();
 class Form {
     validateEmpty(arr) {
-        const arrEmpty = arr;
-        const length = arrEmpty.length;
+        const length = arr.length;
 
         for (let i = 0; i < length; i++) {
-            if (arrEmpty[i].value === '') {
-                arrEmpty[i].focus();
+            if (arr[i].value === '') {
+                arr[i].focus();
                 return false;
             }
         }
@@ -255,8 +256,8 @@ class Form {
 window.form = new Form();
 class Helper {
     getUrlParameter(target) {
-        let url = top.location.search.substring(1);
-        let parameter = url.split('&');
+        const url = top.location.search.substring(1);
+        const parameter = url.split('&');
 
         for (let i = 0; i < parameter.length; i++) {
             let parameterName = parameter[i].split('=');
@@ -284,7 +285,7 @@ class Helper {
     }
 
     verifyUrlRoute(target) {
-        let arrFolder = window.location.pathname.split('/');
+        const arrFolder = window.location.pathname.split('/');
 
         if (arrFolder.indexOf(target) > -1) {
             return true;
@@ -294,7 +295,7 @@ class Helper {
     }
 
     wrapItem(target, cssClass) {
-        let wrapper = document.createElement('div');
+        const wrapper = document.createElement('div');
 
         wrapper.className = cssClass;
         target.parentNode.insertBefore(wrapper, target);
@@ -305,8 +306,6 @@ class Helper {
 window.helper = new Helper();
 class Layout {
     constructor() {
-        this.$body = document.querySelector('body');
-
         this.breakPointExtraSmall = 0;
         this.breakPointSmall = 576;
         this.breakPointMedium = 768;
@@ -318,8 +317,13 @@ class Layout {
 
 window.layout = new Layout();
 class LazyLoad {
+    constructor() {
+        this.cssAttribute = 'data-lazy-load';
+        this.cssData = `[${this.cssAttribute}="true"]`;
+    }
+
     build() {
-        if (document.querySelectorAll('[data-lazy-load="true"]').length < 1) {
+        if (document.querySelectorAll(this.cssData).length < 1) {
             return;
         }
 
@@ -336,7 +340,7 @@ class LazyLoad {
     }
 
     buildLoop() {
-        const el = document.querySelectorAll('[data-lazy-load="true"]');
+        const el = document.querySelectorAll(this.cssData);
 
         Array.prototype.forEach.call(el, (item) => {
             this.verifyPosition(item);
@@ -355,11 +359,26 @@ class LazyLoad {
 
     buildImage(target) {
         target.setAttribute('src', target.getAttribute('data-src'));
-        target.removeAttribute('data-lazy-load');
+        target.removeAttribute(this.cssAttribute);
     }
 }
 
 window.lazyLoad = new LazyLoad();
+class LoadingMain {
+    constructor() {
+        this.cssHide = 'hide';
+        this.cssAnimation = 'animate';
+        this.elWrapper = document.querySelector('.loading-main');
+        this.elLoading = this.elWrapper.querySelector('.loading');
+    }
+
+    hide() {
+        this.elWrapper.classList.add(this.cssHide);
+        this.elLoading.classList.remove(this.cssAnimation);
+    }
+}
+
+window.loadingMain = new LoadingMain();
 class Mask {
     constructor() {
         this.elMask = document.querySelectorAll('[data-mask]');
@@ -522,7 +541,6 @@ class MenuDropDown {
     }
 
     reset() {
-        document.removeEventListener('click', event, true);
         document.removeEventListener('click', this.listener, true);
         window.menuDropDown.build();
     }
@@ -553,15 +571,15 @@ class MenuTab {
         Array.prototype.forEach.call(el, (item) => {
             item.addEventListener('click', () => {
                 self.buildCss(item);
-
             });
         });
     }
 
     buildCss(item) {
-        const el = document.querySelectorAll(this.cssAllButton);
+        const elTab = item.parentNode.classList.contains(this.cssMenu) ? item.parentNode : item.parentNode.parentNode;
+        const elButton = elTab.querySelectorAll(this.cssAllButton);
 
-        Array.prototype.forEach.call(el, (item) => {
+        Array.prototype.forEach.call(elButton, (item) => {
             item.classList.remove(this.cssMenuActive);
         });
 
@@ -635,8 +653,8 @@ class Modal {
         this.elModalFooter = this.elModal.querySelector('footer');
         this.elModalFooterConfirm = this.elModalFooter.querySelector('[data-id="confirm"]');
         this.elModalFooterCancel = this.elModalFooter.querySelector('[data-id="cancel"]');
-        this.elModalClose = document.querySelector('#modalClose');
-        this.elModalContent = document.querySelector('#modalContent');
+        this.elModalClose = document.querySelector('.modal__header .button--close');
+        this.elModalContent = document.querySelector('.modal__content');
         this.elModalBox = this.elModal.querySelector('.modal__box');
         this.elModalNavigationArrow = this.elModal.querySelector('.navigation-change');
         this.elModalNavigationArrowLeft = this.elModalNavigationArrow.querySelector('[data-id="previous"]');
@@ -658,14 +676,14 @@ class Modal {
             <div class="modal ${this.cssClose}">
                 <div class="modal__box">
                     <header class="modal__header right">
-                        <button id="modalClose" type="button" aria-label="${window.translation.translation.close}" class="button button--small button--small--proportional button--grey button--transparent button--close">
+                        <button type="button" aria-label="${window.translation.translation.close}" class="button button--small button--small--proportional button--grey button--transparent button--close">
                             <svg class="icon icon--regular rotate-45">
                                 <use xlink:href="./assets/img/icon.svg#plus"></use>
                             </svg>
                         </button>
                     </header>
                     <div class="row">
-                        <div id="modalContent" class="modal__content"></div>
+                        <div class="modal__content"></div>
                     </div>
                     <div class="navigation-change button-wrapper row center ${this.cssHide}">
                         <button type="button" class="button button--big" data-id="previous" aria-label="${window.translation.translation.previous}" >
@@ -885,7 +903,7 @@ class Modal {
     }
 
     buildContentConfirmation(content) {
-        let string = '<div class="padding-re text-center">' + content + '</div>';
+        const string = `<div class="center">${content}</div>`;
 
         this.elModalFooter.classList.remove(this.cssHide);
         this.elModalContent.innerHTML = string;
@@ -931,6 +949,7 @@ class Notification {
     constructor() {
         this.elBody = document.querySelector('body');
         this.elNotificationId = 'notification';
+        this.colorDefault = 'grey';
 
         this.notificationId = 0;
     }
@@ -950,11 +969,14 @@ class Notification {
         this.elBody.insertAdjacentHTML('beforeend', html);
     }
 
-    buildHtmlItem(style = 'grey', message) {
+    buildHtmlItem(obj) {
+        console.log(obj);
+        const color = typeof obj.color !== 'undefined' ? obj.color : this.colorDefault;
+
         return `
-            <div class="${this.elNotificationId}__item ${this.elNotificationId}--regular ${this.elNotificationId}--${style}" id="${this.elNotificationId}${this.notificationId}">
-                <span class="${this.elNotificationId}__text">${message}</span>
-                <button type="button" class="button button--small button--small--proportional button--transparent" onclick="Notification.remove(this.parentNode, 0)" aria-label="${Translation.translation.close}">
+            <div class="${this.elNotificationId}__item ${this.elNotificationId}--regular ${this.elNotificationId}--${color}" id="${this.elNotificationId}${this.notificationId}">
+                <span class="${this.elNotificationId}__text">${obj.text}</span>
+                <button type="button" class="button button--small button--small--proportional button--transparent" onclick="Notification.remove(this.parentNode, 0)" aria-label="${window.translation.translation.close}">
                     <svg class="icon icon--regular rotate-45">
                         <use xlink:href="./assets/img/icon.svg#plus"></use>
                     </svg>
@@ -974,7 +996,7 @@ class Notification {
     }
 
     placeItem(obj) {
-        let string = this.buildHtmlItem(obj.color, obj.text);
+        let string = this.buildHtmlItem(obj);
         let place = '';
 
         if (typeof obj.place === 'undefined') {
@@ -983,11 +1005,8 @@ class Notification {
             let elList = document.querySelector(obj.place).querySelector(`.${this.elNotificationId}`);
 
             if (elList === null) {
-                let newString = `
-                <div class="${this.elNotificationId}">
-                    ${string}
-                </div>
-                `;
+                let newString = `<div class="${this.elNotificationId}">${string}</div>`;
+
                 string = newString;
                 place = document.querySelector(obj.place);
             } else {
@@ -1120,6 +1139,8 @@ window.addEventListener('load',
     window.menuToggle.build(),
     window.notification.build(),
     window.table.build(),
-    window.tag.build(), {
+    window.tag.build(),
+    window.loadingMain.hide(),
+     {
         once: true
     });

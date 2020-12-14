@@ -15,8 +15,8 @@ class Modal {
         this.elModalFooter = this.elModal.querySelector('footer');
         this.elModalFooterConfirm = this.elModalFooter.querySelector('[data-id="confirm"]');
         this.elModalFooterCancel = this.elModalFooter.querySelector('[data-id="cancel"]');
-        this.elModalClose = document.querySelector('#modalClose');
-        this.elModalContent = document.querySelector('#modalContent');
+        this.elModalClose = document.querySelector('.modal__header .button--close');
+        this.elModalContent = document.querySelector('.modal__content');
         this.elModalBox = this.elModal.querySelector('.modal__box');
         this.elModalNavigationArrow = this.elModal.querySelector('.navigation-change');
         this.elModalNavigationArrowLeft = this.elModalNavigationArrow.querySelector('[data-id="previous"]');
@@ -38,14 +38,14 @@ class Modal {
             <div class="modal ${this.cssClose}">
                 <div class="modal__box">
                     <header class="modal__header right">
-                        <button id="modalClose" type="button" aria-label="${window.translation.translation.close}" class="button button--small button--small--proportional button--grey button--transparent button--close">
+                        <button type="button" aria-label="${window.translation.translation.close}" class="button button--small button--small--proportional button--grey button--transparent button--close">
                             <svg class="icon icon--regular rotate-45">
                                 <use xlink:href="./assets/img/icon.svg#plus"></use>
                             </svg>
                         </button>
                     </header>
                     <div class="row">
-                        <div id="modalContent" class="modal__content"></div>
+                        <div class="modal__content"></div>
                     </div>
                     <div class="navigation-change button-wrapper row center ${this.cssHide}">
                         <button type="button" class="button button--big" data-id="previous" aria-label="${window.translation.translation.previous}" >
@@ -265,7 +265,7 @@ class Modal {
     }
 
     buildContentConfirmation(content) {
-        let string = '<div class="padding-re text-center">' + content + '</div>';
+        const string = `<div class="center">${content}</div>`;
 
         this.elModalFooter.classList.remove(this.cssHide);
         this.elModalContent.innerHTML = string;

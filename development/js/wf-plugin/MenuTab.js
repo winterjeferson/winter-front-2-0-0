@@ -22,15 +22,15 @@ class MenuTab {
         Array.prototype.forEach.call(el, (item) => {
             item.addEventListener('click', () => {
                 self.buildCss(item);
-
             });
         });
     }
 
     buildCss(item) {
-        const el = document.querySelectorAll(this.cssAllButton);
+        const elTab = item.parentNode.classList.contains(this.cssMenu) ? item.parentNode : item.parentNode.parentNode;
+        const elButton = elTab.querySelectorAll(this.cssAllButton);
 
-        Array.prototype.forEach.call(el, (item) => {
+        Array.prototype.forEach.call(elButton, (item) => {
             item.classList.remove(this.cssMenuActive);
         });
 

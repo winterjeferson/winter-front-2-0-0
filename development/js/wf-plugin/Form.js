@@ -1,11 +1,10 @@
 class Form {
     validateEmpty(arr) {
-        const arrEmpty = arr;
-        const length = arrEmpty.length;
+        const length = arr.length;
 
         for (let i = 0; i < length; i++) {
-            if (arrEmpty[i].value === '') {
-                arrEmpty[i].focus();
+            if (arr[i].value === '') {
+                arr[i].focus();
                 return false;
             }
         }

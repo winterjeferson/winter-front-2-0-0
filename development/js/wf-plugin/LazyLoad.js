@@ -1,6 +1,11 @@
 class LazyLoad {
+    constructor() {
+        this.cssAttribute = 'data-lazy-load';
+        this.cssData = `[${this.cssAttribute}="true"]`;
+    }
+
     build() {
-        if (document.querySelectorAll('[data-lazy-load="true"]').length < 1) {
+        if (document.querySelectorAll(this.cssData).length < 1) {
             return;
         }
 
@@ -17,7 +22,7 @@ class LazyLoad {
     }
 
     buildLoop() {
-        const el = document.querySelectorAll('[data-lazy-load="true"]');
+        const el = document.querySelectorAll(this.cssData);
 
         Array.prototype.forEach.call(el, (item) => {
             this.verifyPosition(item);
@@ -36,7 +41,7 @@ class LazyLoad {
 
     buildImage(target) {
         target.setAttribute('src', target.getAttribute('data-src'));
-        target.removeAttribute('data-lazy-load');
+        target.removeAttribute(this.cssAttribute);
     }
 }
 

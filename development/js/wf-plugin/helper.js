@@ -1,7 +1,7 @@
 class Helper {
     getUrlParameter(target) {
-        let url = top.location.search.substring(1);
-        let parameter = url.split('&');
+        const url = top.location.search.substring(1);
+        const parameter = url.split('&');
 
         for (let i = 0; i < parameter.length; i++) {
             let parameterName = parameter[i].split('=');
@@ -29,7 +29,7 @@ class Helper {
     }
 
     verifyUrlRoute(target) {
-        let arrFolder = window.location.pathname.split('/');
+        const arrFolder = window.location.pathname.split('/');
 
         if (arrFolder.indexOf(target) > -1) {
             return true;
@@ -39,7 +39,7 @@ class Helper {
     }
 
     wrapItem(target, cssClass) {
-        let wrapper = document.createElement('div');
+        const wrapper = document.createElement('div');
 
         wrapper.className = cssClass;
         target.parentNode.insertBefore(wrapper, target);

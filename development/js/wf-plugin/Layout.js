@@ -1,7 +1,5 @@
 class Layout {
     constructor() {
-        this.$body = document.querySelector('body');
-
         this.breakPointExtraSmall = 0;
         this.breakPointSmall = 576;
         this.breakPointMedium = 768;

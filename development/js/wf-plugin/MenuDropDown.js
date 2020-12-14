@@ -79,7 +79,6 @@ class MenuDropDown {
     }
 
     reset() {
-        document.removeEventListener('click', event, true);
         document.removeEventListener('click', this.listener, true);
         window.menuDropDown.build();
     }

@@ -9,6 +9,8 @@ window.addEventListener('load',
     window.menuToggle.build(),
     window.notification.build(),
     window.table.build(),
-    window.tag.build(), {
+    window.tag.build(),
+    window.loadingMain.hide(),
+     {
         once: true
     });
