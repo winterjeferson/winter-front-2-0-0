@@ -16,6 +16,10 @@
         display: inline-flex;
     }
 
+    .button__close {
+        padding-right: 0;
+    }
+
     &--extra-small {
         border-radius: $border-radius-extra-small;
         margin: $extra-small;
