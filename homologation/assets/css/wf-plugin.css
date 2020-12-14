@@ -2730,6 +2730,8 @@ small {
   .tag .button, .tag__text {
     align-items: center;
     display: inline-flex; }
+  .tag .button__close {
+    padding-right: 0; }
   .tag--extra-small {
     border-radius: 2px;
     margin: 2px;
