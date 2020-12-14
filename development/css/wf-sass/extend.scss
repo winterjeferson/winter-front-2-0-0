@@ -1,23 +1,27 @@
 %extend-truncate {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 %extend-border-default {
-  border-width: $border-width;
-  border-style: solid;
+    border-style: solid;
+    border-width: $border-width;
 }
 
-%extend-margin-component {
-  margin-left: $regular;
-  margin-right: $regular;
+%extend-disabled {
+    pointer-events: none;
+}
 
-  &:first-child {
-    margin-left: 0;
-  }
+%extend-component-margin {
+    margin-left: $regular;
+    margin-right: $regular;
 
-  &:last-child {
-    margin-right: 0;
-  }
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
 }

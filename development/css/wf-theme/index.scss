@@ -2,5 +2,8 @@
 
 @import "./internet-explorer.scss";
 @import "./theme.scss";
+@import "./pallete.scss";
 
-$arr-z-index: ("drop-down", "notify", "tooltip", "modal", "confirm", "loading-main");
+* {
+    opacity: .85;
+}

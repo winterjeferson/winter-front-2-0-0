@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -36,139 +36,131 @@
     <link href="./assets/css/wf-theme.css" rel="stylesheet">
 
     <script>
-        var globalLanguage = "pt";
+        const globalLanguage = "pt";
     </script>
 </head>
 
 <body>
     <main class="grid">
-        <div id="loadingMain">
-    <div class="col-middle">
-        <div class="row">
-            <div class="col-es-2 col-es-off-5">
-                <div class="progress progress-style-red progress-es">
-                    <div class="progress-bar"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+        <div class="loading-main row center">
+    <div class="loading loading-1 loading-1--big loading-1--white animate"></div>
 </div>
         <header class="grid__header">
             <div class="row theme-header">
-    <a href="index.html" class="button regular proportional grey" aria-label="home">
-        <svg class="icon regular grey">
+    <a href="index.html" class="button button--regular button--regular--proportional button--grey" aria-label="home">
+        <svg class="icon icon--regular icon--grey">
             <use xlink:href="./assets/img/icon.svg#home"></use>
         </svg>
     </a>
     <div class="theme-version">
         v: 2.0.0
         <a href="https://github.com/winterjeferson/winter-front" target="_blank" rel="noopener"
-            class="button regular green">
+            class="button button--regular button--green">
             Download (Github)
         </a>
     </div>
 </div>
         </header>
-        <section class="grid__menu">
+        <aside class="grid__menu">
             
 
 <div class="theme-menu button-wrapper">
-    <button type="button" class="button regular proportional grey hide-tablet-landscape" aria-label="Menu">
-        <svg class="icon regular red">
+    <button type="button" class="button button--regular button--regular--proportional button--grey toggle-menu" aria-label="Menu">
+        <svg class="icon icon--regular">
             <use xlink:href="./assets/img/icon.svg#menu"></use>
         </svg>
     </button>
-    <nav class="column">
+    <nav class="column toggle-menu__content">
         
-        <a href="button.html" data-id="button" class="button small blue">
+        <a href="button.html" data-id="button" class="button button--small button--blue">
             button
         </a>
         
-        <a href="card.html" data-id="card" class="button small blue">
+        <a href="card.html" data-id="card" class="button button--small button--blue">
             card
         </a>
         
-        <a href="carousel.html" data-id="carousel" class="button small blue">
+        <a href="carousel.html" data-id="carousel" class="button button--small button--blue">
             carousel
         </a>
         
-        <a href="form.html" data-id="form" class="button small blue">
+        <a href="error.html" data-id="error" class="button button--small button--blue">
+            error
+        </a>
+        
+        <a href="form.html" data-id="form" class="button button--small button--blue">
             form
         </a>
         
-        <a href="gallery.html" data-id="gallery" class="button small blue">
+        <a href="gallery.html" data-id="gallery" class="button button--small button--blue">
             gallery
         </a>
         
-        <a href="icon.html" data-id="icon" class="button small blue">
+        <a href="icon.html" data-id="icon" class="button button--small button--blue">
             icon
         </a>
         
-        <a href="lazy-load.html" data-id="lazy-load" class="button small blue">
+        <a href="lazy-load.html" data-id="lazy-load" class="button button--small button--blue">
             lazy-load
         </a>
         
-        <a href="loading.html" data-id="loading" class="button small blue">
+        <a href="loading.html" data-id="loading" class="button button--small button--blue">
             loading
         </a>
         
-        <a href="menu.html" data-id="menu" class="button small blue">
+        <a href="menu.html" data-id="menu" class="button button--small button--blue">
             menu
         </a>
         
-        <a href="modal.html" data-id="modal" class="button small blue">
+        <a href="modal.html" data-id="modal" class="button button--small button--blue">
             modal
         </a>
         
-        <a href="notification.html" data-id="notification" class="button small blue">
+        <a href="notification.html" data-id="notification" class="button button--small button--blue">
             notification
         </a>
         
-        <a href="palette.html" data-id="palette" class="button small blue">
+        <a href="palette.html" data-id="palette" class="button button--small button--blue">
             palette
         </a>
         
-        <a href="progress.html" data-id="progress" class="button small blue">
+        <a href="progress.html" data-id="progress" class="button button--small button--blue">
             progress
         </a>
         
-        <a href="responsive.html" data-id="responsive" class="button small blue">
-            responsive
-        </a>
-        
-        <a href="scroll.html" data-id="scroll" class="button small blue">
+        <a href="scroll.html" data-id="scroll" class="button button--small button--blue">
             scroll
         </a>
         
-        <a href="table.html" data-id="table" class="button small blue">
+        <a href="table.html" data-id="table" class="button button--small button--blue">
             table
         </a>
         
-        <a href="tag.html" data-id="tag" class="button small blue">
+        <a href="tag.html" data-id="tag" class="button button--small button--blue">
             tag
         </a>
         
-        <a href="text.html" data-id="text" class="button small blue">
+        <a href="text.html" data-id="text" class="button button--small button--blue">
             text
         </a>
         
-        <a href="tooltip.html" data-id="tooltip" class="button small blue">
+        <a href="tooltip.html" data-id="tooltip" class="button button--small button--blue">
             tooltip
         </a>
         
     </nav>
 </div>
-        </section>
-        <section class="grid__content page">
-<section class="center">
+        </aside>
+        <article class="grid__content page">
+<section class="center page-card">
     <h1 class="page__title">Card</h1>
     
     <h2 class="page__sub-title">extra-small</h2>
     <div class="card-wrapper row center">
         
-        <div class="card extra-small black">
+        <div class="card card--extra-small card--black">
             <header class="card__header">
-                <h2>extra-small / black</h2>
+                <h4>extra-small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -179,21 +171,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-small grey">
+                <button type="button" class="button button--extra-small button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-small red">
+                <button type="button" class="button button--extra-small button--red">
                     button
                 </button>
-                <button type="button" class="button extra-small green">
+                <button type="button" class="button button--extra-small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-small blue">
+        <div class="card card--extra-small card--blue">
             <header class="card__header">
-                <h2>extra-small / blue</h2>
+                <h4>extra-small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -204,21 +196,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-small grey">
+                <button type="button" class="button button--extra-small button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-small red">
+                <button type="button" class="button button--extra-small button--red">
                     button
                 </button>
-                <button type="button" class="button extra-small green">
+                <button type="button" class="button button--extra-small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-small brown">
+        <div class="card card--extra-small card--brown">
             <header class="card__header">
-                <h2>extra-small / brown</h2>
+                <h4>extra-small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -229,21 +221,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-small grey">
+                <button type="button" class="button button--extra-small button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-small red">
+                <button type="button" class="button button--extra-small button--red">
                     button
                 </button>
-                <button type="button" class="button extra-small green">
+                <button type="button" class="button button--extra-small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-small cyan">
+        <div class="card card--extra-small card--cyan">
             <header class="card__header">
-                <h2>extra-small / cyan</h2>
+                <h4>extra-small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -254,21 +246,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-small grey">
+                <button type="button" class="button button--extra-small button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-small red">
+                <button type="button" class="button button--extra-small button--red">
                     button
                 </button>
-                <button type="button" class="button extra-small green">
+                <button type="button" class="button button--extra-small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-small green">
+        <div class="card card--extra-small card--green">
             <header class="card__header">
-                <h2>extra-small / green</h2>
+                <h4>extra-small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -279,21 +271,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-small grey">
+                <button type="button" class="button button--extra-small button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-small red">
+                <button type="button" class="button button--extra-small button--red">
                     button
                 </button>
-                <button type="button" class="button extra-small green">
+                <button type="button" class="button button--extra-small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-small grey">
+        <div class="card card--extra-small card--grey">
             <header class="card__header">
-                <h2>extra-small / grey</h2>
+                <h4>extra-small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -304,21 +296,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-small grey">
+                <button type="button" class="button button--extra-small button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-small red">
+                <button type="button" class="button button--extra-small button--red">
                     button
                 </button>
-                <button type="button" class="button extra-small green">
+                <button type="button" class="button button--extra-small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-small orange">
+        <div class="card card--extra-small card--orange">
             <header class="card__header">
-                <h2>extra-small / orange</h2>
+                <h4>extra-small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -329,21 +321,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-small grey">
+                <button type="button" class="button button--extra-small button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-small red">
+                <button type="button" class="button button--extra-small button--red">
                     button
                 </button>
-                <button type="button" class="button extra-small green">
+                <button type="button" class="button button--extra-small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-small pink">
+        <div class="card card--extra-small card--pink">
             <header class="card__header">
-                <h2>extra-small / pink</h2>
+                <h4>extra-small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -354,21 +346,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-small grey">
+                <button type="button" class="button button--extra-small button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-small red">
+                <button type="button" class="button button--extra-small button--red">
                     button
                 </button>
-                <button type="button" class="button extra-small green">
+                <button type="button" class="button button--extra-small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-small purple">
+        <div class="card card--extra-small card--purple">
             <header class="card__header">
-                <h2>extra-small / purple</h2>
+                <h4>extra-small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -379,21 +371,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-small grey">
+                <button type="button" class="button button--extra-small button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-small red">
+                <button type="button" class="button button--extra-small button--red">
                     button
                 </button>
-                <button type="button" class="button extra-small green">
+                <button type="button" class="button button--extra-small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-small red">
+        <div class="card card--extra-small card--red">
             <header class="card__header">
-                <h2>extra-small / red</h2>
+                <h4>extra-small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -404,21 +396,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-small grey">
+                <button type="button" class="button button--extra-small button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-small red">
+                <button type="button" class="button button--extra-small button--red">
                     button
                 </button>
-                <button type="button" class="button extra-small green">
+                <button type="button" class="button button--extra-small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-small yellow">
+        <div class="card card--extra-small card--yellow">
             <header class="card__header">
-                <h2>extra-small / yellow</h2>
+                <h4>extra-small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -429,21 +421,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-small grey">
+                <button type="button" class="button button--extra-small button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-small red">
+                <button type="button" class="button button--extra-small button--red">
                     button
                 </button>
-                <button type="button" class="button extra-small green">
+                <button type="button" class="button button--extra-small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-small white">
+        <div class="card card--extra-small card--white">
             <header class="card__header">
-                <h2>extra-small / white</h2>
+                <h4>extra-small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -454,13 +446,13 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-small grey">
+                <button type="button" class="button button--extra-small button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-small red">
+                <button type="button" class="button button--extra-small button--red">
                     button
                 </button>
-                <button type="button" class="button extra-small green">
+                <button type="button" class="button button--extra-small button--green">
                     button
                 </button>
             </footer>
@@ -471,9 +463,9 @@
     <h2 class="page__sub-title">small</h2>
     <div class="card-wrapper row center">
         
-        <div class="card small black">
+        <div class="card card--small card--black">
             <header class="card__header">
-                <h2>small / black</h2>
+                <h4>small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -484,21 +476,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button small grey">
+                <button type="button" class="button button--small button--grey">
                     button
                 </button>
-                <button type="button" class="button small red">
+                <button type="button" class="button button--small button--red">
                     button
                 </button>
-                <button type="button" class="button small green">
+                <button type="button" class="button button--small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card small blue">
+        <div class="card card--small card--blue">
             <header class="card__header">
-                <h2>small / blue</h2>
+                <h4>small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -509,21 +501,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button small grey">
+                <button type="button" class="button button--small button--grey">
                     button
                 </button>
-                <button type="button" class="button small red">
+                <button type="button" class="button button--small button--red">
                     button
                 </button>
-                <button type="button" class="button small green">
+                <button type="button" class="button button--small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card small brown">
+        <div class="card card--small card--brown">
             <header class="card__header">
-                <h2>small / brown</h2>
+                <h4>small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -534,21 +526,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button small grey">
+                <button type="button" class="button button--small button--grey">
                     button
                 </button>
-                <button type="button" class="button small red">
+                <button type="button" class="button button--small button--red">
                     button
                 </button>
-                <button type="button" class="button small green">
+                <button type="button" class="button button--small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card small cyan">
+        <div class="card card--small card--cyan">
             <header class="card__header">
-                <h2>small / cyan</h2>
+                <h4>small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -559,21 +551,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button small grey">
+                <button type="button" class="button button--small button--grey">
                     button
                 </button>
-                <button type="button" class="button small red">
+                <button type="button" class="button button--small button--red">
                     button
                 </button>
-                <button type="button" class="button small green">
+                <button type="button" class="button button--small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card small green">
+        <div class="card card--small card--green">
             <header class="card__header">
-                <h2>small / green</h2>
+                <h4>small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -584,21 +576,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button small grey">
+                <button type="button" class="button button--small button--grey">
                     button
                 </button>
-                <button type="button" class="button small red">
+                <button type="button" class="button button--small button--red">
                     button
                 </button>
-                <button type="button" class="button small green">
+                <button type="button" class="button button--small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card small grey">
+        <div class="card card--small card--grey">
             <header class="card__header">
-                <h2>small / grey</h2>
+                <h4>small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -609,21 +601,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button small grey">
+                <button type="button" class="button button--small button--grey">
                     button
                 </button>
-                <button type="button" class="button small red">
+                <button type="button" class="button button--small button--red">
                     button
                 </button>
-                <button type="button" class="button small green">
+                <button type="button" class="button button--small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card small orange">
+        <div class="card card--small card--orange">
             <header class="card__header">
-                <h2>small / orange</h2>
+                <h4>small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -634,21 +626,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button small grey">
+                <button type="button" class="button button--small button--grey">
                     button
                 </button>
-                <button type="button" class="button small red">
+                <button type="button" class="button button--small button--red">
                     button
                 </button>
-                <button type="button" class="button small green">
+                <button type="button" class="button button--small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card small pink">
+        <div class="card card--small card--pink">
             <header class="card__header">
-                <h2>small / pink</h2>
+                <h4>small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -659,21 +651,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button small grey">
+                <button type="button" class="button button--small button--grey">
                     button
                 </button>
-                <button type="button" class="button small red">
+                <button type="button" class="button button--small button--red">
                     button
                 </button>
-                <button type="button" class="button small green">
+                <button type="button" class="button button--small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card small purple">
+        <div class="card card--small card--purple">
             <header class="card__header">
-                <h2>small / purple</h2>
+                <h4>small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -684,21 +676,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button small grey">
+                <button type="button" class="button button--small button--grey">
                     button
                 </button>
-                <button type="button" class="button small red">
+                <button type="button" class="button button--small button--red">
                     button
                 </button>
-                <button type="button" class="button small green">
+                <button type="button" class="button button--small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card small red">
+        <div class="card card--small card--red">
             <header class="card__header">
-                <h2>small / red</h2>
+                <h4>small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -709,21 +701,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button small grey">
+                <button type="button" class="button button--small button--grey">
                     button
                 </button>
-                <button type="button" class="button small red">
+                <button type="button" class="button button--small button--red">
                     button
                 </button>
-                <button type="button" class="button small green">
+                <button type="button" class="button button--small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card small yellow">
+        <div class="card card--small card--yellow">
             <header class="card__header">
-                <h2>small / yellow</h2>
+                <h4>small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -734,21 +726,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button small grey">
+                <button type="button" class="button button--small button--grey">
                     button
                 </button>
-                <button type="button" class="button small red">
+                <button type="button" class="button button--small button--red">
                     button
                 </button>
-                <button type="button" class="button small green">
+                <button type="button" class="button button--small button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card small white">
+        <div class="card card--small card--white">
             <header class="card__header">
-                <h2>small / white</h2>
+                <h4>small</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -759,13 +751,13 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button small grey">
+                <button type="button" class="button button--small button--grey">
                     button
                 </button>
-                <button type="button" class="button small red">
+                <button type="button" class="button button--small button--red">
                     button
                 </button>
-                <button type="button" class="button small green">
+                <button type="button" class="button button--small button--green">
                     button
                 </button>
             </footer>
@@ -776,9 +768,9 @@
     <h2 class="page__sub-title">regular</h2>
     <div class="card-wrapper row center">
         
-        <div class="card regular black">
+        <div class="card card--regular card--black">
             <header class="card__header">
-                <h2>regular / black</h2>
+                <h4>regular</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -789,21 +781,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button regular grey">
+                <button type="button" class="button button--regular button--grey">
                     button
                 </button>
-                <button type="button" class="button regular red">
+                <button type="button" class="button button--regular button--red">
                     button
                 </button>
-                <button type="button" class="button regular green">
+                <button type="button" class="button button--regular button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card regular blue">
+        <div class="card card--regular card--blue">
             <header class="card__header">
-                <h2>regular / blue</h2>
+                <h4>regular</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -814,21 +806,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button regular grey">
+                <button type="button" class="button button--regular button--grey">
                     button
                 </button>
-                <button type="button" class="button regular red">
+                <button type="button" class="button button--regular button--red">
                     button
                 </button>
-                <button type="button" class="button regular green">
+                <button type="button" class="button button--regular button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card regular brown">
+        <div class="card card--regular card--brown">
             <header class="card__header">
-                <h2>regular / brown</h2>
+                <h4>regular</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -839,21 +831,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button regular grey">
+                <button type="button" class="button button--regular button--grey">
                     button
                 </button>
-                <button type="button" class="button regular red">
+                <button type="button" class="button button--regular button--red">
                     button
                 </button>
-                <button type="button" class="button regular green">
+                <button type="button" class="button button--regular button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card regular cyan">
+        <div class="card card--regular card--cyan">
             <header class="card__header">
-                <h2>regular / cyan</h2>
+                <h4>regular</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -864,21 +856,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button regular grey">
+                <button type="button" class="button button--regular button--grey">
                     button
                 </button>
-                <button type="button" class="button regular red">
+                <button type="button" class="button button--regular button--red">
                     button
                 </button>
-                <button type="button" class="button regular green">
+                <button type="button" class="button button--regular button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card regular green">
+        <div class="card card--regular card--green">
             <header class="card__header">
-                <h2>regular / green</h2>
+                <h4>regular</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -889,21 +881,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button regular grey">
+                <button type="button" class="button button--regular button--grey">
                     button
                 </button>
-                <button type="button" class="button regular red">
+                <button type="button" class="button button--regular button--red">
                     button
                 </button>
-                <button type="button" class="button regular green">
+                <button type="button" class="button button--regular button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card regular grey">
+        <div class="card card--regular card--grey">
             <header class="card__header">
-                <h2>regular / grey</h2>
+                <h4>regular</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -914,21 +906,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button regular grey">
+                <button type="button" class="button button--regular button--grey">
                     button
                 </button>
-                <button type="button" class="button regular red">
+                <button type="button" class="button button--regular button--red">
                     button
                 </button>
-                <button type="button" class="button regular green">
+                <button type="button" class="button button--regular button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card regular orange">
+        <div class="card card--regular card--orange">
             <header class="card__header">
-                <h2>regular / orange</h2>
+                <h4>regular</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -939,21 +931,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button regular grey">
+                <button type="button" class="button button--regular button--grey">
                     button
                 </button>
-                <button type="button" class="button regular red">
+                <button type="button" class="button button--regular button--red">
                     button
                 </button>
-                <button type="button" class="button regular green">
+                <button type="button" class="button button--regular button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card regular pink">
+        <div class="card card--regular card--pink">
             <header class="card__header">
-                <h2>regular / pink</h2>
+                <h4>regular</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -964,21 +956,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button regular grey">
+                <button type="button" class="button button--regular button--grey">
                     button
                 </button>
-                <button type="button" class="button regular red">
+                <button type="button" class="button button--regular button--red">
                     button
                 </button>
-                <button type="button" class="button regular green">
+                <button type="button" class="button button--regular button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card regular purple">
+        <div class="card card--regular card--purple">
             <header class="card__header">
-                <h2>regular / purple</h2>
+                <h4>regular</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -989,21 +981,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button regular grey">
+                <button type="button" class="button button--regular button--grey">
                     button
                 </button>
-                <button type="button" class="button regular red">
+                <button type="button" class="button button--regular button--red">
                     button
                 </button>
-                <button type="button" class="button regular green">
+                <button type="button" class="button button--regular button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card regular red">
+        <div class="card card--regular card--red">
             <header class="card__header">
-                <h2>regular / red</h2>
+                <h4>regular</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1014,21 +1006,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button regular grey">
+                <button type="button" class="button button--regular button--grey">
                     button
                 </button>
-                <button type="button" class="button regular red">
+                <button type="button" class="button button--regular button--red">
                     button
                 </button>
-                <button type="button" class="button regular green">
+                <button type="button" class="button button--regular button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card regular yellow">
+        <div class="card card--regular card--yellow">
             <header class="card__header">
-                <h2>regular / yellow</h2>
+                <h4>regular</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1039,21 +1031,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button regular grey">
+                <button type="button" class="button button--regular button--grey">
                     button
                 </button>
-                <button type="button" class="button regular red">
+                <button type="button" class="button button--regular button--red">
                     button
                 </button>
-                <button type="button" class="button regular green">
+                <button type="button" class="button button--regular button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card regular white">
+        <div class="card card--regular card--white">
             <header class="card__header">
-                <h2>regular / white</h2>
+                <h4>regular</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1064,13 +1056,13 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button regular grey">
+                <button type="button" class="button button--regular button--grey">
                     button
                 </button>
-                <button type="button" class="button regular red">
+                <button type="button" class="button button--regular button--red">
                     button
                 </button>
-                <button type="button" class="button regular green">
+                <button type="button" class="button button--regular button--green">
                     button
                 </button>
             </footer>
@@ -1081,9 +1073,9 @@
     <h2 class="page__sub-title">big</h2>
     <div class="card-wrapper row center">
         
-        <div class="card big black">
+        <div class="card card--big card--black">
             <header class="card__header">
-                <h2>big / black</h2>
+                <h4>big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1094,21 +1086,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button big grey">
+                <button type="button" class="button button--big button--grey">
                     button
                 </button>
-                <button type="button" class="button big red">
+                <button type="button" class="button button--big button--red">
                     button
                 </button>
-                <button type="button" class="button big green">
+                <button type="button" class="button button--big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card big blue">
+        <div class="card card--big card--blue">
             <header class="card__header">
-                <h2>big / blue</h2>
+                <h4>big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1119,21 +1111,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button big grey">
+                <button type="button" class="button button--big button--grey">
                     button
                 </button>
-                <button type="button" class="button big red">
+                <button type="button" class="button button--big button--red">
                     button
                 </button>
-                <button type="button" class="button big green">
+                <button type="button" class="button button--big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card big brown">
+        <div class="card card--big card--brown">
             <header class="card__header">
-                <h2>big / brown</h2>
+                <h4>big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1144,21 +1136,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button big grey">
+                <button type="button" class="button button--big button--grey">
                     button
                 </button>
-                <button type="button" class="button big red">
+                <button type="button" class="button button--big button--red">
                     button
                 </button>
-                <button type="button" class="button big green">
+                <button type="button" class="button button--big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card big cyan">
+        <div class="card card--big card--cyan">
             <header class="card__header">
-                <h2>big / cyan</h2>
+                <h4>big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1169,21 +1161,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button big grey">
+                <button type="button" class="button button--big button--grey">
                     button
                 </button>
-                <button type="button" class="button big red">
+                <button type="button" class="button button--big button--red">
                     button
                 </button>
-                <button type="button" class="button big green">
+                <button type="button" class="button button--big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card big green">
+        <div class="card card--big card--green">
             <header class="card__header">
-                <h2>big / green</h2>
+                <h4>big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1194,21 +1186,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button big grey">
+                <button type="button" class="button button--big button--grey">
                     button
                 </button>
-                <button type="button" class="button big red">
+                <button type="button" class="button button--big button--red">
                     button
                 </button>
-                <button type="button" class="button big green">
+                <button type="button" class="button button--big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card big grey">
+        <div class="card card--big card--grey">
             <header class="card__header">
-                <h2>big / grey</h2>
+                <h4>big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1219,21 +1211,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button big grey">
+                <button type="button" class="button button--big button--grey">
                     button
                 </button>
-                <button type="button" class="button big red">
+                <button type="button" class="button button--big button--red">
                     button
                 </button>
-                <button type="button" class="button big green">
+                <button type="button" class="button button--big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card big orange">
+        <div class="card card--big card--orange">
             <header class="card__header">
-                <h2>big / orange</h2>
+                <h4>big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1244,21 +1236,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button big grey">
+                <button type="button" class="button button--big button--grey">
                     button
                 </button>
-                <button type="button" class="button big red">
+                <button type="button" class="button button--big button--red">
                     button
                 </button>
-                <button type="button" class="button big green">
+                <button type="button" class="button button--big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card big pink">
+        <div class="card card--big card--pink">
             <header class="card__header">
-                <h2>big / pink</h2>
+                <h4>big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1269,21 +1261,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button big grey">
+                <button type="button" class="button button--big button--grey">
                     button
                 </button>
-                <button type="button" class="button big red">
+                <button type="button" class="button button--big button--red">
                     button
                 </button>
-                <button type="button" class="button big green">
+                <button type="button" class="button button--big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card big purple">
+        <div class="card card--big card--purple">
             <header class="card__header">
-                <h2>big / purple</h2>
+                <h4>big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1294,21 +1286,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button big grey">
+                <button type="button" class="button button--big button--grey">
                     button
                 </button>
-                <button type="button" class="button big red">
+                <button type="button" class="button button--big button--red">
                     button
                 </button>
-                <button type="button" class="button big green">
+                <button type="button" class="button button--big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card big red">
+        <div class="card card--big card--red">
             <header class="card__header">
-                <h2>big / red</h2>
+                <h4>big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1319,21 +1311,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button big grey">
+                <button type="button" class="button button--big button--grey">
                     button
                 </button>
-                <button type="button" class="button big red">
+                <button type="button" class="button button--big button--red">
                     button
                 </button>
-                <button type="button" class="button big green">
+                <button type="button" class="button button--big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card big yellow">
+        <div class="card card--big card--yellow">
             <header class="card__header">
-                <h2>big / yellow</h2>
+                <h4>big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1344,21 +1336,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button big grey">
+                <button type="button" class="button button--big button--grey">
                     button
                 </button>
-                <button type="button" class="button big red">
+                <button type="button" class="button button--big button--red">
                     button
                 </button>
-                <button type="button" class="button big green">
+                <button type="button" class="button button--big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card big white">
+        <div class="card card--big card--white">
             <header class="card__header">
-                <h2>big / white</h2>
+                <h4>big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1369,13 +1361,13 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button big grey">
+                <button type="button" class="button button--big button--grey">
                     button
                 </button>
-                <button type="button" class="button big red">
+                <button type="button" class="button button--big button--red">
                     button
                 </button>
-                <button type="button" class="button big green">
+                <button type="button" class="button button--big button--green">
                     button
                 </button>
             </footer>
@@ -1386,9 +1378,9 @@
     <h2 class="page__sub-title">extra-big</h2>
     <div class="card-wrapper row center">
         
-        <div class="card extra-big black">
+        <div class="card card--extra-big card--black">
             <header class="card__header">
-                <h2>extra-big / black</h2>
+                <h4>extra-big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1399,21 +1391,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-big grey">
+                <button type="button" class="button button--extra-big button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-big red">
+                <button type="button" class="button button--extra-big button--red">
                     button
                 </button>
-                <button type="button" class="button extra-big green">
+                <button type="button" class="button button--extra-big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-big blue">
+        <div class="card card--extra-big card--blue">
             <header class="card__header">
-                <h2>extra-big / blue</h2>
+                <h4>extra-big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1424,21 +1416,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-big grey">
+                <button type="button" class="button button--extra-big button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-big red">
+                <button type="button" class="button button--extra-big button--red">
                     button
                 </button>
-                <button type="button" class="button extra-big green">
+                <button type="button" class="button button--extra-big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-big brown">
+        <div class="card card--extra-big card--brown">
             <header class="card__header">
-                <h2>extra-big / brown</h2>
+                <h4>extra-big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1449,21 +1441,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-big grey">
+                <button type="button" class="button button--extra-big button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-big red">
+                <button type="button" class="button button--extra-big button--red">
                     button
                 </button>
-                <button type="button" class="button extra-big green">
+                <button type="button" class="button button--extra-big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-big cyan">
+        <div class="card card--extra-big card--cyan">
             <header class="card__header">
-                <h2>extra-big / cyan</h2>
+                <h4>extra-big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1474,21 +1466,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-big grey">
+                <button type="button" class="button button--extra-big button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-big red">
+                <button type="button" class="button button--extra-big button--red">
                     button
                 </button>
-                <button type="button" class="button extra-big green">
+                <button type="button" class="button button--extra-big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-big green">
+        <div class="card card--extra-big card--green">
             <header class="card__header">
-                <h2>extra-big / green</h2>
+                <h4>extra-big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1499,21 +1491,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-big grey">
+                <button type="button" class="button button--extra-big button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-big red">
+                <button type="button" class="button button--extra-big button--red">
                     button
                 </button>
-                <button type="button" class="button extra-big green">
+                <button type="button" class="button button--extra-big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-big grey">
+        <div class="card card--extra-big card--grey">
             <header class="card__header">
-                <h2>extra-big / grey</h2>
+                <h4>extra-big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1524,21 +1516,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-big grey">
+                <button type="button" class="button button--extra-big button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-big red">
+                <button type="button" class="button button--extra-big button--red">
                     button
                 </button>
-                <button type="button" class="button extra-big green">
+                <button type="button" class="button button--extra-big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-big orange">
+        <div class="card card--extra-big card--orange">
             <header class="card__header">
-                <h2>extra-big / orange</h2>
+                <h4>extra-big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1549,21 +1541,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-big grey">
+                <button type="button" class="button button--extra-big button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-big red">
+                <button type="button" class="button button--extra-big button--red">
                     button
                 </button>
-                <button type="button" class="button extra-big green">
+                <button type="button" class="button button--extra-big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-big pink">
+        <div class="card card--extra-big card--pink">
             <header class="card__header">
-                <h2>extra-big / pink</h2>
+                <h4>extra-big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1574,21 +1566,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-big grey">
+                <button type="button" class="button button--extra-big button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-big red">
+                <button type="button" class="button button--extra-big button--red">
                     button
                 </button>
-                <button type="button" class="button extra-big green">
+                <button type="button" class="button button--extra-big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-big purple">
+        <div class="card card--extra-big card--purple">
             <header class="card__header">
-                <h2>extra-big / purple</h2>
+                <h4>extra-big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1599,21 +1591,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-big grey">
+                <button type="button" class="button button--extra-big button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-big red">
+                <button type="button" class="button button--extra-big button--red">
                     button
                 </button>
-                <button type="button" class="button extra-big green">
+                <button type="button" class="button button--extra-big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-big red">
+        <div class="card card--extra-big card--red">
             <header class="card__header">
-                <h2>extra-big / red</h2>
+                <h4>extra-big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1624,21 +1616,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-big grey">
+                <button type="button" class="button button--extra-big button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-big red">
+                <button type="button" class="button button--extra-big button--red">
                     button
                 </button>
-                <button type="button" class="button extra-big green">
+                <button type="button" class="button button--extra-big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-big yellow">
+        <div class="card card--extra-big card--yellow">
             <header class="card__header">
-                <h2>extra-big / yellow</h2>
+                <h4>extra-big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1649,21 +1641,21 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-big grey">
+                <button type="button" class="button button--extra-big button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-big red">
+                <button type="button" class="button button--extra-big button--red">
                     button
                 </button>
-                <button type="button" class="button extra-big green">
+                <button type="button" class="button button--extra-big button--green">
                     button
                 </button>
             </footer>
         </div>
         
-        <div class="card extra-big white">
+        <div class="card card--extra-big card--white">
             <header class="card__header">
-                <h2>extra-big / white</h2>
+                <h4>extra-big</h4>
             </header>
             <article class="card__body">
                 <img src="assets/img/banner/1.png" alt="image">
@@ -1674,13 +1666,13 @@
                 </p>
             </article>
             <footer class="card__footer button-wrapper">
-                <button type="button" class="button extra-big grey">
+                <button type="button" class="button button--extra-big button--grey">
                     button
                 </button>
-                <button type="button" class="button extra-big red">
+                <button type="button" class="button button--extra-big button--red">
                     button
                 </button>
-                <button type="button" class="button extra-big green">
+                <button type="button" class="button button--extra-big button--green">
                     button
                 </button>
             </footer>
@@ -1689,11 +1681,11 @@
     </div>
     
 </section>
-        </section>
-        <footer class=grid__footer>
+        </article>
+        <footer class="grid__footer">
             <div class="row theme-footer">
     By:
-    <a href="https://www.jefersonwinter.com.br" target="_blank" rel="noopener" class="button regular grey">
+    <a href="https://www.jefersonwinter.com.br" target="_blank" rel="noopener" class="button button--regular button--grey">
         Jeferson Winter
     </a>
 </div>

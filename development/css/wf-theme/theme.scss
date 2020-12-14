@@ -1,13 +1,12 @@
 * {
     font-family: sans-serif;
-    font-size: $font-size-regular;
 }
 
 .grid {
-    height: 100%;
     display: grid;
     grid-template:
         "grid-header grid-header"min-content "grid-menu grid-menu"min-content "grid-content grid-content"auto "grid-footer grid-footer"min-content / auto;
+    height: 100%;
 
     @include tablet-landscape {
         grid-template:
@@ -57,12 +56,14 @@
 
 .theme-menu {
     background-color: $color-grey-light-3;
-    padding: $regular;
     height: 100%;
+    padding: $regular;
 
-    .button {
-        font-size: $font-size-regular;
-        margin-bottom: 0;
+    .column {
+        .button {
+            font-size: $font-size-regular;
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -95,8 +96,8 @@
 
     &__sub-title,
     &__title {
-        text-align: center;
         font-weight: 100;
+        text-align: center;
     }
 
     &__sub-title {
@@ -111,31 +112,91 @@
 }
 
 .page-home {
-    display: flex;
     height: 100%;
 
     .carousel,
     .carousel__list {
         height: 100%;
+        min-height: 300px;
+    }
+
+    .carousel {
+
+        &__item {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+        }
+
+        &__content {
+            color: $color-white;
+            font-size: $font-size-big;
+            width: calc(100% - #{$extra-big});
+
+            @include tablet-landscape {
+                font-size: $font-size-extra-big * 2;
+            }
+        }
     }
 
     .icon {
         fill: $color-white;
     }
+}
 
-    .carousel__item {
-        align-items: center;
-        color: $color-white;
-        font-size: $font-size-extra-big * 2;
-        justify-content: center;
-        padding: $extra-big;
-        text-align: center;
+.card--extra-big,
+.card--big {
+    display: none;
+
+    @include tablet-landscape {
+        display: initial;
     }
 }
 
-.gallery {
-    &__item {
-        flex: 1;
-        @extend %extend-margin-component;
+.page-table {
+    .wrapper-table-responsive {
+        margin-bottom: $extra-big;
+        max-height: 500px;
     }
+}
+
+.tooltip-wrapper {
+    margin-bottom: $extra-big;
+}
+
+.gallery {
+
+    &__item {
+        margin: $extra-small;
+
+        @include tablet-landscape {
+            flex: 1;
+            margin: $regular;
+        }
+    }
+}
+
+.progress {
+    margin-bottom: $regular;
+
+    .progress__bar {
+        width: 80%;
+    }
+}
+
+.theme-scroll {
+    .scrollbar {
+        height: 300px;
+        margin: $regular;
+        overflow-y: scroll;
+    }
+
+    .scrollbar-force-overflow {
+        min-height: 450px;
+    }
+}
+
+.tag--extra-big {
+    display: none;
 }

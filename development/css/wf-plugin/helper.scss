@@ -1,32 +1,29 @@
-.column {
-    flex-direction: column;
-    height: 100%;
+.rotate-45 {
+    transform: rotate(45deg);
 }
 
-.row {
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex: 0 1 100%;
-}
-
-.column,
-.row {
-    display: flex;
-}
-
-.center {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-
-.flip {
+.rotate-180 {
     transform: rotate(180deg);
 }
 
 .hide {
-    visibility: hidden;
+    font-size: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
     pointer-events: none;
+    visibility: hidden;
+    width: 0;
+
+    * {
+        font-size: 0;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        pointer-events: none;
+        visibility: hidden;
+        width: 0;
+    }
 }
 
 .hide-tablet {

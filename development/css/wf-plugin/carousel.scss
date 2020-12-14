@@ -1,69 +1,47 @@
 .carousel {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  z-index: 1;
-
-  &__list {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    transition: $transition;
-  }
-
-  &__item {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-  }
-
-  &__controller {
+    overflow: hidden;
     position: relative;
     width: 100%;
+    z-index: 1;
 
-    .button{
-      border-radius: 50%;
-      margin: 0 $small;
+    &__list {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        transition: $transition;
     }
-  }
 
-  .over {
-    bottom: 40px;
-    position: absolute;
-    z-index: 2;
-  }
-
-  &__controller-button {
-    opacity: .5;
-    border-color: transparent;
-    border-radius: 50%;
-
-    &--active {
-      opacity: 1;
+    &__item {
+        display: flex;
+        flex-direction: row;
+        position: relative;
     }
-  }
 
-  &__arrow {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
+    &__controller {
+        position: relative;
+        width: 100%;
 
-    .button {
-      background-color: transparent;
-      border-color: transparent;
-      position: absolute;
+        .button {
+            border-radius: 50%;
+            margin: 0 $small;
+        }
 
-      &:first-child {
-        left: 0;
-      }
-
-      &:last-child {
-        right: 0;
-      }
+        &--over {
+            bottom: 40px;
+            position: absolute;
+            z-index: 2;
+        }
     }
-  }
+
+    &__controller-button {
+        border-color: transparent;
+        border-radius: 50%;
+        opacity: 0.5;
+
+        &--active {
+            opacity: 1;
+        }
+    }
 }
