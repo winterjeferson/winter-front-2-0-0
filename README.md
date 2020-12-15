@@ -1,3 +1,6 @@
+
+Take a look: https://winterjeferson.github.io/winter-front-2-0-0/production/
+
 Dependencies:
 
 * Node js: https://nodejs.org/pt-br/download/
@@ -17,5 +20,3 @@ How it works:
 * When it is done, run the command "gulp deploy" to minify assets at "production" folder.
 * Upload all "production" files to your host.
 * Thats all
-
-Take a look at: https://winterjeferson.github.io/winter-front-2-0-0/production/
