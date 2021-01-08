@@ -11,7 +11,7 @@ const configuration = require('./configuration.js');
 const helper = require('./helper.js');
 
 const extension = 'html';
-const folder = `${configuration.src}template/`;
+const folder = `${configuration.src + extension}/`;
 const file = `${folder}*.${extension}`;
 const fileAll = folder + configuration.allFolderFile;
 const fileClean = `${configuration.dist}*.${extension}`;
