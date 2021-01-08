@@ -6,15 +6,15 @@ const gulpStylelint = require('gulp-stylelint'); //npm install stylelint gulp-st
 
 const configuration = require('./configuration.js');
 
-const extension = 'css';
-const extensionSass = `s${extension}`;
+const extensionCss = 'css';
+const extensionSass = `s${extensionCss}`;
 const filePrefix = `${configuration.prefix}${configuration.theme}`;
 const filePrefixPlugin = `${configuration.prefix}${configuration.plugin}`;
-const folder = `${configuration.development}${extension}/`;
+const folder = `${configuration.src}${extensionCss}/`;
 const file = folder + `${filePrefix}/${configuration.index}.${extensionSass}`;
 const filePlugin = folder + `${filePrefixPlugin}/${configuration.index}.${extensionSass}`;
-const fileName = `${filePrefix}.${extension}`;
-const fileNamePlugin = `${filePrefixPlugin}.${extension}`;
+const fileName = `${filePrefix}.${extensionCss}`;
+const fileNamePlugin = `${filePrefixPlugin}.${extensionCss}`;
 const fileAll = folder + configuration.allFolderFile;
 
 
@@ -24,7 +24,7 @@ gulp.task('buildCssSass', () => {
         .src(file)
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(rename(fileName))
-        .pipe(gulp.dest(`${configuration.homologation}${configuration.assets}${extension}/`));
+        .pipe(gulp.dest(`${configuration.dist}${configuration.assets}${extensionCss}/`));
 });
 
 gulp.task('buildCssSassPlugin', () => {
@@ -32,14 +32,14 @@ gulp.task('buildCssSassPlugin', () => {
         .src(filePlugin)
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(rename(fileNamePlugin))
-        .pipe(gulp.dest(`${configuration.homologation}${configuration.assets}${extension}/`));
+        .pipe(gulp.dest(`${configuration.dist}${configuration.assets}${extensionCss}/`));
 });
 
 gulp.task('buildCssMinify', () => {
     return gulp
-        .src(`${configuration.homologation}${configuration.assets}${extension}/*.*`)
+        .src(`${configuration.dist}${configuration.assets}${extensionCss}/*.*`)
         .pipe(csso())
-        .pipe(gulp.dest(`${configuration.production}${configuration.assets}${extension}/`));
+        .pipe(gulp.dest(`${configuration.dist}${configuration.assets}${extensionCss}/`));
 });
 
 gulp.task('buildCssLint', function lintCssTask(done) {

@@ -9,9 +9,9 @@ const template = require('./template.js');
 const configuration = require('./configuration.js');
 
 const fileAll = [
-    configuration.homologation + '.htaccess',
-    configuration.homologation + '*.txt',
-    configuration.homologation + '*.xml',
+    configuration.dist + '.htaccess',
+    configuration.dist + '*.txt',
+    configuration.dist + '*.xml',
 ];
 
 
@@ -19,11 +19,11 @@ const fileAll = [
 gulp.task('buildProjectMove', () => {
     gulp
         .src(fileAll)
-        .pipe(gulp.dest(configuration.production));
+        .pipe(gulp.dest(configuration.dist));
 
     return gulp
-        .src(`${configuration.homologation}${configuration.assets}font/${configuration.allFolderFile}`)
-        .pipe(gulp.dest(`${configuration.production}${configuration.assets}font/`));
+        .src(`${configuration.dist}${configuration.assets}font/${configuration.allFolderFile}`)
+        .pipe(gulp.dest(`${configuration.dist}${configuration.assets}font/`));
 });
 
 gulp.task('buildProject', gulp.series(

@@ -9,7 +9,7 @@ const configuration = require('./configuration.js');
 const extension = 'js';
 const filePrefix = `${configuration.prefix}${configuration.theme}`;
 const filePrefixPlugin = `${configuration.prefix}${configuration.plugin}`;
-const folder = `${configuration.development}${extension}/`;
+const folder = `${configuration.src}${extension}/`;
 const file = [
     `${folder}${filePrefix}/!(${configuration.index})*.${extension}`,
     `${folder}${filePrefix}/${configuration.index}.${extension}`,
@@ -27,40 +27,40 @@ gulp.task('buildJsConcat', () => {
     return gulp
         .src(file)
         .pipe(concat(fileName))
-        .pipe(gulp.dest(`${configuration.homologation}${configuration.assets}${extension}/`));
+        .pipe(gulp.dest(`${configuration.dist}${configuration.assets}${extension}/`));
 });
 
 gulp.task('buildJsConcatPlugin', () => {
     return gulp
         .src(filePlugin)
         .pipe(concat(fileNamePlugin))
-        .pipe(gulp.dest(`${configuration.homologation}${configuration.assets}${extension}/`));
+        .pipe(gulp.dest(`${configuration.dist}${configuration.assets}${extension}/`));
 });
 
 gulp.task('buildJsMinify', () => {
     return gulp
-        .src(`${configuration.homologation}${configuration.assets}${extension}/${configuration.allFile}`)
+        .src(`${configuration.dist}${configuration.assets}${extension}/${configuration.allFile}`)
         .pipe(uglify())
-        .pipe(gulp.dest(`${configuration.production}${configuration.assets}${extension}/`));
+        .pipe(gulp.dest(`${configuration.dist}${configuration.assets}${extension}/`));
 });
 
 gulp.task('buildJsRemoveCode', () => {
     return gulp
-        .src(`${configuration.homologation}${configuration.assets}${extension}/*.${extension}`)
+        .src(`${configuration.dist}${configuration.assets}${extension}/*.${extension}`)
         .pipe(removeCode({
-            production: true
+            dist: true
         }))
         .pipe(removeCode({
             noDevFeatures: false,
             commentStart: '/*',
             commentEnd: '*/'
         }))
-        .pipe(gulp.dest(`${configuration.production}${configuration.assets}${extension}/`));
+        .pipe(gulp.dest(`${configuration.dist}${configuration.assets}${extension}/`));
 });
 
 gulp.task('buildJsLint', () => {
     return gulp
-        .src(`${configuration.development}${extension}/${configuration.allFolderFile}`)
+        .src(`${configuration.src}${extension}/${configuration.allFolderFile}`)
         .pipe(eslint({
             "extends": "eslint:recommended",
             configFile: 'eslint.json'

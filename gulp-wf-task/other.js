@@ -6,13 +6,13 @@ const helper = require('./helper.js');
 
 const folder = 'other/';
 const fileAll = [
-    `${configuration.development}${folder}${configuration.allFolderFile}`,
-    `${configuration.development}${folder}.htaccess`,
+    `${configuration.src}${folder}${configuration.allFolderFile}`,
+    `${configuration.src}${folder}.htaccess`,
 ];
 const fileClean = [
-    `${configuration.homologation}.htaccess`,
-    `${configuration.homologation}*.txt`,
-    `${configuration.homologation}*.xml`,
+    `${configuration.dist}.htaccess`,
+    `${configuration.dist}*.txt`,
+    `${configuration.dist}*.xml`,
 ];
 
 
@@ -25,7 +25,7 @@ gulp.task('buildOtherClean', (done) => {
 gulp.task('buildOtherMove', (done) => {
     return gulp
         .src(fileAll)
-        .pipe(gulp.dest(configuration.homologation));
+        .pipe(gulp.dest(configuration.dist));
     done();
 });
 

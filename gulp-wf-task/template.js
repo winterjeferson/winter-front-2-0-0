@@ -11,10 +11,10 @@ const configuration = require('./configuration.js');
 const helper = require('./helper.js');
 
 const extension = 'html';
-const folder = `${configuration.development}template/`;
+const folder = `${configuration.src}template/`;
 const file = `${folder}*.${extension}`;
 const fileAll = folder + configuration.allFolderFile;
-const fileClean = `${configuration.homologation}*.${extension}`;
+const fileClean = `${configuration.dist}*.${extension}`;
 
 
 
@@ -31,16 +31,16 @@ gulp.task('buildTemplateInclude', () => {
         .pipe(nunjucksRender({
             path: [folder]
         }))
-        .pipe(gulp.dest(configuration.homologation));
+        .pipe(gulp.dest(configuration.dist));
 });
 
 gulp.task('buildTemplateMinify', () => {
     return gulp
-        .src(`${configuration.homologation}*.${extension}`)
+        .src(`${configuration.dist}*.${extension}`)
         .pipe(htmlmin({
             collapseWhitespace: true
         }))
-        .pipe(gulp.dest(configuration.production));
+        .pipe(gulp.dest(configuration.dist));
 });
 
 gulp.task('buildTemplateLint', () => {

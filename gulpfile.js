@@ -4,7 +4,7 @@ const gulpWfTask = requireDir('./gulp-wf-task/', {
     recurse: true
 });
 
-gulp.gulpWfTask('default',
+gulp.task('default',
     gulp.series(
         'watch',
         'initialize',
