@@ -16,7 +16,8 @@
     "gulp-watch": "^5.0.1",
     "lodash": "^4.17.20",
     "lodash.template": "^4.5.0",
-    "require-dir": "^1.2.0"
+    "require-dir": "^1.2.0",
+    "yargs-parser": "^20.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
