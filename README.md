@@ -1,7 +1,7 @@
 
-Take a look: https://winterjeferson.github.io/winter-front-2-0-0/production/
+Take a look: https://winterjeferson.github.io/winter-front-2-0-0/dist/
 
-Dependencies:
+Dependencies (you must have it installed):
 
 * Node js: https://nodejs.org/pt-br/download/
 * Gulp Js: https://gulpjs.com/docs/en/getting-started/quick-start
@@ -9,14 +9,13 @@ Dependencies:
 How to start:
 
 * Clone the projetc.
-* Open a terminal on "development/gulp/" folder and run "npm install".
+* Run "npm install".
 * Than run "gulp" command.
 
 How it works:
 
-* Build/edit your project at "development" folder.
-* Gulp will compile it at "homologation" folder.
-* Use "homologation" folder to visualize your current project on the browser.
-* When it is done, run the command "gulp deploy" to minify assets at "production" folder.
-* Upload all "production" files to your host.
+* Build/edit your project at "src" folder.
+* Gulp will compile it at "dist" folder.
+* When all the project is done, run the command "gulp deploy" to minify assets at "dist" folder.
+* Upload all "dist" files to your host.
 * Thats all
