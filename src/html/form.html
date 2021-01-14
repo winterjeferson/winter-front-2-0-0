@@ -2,7 +2,7 @@
 {% include "include/head.html" %}
 <h1 class="page__title">Form</h1>
 {% for color in arrColor %}
-<form class="form {{color}}">
+<form class="form form--{{color}}">
     <h2 class="page__sub-title">{{color}}</h2>
     <div class="row form__field">
         <label class="form__label" for="id-number-{{color}}">Number</label>

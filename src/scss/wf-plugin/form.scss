@@ -43,7 +43,7 @@ $prefix: 'form';
     }
 
     @each $color in $arrColorButton {
-        &.#{$color} {
+        &--#{$color} {
 
             input[type="checkbox"],
             input[type="radio"] {
