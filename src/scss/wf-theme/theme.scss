@@ -5,28 +5,28 @@
 .grid {
     display: grid;
     grid-template:
-        "grid-header grid-header"min-content "grid-menu grid-menu"min-content "grid-content grid-content"auto "grid-footer grid-footer"min-content / auto;
+        "grid__header grid__header"min-content "grid__menu grid__menu"min-content "grid__content grid__content"auto "grid__footer grid__footer"min-content / auto;
     height: 100%;
 
     @include tablet-landscape {
         grid-template:
-            "grid-header grid-header"min-content "grid-menu grid-content"auto "grid-footer grid-footer"min-content / 250px auto;
+            "grid__header grid__header"min-content "grid__menu grid__content"auto "grid__footer grid__footer"min-content / 250px auto;
     }
 
     &__header {
-        grid-area: grid-header;
+        grid-area: grid__header;
     }
 
     &__menu {
-        grid-area: grid-menu;
+        grid-area: grid__menu;
     }
 
     &__content {
-        grid-area: grid-content;
+        grid-area: grid__content;
     }
 
     &__footer {
-        grid-area: grid-footer;
+        grid-area: grid__footer;
     }
 }
 

@@ -7,6 +7,7 @@
 
 .tag {
     align-items: center;
+    border-radius: 2rem;
     display: flex;
     flex-wrap: wrap;
 
@@ -21,9 +22,9 @@
     }
 
     &--extra-small {
-        border-radius: $border-radius-extra-small;
-        margin: $extra-small;
-        padding: $extra-small $small;
+        $size: $extra-small;
+        margin: $size;
+        padding: $size ($size * 3);
 
         .tag__text {
             font-size: $font-size-extra-small;
@@ -31,9 +32,9 @@
     }
 
     &--small {
-        border-radius: $border-radius-small;
-        margin: $small;
-        padding: $small $regular;
+        $size: $small;
+        margin: $size;
+        padding: $size ($size * 3);
 
         .tag__text {
             font-size: $font-size-small;
@@ -41,9 +42,9 @@
     }
 
     &--regular {
-        border-radius: $border-radius-regular;
-        margin: $regular;
-        padding: $regular $big;
+        $size: $regular;
+        margin: $size;
+        padding: $size ($size * 3);
 
         .tag__text {
             font-size: $font-size-regular;
@@ -51,9 +52,10 @@
     }
 
     &--big {
-        border-radius: $border-radius-big;
-        margin: $big;
-        padding: $big $extra-big;
+        $size: $big;
+        border-radius: $size * 3;
+        margin: $size;
+        padding: $size ($size * 3);
 
         .tag__text {
             font-size: $font-size-big;
@@ -61,9 +63,10 @@
     }
 
     &--extra-big {
-        border-radius: $border-radius-extra-big;
-        margin: $extra-big;
-        padding: $extra-big $extra-big-2;
+        $size: $extra-big;
+        border-radius: $size * 3;
+        margin: $size;
+        padding: $size ($size * 3);
 
         .tag__text {
             font-size: $font-size-extra-big;
