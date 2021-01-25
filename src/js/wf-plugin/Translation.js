@@ -38,4 +38,6 @@ class Translation {
     }
 }
 
-window.translation = new Translation();
+export {
+    Translation
+};

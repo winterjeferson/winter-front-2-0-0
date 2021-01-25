@@ -84,4 +84,6 @@ class MenuDropDown {
     }
 }
 
-window.menuDropDown = new MenuDropDown();
+export {
+    MenuDropDown
+};

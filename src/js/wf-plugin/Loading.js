@@ -15,4 +15,6 @@ class LoadingMain {
     }
 }
 
-window.loadingMain = new LoadingMain();
+export {
+    LoadingMain
+};

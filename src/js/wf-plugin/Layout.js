@@ -9,4 +9,6 @@ class Layout {
     }
 }
 
-window.layout = new Layout();
+export {
+    Layout
+};

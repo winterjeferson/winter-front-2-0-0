@@ -45,4 +45,6 @@ class LazyLoad {
     }
 }
 
-window.lazyLoad = new LazyLoad();
+export {
+    LazyLoad
+};

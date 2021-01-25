@@ -38,4 +38,6 @@ class MenuTab {
     }
 }
 
-window.menuTab = new MenuTab();
+export {
+    MenuTab
+};

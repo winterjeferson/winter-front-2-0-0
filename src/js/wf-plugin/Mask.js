@@ -78,4 +78,6 @@ class Mask {
     }
 }
 
-window.mask = new Mask();
+export {
+    Mask
+};

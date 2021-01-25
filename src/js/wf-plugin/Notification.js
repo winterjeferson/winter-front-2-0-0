@@ -87,4 +87,6 @@ class Notification {
     }
 }
 
-window.notification = new Notification();
+export {
+    Notification
+};

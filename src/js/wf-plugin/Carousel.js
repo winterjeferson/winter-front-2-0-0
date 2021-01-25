@@ -237,4 +237,6 @@ class Carousel {
     }
 }
 
-window.carousel = new Carousel();
+export {
+    Carousel
+};

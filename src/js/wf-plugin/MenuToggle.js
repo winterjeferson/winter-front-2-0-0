@@ -45,4 +45,6 @@ class MenuToggle {
     }
 }
 
-window.menuToggle = new MenuToggle();
+export {
+    MenuToggle
+};

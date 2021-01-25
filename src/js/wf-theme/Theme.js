@@ -20,4 +20,6 @@ class Theme {
     }
 }
 
-window.theme = new Theme();
+export {
+    Theme
+};

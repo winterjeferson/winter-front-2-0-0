@@ -13,4 +13,6 @@ class Form {
     }
 }
 
-window.form = new Form();
+export {
+    Form
+};

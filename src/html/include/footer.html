@@ -3,8 +3,10 @@
             {% include "include/template-footer.html" %}
         </footer>
 
-        <script src="./assets/js/wf-plugin.js"></script>
-        <script src="./assets/js/wf-theme.js"></script>
+        <script type="module">
+            import * as wfp from './assets/js/wf-plugin.js';
+            import * as wft from './assets/js/wf-theme.js';
+        </script>
     </main>
 </body>
 

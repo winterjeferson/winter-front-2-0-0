@@ -26,4 +26,6 @@ class Tag {
     }
 }
 
-window.tag = new Tag();
+export {
+    Tag
+};
